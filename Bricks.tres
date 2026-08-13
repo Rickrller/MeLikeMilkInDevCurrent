@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://br66824ryfl2b"]
+
+[ext_resource type="Texture2D" uid="uid://boryux6pchfjc" path="res://BricksFixed.png" id="1_rdbef"]
+
+[resource]
+albedo_texture = ExtResource("1_rdbef")
+uv1_scale = Vector3(64, 12, 8)

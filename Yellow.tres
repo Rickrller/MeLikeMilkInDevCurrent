@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dmxf544pr77t"]
+
+[ext_resource type="Texture2D" uid="uid://xr01xbe4wadb" path="res://BlueGlass.png" id="1_q3w6u"]
+
+[resource]
+albedo_color = Color(1, 1, 0, 1)
+albedo_texture = ExtResource("1_q3w6u")
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 0.4

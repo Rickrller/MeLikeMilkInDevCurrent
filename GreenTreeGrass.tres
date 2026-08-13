@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b2rj36yucvk8k"]
+
+[ext_resource type="Texture2D" uid="uid://cpxqf1410tcfq" path="res://GreenTexture.png" id="1_2upu8"]
+
+[resource]
+albedo_color = Color(0.6603956, 0.66039556, 0.66039556, 1)
+albedo_texture = ExtResource("1_2upu8")
+emission_enabled = true
+emission = Color(0.25882354, 0.7372549, 0.49803922, 1)
+emission_energy_multiplier = 0.1
+uv1_scale = Vector3(2, 2, 4)
+texture_filter = 2
+billboard_keep_scale = true
+distance_fade_mode = 2
+distance_fade_max_distance = 3.0

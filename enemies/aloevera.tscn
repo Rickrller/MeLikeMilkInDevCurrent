@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://2k4hx0qjyd3h"]
+
+[ext_resource type="PackedScene" uid="uid://bkjklx2whpfx8" path="res://models/aloevera.glb" id="1_6e08e"]
+[ext_resource type="Script" uid="uid://cbapui31gg4xq" path="res://enemies/aloevera.gd" id="1_qctjv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qctjv"]
+radius = 0.9838938
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pujrq"]
+
+[node name="aloevera" type="CharacterBody3D" unique_id=222285199 groups=["enemy"]]
+script = ExtResource("1_qctjv")
+damage = 1.0
+health = 11.0
+speed = 11.0
+givenfruit = "aloevera"
+sightrange = 35.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=711329825]
+shape = SubResource("SphereShape3D_qctjv")
+
+[node name="aloevera" parent="." unique_id=1477702143 instance=ExtResource("1_6e08e")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Timer2" type="Timer" parent="." unique_id=548990446]
+one_shot = true
+
+[node name="Area3D" type="Area3D" parent="." unique_id=392512647]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=361992909]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+shape = SubResource("SphereShape3D_pujrq")
+
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,0 +1,1346 @@
+[gd_scene format=3 uid="uid://ptd3sftepgx4"]
+
+[ext_resource type="Material" uid="uid://b2rj36yucvk8k" path="res://GreenTreeGrass.tres" id="1_k5sx3"]
+[ext_resource type="Material" path="res://GreenGreenGrass.tres" id="1_vwn4e"]
+[ext_resource type="Material" path="res://Curb.tres" id="2_e6cbp"]
+[ext_resource type="Texture2D" uid="uid://d12hejdp07kry" path="res://Grass2.png" id="2_xum4l"]
+[ext_resource type="Material" path="res://SlightlyDarkerThanLighterBrown.tres" id="3_vwn4e"]
+[ext_resource type="Texture2D" uid="uid://bckc05fqg3l56" path="res://Wood.png" id="4_xum4l"]
+[ext_resource type="Material" path="res://LighterBrown.tres" id="5_08hku"]
+[ext_resource type="Material" path="res://DarkGrayMetal.tres" id="6_gxdaw"]
+[ext_resource type="Material" uid="uid://c1wjhtox6rsx3" path="res://Wood.tres" id="7_beby0"]
+[ext_resource type="Material" path="res://WhiteWall.tres" id="8_reqhv"]
+[ext_resource type="Material" path="res://Bricks.tres" id="9_nnca1"]
+[ext_resource type="Texture2D" uid="uid://demsqoao81t8b" path="res://BricksFixed.png" id="10_4eeco"]
+[ext_resource type="Texture2D" uid="uid://dvmirdm6cat3t" path="res://RedTexture.jpg" id="10_08hku"]
+[ext_resource type="Material" path="res://BlueGlass.tres" id="11_53fbj"]
+[ext_resource type="Texture2D" uid="uid://cj7jysfkrhxe0" path="res://WHITEwall.png" id="11_gxdaw"]
+[ext_resource type="Material" path="res://Yellow.tres" id="12_npfxg"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_08hku"]
+material = ExtResource("1_vwn4e")
+size = Vector2(500, 500)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_beby0"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.7379664, 0.80518776, 0.7235965, 1)
+albedo_texture = ExtResource("2_xum4l")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_distance = 0.01
+distance_fade_max_distance = 5.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_gxdaw"]
+material = SubResource("StandardMaterial3D_beby0")
+
+[sub_resource type="Curve" id="Curve_beby0"]
+_limits = [-50.0, 50.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(0.4, -1), 0.0, 0.0, 0, 0, Vector2(0.6, 1), 0.0, 0.0, 0, 0, Vector2(0.8, -1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Curve" id="Curve_reqhv"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.28042328, 1), 0.0, 0.0, 0, 0, Vector2(0.52116406, 1), 0.0, 0.0, 0, 0, Vector2(0.6269841, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_nnca1"]
+offsets = PackedFloat32Array(0, 0.20679012, 0.79320985, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_4eeco"]
+offsets = PackedFloat32Array(0.0030864198, 0.40432099, 0.69135803, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.8625222, 0.8625217, 0.8625216, 1, 1, 1, 1, 1, 0.89275575, 0.89275575, 0.8927557, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_y3okc"]
+material = ExtResource("1_k5sx3")
+radius = 1.6
+height = 3.2
+radial_segments = 4
+rings = 4
+
+[sub_resource type="SphereMesh" id="SphereMesh_e2pgf"]
+material = ExtResource("1_k5sx3")
+radius = 1.6
+height = 3.2
+radial_segments = 4
+rings = 3
+
+[sub_resource type="SphereMesh" id="SphereMesh_4r7yv"]
+material = ExtResource("1_k5sx3")
+radius = 1.6
+height = 3.2
+radial_segments = 4
+rings = 3
+
+[sub_resource type="SphereMesh" id="SphereMesh_bskx2"]
+material = ExtResource("1_k5sx3")
+radius = 1.6
+height = 3.2
+radial_segments = 4
+rings = 4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_crxvc"]
+material = ExtResource("2_e6cbp")
+top_radius = 0.3
+bottom_radius = 0.4
+height = 7.0
+radial_segments = 5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ex15n"]
+material = ExtResource("2_e6cbp")
+top_radius = 0.3
+height = 1.0
+radial_segments = 5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_17emo"]
+material = ExtResource("7_beby0")
+top_radius = 0.2
+height = 1.0
+radial_segments = 5
+
+[sub_resource type="SphereMesh" id="SphereMesh_ng0nt"]
+material = ExtResource("1_k5sx3")
+radius = 1.5
+height = 3.0
+radial_segments = 4
+rings = 4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_v21h4"]
+top_radius = 0.2
+bottom_radius = 0.3
+height = 6.0
+radial_segments = 5
+
+[sub_resource type="SphereMesh" id="SphereMesh_qm0q2"]
+material = ExtResource("1_k5sx3")
+radius = 1.5
+height = 3.0
+radial_segments = 4
+rings = 4
+
+[sub_resource type="SphereMesh" id="SphereMesh_1sidn"]
+radius = 1.2
+height = 2.4
+radial_segments = 4
+rings = 3
+
+[sub_resource type="SphereMesh" id="SphereMesh_o8i3d"]
+radius = 1.5
+height = 3.0
+radial_segments = 4
+rings = 4
+
+[sub_resource type="SphereMesh" id="SphereMesh_61iok"]
+radius = 1.2
+height = 2.4
+radial_segments = 4
+rings = 4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rpxwp"]
+top_radius = 0.2
+bottom_radius = 0.3
+height = 4.0
+radial_segments = 5
+
+[sub_resource type="SphereMesh" id="SphereMesh_0neff"]
+material = ExtResource("1_k5sx3")
+radius = 1.2
+height = 2.4
+radial_segments = 4
+rings = 4
+
+[sub_resource type="SphereMesh" id="SphereMesh_xl3ru"]
+radius = 1.0
+height = 2.0
+radial_segments = 4
+rings = 4
+
+[sub_resource type="BoxMesh" id="BoxMesh_5g2ga"]
+material = ExtResource("3_vwn4e")
+size = Vector3(0.2, 1, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ynbcv"]
+albedo_texture = ExtResource("4_xum4l")
+uv1_scale = Vector3(3, 3, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i1ogn"]
+material = SubResource("StandardMaterial3D_ynbcv")
+size = Vector3(0.2, 1.2, 0.05)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yyrg3"]
+material = ExtResource("5_08hku")
+top_radius = 0.18
+bottom_radius = 0.25
+height = 8.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_bk57i"]
+size = Vector3(0.2, 4, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5sgtb"]
+size = Vector3(0.2, 1.5, 0.2)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mp4m7"]
+material = ExtResource("6_gxdaw")
+top_radius = 0.05
+bottom_radius = 0.06
+height = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i1ogn"]
+material = ExtResource("6_gxdaw")
+top_radius = 0.02
+bottom_radius = 0.06
+height = 0.06
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_reqhv"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("10_08hku")
+
+[sub_resource type="BoxMesh" id="BoxMesh_nnca1"]
+material = SubResource("StandardMaterial3D_reqhv")
+size = Vector3(200, 0.1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4eeco"]
+transparency = 1
+albedo_color = Color(0.3854925, 0.38549247, 0.38549247, 1)
+albedo_texture = ExtResource("11_gxdaw")
+metallic_specular = 0.42
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+uv1_scale = Vector3(1, 0.1, 1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_53fbj"]
+material = SubResource("StandardMaterial3D_4eeco")
+size = Vector3(200, 0.15, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npfxg"]
+albedo_color = Color(1, 1, 0, 1)
+albedo_texture = ExtResource("10_08hku")
+emission_enabled = true
+emission = Color(1, 1, 0.14901961, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3hwhb"]
+material = SubResource("StandardMaterial3D_npfxg")
+size = Vector3(200, 0.15, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v21h4"]
+material = ExtResource("7_beby0")
+size = Vector3(12, 0.4, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1sidn"]
+material = ExtResource("8_reqhv")
+size = Vector3(11.5, 4, 11.5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_o8i3d"]
+material = ExtResource("9_nnca1")
+size = Vector3(13, 3, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yd1tc"]
+albedo_texture = ExtResource("10_4eeco")
+
+[sub_resource type="BoxMesh" id="BoxMesh_61iok"]
+material = SubResource("StandardMaterial3D_yd1tc")
+size = Vector3(13, 0.5, 12)
+
+[sub_resource type="PrismMesh" id="PrismMesh_0neff"]
+size = Vector3(13, 3, 13)
+
+[sub_resource type="PrismMesh" id="PrismMesh_xl3ru"]
+material = ExtResource("8_reqhv")
+size = Vector3(11.5, 2.5, 11.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_crxvc"]
+material = ExtResource("7_beby0")
+size = Vector3(1.5, 2.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ex15n"]
+size = Vector3(1.3, 2.05, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y3okc"]
+material = ExtResource("7_beby0")
+size = Vector3(1.5, 1.5, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e2pgf"]
+material = ExtResource("11_53fbj")
+size = Vector3(1.3, 1.3, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ynbcv"]
+material = ExtResource("12_npfxg")
+size = Vector3(1.4, 2.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yyrg3"]
+size = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o8i3d"]
+material = ExtResource("11_53fbj")
+size = Vector3(2.8, 1.8, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ng0nt"]
+material = ExtResource("12_npfxg")
+size = Vector3(1.4, 2.19, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0neff"]
+material = ExtResource("7_beby0")
+size = Vector3(1.5, 2.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xl3ru"]
+size = Vector3(1.3, 2.05, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4r7yv"]
+size = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bskx2"]
+material = ExtResource("11_53fbj")
+size = Vector3(2.8, 1.8, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_agjas"]
+material = ExtResource("12_npfxg")
+size = Vector3(1.4, 2.19, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ir30u"]
+material = ExtResource("12_npfxg")
+size = Vector3(1.4, 2.19, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_bk57i"]
+material = ExtResource("8_reqhv")
+size = Vector3(11.5, 2.5, 11.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xcv0s"]
+material = ExtResource("12_npfxg")
+size = Vector3(1.4, 2.19, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_chw0x"]
+material = ExtResource("8_reqhv")
+size = Vector3(5.75, 4, 9.5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_5sgtb"]
+material = ExtResource("9_nnca1")
+size = Vector3(6.5, 2, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mp4m7"]
+size = Vector3(6.5, 0.5, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ir30u"]
+albedo_texture = ExtResource("10_4eeco")
+
+[sub_resource type="PrismMesh" id="PrismMesh_i1ogn"]
+size = Vector3(6.5, 2, 11)
+
+[sub_resource type="PrismMesh" id="PrismMesh_rpxwp"]
+material = ExtResource("8_reqhv")
+size = Vector3(5.7, 2.2, 9.5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yd1tc"]
+material = ExtResource("7_beby0")
+top_radius = 0.7
+bottom_radius = 0.7
+radial_segments = 15
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ynbcv"]
+material = ExtResource("7_beby0")
+top_radius = 0.3
+bottom_radius = 0.6
+height = 1.0
+radial_segments = 15
+
+[sub_resource type="BoxMesh" id="BoxMesh_17emo"]
+material = ExtResource("7_beby0")
+size = Vector3(0.1, 1.3, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xcv0s"]
+material = ExtResource("11_53fbj")
+top_radius = 0.8
+bottom_radius = 0.6
+
+[node name="Assets" type="Node3D" unique_id=1680835380]
+transform = Transform3D(0.9989801, 0, 0, 0, 0.9989801, 0, 0, 0, 0.9989801, 0, 0, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=85844043]
+transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, 6.4666996, -0.12577856, -1.4824852)
+mesh = SubResource("PlaneMesh_08hku")
+
+[node name="GrassParticles" type="CPUParticles3D" parent="Floor" unique_id=398328071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35113, -0.090501696, -39.3456)
+cast_shadow = 0
+emitting = false
+amount = 500
+lifetime = 15.0
+draw_order = 2
+mesh = SubResource("QuadMesh_gxdaw")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 100000, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 25.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 45.0
+gravity = Vector3(0, -0.1, 0)
+angular_velocity_min = 1.0
+angular_velocity_max = 2.0
+angular_velocity_curve = SubResource("Curve_beby0")
+linear_accel_min = -0.3
+scale_amount_min = 0.2
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_reqhv")
+color_ramp = SubResource("Gradient_nnca1")
+color_initial_ramp = SubResource("Gradient_4eeco")
+
+[node name="GrassParticles2" type="CPUParticles3D" parent="Floor" unique_id=1645130458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35113, -0.090501696, -37.457287)
+cast_shadow = 0
+emitting = false
+amount = 6000
+lifetime = 15.0
+local_coords = true
+draw_order = 2
+mesh = SubResource("QuadMesh_gxdaw")
+emission_shape = 3
+emission_box_extents = Vector3(250, 0, 20)
+gravity = Vector3(0, -0.1, 0)
+angular_velocity_min = 1.0
+angular_velocity_max = 2.0
+angular_velocity_curve = SubResource("Curve_beby0")
+linear_accel_min = -0.3
+scale_amount_min = 0.2
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_reqhv")
+color_ramp = SubResource("Gradient_nnca1")
+color_initial_ramp = SubResource("Gradient_4eeco")
+
+[node name="GrassParticles3" type="CPUParticles3D" parent="Floor" unique_id=1950771977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35113, -0.090501696, 15.741048)
+cast_shadow = 0
+emitting = false
+amount = 6000
+lifetime = 15.0
+local_coords = true
+draw_order = 2
+mesh = SubResource("QuadMesh_gxdaw")
+emission_shape = 3
+emission_box_extents = Vector3(250, 0, 20)
+gravity = Vector3(0, -0.1, 0)
+angular_velocity_min = 1.0
+angular_velocity_max = 2.0
+angular_velocity_curve = SubResource("Curve_beby0")
+linear_accel_min = -0.3
+scale_amount_min = 0.2
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_reqhv")
+color_ramp = SubResource("Gradient_nnca1")
+color_initial_ramp = SubResource("Gradient_4eeco")
+
+[node name="TreeTall" type="Node3D" parent="." unique_id=1033814236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2265787, 0.30974722, -5.803993)
+
+[node name="Leaves" type="MeshInstance3D" parent="TreeTall" unique_id=2125015302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, 0)
+mesh = SubResource("SphereMesh_y3okc")
+
+[node name="Leaves2" type="MeshInstance3D" parent="TreeTall" unique_id=2061655655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.31711388)
+mesh = SubResource("SphereMesh_e2pgf")
+
+[node name="Leaves3" type="MeshInstance3D" parent="TreeTall" unique_id=1612842886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.55119514)
+mesh = SubResource("SphereMesh_4r7yv")
+
+[node name="Leaves4" type="MeshInstance3D" parent="TreeTall" unique_id=1855496272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.3726754, -0.37444496)
+mesh = SubResource("SphereMesh_bskx2")
+
+[node name="Trunk" type="MeshInstance3D" parent="TreeTall" unique_id=2111711798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_crxvc")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="TreeTall" unique_id=2141985540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_ex15n")
+
+[node name="Tree" type="Node3D" parent="." unique_id=803446625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.990552, 0.30974722, -1.2936478)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="Tree" unique_id=1910895244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("2_e6cbp")
+mesh = SubResource("CylinderMesh_17emo")
+
+[node name="Leaves" type="MeshInstance3D" parent="Tree" unique_id=486906152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8941922, 0)
+mesh = SubResource("SphereMesh_ng0nt")
+
+[node name="Leaves2" type="MeshInstance3D" parent="Tree" unique_id=787594438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 3.2314253, -0.31711388)
+mesh = SubResource("SphereMesh_ng0nt")
+
+[node name="Leaves3" type="MeshInstance3D" parent="Tree" unique_id=1327842625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 2.8782606, 0.55119467)
+mesh = SubResource("SphereMesh_ng0nt")
+
+[node name="Trunk" type="MeshInstance3D" parent="Tree" unique_id=1959697622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1945539, 0)
+material_override = ExtResource("2_e6cbp")
+mesh = SubResource("CylinderMesh_v21h4")
+
+[node name="Leaves4" type="MeshInstance3D" parent="Tree" unique_id=1376792390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 3.025011, -0.37444496)
+mesh = SubResource("SphereMesh_qm0q2")
+
+[node name="TreeShort" type="Node3D" parent="." unique_id=46945697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0721006, 0.30974722, 3.6766584)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="TreeShort" unique_id=2019415939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("2_e6cbp")
+mesh = SubResource("CylinderMesh_17emo")
+
+[node name="Leaves" type="MeshInstance3D" parent="TreeShort" unique_id=2039490543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8511744, 0)
+material_override = ExtResource("1_k5sx3")
+mesh = SubResource("SphereMesh_1sidn")
+
+[node name="Leaves2" type="MeshInstance3D" parent="TreeShort" unique_id=542305185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 2.1884074, -0.31711388)
+material_override = ExtResource("1_k5sx3")
+mesh = SubResource("SphereMesh_o8i3d")
+
+[node name="Leaves3" type="MeshInstance3D" parent="TreeShort" unique_id=1462018542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 1.8352426, 0.55119467)
+material_override = ExtResource("1_k5sx3")
+mesh = SubResource("SphereMesh_61iok")
+
+[node name="Trunk" type="MeshInstance3D" parent="TreeShort" unique_id=2081860904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6353148, 0)
+material_override = ExtResource("2_e6cbp")
+mesh = SubResource("CylinderMesh_rpxwp")
+
+[node name="Leaves4" type="MeshInstance3D" parent="TreeShort" unique_id=552071242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 1.9819931, -0.37444496)
+mesh = SubResource("SphereMesh_0neff")
+
+[node name="Bush" type="Node3D" parent="." unique_id=779026746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0721006, 0.30974722, 8.1772995)
+
+[node name="Leaves2" type="MeshInstance3D" parent="Bush" unique_id=734120705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 0.16740954, -0.31711388)
+material_override = ExtResource("1_k5sx3")
+mesh = SubResource("SphereMesh_xl3ru")
+
+[node name="Leaves5" type="MeshInstance3D" parent="Bush" unique_id=896538800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17313766, -0.10440767, -0.7487197)
+material_override = ExtResource("1_k5sx3")
+mesh = SubResource("SphereMesh_xl3ru")
+
+[node name="Leaves6" type="MeshInstance3D" parent="Bush" unique_id=44998964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46074486, 0.3269564, -0.13806748)
+material_override = ExtResource("1_k5sx3")
+mesh = SubResource("SphereMesh_xl3ru")
+
+[node name="Leaves7" type="MeshInstance3D" parent="Bush" unique_id=1562067997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48673344, -0.23988616, 0.22208858)
+material_override = ExtResource("1_k5sx3")
+mesh = SubResource("SphereMesh_xl3ru")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="Bush" unique_id=599729871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_17emo")
+
+[node name="Leaves3" type="MeshInstance3D" parent="Bush" unique_id=720392301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, -0.18575513, 0.55119467)
+material_override = ExtResource("1_k5sx3")
+mesh = SubResource("SphereMesh_61iok")
+
+[node name="Leaves4" type="MeshInstance3D" parent="Bush" unique_id=20018982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, -0.039004683, -0.37444496)
+mesh = SubResource("SphereMesh_0neff")
+
+[node name="FenceLine" type="Node3D" parent="." unique_id=1021793984]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -4.987688, 0.95202696, -7.3782043)
+
+[node name="Fence" type="Node3D" parent="FenceLine" unique_id=886320262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2808619, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence" unique_id=1468567841]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence" unique_id=1795034325]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence" unique_id=965987516]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence2" type="Node3D" parent="FenceLine" unique_id=830263154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5179374, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence2" unique_id=290817259]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence2" unique_id=1216116179]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence2" unique_id=1777494272]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence3" type="Node3D" parent="FenceLine" unique_id=730692848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.798162, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence3" unique_id=775058667]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence3" unique_id=1448104474]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence3" unique_id=871010502]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence4" type="Node3D" parent="FenceLine" unique_id=1007453619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1005983, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence4" unique_id=773238338]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence4" unique_id=236823478]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence4" unique_id=739814632]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence5" type="Node3D" parent="FenceLine" unique_id=1716041870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.337674, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence5" unique_id=1689719564]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence5" unique_id=674761228]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence5" unique_id=180514182]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence6" type="Node3D" parent="FenceLine" unique_id=1398328303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.617899, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence6" unique_id=371138111]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence6" unique_id=1397298954]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence6" unique_id=1790044345]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence7" type="Node3D" parent="FenceLine" unique_id=1376835805]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.885561, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence7" unique_id=1435212660]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence7" unique_id=313635963]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence7" unique_id=527426333]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence8" type="Node3D" parent="FenceLine" unique_id=587104213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.122636, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence8" unique_id=1812604877]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence8" unique_id=1348714420]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence8" unique_id=1734555506]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence9" type="Node3D" parent="FenceLine" unique_id=931031498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.402861, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence9" unique_id=1487599511]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence9" unique_id=1056372944]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence9" unique_id=948874844]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence10" type="Node3D" parent="FenceLine" unique_id=176163615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.705297, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence10" unique_id=366795932]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence10" unique_id=1744030158]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence10" unique_id=1891016427]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence11" type="Node3D" parent="FenceLine" unique_id=2144876189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.942373, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence11" unique_id=207857708]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence11" unique_id=617482125]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence11" unique_id=952672606]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence12" type="Node3D" parent="FenceLine" unique_id=1382651473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.222597, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence12" unique_id=206511947]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence12" unique_id=644745974]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence12" unique_id=1905518971]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence13" type="Node3D" parent="FenceLine" unique_id=1836867852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.494524, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence13" unique_id=1057779171]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence13" unique_id=2065776805]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence13" unique_id=10724961]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence14" type="Node3D" parent="FenceLine" unique_id=168366352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7316, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence14" unique_id=1657006533]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence14" unique_id=725068963]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence14" unique_id=1694506362]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence15" type="Node3D" parent="FenceLine" unique_id=1986229376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.011824, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence15" unique_id=2116657508]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence15" unique_id=303960409]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence15" unique_id=1685516655]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence16" type="Node3D" parent="FenceLine" unique_id=1926085862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.31426, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence16" unique_id=1222945912]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence16" unique_id=2070819665]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence16" unique_id=971763650]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence17" type="Node3D" parent="FenceLine" unique_id=298037263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.551336, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence17" unique_id=1330892321]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence17" unique_id=1579037890]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence17" unique_id=1469504454]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Fence18" type="Node3D" parent="FenceLine" unique_id=1686622096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.83156, 0, 0)
+
+[node name="Post" type="MeshInstance3D" parent="FenceLine/Fence18" unique_id=952044678]
+transform = Transform3D(0.9999851, 0.0054628537, 0, -0.0054628537, 0.9999851, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5g2ga")
+
+[node name="Liner1" type="MeshInstance3D" parent="FenceLine/Fence18" unique_id=434432722]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, 0.31776404, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="Liner2" type="MeshInstance3D" parent="FenceLine/Fence18" unique_id=1117186412]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.6079103, -0.021741211, 0)
+mesh = SubResource("BoxMesh_i1ogn")
+
+[node name="PowerPole" type="Node3D" parent="." unique_id=2058364926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54801875, 0)
+
+[node name="Base" type="MeshInstance3D" parent="PowerPole" unique_id=1545218824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1662507, 0)
+mesh = SubResource("CylinderMesh_yyrg3")
+
+[node name="Stretch" type="MeshInstance3D" parent="PowerPole" unique_id=541286574]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 6.9205604, 0)
+material_override = ExtResource("5_08hku")
+mesh = SubResource("BoxMesh_bk57i")
+
+[node name="Stretch2" type="MeshInstance3D" parent="PowerPole" unique_id=27174710]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 6.393389, 0.44221783)
+material_override = ExtResource("5_08hku")
+mesh = SubResource("BoxMesh_5sgtb")
+
+[node name="Stretch3" type="MeshInstance3D" parent="PowerPole" unique_id=322184307]
+transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071067, 0, -0.7071067, 0.7071067, 0, 6.393, -0.44527912)
+material_override = ExtResource("5_08hku")
+mesh = SubResource("BoxMesh_5sgtb")
+
+[node name="Cylinder" type="MeshInstance3D" parent="PowerPole" unique_id=881656612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.987649, -1.8753853)
+mesh = SubResource("CylinderMesh_mp4m7")
+
+[node name="Cylinder2" type="MeshInstance3D" parent="PowerPole" unique_id=455064516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.106709, -1.8753853)
+mesh = SubResource("CylinderMesh_i1ogn")
+
+[node name="Cylinder3" type="MeshInstance3D" parent="PowerPole" unique_id=913529534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.987649, 1.875)
+mesh = SubResource("CylinderMesh_mp4m7")
+
+[node name="Cylinder4" type="MeshInstance3D" parent="PowerPole" unique_id=700914178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.106709, 1.875)
+mesh = SubResource("CylinderMesh_i1ogn")
+
+[node name="Cylinder7" type="MeshInstance3D" parent="PowerPole" unique_id=995531697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.987649, 1.2473764)
+mesh = SubResource("CylinderMesh_mp4m7")
+
+[node name="Cylinder8" type="MeshInstance3D" parent="PowerPole" unique_id=788942512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.106709, 1.2473764)
+mesh = SubResource("CylinderMesh_i1ogn")
+
+[node name="Cylinder9" type="MeshInstance3D" parent="PowerPole" unique_id=1430759086]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.987649, -1.247)
+mesh = SubResource("CylinderMesh_mp4m7")
+
+[node name="Cylinder10" type="MeshInstance3D" parent="PowerPole" unique_id=1406075746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.106709, -1.247)
+mesh = SubResource("CylinderMesh_i1ogn")
+
+[node name="Road" type="Node3D" parent="PowerPole" unique_id=123891895]
+transform = Transform3D(2.0914578, 0, 0, 0, 0.99898, 0, 0, 0, 0.99898005, -13.815231, -0.63978, -39.758003)
+
+[node name="Road" type="MeshInstance3D" parent="PowerPole/Road" unique_id=1364770087]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 1, 0.00400409, 7.390976e-06, -0.105587006)
+mesh = SubResource("BoxMesh_nnca1")
+
+[node name="Curb1" type="MeshInstance3D" parent="PowerPole/Road" unique_id=1297533225]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 0.8, 0.0006996708, 0.03, -5.216135)
+mesh = SubResource("BoxMesh_53fbj")
+
+[node name="Curb2" type="MeshInstance3D" parent="PowerPole/Road" unique_id=863008804]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 0.8, 0.0006996708, 0.03, 5.2159996)
+mesh = SubResource("BoxMesh_53fbj")
+
+[node name="Curb3" type="MeshInstance3D" parent="PowerPole/Road" unique_id=362527776]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006996708, -0.01710844, -0.14999962)
+mesh = SubResource("BoxMesh_3hwhb")
+
+[node name="Curb4" type="MeshInstance3D" parent="PowerPole/Road" unique_id=823997880]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006996708, -0.01710844, 0.14999962)
+mesh = SubResource("BoxMesh_3hwhb")
+
+[node name="HouseType1" type="Node3D" parent="." unique_id=380578617]
+transform = Transform3D(0.999097, 0, 0.042485975, 0, 1, 0, -0.042485975, 0, 0.999097, 14.622171, 0, -20.09517)
+
+[node name="Base" type="MeshInstance3D" parent="HouseType1" unique_id=1075635667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_v21h4")
+
+[node name="Walls" type="MeshInstance3D" parent="HouseType1" unique_id=1499522353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05, 0)
+mesh = SubResource("BoxMesh_1sidn")
+
+[node name="Roof" type="CSGCombiner3D" parent="HouseType1" unique_id=948582706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8750525, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="HouseType1/Roof" unique_id=1317328439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_o8i3d")
+material = ExtResource("9_nnca1")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="HouseType1/Roof" unique_id=1384595857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("BoxMesh_61iok")
+
+[node name="RoofCut" type="CSGMesh3D" parent="HouseType1/Roof" unique_id=1168255864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_0neff")
+material = ExtResource("9_nnca1")
+
+[node name="RoofInside" type="MeshInstance3D" parent="HouseType1" unique_id=1856942627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2963176, 0)
+mesh = SubResource("PrismMesh_xl3ru")
+
+[node name="Doorframe" type="CSGCombiner3D" parent="HouseType1" unique_id=861380299]
+use_collision = true
+
+[node name="Doorframe" type="CSGMesh3D" parent="HouseType1/Doorframe" unique_id=24563923]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_crxvc")
+material = ExtResource("7_beby0")
+
+[node name="DoorframeCutout" type="CSGMesh3D" parent="HouseType1/Doorframe" unique_id=548270895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3208761, -5.4093323)
+operation = 2
+mesh = SubResource("BoxMesh_ex15n")
+
+[node name="Window" type="CSGCombiner3D" parent="HouseType1" unique_id=365467613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.893, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="HouseType1/Window" unique_id=175075956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_y3okc")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="HouseType1/Window" unique_id=346920402]
+transform = Transform3D(0.9999992, 0.0011755413, 0.00032850265, -0.0011755232, 0.9999993, -5.3240776e-05, -0.00032856737, 5.2839798e-05, 0.99999994, 0, 1.3999997, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_e2pgf")
+
+[node name="Window2" type="CSGCombiner3D" parent="HouseType1" unique_id=1308486438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.893, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="HouseType1/Window2" unique_id=709965467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_y3okc")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="HouseType1/Window2" unique_id=329801348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_e2pgf")
+
+[node name="Door" type="MeshInstance3D" parent="HouseType1" unique_id=1747008760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.336178, -5.346551)
+mesh = SubResource("BoxMesh_ynbcv")
+
+[node name="HouseType2" type="Node3D" parent="." unique_id=819964217]
+transform = Transform3D(0.9995185, 0, -0.03102697, 0, 1, 0, 0.03102697, 0, 0.9995185, -4.320941, 0, -18.898926)
+
+[node name="Base" type="MeshInstance3D" parent="HouseType2" unique_id=1177177468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_v21h4")
+
+[node name="Walls" type="MeshInstance3D" parent="HouseType2" unique_id=1107086788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125158, 0)
+mesh = SubResource("BoxMesh_1sidn")
+
+[node name="Roof" type="CSGCombiner3D" parent="HouseType2" unique_id=1586516793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="HouseType2/Roof" unique_id=915498227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_o8i3d")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="HouseType2/Roof" unique_id=2102443059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("BoxMesh_61iok")
+
+[node name="RoofCut" type="CSGMesh3D" parent="HouseType2/Roof" unique_id=22245089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_0neff")
+
+[node name="RoofInside" type="MeshInstance3D" parent="HouseType2" unique_id=977853660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2963176, 0)
+mesh = SubResource("PrismMesh_xl3ru")
+
+[node name="Doorframe" type="CSGCombiner3D" parent="HouseType2" unique_id=597144297]
+use_collision = true
+
+[node name="Doorframe" type="CSGMesh3D" parent="HouseType2/Doorframe" unique_id=411588024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_crxvc")
+
+[node name="DoorframeCutout" type="CSGMesh3D" parent="HouseType2/Doorframe" unique_id=1181563530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3208761, -5.4093323)
+operation = 2
+mesh = SubResource("BoxMesh_ex15n")
+
+[node name="Window" type="CSGCombiner3D" parent="HouseType2" unique_id=1897630130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="HouseType2/Window" unique_id=1523071983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_yyrg3")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="HouseType2/Window" unique_id=1855122120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_o8i3d")
+
+[node name="Window2" type="CSGCombiner3D" parent="HouseType2" unique_id=1514730767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="HouseType2/Window2" unique_id=734355291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_yyrg3")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="HouseType2/Window2" unique_id=1738936364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_o8i3d")
+
+[node name="Door" type="MeshInstance3D" parent="HouseType2" unique_id=1387361578]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.346551)
+mesh = SubResource("BoxMesh_ng0nt")
+
+[node name="HouseType3" type="Node3D" parent="." unique_id=854165749]
+transform = Transform3D(0.9998968, 0, 0.0143635655, 0, 1, 0, -0.0143635655, 0, 0.9998968, -21.692715, 0, -19.15039)
+
+[node name="Base" type="MeshInstance3D" parent="HouseType3" unique_id=1138665799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_v21h4")
+
+[node name="Walls" type="MeshInstance3D" parent="HouseType3" unique_id=1198514165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125158, 0)
+mesh = SubResource("BoxMesh_1sidn")
+
+[node name="Roof" type="CSGCombiner3D" parent="HouseType3" unique_id=454802959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="HouseType3/Roof" unique_id=356535191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_o8i3d")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="HouseType3/Roof" unique_id=784254121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("BoxMesh_61iok")
+
+[node name="RoofCut" type="CSGMesh3D" parent="HouseType3/Roof" unique_id=1035326491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_0neff")
+
+[node name="RoofInside" type="MeshInstance3D" parent="HouseType3" unique_id=702198290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2963176, 0)
+mesh = SubResource("PrismMesh_xl3ru")
+
+[node name="Doorframe" type="CSGCombiner3D" parent="HouseType3" unique_id=129716991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5824928, 0, 0)
+use_collision = true
+
+[node name="Doorframe" type="CSGMesh3D" parent="HouseType3/Doorframe" unique_id=1828496241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_0neff")
+
+[node name="DoorframeCutout" type="CSGMesh3D" parent="HouseType3/Doorframe" unique_id=1846626603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3208761, -5.4093323)
+operation = 2
+mesh = SubResource("BoxMesh_xl3ru")
+
+[node name="Window" type="CSGCombiner3D" parent="HouseType3" unique_id=1090940320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48666954, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="HouseType3/Window" unique_id=225129299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_4r7yv")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="HouseType3/Window" unique_id=620396556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_bskx2")
+
+[node name="Window2" type="CSGCombiner3D" parent="HouseType3" unique_id=2016458225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2603245, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="HouseType3/Window2" unique_id=1850946715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_4r7yv")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="HouseType3/Window2" unique_id=977328149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_bskx2")
+
+[node name="Door" type="MeshInstance3D" parent="HouseType3" unique_id=463548736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.578926, 1.3904246, -5.3481383)
+mesh = SubResource("BoxMesh_agjas")
+
+[node name="HouseType4" type="Node3D" parent="." unique_id=1486769893]
+transform = Transform3D(0.9994392, 0, -0.033486605, 0, 1, 0, 0.033486605, 0, 0.9994392, -41.2538, 0, -18.315292)
+
+[node name="Base" type="MeshInstance3D" parent="HouseType4" unique_id=1465461178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_v21h4")
+
+[node name="Walls" type="MeshInstance3D" parent="HouseType4" unique_id=1086662682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125158, 0)
+mesh = SubResource("BoxMesh_1sidn")
+
+[node name="Roof" type="CSGCombiner3D" parent="HouseType4" unique_id=1023986273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="HouseType4/Roof" unique_id=452204475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_o8i3d")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="HouseType4/Roof" unique_id=1681189551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("BoxMesh_61iok")
+
+[node name="RoofCut" type="CSGMesh3D" parent="HouseType4/Roof" unique_id=972727761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_0neff")
+
+[node name="RoofInside" type="MeshInstance3D" parent="HouseType4" unique_id=970523143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2963176, 0)
+mesh = SubResource("PrismMesh_xl3ru")
+
+[node name="Doorframe" type="CSGCombiner3D" parent="HouseType4" unique_id=214438210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.582, 0, 0)
+use_collision = true
+
+[node name="Doorframe" type="CSGMesh3D" parent="HouseType4/Doorframe" unique_id=2042934973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_0neff")
+
+[node name="DoorframeCutout" type="CSGMesh3D" parent="HouseType4/Doorframe" unique_id=1073176440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3208761, -5.4093323)
+operation = 2
+mesh = SubResource("BoxMesh_xl3ru")
+
+[node name="Window" type="CSGCombiner3D" parent="HouseType4" unique_id=1662730727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.487, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="HouseType4/Window" unique_id=319686624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_4r7yv")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="HouseType4/Window" unique_id=892699411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_bskx2")
+
+[node name="Window2" type="CSGCombiner3D" parent="HouseType4" unique_id=781143315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.26, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="HouseType4/Window2" unique_id=1455646824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_4r7yv")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="HouseType4/Window2" unique_id=1685667234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_bskx2")
+
+[node name="Door" type="MeshInstance3D" parent="HouseType4" unique_id=678264912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5820007, 1.39, -5.347)
+mesh = SubResource("BoxMesh_ir30u")
+
+[node name="BigHouseType1" type="Node3D" parent="." unique_id=1332799289]
+transform = Transform3D(1.627259, 0, 0, 0, 1.5208863, 0, 0, 0, 1, -13.606665, 0, 1.2328644)
+
+[node name="Base" type="MeshInstance3D" parent="BigHouseType1" unique_id=2053779011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_v21h4")
+
+[node name="Walls" type="MeshInstance3D" parent="BigHouseType1" unique_id=664503739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125158, 0)
+mesh = SubResource("BoxMesh_1sidn")
+
+[node name="Roof" type="CSGCombiner3D" parent="BigHouseType1" unique_id=813733088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="BigHouseType1/Roof" unique_id=1098021468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_o8i3d")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="BigHouseType1/Roof" unique_id=278988941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("BoxMesh_61iok")
+
+[node name="RoofCut" type="CSGMesh3D" parent="BigHouseType1/Roof" unique_id=1667393965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_0neff")
+
+[node name="RoofInside" type="MeshInstance3D" parent="BigHouseType1" unique_id=746344906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2963176, 0)
+mesh = SubResource("PrismMesh_bk57i")
+
+[node name="Doorframe" type="CSGCombiner3D" parent="BigHouseType1" unique_id=1087315765]
+use_collision = true
+
+[node name="Doorframe" type="CSGMesh3D" parent="BigHouseType1/Doorframe" unique_id=1174418307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_crxvc")
+
+[node name="DoorframeCutout" type="CSGMesh3D" parent="BigHouseType1/Doorframe" unique_id=1006005272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3208761, -5.4093323)
+operation = 2
+mesh = SubResource("BoxMesh_ex15n")
+
+[node name="Window" type="CSGCombiner3D" parent="BigHouseType1" unique_id=1969457705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="BigHouseType1/Window" unique_id=427870039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_yyrg3")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="BigHouseType1/Window" unique_id=1954777871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_o8i3d")
+
+[node name="Window2" type="CSGCombiner3D" parent="BigHouseType1" unique_id=937956226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="BigHouseType1/Window2" unique_id=1651216687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_yyrg3")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="BigHouseType1/Window2" unique_id=135349527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_o8i3d")
+
+[node name="Door" type="MeshInstance3D" parent="BigHouseType1" unique_id=1871151384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.346551)
+mesh = SubResource("BoxMesh_xcv0s")
+
+[node name="SecondFloor2" type="Node3D" parent="BigHouseType1" unique_id=346677147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -0.371)
+
+[node name="Walls" type="MeshInstance3D" parent="BigHouseType1/SecondFloor2" unique_id=542799505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6275067, 0)
+mesh = SubResource("BoxMesh_chw0x")
+
+[node name="Roof" type="CSGCombiner3D" parent="BigHouseType1/SecondFloor2" unique_id=885338214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="BigHouseType1/SecondFloor2/Roof" unique_id=266053178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_5sgtb")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="BigHouseType1/SecondFloor2/Roof" unique_id=2108338026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4292421, 0)
+mesh = SubResource("BoxMesh_mp4m7")
+material = SubResource("StandardMaterial3D_ir30u")
+
+[node name="RoofCut" type="CSGMesh3D" parent="BigHouseType1/SecondFloor2/Roof" unique_id=1304723690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_i1ogn")
+
+[node name="RoofInside" type="MeshInstance3D" parent="BigHouseType1/SecondFloor2" unique_id=1497821633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.3593674, 0)
+mesh = SubResource("PrismMesh_rpxwp")
+
+[node name="CircleWindow" type="CSGCombiner3D" parent="BigHouseType1" unique_id=535006822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5020514, 0.6115489)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="BigHouseType1/CircleWindow" unique_id=921593375]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3904247, -4.8226953)
+mesh = SubResource("CylinderMesh_yd1tc")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="BigHouseType1/CircleWindow" unique_id=923185456]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3999996, -5.343495)
+operation = 2
+mesh = SubResource("CylinderMesh_ynbcv")
+
+[node name="WindowFrame" type="MeshInstance3D" parent="BigHouseType1/CircleWindow" unique_id=612939623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_17emo")
+
+[node name="WindowFrame2" type="MeshInstance3D" parent="BigHouseType1/CircleWindow" unique_id=577397965]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_17emo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BigHouseType1/CircleWindow" unique_id=771781846]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, 1.4017477, -4.757486)
+mesh = SubResource("CylinderMesh_xcv0s")

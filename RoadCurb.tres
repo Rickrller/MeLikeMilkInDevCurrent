@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bjnhc1tfb6cto"]
+
+[ext_resource type="Texture2D" uid="uid://cj7jysfkrhxe0" path="res://WHITEwall.png" id="1_penht"]
+
+[resource]
+albedo_color = Color(0.3854925, 0.38549247, 0.38549247, 1)
+albedo_texture = ExtResource("1_penht")
+metallic_specular = 0.42
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+uv1_scale = Vector3(1, 0.1, 1)
+uv1_triplanar = true
+uv1_world_triplanar = true

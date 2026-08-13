@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bpa8l5ewjrhyw"]
+
+[ext_resource type="PackedScene" uid="uid://bptsd4vh0qweh" path="res://models/strawberry.glb" id="1_v2d6k"]
+
+[node name="strawberry" unique_id=1965046173 instance=ExtResource("1_v2d6k")]

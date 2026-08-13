@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://cxkemj5q5ftp1"]
+
+[ext_resource type="Script" uid="uid://ckoiiv10m0gpm" path="res://PlayerScript.gd" id="1_n7ghd"]
+[ext_resource type="Script" uid="uid://b2qd52joercdd" path="res://Camera.gd" id="2_nvl01"]
+[ext_resource type="Script" uid="uid://balg1ow4j5jc6" path="res://camera_3d.gd" id="3_ivps1"]
+[ext_resource type="Shader" uid="uid://cvdurhmxd85c8" path="res://Experimental1.gdshader" id="4_urp6f"]
+[ext_resource type="Script" uid="uid://dch8n0nnpwt3u" path="res://handstatemachine.gd" id="5_bwjto"]
+[ext_resource type="Script" uid="uid://tek1dlvmtutb" path="res://movementstatemachine.gd" id="6_606se"]
+[ext_resource type="Script" uid="uid://bodhfhh6vqhcu" path="res://empty.gd" id="6_nvl01"]
+[ext_resource type="Script" uid="uid://cfraxijtmtw8r" path="res://fruit.gd" id="7_ivps1"]
+[ext_resource type="Script" uid="uid://bxr6ugpifg17t" path="res://dashing.gd" id="7_u1c27"]
+[ext_resource type="Script" uid="uid://dklaourcj5ndh" path="res://walking.gd" id="8_op7ga"]
+[ext_resource type="Script" uid="uid://cxwybbhdq8ec3" path="res://parry.gd" id="8_urp6f"]
+[ext_resource type="Script" uid="uid://mxvp21rd07jy" path="res://idle.gd" id="9_q13i1"]
+[ext_resource type="Script" uid="uid://d3quc5ndmttbi" path="res://airborne.gd" id="10_pylmc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bxpib"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djscl"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_63qkx"]
+material = SubResource("StandardMaterial3D_djscl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4kemo"]
+shader = ExtResource("4_urp6f")
+shader_parameter/pixel_grid_size = Vector2(128, 128)
+shader_parameter/offset_x = false
+shader_parameter/offset_y = false
+shader_parameter/inverted = false
+
+[node name="Player" type="CharacterBody3D" unique_id=2021393363 groups=["player"]]
+script = ExtResource("1_n7ghd")
+
+[node name="hurtbox" type="Area3D" parent="." unique_id=271902006]
+
+[node name="PlayerHurtbox" type="CollisionShape3D" parent="hurtbox" unique_id=1899169097]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_bxpib")
+
+[node name="Playercollision" type="CollisionShape3D" parent="." unique_id=338251054]
+shape = SubResource("CapsuleShape3D_bxpib")
+
+[node name="PlayerMesh" type="MeshInstance3D" parent="." unique_id=2059204551]
+mesh = SubResource("CapsuleMesh_63qkx")
+
+[node name="Neck" type="Node3D" parent="." unique_id=293218289]
+script = ExtResource("2_nvl01")
+
+[node name="punchcheck" type="RayCast3D" parent="Neck" unique_id=1198875924]
+enabled = false
+target_position = Vector3(0, 0, -5)
+debug_shape_custom_color = Color(1, 1, 1, 1)
+debug_shape_thickness = 4
+
+[node name="Camera3D" type="Camera3D" parent="Neck" unique_id=81356670]
+unique_name_in_owner = true
+script = ExtResource("3_ivps1")
+
+[node name="CamOriginalPos" type="Marker3D" parent="Neck" unique_id=1955695895]
+unique_name_in_owner = true
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=636670200]
+offset_left = -54.0
+offset_top = -55.0
+offset_right = 1237.0
+offset_bottom = 726.0
+
+[node name="Shader" type="ColorRect" parent="CenterContainer" unique_id=1220879852]
+visible = false
+material = SubResource("ShaderMaterial_4kemo")
+custom_minimum_size = Vector2(1300, 800)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="CrosshairContainer" type="CenterContainer" parent="." unique_id=177655188]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crosshair" type="ColorRect" parent="CrosshairContainer" unique_id=308988897]
+custom_minimum_size = Vector2(4, 4)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="handstatemachine" type="Node" parent="." unique_id=47888081 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("5_bwjto")
+initial_state = NodePath("empty")
+
+[node name="empty" type="Node" parent="handstatemachine" unique_id=213338977]
+script = ExtResource("6_nvl01")
+
+[node name="fruit" type="Node" parent="handstatemachine" unique_id=1549963577]
+script = ExtResource("7_ivps1")
+
+[node name="parry" type="Node" parent="handstatemachine" unique_id=825112574]
+script = ExtResource("8_urp6f")
+
+[node name="movementstatemachine" type="Node" parent="." unique_id=895398097]
+script = ExtResource("6_606se")
+
+[node name="dashing" type="Node" parent="movementstatemachine" unique_id=224254642]
+script = ExtResource("7_u1c27")
+
+[node name="walking" type="Node" parent="movementstatemachine" unique_id=1211005640]
+script = ExtResource("8_op7ga")
+
+[node name="idle" type="Node" parent="movementstatemachine" unique_id=264700618]
+script = ExtResource("9_q13i1")
+
+[node name="airborne" type="Node" parent="movementstatemachine" unique_id=1542197345]
+script = ExtResource("10_pylmc")
+
+[node name="dashcooldown" type="Timer" parent="." unique_id=1617558287]
+wait_time = 3.0
+one_shot = true
+
+[node name="punchcooldown" type="Timer" parent="." unique_id=187235543]
+wait_time = 0.5
+one_shot = true
+
+[node name="parrycooldown" type="Timer" parent="." unique_id=1532889701]
+
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="timeout" from="dashcooldown" to="." method="_on_dashcooldown_timeout"]
+[connection signal="timeout" from="punchcooldown" to="." method="_on_punchcooldown_timeout"]
+[connection signal="timeout" from="parrycooldown" to="." method="_on_parrycooldown_timeout"]

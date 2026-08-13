@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dmidhahr23ew3"]
+
+[ext_resource type="Script" uid="uid://b8wnu5ojcxlkm" path="res://enemymovement.gd" id="1_7k104"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7k104"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xaro"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_7k104"]
+material = SubResource("StandardMaterial3D_7xaro")
+
+[node name="Enemy" type="CharacterBody3D" unique_id=751157666 groups=["enemy"]]
+script = ExtResource("1_7k104")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=111966732]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_7k104")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=816802689]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("SphereMesh_7k104")
+
+[node name="Timer" type="Timer" parent="." unique_id=1730944178]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

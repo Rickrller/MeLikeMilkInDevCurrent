@@ -1,0 +1,307 @@
+[gd_scene format=3 uid="uid://cxkemj5q5ftp1"]
+
+[ext_resource type="Script" uid="uid://ckoiiv10m0gpm" path="res://PlayerScript.gd" id="1_n7ghd"]
+[ext_resource type="Script" uid="uid://b2qd52joercdd" path="res://Camera.gd" id="2_nvl01"]
+[ext_resource type="Script" uid="uid://balg1ow4j5jc6" path="res://camera_3d.gd" id="3_ivps1"]
+[ext_resource type="Shader" uid="uid://cvdurhmxd85c8" path="res://Experimental1.gdshader" id="4_urp6f"]
+[ext_resource type="PackedScene" uid="uid://dvad14ikxba27" path="res://arms/rightarm.tscn" id="5_2wuci"]
+[ext_resource type="Script" uid="uid://dch8n0nnpwt3u" path="res://handstatemachine.gd" id="5_bwjto"]
+[ext_resource type="PackedScene" uid="uid://c7sn8d8igcqv3" path="res://arms/leftarm.tscn" id="5_iruf7"]
+[ext_resource type="Script" uid="uid://tek1dlvmtutb" path="res://movementstatemachine.gd" id="6_606se"]
+[ext_resource type="Script" uid="uid://bodhfhh6vqhcu" path="res://empty.gd" id="6_nvl01"]
+[ext_resource type="Script" uid="uid://bxr6ugpifg17t" path="res://dashing.gd" id="7_u1c27"]
+[ext_resource type="Script" uid="uid://dklaourcj5ndh" path="res://walking.gd" id="8_op7ga"]
+[ext_resource type="Script" uid="uid://cxwybbhdq8ec3" path="res://parry.gd" id="8_urp6f"]
+[ext_resource type="Script" uid="uid://476lshthus4m" path="res://apple.gd" id="9_bwjto"]
+[ext_resource type="Script" uid="uid://mxvp21rd07jy" path="res://idle.gd" id="9_q13i1"]
+[ext_resource type="Script" uid="uid://ddlj0bj5soy35" path="res://citruscannonade.gd" id="10_606se"]
+[ext_resource type="Script" uid="uid://d3quc5ndmttbi" path="res://airborne.gd" id="10_pylmc"]
+[ext_resource type="Script" uid="uid://cywmp0kt6qjla" path="res://cococare.gd" id="11_u1c27"]
+[ext_resource type="Script" uid="uid://nn1c62175e3l" path="res://carrotpirouette.gd" id="12_pylmc"]
+[ext_resource type="Script" uid="uid://bewbdeo1drveh" path="res://jellyjamslam.gd" id="13_pbfsw"]
+[ext_resource type="Script" uid="uid://bre4sfhmj665a" path="res://soursplash.gd" id="14_5tmop"]
+[ext_resource type="Script" uid="uid://bspkcu07811d1" path="res://durianbomb.gd" id="15_7ahtn"]
+[ext_resource type="Script" uid="uid://bo11n6c867cty" path="res://peartoflash.gd" id="16_7lmhl"]
+[ext_resource type="Script" uid="uid://w8kivkput6x" path="res://aloaid.gd" id="16_jm5j8"]
+[ext_resource type="Script" uid="uid://byg5baaa3r35w" path="res://nutrition.gd" id="17_op7ga"]
+[ext_resource type="Script" uid="uid://yw3vhnmbg8b5" path="res://effects.gd" id="17_q13i1"]
+[ext_resource type="Script" uid="uid://bqlsgnaefxp3s" path="res://starburst.gd" id="17_qtqh7"]
+[ext_resource type="AudioStream" uid="uid://c3n5opgcgd1md" path="res://Delivery_Time.mp3" id="23_7lmhl"]
+[ext_resource type="Texture2D" uid="uid://dqdiecp557i5v" path="res://enemies/Kasane_Pearto_Original.webp" id="24_dx0e4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bxpib"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djscl"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_63qkx"]
+material = SubResource("StandardMaterial3D_djscl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4kemo"]
+shader = ExtResource("4_urp6f")
+shader_parameter/pixel_grid_size = Vector2(128, 128)
+shader_parameter/offset_x = false
+shader_parameter/offset_y = false
+shader_parameter/inverted = false
+
+[node name="Player" type="CharacterBody3D" unique_id=2021393363 groups=["player"]]
+floor_max_angle = 1.3962634
+script = ExtResource("1_n7ghd")
+
+[node name="hurtbox" type="Area3D" parent="." unique_id=271902006]
+
+[node name="PlayerHurtbox" type="CollisionShape3D" parent="hurtbox" unique_id=1899169097]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_bxpib")
+debug_color = Color(0.96168846, 1.540184e-06, 0.51167804, 0.41960785)
+
+[node name="Playercollision" type="CollisionShape3D" parent="." unique_id=338251054]
+shape = SubResource("CapsuleShape3D_bxpib")
+debug_color = Color(0.96168846, 1.540184e-06, 0.51167804, 0.41960785)
+
+[node name="PlayerMesh" type="MeshInstance3D" parent="." unique_id=2059204551]
+visible = false
+mesh = SubResource("CapsuleMesh_63qkx")
+
+[node name="Neck" type="Node3D" parent="." unique_id=293218289]
+script = ExtResource("2_nvl01")
+
+[node name="punchcheck" type="RayCast3D" parent="Neck" unique_id=1198875924]
+enabled = false
+target_position = Vector3(0, 0, -5)
+debug_shape_custom_color = Color(1, 1, 1, 1)
+debug_shape_thickness = 4
+
+[node name="Camera3D" type="Camera3D" parent="Neck" unique_id=81356670]
+unique_name_in_owner = true
+script = ExtResource("3_ivps1")
+
+[node name="CamOriginalPos" type="Marker3D" parent="Neck" unique_id=1955695895]
+unique_name_in_owner = true
+
+[node name="arm2" parent="Neck" unique_id=207769933 instance=ExtResource("5_2wuci")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.4007164, -0.5511283, 0)
+
+[node name="Cube_002" parent="Neck/arm2/metarig_001/Skeleton3D" parent_id_path=PackedInt32Array(207769933, 1585665056) index="0" unique_id=776534951]
+gi_mode = 0
+
+[node name="AnimationPlayer" parent="Neck/arm2" index="1" unique_id=28480351]
+root_node = NodePath("../../arm2")
+
+[node name="arm" parent="Neck" unique_id=1318632943 instance=ExtResource("5_iruf7")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.4007164, -0.5511283, 0)
+
+[node name="Cube_001" parent="Neck/arm/metarig/Skeleton3D" parent_id_path=PackedInt32Array(1318632943, 1219146868) index="0" unique_id=805118592]
+gi_mode = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=636670200]
+offset_left = -54.0
+offset_top = -55.0
+offset_right = 1237.0
+offset_bottom = 726.0
+
+[node name="Shader" type="ColorRect" parent="CenterContainer" unique_id=1220879852]
+visible = false
+material = SubResource("ShaderMaterial_4kemo")
+custom_minimum_size = Vector2(1300, 800)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="CrosshairContainer" type="CenterContainer" parent="." unique_id=177655188]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crosshair" type="ColorRect" parent="CrosshairContainer" unique_id=308988897]
+custom_minimum_size = Vector2(4, 4)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="handstatemachine" type="Node" parent="." unique_id=47888081 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("5_bwjto")
+initial_state = NodePath("empty")
+
+[node name="empty" type="Node" parent="handstatemachine" unique_id=213338977]
+script = ExtResource("6_nvl01")
+
+[node name="apple" type="Node" parent="handstatemachine" unique_id=474494564]
+script = ExtResource("9_bwjto")
+
+[node name="parry" type="Node" parent="handstatemachine" unique_id=825112574]
+script = ExtResource("8_urp6f")
+
+[node name="duration" type="Timer" parent="handstatemachine/parry" unique_id=1960152815]
+wait_time = 0.25
+one_shot = true
+
+[node name="orange" type="Node" parent="handstatemachine" unique_id=2043904157]
+script = ExtResource("10_606se")
+
+[node name="coconut" type="Node" parent="handstatemachine" unique_id=806007637]
+script = ExtResource("11_u1c27")
+
+[node name="carrot" type="Node" parent="handstatemachine" unique_id=221647052]
+script = ExtResource("12_pylmc")
+
+[node name="strawberry" type="Node" parent="handstatemachine" unique_id=1606239563]
+script = ExtResource("13_pbfsw")
+
+[node name="lemon" type="Node" parent="handstatemachine" unique_id=466881196]
+script = ExtResource("14_5tmop")
+
+[node name="durian" type="Node" parent="handstatemachine" unique_id=1111606089]
+script = ExtResource("15_7ahtn")
+
+[node name="pearto" type="Node" parent="handstatemachine" unique_id=2123814035]
+script = ExtResource("16_7lmhl")
+
+[node name="starfruit" type="Node" parent="handstatemachine" unique_id=696782627]
+script = ExtResource("17_qtqh7")
+
+[node name="aloevera" type="Node" parent="handstatemachine" unique_id=391574341]
+script = ExtResource("16_jm5j8")
+
+[node name="movementstatemachine" type="Node" parent="." unique_id=895398097]
+script = ExtResource("6_606se")
+
+[node name="dashing" type="Node" parent="movementstatemachine" unique_id=224254642]
+script = ExtResource("7_u1c27")
+
+[node name="walking" type="Node" parent="movementstatemachine" unique_id=1211005640]
+script = ExtResource("8_op7ga")
+
+[node name="idle" type="Node" parent="movementstatemachine" unique_id=264700618]
+script = ExtResource("9_q13i1")
+
+[node name="airborne" type="Node" parent="movementstatemachine" unique_id=1542197345]
+script = ExtResource("10_pylmc")
+
+[node name="dashcooldown" type="Timer" parent="." unique_id=1617558287]
+wait_time = 2.0
+one_shot = true
+
+[node name="punchcooldown" type="Timer" parent="." unique_id=187235543]
+wait_time = 0.2
+one_shot = true
+
+[node name="parrycooldown" type="Timer" parent="." unique_id=1532889701]
+wait_time = 1.5
+one_shot = true
+
+[node name="iframes" type="Timer" parent="." unique_id=68961472]
+
+[node name="Panel" type="Panel" parent="." unique_id=1689909801]
+offset_right = 178.0
+offset_bottom = 123.0
+
+[node name="Health" type="Label" parent="Panel" unique_id=1055937492]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 122.0
+text = "health"
+
+[node name="parryavailable" type="Label" parent="Panel" unique_id=1400142532]
+layout_mode = 0
+offset_top = 30.0
+offset_right = 42.0
+offset_bottom = 79.0
+text = "parry
+"
+
+[node name="minerals" type="ProgressBar" parent="Panel" unique_id=2056984790]
+modulate = Color(18.892157, 18.892157, 0, 1)
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 628.0
+offset_right = 348.0
+offset_bottom = 639.0
+scale = Vector2(0.48000002, 1)
+value = 100.0
+show_percentage = false
+
+[node name="carbs" type="ProgressBar" parent="Panel" unique_id=310810180]
+modulate = Color(18.892002, 18.892002, 18.892002, 1)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 612.0
+offset_right = 348.0
+offset_bottom = 623.0
+scale = Vector2(0.48000002, 1)
+value = 100.0
+show_percentage = false
+
+[node name="vitamins" type="ProgressBar" parent="Panel" unique_id=950570887]
+modulate = Color(1, 0.65210927, 0.3179172, 1)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 595.0
+offset_right = 348.0
+offset_bottom = 606.0
+scale = Vector2(0.48000002, 1)
+value = 100.0
+show_percentage = false
+
+[node name="hydration" type="ProgressBar" parent="Panel" unique_id=434773841]
+modulate = Color(0.5631181, 0.86535984, 0.9691853, 1)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 578.0
+offset_right = 348.0
+offset_bottom = 589.0
+scale = Vector2(0.48000002, 1)
+value = 100.0
+show_percentage = false
+
+[node name="protien" type="ProgressBar" parent="Panel" unique_id=1880359571]
+modulate = Color(0.57083243, 0.3054969, 0.29292062, 1)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 563.0
+offset_right = 348.0
+offset_bottom = 574.0
+scale = Vector2(0.48000002, 1)
+value = 100.0
+show_percentage = false
+
+[node name="effects" type="Node" parent="." unique_id=1924522806]
+script = ExtResource("17_q13i1")
+
+[node name="nutrition" type="Node" parent="." unique_id=1404142914]
+script = ExtResource("17_op7ga")
+
+[node name="tick" type="Timer" parent="nutrition" unique_id=1476185504]
+wait_time = 2.5
+
+[node name="DeliveryTime" type="AudioStreamPlayer" parent="." unique_id=405496095]
+stream = ExtResource("23_7lmhl")
+parameters/looping = true
+
+[node name="peartoflash" type="TextureRect" parent="." unique_id=973778616]
+visible = false
+z_index = 100
+offset_right = 1152.0
+offset_bottom = 647.0
+texture = ExtResource("24_dx0e4")
+
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="timeout" from="handstatemachine/parry/duration" to="handstatemachine/parry" method="_on_duration_timeout"]
+[connection signal="timeout" from="dashcooldown" to="." method="_on_dashcooldown_timeout"]
+[connection signal="timeout" from="punchcooldown" to="." method="_on_punchcooldown_timeout"]
+[connection signal="timeout" from="parrycooldown" to="." method="_on_parrycooldown_timeout"]
+[connection signal="timeout" from="iframes" to="." method="_on_iframes_timeout"]
+[connection signal="timeout" from="nutrition/tick" to="nutrition" method="_on_tick"]
+
+[editable path="Neck/arm2"]
+[editable path="Neck/arm"]

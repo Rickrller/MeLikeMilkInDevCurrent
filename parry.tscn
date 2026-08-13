@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cknxkcdlf0md1"]
+
+[ext_resource type="Script" uid="uid://in70xok2q5v1" path="res://parryinst.gd" id="1_ymktk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xspql"]
+
+[node name="parry" type="Area3D" unique_id=405881900]
+script = ExtResource("1_ymktk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1099496042]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_xspql")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

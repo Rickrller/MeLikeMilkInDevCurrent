@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://buqyie0fr8stu"]
+
+[ext_resource type="Script" uid="uid://b4w6d5egouab" path="res://enemies/apple.gd" id="1_r05cu"]
+[ext_resource type="PackedScene" uid="uid://fly4w6tsfj25" path="res://models/apple.glb" id="2_r05cu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mwvcl"]
+radius = 0.97460335
+
+[node name="apple" type="CharacterBody3D" unique_id=739258596 groups=["enemy"]]
+rotation_edit_mode = 1
+script = ExtResource("1_r05cu")
+damage = 5.0
+health = 21.0
+speed = 10.0
+givenfruit = "apple"
+sightrange = 50.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=75538227]
+shape = SubResource("SphereShape3D_mwvcl")
+
+[node name="apple" parent="." unique_id=1381774635 instance=ExtResource("2_r05cu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Timer2" type="Timer" parent="." unique_id=607786369]
+wait_time = 4.0
+one_shot = true
+
+[node name="windup" type="Timer" parent="." unique_id=1311803510]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="windup" to="." method="_on_windup_timeout"]

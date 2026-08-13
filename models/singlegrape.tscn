@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cr33claud2jep"]
+
+[ext_resource type="PackedScene" uid="uid://c6okg0aotirvm" path="res://models/singlegrape.glb" id="1_jg8vl"]
+
+[node name="singlegrape" unique_id=1134611703 instance=ExtResource("1_jg8vl")]

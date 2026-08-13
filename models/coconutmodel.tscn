@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cnqkgwu6yayma"]
+
+[ext_resource type="PackedScene" uid="uid://dmn7tfxxjp8r8" path="res://models/coconut.glb" id="1_68kns"]
+
+[node name="coconut" unique_id=855803640 instance=ExtResource("1_68kns")]

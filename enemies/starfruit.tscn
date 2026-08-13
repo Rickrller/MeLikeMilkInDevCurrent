@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bq67rk83banep"]
+
+[ext_resource type="Script" uid="uid://txvk66jbqxak" path="res://enemies/starfruit.gd" id="1_uk2yf"]
+[ext_resource type="PackedScene" uid="uid://r7iqxcwytljo" path="res://models/starfruit.glb" id="2_rhue5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uk2yf"]
+size = Vector3(1, 0.1607666, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uk2yf"]
+margin = 0.0
+height = 0.720726
+radius = 1.2
+
+[node name="starfruit" type="CharacterBody3D" unique_id=503213655 groups=["enemy"]]
+script = ExtResource("1_uk2yf")
+health = 15.0
+givenfruit = "starfruit"
+
+[node name="starfruit" parent="." unique_id=239681472 instance=ExtResource("2_rhue5")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1856156969]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.057434082, 0)
+shape = SubResource("BoxShape3D_uk2yf")
+
+[node name="buffarea" type="Area3D" parent="." unique_id=451433940]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="buffarea" unique_id=711390496]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, -1.8670807, 0)
+shape = SubResource("CylinderShape3D_uk2yf")
+
+[connection signal="body_entered" from="buffarea" to="." method="_on_buffarea_body_entered"]
+[connection signal="body_exited" from="buffarea" to="." method="_on_buffarea_body_exited"]

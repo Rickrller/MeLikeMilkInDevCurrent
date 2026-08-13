@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dl0gfhs3klsbs"]
+
+[ext_resource type="Script" uid="uid://bhb5ixgl2lvcu" path="res://enemies/orange.gd" id="1_htvct"]
+[ext_resource type="PackedScene" uid="uid://c80fjg3duuga1" path="res://models/Orange.glb" id="2_htvct"]
+[ext_resource type="Script" uid="uid://diloa5dskwr3q" path="res://enemies/orangebeam.gd" id="3_htvct"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hs87k"]
+radius = 0.9491662
+
+[node name="orange" type="CharacterBody3D" unique_id=945280037 groups=["enemy"]]
+script = ExtResource("1_htvct")
+health = 21.0
+speed = 5.0
+pouncerange = 10.0
+pounceforce = -15.0
+givenfruit = "orange"
+sightrange = 45.0
+
+[node name="Orange" parent="." unique_id=2109876570 instance=ExtResource("2_htvct")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1051928235]
+shape = SubResource("SphereShape3D_hs87k")
+
+[node name="Timer" type="Timer" parent="." unique_id=289848756]
+wait_time = 5.0
+one_shot = true
+
+[node name="beam" type="RayCast3D" parent="." unique_id=251820043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.056583166, 0)
+enabled = false
+target_position = Vector3(0, 0, -30)
+collision_mask = 3
+script = ExtResource("3_htvct")
+
+[node name="Timer2" type="Timer" parent="." unique_id=229502133]
+wait_time = 6.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

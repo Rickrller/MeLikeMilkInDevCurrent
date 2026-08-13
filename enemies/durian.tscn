@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dmidhahr23ew3"]
+
+[ext_resource type="Script" uid="uid://cr5be15k1wmtj" path="res://enemies/durian.gd" id="1_ohh1l"]
+[ext_resource type="PackedScene" uid="uid://dfkwkinsa2x0f" path="res://models/Durian.glb" id="2_4gyqm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7k104"]
+radius = 0.4643721
+
+[node name="Durian" type="CharacterBody3D" unique_id=751157666 groups=["enemy"]]
+script = ExtResource("1_ohh1l")
+damage = 7.0
+health = 28.0
+speed = 14.0
+pouncerange = 20.0
+pounceforce = 20.0
+givenfruit = "durian"
+sightrange = 40.0
+
+[node name="Durian" parent="." unique_id=1333057724 instance=ExtResource("2_4gyqm")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Timer" type="Timer" parent="." unique_id=1730944178]
+wait_time = 4.0
+one_shot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=111966732]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.073058784, 0)
+shape = SubResource("SphereShape3D_7k104")
+
+[node name="Timer2" type="Timer" parent="." unique_id=1330012292]
+one_shot = true
+
+[node name="smokecooldown" type="Timer" parent="." unique_id=926887697]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="smokecooldown" to="." method="_on_smokecooldown_timeout"]

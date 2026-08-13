@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dkwimiit384l5"]
+
+[ext_resource type="Script" uid="uid://baxy71g2jt24x" path="res://enemies/grape.gd" id="1_3xd47"]
+[ext_resource type="PackedScene" uid="uid://cr33claud2jep" path="res://models/singlegrape.tscn" id="1_3xhxg"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0ixxu"]
+radius = 0.47566298
+
+[node name="grape" type="CharacterBody3D" unique_id=1621887031]
+script = ExtResource("1_3xd47")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1262129501]
+shape = SubResource("SphereShape3D_0ixxu")
+
+[node name="singlegrape" parent="." unique_id=1134611703 instance=ExtResource("1_3xhxg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

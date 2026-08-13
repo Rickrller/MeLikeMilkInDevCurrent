@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cjis0enmu1243"]
+
+[ext_resource type="Script" uid="uid://cy7ot2g3kvdu4" path="res://SimpleRigidBodyEnemy.gd" id="1_i1gn6"]
+[ext_resource type="PackedScene" uid="uid://cnqkgwu6yayma" path="res://models/coconutmodel.tscn" id="2_i1gn6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_crgjs"]
+radius = 0.4854979
+
+[node name="coconut" type="RigidBody3D" unique_id=593736368 groups=["enemy", "rigidbody"]]
+mass = 1.1
+script = ExtResource("1_i1gn6")
+health = 80
+damage = 7
+givenfruit = "coconut"
+sightrange = 60.0
+
+[node name="EnemyHitbox" type="CollisionShape3D" parent="." unique_id=1596168018]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.14229989, 0)
+shape = SubResource("SphereShape3D_crgjs")
+
+[node name="coconut" parent="." unique_id=855803640 instance=ExtResource("2_i1gn6")]

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://gswuppqn863l"]
+
+[ext_resource type="PackedScene" uid="uid://c80fjg3duuga1" path="res://models/Orange.glb" id="1_ei6c0"]
+
+[node name="Orange" unique_id=2109876570 instance=ExtResource("1_ei6c0")]

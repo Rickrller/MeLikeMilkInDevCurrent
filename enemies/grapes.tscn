@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dm75h6sa1wvaj"]
+
+[ext_resource type="Script" uid="uid://cpv8dghj0xb6n" path="res://enemies/grapes.gd" id="1_myx2m"]
+[ext_resource type="PackedScene" uid="uid://2qw3tinlwxp" path="res://models/grapes.glb" id="2_myx2m"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_myx2m"]
+radius = 2.2303357
+
+[node name="grapes" type="CharacterBody3D" unique_id=1874956871 groups=["enemy"]]
+visible = false
+script = ExtResource("1_myx2m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=715742823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9789905, 0)
+shape = SubResource("SphereShape3D_myx2m")
+disabled = true
+
+[node name="Timer2" type="Timer" parent="." unique_id=836635630]
+one_shot = true
+
+[node name="grapesmodel" parent="." unique_id=852263098 instance=ExtResource("2_myx2m")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.38243306, 0, 0.43264675)
+
+[node name="Timer" type="Timer" parent="." unique_id=1422598897]
+one_shot = true
+
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

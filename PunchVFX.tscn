@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://iuhtixcyxp5d"]
+
+[ext_resource type="Texture2D" uid="uid://bste6uo2mompy" path="res://FaintSmoke.png" id="1_j34kx"]
+[ext_resource type="Script" uid="uid://duabqnwcau7w2" path="res://VFXCleanup.gd" id="2_07l2y"]
+[ext_resource type="QuadMesh" uid="uid://dstqc8djbwfa8" path="res://BlueSparks.tres" id="3_quyip"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ha00q"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_j34kx")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_rburc"]
+material = SubResource("StandardMaterial3D_ha00q")
+
+[sub_resource type="Curve" id="Curve_ipp32"]
+_data = [Vector2(0, 0), 0.0, 3.4162679, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_xarlr"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lgobb"]
+load_path = "res://.godot/imported/AirSpikes.png-78f7e67af9670a4dd6671c08bb3d5fe4.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tlsx"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_lgobb")
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 5.0
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_p3ky3"]
+material = SubResource("StandardMaterial3D_2tlsx")
+
+[sub_resource type="Curve" id="Curve_1mcsc"]
+_data = [Vector2(0, 0), 0.0, 1.1929823, 0, 0, Vector2(1, 1), 1.0327872, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_cdwdx"]
+offsets = PackedFloat32Array(0.009259259, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_o0yg1"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="PunchVFX" type="Node3D" unique_id=1111543218]
+
+[node name="Smoke" type="CPUParticles3D" parent="." unique_id=1896229183]
+emitting = false
+amount = 1
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_rburc")
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -15.0
+angular_velocity_max = 15.0
+angle_max = 360.0
+scale_amount_min = 6.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_ipp32")
+color_ramp = SubResource("Gradient_xarlr")
+script = ExtResource("2_07l2y")
+
+[node name="Spikes" type="CPUParticles3D" parent="." unique_id=748860419]
+emitting = false
+amount = 1
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_p3ky3")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_1mcsc")
+color_ramp = SubResource("Gradient_cdwdx")
+script = ExtResource("2_07l2y")
+
+[node name="BigBoom" type="CPUParticles3D" parent="." unique_id=1543084064]
+emitting = false
+amount = 1
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+mesh = ExtResource("3_quyip")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_1mcsc")
+color_ramp = SubResource("Gradient_o0yg1")
+script = ExtResource("2_07l2y")

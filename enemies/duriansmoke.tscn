@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://g0c74llc3w1q"]
+
+[ext_resource type="Script" uid="uid://dddcv3med7a1k" path="res://duriansmoke.gd" id="1_sfpo6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wufah"]
+radius = 8.682
+
+[node name="smoke" type="Area3D" unique_id=685237340]
+script = ExtResource("1_sfpo6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2113266582]
+shape = SubResource("SphereShape3D_wufah")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b7f1cautt6gxo"]
+
+[ext_resource type="PackedScene" uid="uid://dfkwkinsa2x0f" path="res://models/Durian.glb" id="1_u67td"]
+
+[node name="Durian" unique_id=1333057724 instance=ExtResource("1_u67td")]

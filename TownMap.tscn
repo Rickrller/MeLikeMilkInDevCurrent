@@ -1,0 +1,296 @@
+[gd_scene format=3 uid="uid://x7ihjpinr0kw"]
+
+[ext_resource type="Material" uid="uid://clvfjt5wy64vq" path="res://Road.tres" id="1_4ct8x"]
+[ext_resource type="Material" path="res://GreenGreenGrass.tres" id="1_oxr1r"]
+[ext_resource type="Texture2D" uid="uid://d12hejdp07kry" path="res://Grass2.png" id="2_i1jjm"]
+[ext_resource type="Material" uid="uid://bjnhc1tfb6cto" path="res://RoadCurb.tres" id="2_ylbrk"]
+[ext_resource type="Material" uid="uid://jdf7u6btn8q7" path="res://YellowLine.tres" id="3_engap"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_su22g"]
+material = ExtResource("1_4ct8x")
+size = Vector3(200, 0.1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bspbx"]
+material = ExtResource("2_ylbrk")
+size = Vector3(200, 0.15, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ogvx3"]
+material = ExtResource("3_engap")
+size = Vector3(200, 0.15, 0.2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tu0qr"]
+material = ExtResource("1_oxr1r")
+size = Vector2(500, 500)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idp3m"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.7379664, 0.80518776, 0.7235965, 1)
+albedo_texture = ExtResource("2_i1jjm")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_distance = 0.01
+distance_fade_max_distance = 5.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_4ct8x"]
+material = SubResource("StandardMaterial3D_idp3m")
+
+[sub_resource type="Curve" id="Curve_ylbrk"]
+_limits = [-50.0, 50.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(0.4, -1), 0.0, 0.0, 0, 0, Vector2(0.6, 1), 0.0, 0.0, 0, 0, Vector2(0.8, -1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Curve" id="Curve_engap"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.28042328, 1), 0.0, 0.0, 0, 0, Vector2(0.52116406, 1), 0.0, 0.0, 0, 0, Vector2(0.6269841, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_su22g"]
+offsets = PackedFloat32Array(0, 0.20679012, 0.79320985, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_bspbx"]
+offsets = PackedFloat32Array(0.0030864198, 0.40432099, 0.69135803, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.8625222, 0.8625217, 0.8625216, 1, 1, 1, 1, 1, 0.89275575, 0.89275575, 0.8927557, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jey10"]
+material = ExtResource("1_4ct8x")
+top_radius = 30.0
+bottom_radius = 30.0
+height = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fenau"]
+material = ExtResource("1_4ct8x")
+top_radius = 18.0
+bottom_radius = 18.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gafoj"]
+material = ExtResource("2_ylbrk")
+top_radius = 31.0
+bottom_radius = 31.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dwble"]
+load_path = "res://.godot/imported/RedTexture.jpg-a4ef2b99f006577faf14e32090a1853d.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10ffx"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_dwble")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_38sg7"]
+material = SubResource("StandardMaterial3D_10ffx")
+top_radius = 30.0
+bottom_radius = 30.0
+height = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5t3b5"]
+load_path = "res://.godot/imported/WHITEwall.png-cbf20d4971aea98df27304b1ccc244dd.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0h8vs"]
+albedo_color = Color(0.3854925, 0.38549247, 0.38549247, 1)
+albedo_texture = SubResource("CompressedTexture2D_5t3b5")
+metallic_specular = 0.42
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+uv1_scale = Vector3(1, 0.1, 1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_15c7m"]
+material = SubResource("StandardMaterial3D_0h8vs")
+top_radius = 19.0
+bottom_radius = 19.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tl5al"]
+load_path = "res://.godot/imported/RedTexture.jpg-a4ef2b99f006577faf14e32090a1853d.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33o58"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_tl5al")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rkaee"]
+material = SubResource("StandardMaterial3D_33o58")
+top_radius = 18.0
+bottom_radius = 18.0
+height = 4.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8bkl3"]
+material = ExtResource("3_engap")
+top_radius = 25.3
+bottom_radius = 25.3
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1p161"]
+load_path = "res://.godot/imported/RedTexture.jpg-a4ef2b99f006577faf14e32090a1853d.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kow3v"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_1p161")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_l8nj6"]
+material = SubResource("StandardMaterial3D_kow3v")
+top_radius = 24.7
+bottom_radius = 24.7
+height = 4.0
+
+[node name="Town" type="Node3D" unique_id=495490743]
+
+[node name="Road" type="Node3D" parent="." unique_id=967320688]
+transform = Transform3D(2.5097492, 0, 0, 0, 1.1987759, 0, 0, 0, 1.198776, -112.90648, -0.037, 0)
+
+[node name="Road" type="MeshInstance3D" parent="Road" unique_id=772816207]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 1, 0.00400409, 7.390976e-06, -0.105587006)
+mesh = SubResource("BoxMesh_su22g")
+
+[node name="Curb1" type="MeshInstance3D" parent="Road" unique_id=122934542]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 0.79999983, -1.2987823, 0.03, -5.216134)
+mesh = SubResource("BoxMesh_bspbx")
+
+[node name="Curb2" type="MeshInstance3D" parent="Road" unique_id=450718955]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 0.79999983, -1.2987823, 0.03, 5.2159986)
+mesh = SubResource("BoxMesh_bspbx")
+
+[node name="Line1" type="MeshInstance3D" parent="Road" unique_id=1541231170]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0.68, -0.017108437, -0.14999959)
+mesh = SubResource("BoxMesh_ogvx3")
+
+[node name="Line2" type="MeshInstance3D" parent="Road" unique_id=1682349972]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0.68, -0.017108437, 0.14999959)
+mesh = SubResource("BoxMesh_ogvx3")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=393100273]
+transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, -0.014809608, -0.016088486, -0.0106037855)
+mesh = SubResource("PlaneMesh_tu0qr")
+
+[node name="GrassParticles" type="CPUParticles3D" parent="Floor" unique_id=1273539777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35113, -0.090501696, -39.3456)
+cast_shadow = 0
+emitting = false
+amount = 500
+lifetime = 15.0
+draw_order = 2
+mesh = SubResource("QuadMesh_4ct8x")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 100000, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 25.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 45.0
+gravity = Vector3(0, -0.1, 0)
+angular_velocity_min = 1.0
+angular_velocity_max = 2.0
+angular_velocity_curve = SubResource("Curve_ylbrk")
+linear_accel_min = -0.3
+scale_amount_min = 0.2
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_engap")
+color_ramp = SubResource("Gradient_su22g")
+color_initial_ramp = SubResource("Gradient_bspbx")
+
+[node name="GrassParticles2" type="CPUParticles3D" parent="Floor" unique_id=1236693215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35113, -0.090501696, -37.457287)
+cast_shadow = 0
+emitting = false
+amount = 6000
+lifetime = 15.0
+local_coords = true
+draw_order = 2
+mesh = SubResource("QuadMesh_4ct8x")
+emission_shape = 3
+emission_box_extents = Vector3(250, 0, 20)
+gravity = Vector3(0, -0.1, 0)
+angular_velocity_min = 1.0
+angular_velocity_max = 2.0
+angular_velocity_curve = SubResource("Curve_ylbrk")
+linear_accel_min = -0.3
+scale_amount_min = 0.2
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_engap")
+color_ramp = SubResource("Gradient_su22g")
+color_initial_ramp = SubResource("Gradient_bspbx")
+
+[node name="GrassParticles3" type="CPUParticles3D" parent="Floor" unique_id=1725158895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35113, -0.090501696, 15.741048)
+cast_shadow = 0
+emitting = false
+amount = 6000
+lifetime = 15.0
+local_coords = true
+draw_order = 2
+mesh = SubResource("QuadMesh_4ct8x")
+emission_shape = 3
+emission_box_extents = Vector3(250, 0, 20)
+gravity = Vector3(0, -0.1, 0)
+angular_velocity_min = 1.0
+angular_velocity_max = 2.0
+angular_velocity_curve = SubResource("Curve_ylbrk")
+linear_accel_min = -0.3
+scale_amount_min = 0.2
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_engap")
+color_ramp = SubResource("Gradient_su22g")
+color_initial_ramp = SubResource("Gradient_bspbx")
+
+[node name="CircularRoad" type="CSGCombiner3D" parent="." unique_id=201036245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.47481847, 0)
+
+[node name="RoadOutside" type="CSGMesh3D" parent="CircularRoad" unique_id=1633655145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+mesh = SubResource("CylinderMesh_jey10")
+
+[node name="RoadCutout" type="CSGMesh3D" parent="CircularRoad" unique_id=754962420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_fenau")
+
+[node name="CircularRoadCurb" type="CSGCombiner3D" parent="." unique_id=1624065206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.911, 0)
+
+[node name="RoadOutside" type="CSGMesh3D" parent="CircularRoadCurb" unique_id=533105423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+mesh = SubResource("CylinderMesh_gafoj")
+
+[node name="RoadCutout" type="CSGMesh3D" parent="CircularRoadCurb" unique_id=2053950266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_38sg7")
+
+[node name="Cutout2" type="CSGBox3D" parent="CircularRoadCurb" unique_id=1243512115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6148934, 0.566, 0)
+operation = 2
+size = Vector3(7.859, 2.133, 11.546)
+material = ExtResource("2_ylbrk")
+
+[node name="CircularRoadCurbInside" type="CSGCombiner3D" parent="." unique_id=357917756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.911, 0)
+
+[node name="RoadOutside" type="CSGMesh3D" parent="CircularRoadCurbInside" unique_id=1006478696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+mesh = SubResource("CylinderMesh_15c7m")
+
+[node name="RoadCutout" type="CSGMesh3D" parent="CircularRoadCurbInside" unique_id=337561968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_rkaee")
+
+[node name="CircularRoadLine1" type="CSGCombiner3D" parent="." unique_id=1919802432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9643432, 0)
+
+[node name="RoadOutside" type="CSGMesh3D" parent="CircularRoadLine1" unique_id=871794275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+mesh = SubResource("CylinderMesh_8bkl3")
+
+[node name="RoadCutout" type="CSGMesh3D" parent="CircularRoadLine1" unique_id=530460077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_l8nj6")
+
+[node name="LineCutout1" type="CSGTorus3D" parent="CircularRoadLine1" unique_id=949509766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8, 0.97845876, 0)
+operation = 2
+inner_radius = 24.92
+outer_radius = 25.08
+sides = 64

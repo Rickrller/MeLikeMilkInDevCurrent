@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://r4ify3rkpjl0"]
+
+[ext_resource type="Script" uid="uid://b8wnu5ojcxlkm" path="res://enemymovement.gd" id="1_1rpr7"]
+[ext_resource type="PackedScene" uid="uid://60hj435frlue" path="res://models/pearto.glb" id="2_oq0iw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oq0iw"]
+
+[node name="pear" type="CharacterBody3D" unique_id=506862887 groups=["enemy"]]
+script = ExtResource("1_1rpr7")
+damage = 1.0
+health = 1.0
+speed = 20.0
+givenfruit = "pearto"
+sightrange = 45.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=652057459]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.07116699, 0)
+shape = SubResource("SphereShape3D_oq0iw")
+
+[node name="Timer2" type="Timer" parent="." unique_id=522235369]
+wait_time = 1.4
+one_shot = true
+
+[node name="pearto" parent="." unique_id=973997065 instance=ExtResource("2_oq0iw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

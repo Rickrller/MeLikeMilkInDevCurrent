@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://xk2j588d8c7o"]
+
+[ext_resource type="Script" uid="uid://csrxehbnpxtsf" path="res://citruscannonadeinst.gd" id="1_e1hy1"]
+
+[node name="citruscannonade" type="RayCast3D" unique_id=1419869669]
+target_position = Vector3(0, 0, -20)
+script = ExtResource("1_e1hy1")

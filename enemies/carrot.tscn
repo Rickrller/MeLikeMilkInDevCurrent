@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://u1ean8an17tk"]
+
+[ext_resource type="Script" uid="uid://dxjsbuymoharh" path="res://carrot.gd" id="1_2t4jl"]
+[ext_resource type="Script" uid="uid://cehhcbea6hljs" path="res://models/carrotbrotate.gd" id="3_m70ie"]
+[ext_resource type="PackedScene" uid="uid://vs83hvr274j" path="res://models/CArrot.glb" id="3_ve0v3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4kemo"]
+size = Vector3(0.37945557, 1.2642944, 0.2)
+
+[node name="carrot" type="RigidBody3D" unique_id=1780070971 groups=["enemy", "rigidbody"]]
+gravity_scale = 0.0
+script = ExtResource("1_2t4jl")
+damage = 15
+givenfruit = "carrot"
+
+[node name="EnemyHitbox" type="CollisionShape3D" parent="." unique_id=287524774]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.027038574, 0.1983521, 0)
+shape = SubResource("BoxShape3D_4kemo")
+
+[node name="CArrot" parent="." unique_id=1221868710 instance=ExtResource("3_ve0v3")]
+transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 0.7, 0, 0, 0)
+script = ExtResource("3_m70ie")
