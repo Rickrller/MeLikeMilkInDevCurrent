@@ -51,13 +51,13 @@ shader_parameter/sun_intensity = 14.0
 shader_parameter/random_light_strength = 0.4
 shader_parameter/random_light_scale = 0.7
 
-[sub_resource type="Sky" id="Sky_typi0"]
+[sub_resource type="Sky" id="Sky_76vxh"]
 sky_material = SubResource("ShaderMaterial_2hxns")
 
 [sub_resource type="Environment" id="Environment_24t42"]
 background_mode = 2
 background_energy_multiplier = 0.6
-sky = SubResource("Sky_typi0")
+sky = SubResource("Sky_76vxh")
 ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 3
 fog_enabled = true
@@ -199,6 +199,9 @@ script = ExtResource("1_24t42")
 
 [node name="Lighting" type="Node3D" parent="." unique_id=1781470910]
 
+[node name="Environment" type="WorldEnvironment" parent="Lighting" unique_id=2116156716]
+environment = SubResource("Environment_24t42")
+
 [node name="Sun" type="DirectionalLight3D" parent="Lighting" unique_id=208120462]
 transform = Transform3D(-1, 6.1817246e-08, -6.1817246e-08, 0, 0.7071068, 0.7071068, 8.742278e-08, 0.7071068, -0.7071068, 0, 0, 0)
 light_color = Color(0.9990608, 0.9999998, 0.95401555, 1)
@@ -208,9 +211,6 @@ light_specular = 0.0
 light_bake_mode = 0
 shadow_enabled = true
 shadow_normal_bias = 0.0
-
-[node name="Environment" type="WorldEnvironment" parent="Lighting/Sun" unique_id=2116156716]
-environment = SubResource("Environment_24t42")
 
 [node name="TestFloor" type="StaticBody3D" parent="." unique_id=1124614332]
 
