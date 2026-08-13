@@ -209,7 +209,7 @@ light_bake_mode = 0
 shadow_enabled = true
 shadow_normal_bias = 0.0
 
-[node name="Environment" type="WorldEnvironment" parent="Lighting" unique_id=2116156716]
+[node name="Environment" type="WorldEnvironment" parent="Lighting/Sun" unique_id=2116156716]
 environment = SubResource("Environment_24t42")
 
 [node name="TestFloor" type="StaticBody3D" parent="." unique_id=1124614332]
