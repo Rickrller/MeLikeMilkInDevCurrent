@@ -1,16 +1,106 @@
 [gd_scene format=3 uid="uid://x7ihjpinr0kw"]
 
 [ext_resource type="Material" uid="uid://clvfjt5wy64vq" path="res://Road.tres" id="1_4ct8x"]
+[ext_resource type="Material" uid="uid://ng6ioslup1d" path="res://PurpleRoof.tres" id="1_5t3b5"]
 [ext_resource type="Material" uid="uid://b2rj36yucvk8k" path="res://GreenTreeGrass.tres" id="1_bspbx"]
 [ext_resource type="Shader" uid="uid://vcnano0bkesh" path="res://Sky.gdshader" id="1_jey10"]
 [ext_resource type="Material" uid="uid://cmptt1iar8hnh" path="res://GreenGreenGrass.tres" id="1_oxr1r"]
+[ext_resource type="Material" uid="uid://loh78rx77ghn" path="res://WhiteWall.tres" id="2_0h8vs"]
 [ext_resource type="Texture2D" uid="uid://blwx5y33w6d0l" path="res://Clouds.png" id="2_fenau"]
 [ext_resource type="Texture2D" uid="uid://d12hejdp07kry" path="res://Grass2.png" id="2_i1jjm"]
 [ext_resource type="Material" uid="uid://balumk05moncr" path="res://Curb.tres" id="2_ogvx3"]
 [ext_resource type="Material" uid="uid://bjnhc1tfb6cto" path="res://RoadCurb.tres" id="2_ylbrk"]
+[ext_resource type="Texture2D" uid="uid://demsqoao81t8b" path="res://BricksFixed.png" id="3_15c7m"]
 [ext_resource type="Material" uid="uid://jdf7u6btn8q7" path="res://YellowLine.tres" id="3_engap"]
 [ext_resource type="Material" uid="uid://c1wjhtox6rsx3" path="res://Wood.tres" id="3_jey10"]
+[ext_resource type="Material" uid="uid://ca7m8147ic7m1" path="res://BlueGlass.tres" id="5_tl5al"]
+[ext_resource type="Material" uid="uid://dmxf544pr77t" path="res://Yellow.tres" id="6_33o58"]
+[ext_resource type="Material" uid="uid://br66824ryfl2b" path="res://Bricks.tres" id="7_rkaee"]
 [ext_resource type="PackedScene" uid="uid://cxkemj5q5ftp1" path="res://player.tscn" id="9_fenau"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8bkl3"]
+material = ExtResource("1_5t3b5")
+size = Vector3(12, 0.4, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1p161"]
+material = ExtResource("2_0h8vs")
+size = Vector3(11.5, 4, 11.5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_kow3v"]
+material = ExtResource("1_5t3b5")
+size = Vector3(13, 3, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8nj6"]
+albedo_texture = ExtResource("3_15c7m")
+
+[sub_resource type="BoxMesh" id="BoxMesh_toa7y"]
+material = SubResource("StandardMaterial3D_l8nj6")
+size = Vector3(13, 0.5, 12)
+
+[sub_resource type="PrismMesh" id="PrismMesh_rs0yp"]
+size = Vector3(13, 3, 13)
+
+[sub_resource type="PrismMesh" id="PrismMesh_xgnmy"]
+material = ExtResource("2_0h8vs")
+size = Vector3(11.5, 2.5, 11.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tbtnm"]
+material = ExtResource("3_jey10")
+size = Vector3(1.5, 2.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iw6o8"]
+size = Vector3(1.3, 2.05, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rt80h"]
+size = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p1isk"]
+material = ExtResource("5_tl5al")
+size = Vector3(2.8, 1.8, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kovb7"]
+material = ExtResource("6_33o58")
+size = Vector3(1.4, 2.19, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fa76n"]
+material = ExtResource("2_0h8vs")
+size = Vector3(5.75, 4, 9.5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_x4x62"]
+material = ExtResource("7_rkaee")
+size = Vector3(6.5, 2, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3lmmn"]
+size = Vector3(6.5, 0.5, 10)
+
+[sub_resource type="PrismMesh" id="PrismMesh_l6pg1"]
+size = Vector3(6.5, 2, 11)
+
+[sub_resource type="PrismMesh" id="PrismMesh_dgn22"]
+material = ExtResource("2_0h8vs")
+size = Vector3(5.7, 2.2, 9.5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3dv0u"]
+material = ExtResource("3_jey10")
+top_radius = 0.7
+bottom_radius = 0.7
+radial_segments = 15
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_himqq"]
+material = ExtResource("3_jey10")
+top_radius = 0.3
+bottom_radius = 0.6
+height = 1.0
+radial_segments = 15
+
+[sub_resource type="BoxMesh" id="BoxMesh_rf200"]
+material = ExtResource("3_jey10")
+size = Vector3(0.1, 1.3, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_c5m7e"]
+material = ExtResource("5_tl5al")
+top_radius = 0.8
+bottom_radius = 0.6
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gafoj"]
 shader = ExtResource("1_jey10")
@@ -181,49 +271,6 @@ size = Vector3(200, 0.15, 1)
 material = ExtResource("3_engap")
 size = Vector3(200, 0.15, 0.2)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_tu0qr"]
-material = ExtResource("1_oxr1r")
-size = Vector2(500, 500)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idp3m"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.7379664, 0.80518776, 0.7235965, 1)
-albedo_texture = ExtResource("2_i1jjm")
-billboard_mode = 3
-billboard_keep_scale = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-proximity_fade_distance = 0.01
-distance_fade_max_distance = 5.0
-
-[sub_resource type="QuadMesh" id="QuadMesh_4ct8x"]
-material = SubResource("StandardMaterial3D_idp3m")
-
-[sub_resource type="Curve" id="Curve_ylbrk"]
-_limits = [-50.0, 50.0, 0.0, 1.0]
-_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(0.4, -1), 0.0, 0.0, 0, 0, Vector2(0.6, 1), 0.0, 0.0, 0, 0, Vector2(0.8, -1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 6
-
-[sub_resource type="Curve" id="Curve_engap"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.28042328, 1), 0.0, 0.0, 0, 0, Vector2(0.52116406, 1), 0.0, 0.0, 0, 0, Vector2(0.6269841, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 5
-
-[sub_resource type="Gradient" id="Gradient_su22g"]
-offsets = PackedFloat32Array(0, 0.20679012, 0.79320985, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="Gradient" id="Gradient_bspbx"]
-offsets = PackedFloat32Array(0.0030864198, 0.40432099, 0.69135803, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.8625222, 0.8625217, 0.8625216, 1, 1, 1, 1, 1, 0.89275575, 0.89275575, 0.8927557, 1)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rt80h"]
-points = PackedVector3Array(253.96825, 3.9682539, 253.96825, -253.96825, -3.9682539, -253.96825, -253.96825, 3.9682539, -253.96825, 253.96825, -3.9682539, -253.96825, -253.96825, -3.9682539, 253.96825, -253.96825, 3.9682539, 253.96825, 253.96825, 3.9682539, -253.96825, 253.96825, -3.9682539, 253.96825)
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_jey10"]
 material = ExtResource("1_4ct8x")
 top_radius = 30.0
@@ -302,7 +349,184 @@ top_radius = 24.7
 bottom_radius = 24.7
 height = 4.0
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_tu0qr"]
+material = ExtResource("1_oxr1r")
+size = Vector2(500, 500)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idp3m"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.7379664, 0.80518776, 0.7235965, 1)
+albedo_texture = ExtResource("2_i1jjm")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_distance = 0.01
+distance_fade_max_distance = 5.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_4ct8x"]
+material = SubResource("StandardMaterial3D_idp3m")
+
+[sub_resource type="Curve" id="Curve_ylbrk"]
+_limits = [-50.0, 50.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(0.4, -1), 0.0, 0.0, 0, 0, Vector2(0.6, 1), 0.0, 0.0, 0, 0, Vector2(0.8, -1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Curve" id="Curve_engap"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.28042328, 1), 0.0, 0.0, 0, 0, Vector2(0.52116406, 1), 0.0, 0.0, 0, 0, Vector2(0.6269841, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_su22g"]
+offsets = PackedFloat32Array(0, 0.20679012, 0.79320985, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_bspbx"]
+offsets = PackedFloat32Array(0.0030864198, 0.40432099, 0.69135803, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.8625222, 0.8625217, 0.8625216, 1, 1, 1, 1, 1, 0.89275575, 0.89275575, 0.8927557, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rt80h"]
+points = PackedVector3Array(253.96825, 3.9682539, 253.96825, -253.96825, -3.9682539, -253.96825, -253.96825, 3.9682539, -253.96825, 253.96825, -3.9682539, -253.96825, -253.96825, -3.9682539, 253.96825, -253.96825, 3.9682539, 253.96825, 253.96825, 3.9682539, -253.96825, 253.96825, -3.9682539, 253.96825)
+
 [node name="Town" type="Node3D" unique_id=495490743]
+
+[node name="Buildings" type="Node3D" parent="." unique_id=997222845]
+
+[node name="BigHouseType1" type="Node3D" parent="Buildings" unique_id=1588564919]
+transform = Transform3D(0.01941466, 0, 1.1059356, 0, 1.683, 0, -1.7998953, 0, 0.01192923, 74.01652, 0, -0.18873358)
+
+[node name="Base" type="MeshInstance3D" parent="Buildings/BigHouseType1" unique_id=1477741354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_8bkl3")
+
+[node name="Walls" type="MeshInstance3D" parent="Buildings/BigHouseType1" unique_id=375121150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125158, 0)
+mesh = SubResource("BoxMesh_1p161")
+
+[node name="Roof" type="CSGCombiner3D" parent="Buildings/BigHouseType1" unique_id=145945066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="Buildings/BigHouseType1/Roof" unique_id=1702608472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_kow3v")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="Buildings/BigHouseType1/Roof" unique_id=1491458175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("BoxMesh_toa7y")
+material = ExtResource("1_5t3b5")
+
+[node name="RoofCut" type="CSGMesh3D" parent="Buildings/BigHouseType1/Roof" unique_id=89066455]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_rs0yp")
+
+[node name="RoofInside" type="MeshInstance3D" parent="Buildings/BigHouseType1" unique_id=362700243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2963176, 0)
+mesh = SubResource("PrismMesh_xgnmy")
+
+[node name="Doorframe" type="CSGCombiner3D" parent="Buildings/BigHouseType1" unique_id=1011938065]
+use_collision = true
+
+[node name="Doorframe" type="CSGMesh3D" parent="Buildings/BigHouseType1/Doorframe" unique_id=998873070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_tbtnm")
+
+[node name="DoorframeCutout" type="CSGMesh3D" parent="Buildings/BigHouseType1/Doorframe" unique_id=252800851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3208761, -5.4093323)
+operation = 2
+mesh = SubResource("BoxMesh_iw6o8")
+
+[node name="Window" type="CSGCombiner3D" parent="Buildings/BigHouseType1" unique_id=94085659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="Buildings/BigHouseType1/Window" unique_id=2044067879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_rt80h")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="Buildings/BigHouseType1/Window" unique_id=1717843541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_p1isk")
+
+[node name="Window2" type="CSGCombiner3D" parent="Buildings/BigHouseType1" unique_id=1955782406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="Buildings/BigHouseType1/Window2" unique_id=376473991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_rt80h")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="Buildings/BigHouseType1/Window2" unique_id=1092666631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_p1isk")
+
+[node name="Door" type="MeshInstance3D" parent="Buildings/BigHouseType1" unique_id=441629710]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.346551)
+mesh = SubResource("BoxMesh_kovb7")
+
+[node name="SecondFloor2" type="Node3D" parent="Buildings/BigHouseType1" unique_id=255932863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -0.371)
+
+[node name="Walls" type="MeshInstance3D" parent="Buildings/BigHouseType1/SecondFloor2" unique_id=958168982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6275067, 0)
+mesh = SubResource("BoxMesh_fa76n")
+
+[node name="Roof" type="CSGCombiner3D" parent="Buildings/BigHouseType1/SecondFloor2" unique_id=1113597256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="Buildings/BigHouseType1/SecondFloor2/Roof" unique_id=1904625004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_x4x62")
+material = ExtResource("1_5t3b5")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="Buildings/BigHouseType1/SecondFloor2/Roof" unique_id=521202432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4292421, 0)
+mesh = SubResource("BoxMesh_3lmmn")
+material = ExtResource("1_5t3b5")
+
+[node name="RoofCut" type="CSGMesh3D" parent="Buildings/BigHouseType1/SecondFloor2/Roof" unique_id=1803528561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_l6pg1")
+
+[node name="RoofInside" type="MeshInstance3D" parent="Buildings/BigHouseType1/SecondFloor2" unique_id=271191479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.3593674, 0)
+mesh = SubResource("PrismMesh_dgn22")
+
+[node name="CircleWindow" type="CSGCombiner3D" parent="Buildings/BigHouseType1" unique_id=1287190025]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5020514, 0.6115489)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="Buildings/BigHouseType1/CircleWindow" unique_id=1399451452]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3904247, -4.8226953)
+mesh = SubResource("CylinderMesh_3dv0u")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="Buildings/BigHouseType1/CircleWindow" unique_id=1717024169]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3999996, -5.343495)
+operation = 2
+mesh = SubResource("CylinderMesh_himqq")
+
+[node name="WindowFrame" type="MeshInstance3D" parent="Buildings/BigHouseType1/CircleWindow" unique_id=1159953401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_rf200")
+
+[node name="WindowFrame2" type="MeshInstance3D" parent="Buildings/BigHouseType1/CircleWindow" unique_id=2141754212]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_rf200")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buildings/BigHouseType1/CircleWindow" unique_id=1867156561]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, 1.4017477, -4.757486)
+mesh = SubResource("CylinderMesh_c5m7e")
 
 [node name="Lighting" type="Node3D" parent="." unique_id=1358064636]
 transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, -0.020466805, -4.7064266, -0.016745448)
@@ -454,6 +678,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
 mesh = SubResource("CylinderMesh_5t3b5")
 
 [node name="TrunkBottom" type="MeshInstance3D" parent="Greenery/TreeTall4" unique_id=952421416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_0h8vs")
+
+[node name="TreeTall6" type="Node3D" parent="Greenery" unique_id=310847218]
+transform = Transform3D(1.1822569, 0, 0.20559275, 0, 1.1999999, 0, -0.20559275, 0, 1.1822569, 34.648293, 0.49509972, 7.03594)
+
+[node name="Leaves" type="MeshInstance3D" parent="Greenery/TreeTall6" unique_id=311198494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, 0)
+mesh = SubResource("SphereMesh_gafoj")
+
+[node name="Leaves2" type="MeshInstance3D" parent="Greenery/TreeTall6" unique_id=618507319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.31711388)
+mesh = SubResource("SphereMesh_dwble")
+
+[node name="Leaves3" type="MeshInstance3D" parent="Greenery/TreeTall6" unique_id=1857922662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.55119514)
+mesh = SubResource("SphereMesh_10ffx")
+
+[node name="Leaves4" type="MeshInstance3D" parent="Greenery/TreeTall6" unique_id=2114063278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.3726754, -0.37444496)
+mesh = SubResource("SphereMesh_38sg7")
+
+[node name="Trunk" type="MeshInstance3D" parent="Greenery/TreeTall6" unique_id=1090881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_5t3b5")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="Greenery/TreeTall6" unique_id=1908566379]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
 mesh = SubResource("CylinderMesh_0h8vs")
 
@@ -875,7 +1126,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, -0.039004683, -0.
 mesh = SubResource("SphereMesh_tbtnm")
 
 [node name="GreeneryLarge" type="Node3D" parent="." unique_id=786572817]
-transform = Transform3D(4.303902, 0, 0, 0, 3.8674026, 0, 0, 0, 4.8329425, -106.53357, 0, 0)
+transform = Transform3D(4.303902, 0, 0, 0, 4.3634033, 0, 0, 0, 4.8329425, -106.53357, 0, 0)
 
 [node name="TreeTall" type="Node3D" parent="GreeneryLarge" unique_id=1396398633]
 transform = Transform3D(1.142504, 0, 0.36699387, 0, 1.1999999, 0, -0.36699387, 0, 1.142504, 44.001842, 0.49509972, -3.1826305)
@@ -1452,6 +1703,73 @@ mesh = SubResource("BoxMesh_ogvx3")
 transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0.68, -0.017108437, 0.14999959)
 mesh = SubResource("BoxMesh_ogvx3")
 
+[node name="CircularRoad" type="CSGCombiner3D" parent="Road" unique_id=201036245]
+transform = Transform3D(0.3984462, 0, 0, 0, 0.8341843, 0, 0, 0, 0.8341841, 44.987156, -0.36522126, 0)
+
+[node name="RoadOutside" type="CSGMesh3D" parent="Road/CircularRoad" unique_id=1633655145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+mesh = SubResource("CylinderMesh_jey10")
+
+[node name="RoadCutout" type="CSGMesh3D" parent="Road/CircularRoad" unique_id=754962420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_fenau")
+
+[node name="CircularRoadCurb" type="CSGCombiner3D" parent="Road" unique_id=1624065206]
+transform = Transform3D(0.3984462, 0, 0, 0, 0.8341843, 0, 0, 0, 0.8341841, 44.987156, -0.72907704, 0)
+
+[node name="RoadOutside" type="CSGMesh3D" parent="Road/CircularRoadCurb" unique_id=533105423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+mesh = SubResource("CylinderMesh_gafoj")
+
+[node name="RoadCutout" type="CSGMesh3D" parent="Road/CircularRoadCurb" unique_id=2053950266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_38sg7")
+
+[node name="Cutout2" type="CSGBox3D" parent="Road/CircularRoadCurb" unique_id=1243512115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6148934, 0.566, 0)
+operation = 2
+size = Vector3(7.859, 2.133, 11.546)
+material = ExtResource("2_ylbrk")
+
+[node name="CircularRoadCurbInside" type="CSGCombiner3D" parent="Road" unique_id=357917756]
+transform = Transform3D(0.3984462, 0, 0, 0, 0.8341843, 0, 0, 0, 0.8341841, 44.987156, -0.72907704, 0)
+
+[node name="RoadOutside" type="CSGMesh3D" parent="Road/CircularRoadCurbInside" unique_id=1006478696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+mesh = SubResource("CylinderMesh_15c7m")
+
+[node name="RoadCutout" type="CSGMesh3D" parent="Road/CircularRoadCurbInside" unique_id=337561968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.80671, 0, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_rkaee")
+
+[node name="CircularRoadLine1" type="CSGCombiner3D" parent="Road" unique_id=1919802432]
+transform = Transform3D(0.3984462, 0, 0, 0, 0.8341843, 0, 0, 0, 0.8341841, 44.987156, -0.7735751, 0)
+
+[node name="RoadOutside" type="CSGMesh3D" parent="Road/CircularRoadLine1" unique_id=871794275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+mesh = SubResource("CylinderMesh_8bkl3")
+
+[node name="RoadCutout" type="CSGMesh3D" parent="Road/CircularRoadLine1" unique_id=530460077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_l8nj6")
+
+[node name="LineCutout1" type="CSGTorus3D" parent="Road/CircularRoadLine1" unique_id=949509766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8, 0.97845876, 0)
+operation = 2
+inner_radius = 24.92
+outer_radius = 25.08
+sides = 64
+
+[node name="LineCutout2" type="CSGBox3D" parent="Road/CircularRoadLine1" unique_id=1354885332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.317402, 0.8396782, -0.00033038855)
+operation = 2
+size = Vector3(1, 1, 0.12269592)
+material = ExtResource("3_engap")
+
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=393100273]
 transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, -0.020466805, -0.035798073, -0.016745448)
 mesh = SubResource("PlaneMesh_tu0qr")
@@ -1533,70 +1851,3 @@ shape = SubResource("ConvexPolygonShape3D_rt80h")
 
 [node name="Player" parent="Floor" unique_id=2021393363 instance=ExtResource("9_fenau")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4269645, 0)
-
-[node name="CircularRoad" type="CSGCombiner3D" parent="." unique_id=201036245]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.47481847, 0)
-
-[node name="RoadOutside" type="CSGMesh3D" parent="CircularRoad" unique_id=1633655145]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
-mesh = SubResource("CylinderMesh_jey10")
-
-[node name="RoadCutout" type="CSGMesh3D" parent="CircularRoad" unique_id=754962420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
-operation = 2
-mesh = SubResource("CylinderMesh_fenau")
-
-[node name="CircularRoadCurb" type="CSGCombiner3D" parent="." unique_id=1624065206]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.911, 0)
-
-[node name="RoadOutside" type="CSGMesh3D" parent="CircularRoadCurb" unique_id=533105423]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
-mesh = SubResource("CylinderMesh_gafoj")
-
-[node name="RoadCutout" type="CSGMesh3D" parent="CircularRoadCurb" unique_id=2053950266]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
-operation = 2
-mesh = SubResource("CylinderMesh_38sg7")
-
-[node name="Cutout2" type="CSGBox3D" parent="CircularRoadCurb" unique_id=1243512115]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6148934, 0.566, 0)
-operation = 2
-size = Vector3(7.859, 2.133, 11.546)
-material = ExtResource("2_ylbrk")
-
-[node name="CircularRoadCurbInside" type="CSGCombiner3D" parent="." unique_id=357917756]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.911, 0)
-
-[node name="RoadOutside" type="CSGMesh3D" parent="CircularRoadCurbInside" unique_id=1006478696]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
-mesh = SubResource("CylinderMesh_15c7m")
-
-[node name="RoadCutout" type="CSGMesh3D" parent="CircularRoadCurbInside" unique_id=337561968]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.80671, 0, 0)
-operation = 2
-mesh = SubResource("CylinderMesh_rkaee")
-
-[node name="CircularRoadLine1" type="CSGCombiner3D" parent="." unique_id=1919802432]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9643432, 0)
-
-[node name="RoadOutside" type="CSGMesh3D" parent="CircularRoadLine1" unique_id=871794275]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
-mesh = SubResource("CylinderMesh_8bkl3")
-
-[node name="RoadCutout" type="CSGMesh3D" parent="CircularRoadLine1" unique_id=530460077]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
-operation = 2
-mesh = SubResource("CylinderMesh_l8nj6")
-
-[node name="LineCutout1" type="CSGTorus3D" parent="CircularRoadLine1" unique_id=949509766]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8, 0.97845876, 0)
-operation = 2
-inner_radius = 24.92
-outer_radius = 25.08
-sides = 64
-
-[node name="LineCutout2" type="CSGBox3D" parent="CircularRoadLine1" unique_id=1354885332]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.317402, 0.8396782, -0.00033038855)
-operation = 2
-size = Vector3(1, 1, 0.12269592)
-material = ExtResource("3_engap")

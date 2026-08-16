@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://dah08t6ttiajt" path="res://enemies/lemon.tscn" id="8_11y0e"]
 [ext_resource type="PackedScene" uid="uid://bq67rk83banep" path="res://enemies/starfruit.tscn" id="13_ykxim"]
 [ext_resource type="PackedScene" uid="uid://xlkowwqt7421" path="res://HouseModels.tscn" id="14_ykxim"]
-[ext_resource type="PackedScene" uid="uid://dm75h6sa1wvaj" path="res://enemies/grapes.tscn" id="15_i4tu1"]
 [ext_resource type="PackedScene" uid="uid://2k4hx0qjyd3h" path="res://enemies/aloevera.tscn" id="16_tbyl1"]
 [ext_resource type="Texture2D" uid="uid://cno613y7cf45x" path="res://RedGradient.png" id="17_fllgw"]
 [ext_resource type="PackedScene" uid="uid://dmidhahr23ew3" path="res://enemies/durian.tscn" id="18_4jyq1"]
@@ -489,9 +488,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -34.757614, 0)
 [node name="starfruit" parent="." unique_id=503213655 instance=ExtResource("13_ykxim")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 18.105068, -40.689026)
 
-[node name="grapes" parent="." unique_id=1874956871 instance=ExtResource("15_i4tu1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -42.179962, -41)
-
 [node name="aloevera" parent="." unique_id=222285199 instance=ExtResource("16_tbyl1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.214355, 9.2713585, -114.886375)
 
@@ -515,9 +511,6 @@ position = Vector2(570, 333)
 scale = Vector2(2, 2.056)
 texture = ExtResource("20_typi0")
 script = ExtResource("21_6xtxr")
-
-[node name="grapes2" parent="." unique_id=1913154043 instance=ExtResource("15_i4tu1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.702711, 9.6063, -86.16556)
 
 [node name="Durian" parent="." unique_id=751157666 instance=ExtResource("18_4jyq1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.702711, 9.6063, -86.16556)

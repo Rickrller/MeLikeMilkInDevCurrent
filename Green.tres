@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cw30faqnoi56u"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ev43h"]
+load_path = "res://.godot/imported/BricksFixed.png-4cb0ce259318d57acc404384b6d1e193.s3tc.ctex"
+
+[resource]
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_ev43h")
+uv1_scale = Vector3(64, 12, 8)
