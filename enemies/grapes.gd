@@ -14,9 +14,9 @@ func _ready():
 func shoot():
 	var instance = grapeprojectile.instantiate()
 	get_tree().current_scene.add_child(instance)
-	
+	instance.parent = self
 	instance.global_position = global_position
-	instance.player = player.global_position
+
 	
 func parried():
 	queue_free()
