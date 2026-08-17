@@ -8,7 +8,7 @@ enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attac
 @export var pounce_available = true
 @export var ispouncing : bool = false
 @export var direction : Vector3 
-@onready var player: Node3D = %Player
+@onready var player: Node3D = null
 @export var pouncerange : float
 @export var pounceforce : float
 @export var givenfruit : String
@@ -22,6 +22,11 @@ enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attac
 
 func _ready() -> void:
 	$smokecooldown.start()
+	var players = get_tree().get_nodes_in_group("player")
+	if players.size() > 0:
+		player = players[0]
+	else:
+		push_error("Error locating player")
 
 func _physics_process(delta: float) -> void:
 	if state == enemystate.blasted:

@@ -6,7 +6,7 @@ enum enemystate {parrying, everythingelse, blasted, attacking}
 @export var speed : float
 @export var fallspeed = ProjectSettings.get_setting("physics/3d/default_gravity") + 25
 @export var direction : Vector3 
-@onready var player: Node3D = %Player
+@onready var player: CharacterBody3D = null
 @export var attackdir : Vector3
 @export var givenfruit : String
 @onready var ParryVFX = load("res://ParryBlueVFX.tscn")
@@ -16,6 +16,14 @@ enum enemystate {parrying, everythingelse, blasted, attacking}
 @onready var attackcooldown = $Timer2
 @export var diff : Vector3
 @export var distancetoplayer : float
+
+func _ready() -> void:
+	var players = get_tree().get_nodes_in_group("player")
+	if players.size() > 0:
+		player = players[0]
+	else:
+		push_error("Error locating player")
+
 func _physics_process(delta: float) -> void:
 	if Engine.get_frames_drawn() % 5 == 0:
 		diff = global_position - player.global_position

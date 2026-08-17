@@ -6,10 +6,16 @@ extends RigidBody3D
 @export var gettingparried = false
 @export var velocity : Vector3
 @export var direction : Vector3
-@onready var player : Node3D = %Player
+@onready var player : Node3D = null
 @onready var ParryVFX = load("res://ParryBlueVFX.tscn")
 @export var givenfruit : String
 
+func _ready() -> void:
+	var players = get_tree().get_nodes_in_group("player")
+	if players.size() > 0:
+		player = players[0]
+	else:
+		push_error("Error locating player")
 
 func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	if player:

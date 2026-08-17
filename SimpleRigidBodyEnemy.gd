@@ -6,7 +6,7 @@ extends RigidBody3D
 @export var gettingparried = false
 enum Estate {idle, blasted, lookingforplayer}
 @export var state : Estate = Estate.lookingforplayer
-@onready var player: Node3D = %Player
+@onready var player: Node3D = null
 @onready var direction: Vector3
 @onready var ParryVFX = load("res://ParryBlueVFX.tscn")
 @export var givenfruit : String
@@ -18,6 +18,12 @@ func _ready() -> void:
 	linear_damp_mode = RigidBody3D.DAMP_MODE_REPLACE
 	angular_damp_mode = RigidBody3D.DAMP_MODE_REPLACE
 	#linear_velocity.y = -1
+	var players = get_tree().get_nodes_in_group("player")
+	if players.size() > 0:
+		player = players[0]
+	else:
+		push_error("Error locating player")
+
 func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 	if not player:
 		return
