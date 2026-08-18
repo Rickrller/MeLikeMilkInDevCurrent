@@ -10,7 +10,7 @@ enum enemystate {everythingelse, attacking}
 @export var givenfruit : String
 @onready var ParryVFX = load("res://ParryBlueVFX.tscn")
 @export var sightrange : float
-@export var attackready : bool = true
+@export var attackready : bool = false
 @onready var attackcooldown = $Timer2
 @export var distancetoplayer : float
 @export var diff : Vector3
@@ -21,6 +21,7 @@ func _ready() -> void:
 		player = players[0]
 	else:
 		push_error("Error locating player")
+	attackcooldown.start()
 
 func _physics_process(delta: float) -> void:
 	if health <= 0:

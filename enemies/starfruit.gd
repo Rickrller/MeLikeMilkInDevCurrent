@@ -2,6 +2,9 @@ extends CharacterBody3D
 @export var touchedfloor : bool = false
 @export var health : float
 @export var givenfruit : String
+@onready var heighvariation = randf_range(0.04,0.06)
+var speed = 0
+var attackcooldown = {"wait_time" : 0}
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _physics_process(delta: float) -> void:
 	if health <= 0:
@@ -13,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor() and touchedfloor == false:
 		velocity.y -= gravity * delta
 	else:
-		velocity.y = lerp(velocity.y, 0.0, 0.05)
+		velocity.y = lerp(velocity.y, 0.0, heighvariation)
 	move_and_slide()
 
 

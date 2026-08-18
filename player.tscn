@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://byg5baaa3r35w" path="res://nutrition.gd" id="17_op7ga"]
 [ext_resource type="Script" uid="uid://yw3vhnmbg8b5" path="res://effects.gd" id="17_q13i1"]
 [ext_resource type="Script" uid="uid://bqlsgnaefxp3s" path="res://starburst.gd" id="17_qtqh7"]
+[ext_resource type="Script" uid="uid://n4s7m4kvc2t6" path="res://grapecascade.gd" id="20_iruf7"]
 [ext_resource type="AudioStream" uid="uid://c3n5opgcgd1md" path="res://Delivery_Time.mp3" id="23_7lmhl"]
 [ext_resource type="Texture2D" uid="uid://dqdiecp557i5v" path="res://enemies/Kasane_Pearto_Original.webp" id="24_dx0e4"]
 
@@ -85,16 +86,16 @@ unique_name_in_owner = true
 [node name="arm2" parent="Neck" unique_id=207769933 instance=ExtResource("5_2wuci")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.4007164, -0.5511283, 0)
 
-[node name="Cube_002" parent="Neck/arm2/metarig_001/Skeleton3D" parent_id_path=PackedInt32Array(207769933, 1767446859) index="0" unique_id=1444091749]
+[node name="Cube_002" parent="Neck/arm2/metarig_001/Skeleton3D" parent_id_path=PackedInt32Array(207769933, 545454325) index="0" unique_id=1631849677]
 gi_mode = 0
 
-[node name="AnimationPlayer" parent="Neck/arm2" index="1" unique_id=1489867654]
+[node name="AnimationPlayer" parent="Neck/arm2" index="1" unique_id=1962950394]
 root_node = NodePath("../../arm2")
 
 [node name="arm" parent="Neck" unique_id=1318632943 instance=ExtResource("5_iruf7")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.4007164, -0.5511283, 0)
 
-[node name="Cube_001" parent="Neck/arm/metarig/Skeleton3D" parent_id_path=PackedInt32Array(1318632943, 1010938402) index="0" unique_id=2093819766]
+[node name="Cube_001" parent="Neck/arm/metarig/Skeleton3D" parent_id_path=PackedInt32Array(1318632943, 100309300) index="0" unique_id=947445986]
 gi_mode = 0
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=636670200]
@@ -171,6 +172,9 @@ script = ExtResource("17_qtqh7")
 
 [node name="aloevera" type="Node" parent="handstatemachine" unique_id=391574341]
 script = ExtResource("16_jm5j8")
+
+[node name="grapes" type="Node" parent="handstatemachine" unique_id=1468718033]
+script = ExtResource("20_iruf7")
 
 [node name="movementstatemachine" type="Node" parent="." unique_id=895398097]
 script = ExtResource("6_606se")

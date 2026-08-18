@@ -1,33 +1,73 @@
-[gd_scene format=3 uid="uid://bq67rk83banep"]
+[gd_scene format=4 uid="uid://bq67rk83banep"]
 
 [ext_resource type="Script" uid="uid://txvk66jbqxak" path="res://enemies/starfruit.gd" id="1_uk2yf"]
-[ext_resource type="PackedScene" uid="uid://r7iqxcwytljo" path="res://models/starfruit.glb" id="2_rhue5"]
+[ext_resource type="Texture2D" uid="uid://brateomrpp273" path="res://models/starfruit_Untitled.png" id="2_uk2yf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uk2yf"]
-size = Vector3(1, 0.1607666, 1)
+size = Vector3(1.9424438, 0.44863892, 1.801117)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_uk2yf"]
 margin = 0.0
-height = 0.720726
+height = 1.0839901
 radius = 1.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0m0l8"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("2_uk2yf")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_l8jlq"]
+_surfaces = [{
+"aabb": AABB(-0.95105654, 0.8, -1, 1.9021131, 0.40000004, 1.809017),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAQADAAQABQAAAAIAAAAFAAMABgAFAAIABgADAAUABwACAAQABAADAAcACAAGAAIABgAIAAMACQAIAAIACQADAAgABwAKAAIACgAHAAMACwAJAAIACgALAAIACQALAAMACwAKAAMA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/aj/fy9SAAD/f/9/AAAAAP9/AACCjQAA/3///4KNAAABV/9/L1IAAP///3/IYQAAU8L/fyukAAAAAP9/yGEAABrP/3///wAA/3//f9fWAACrPf9/K6QAAOQw/3///wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rhue5"]
+resource_name = "starfruit_Plane"
+_surfaces = [{
+"aabb": AABB(-0.95105654, 0.8, -1, 1.9021131, 0.40000004, 1.809017),
+"attribute_data": PackedByteArray("Cqkzzv+/Qcvgo7LdcZgSvgqpM87go7Ldi5Rr1HGYEr7go7Ld/3+q3ouUa9Tgo7Ldi5SI6f9/qt7go7LdcZj//4uUiOngo7LdCqld8HGY///go7Ld/7//8wqpXfDgo7Ld/7//8+Cjst21tXnftbV53+Cjst3/v0HL/79m3+DjX+CL1Kbpi9Sm6eDjX+Bx2P//Cund73HY///g41/g///P8grp3e/g41/gtfWY3v//z/Lg41/gtfWY3uDjX+D//xHKCum0zf//Ecrg41/gi9SJ1ODjX+D/v2bfi9SJ1HHYEr7g41/gCum0zeDjX+Bx2BK+"),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgATABQAFQAWABcAGAAZABoAGwAcAB0AHgAfACAAIQAiACMAJAAlACYAJwAoACkAKgArACwALQAuAC8AMAAxADIAMwA0ADUANgA3ADgAOQA6ADsA"),
+"material": SubResource("StandardMaterial3D_0m0l8"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(2, 2, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray("/aj/fy9S+N7/f/9/AAD43v9/AACCjfje////f8hh/ub9qP9/L1L+5v9/AACCjf7mU8L/fyuketz///9/yGF63P9/AACCjXrcGs//f///WN1Twv9/K6RY3f9/AACCjVjd/3//f9fWgeUaz/9///+B5f9/AACCjYHl5DD/f///qN3/f/9/19ao3f9/AACCjajdqz3/fyukaPDkMP9///9o8P9/AACCjWjwAAD/f8hhXumrPf9/K6Re6f9/AACCjV7pAAD/f8hhder/fwAAgo116gFX/38vUnXqAVf/fy9SevD/fwAAgo168P9//38AAHrw/3//fwAAI9H/f///go0j0QFX/38vUiPRAVf/fy9Sb9z/f///go1v3AAA/3/IYW/cqz3/fyukj8sAAP9/yGGPy/9///+CjY/L5DD/f///4s2rPf9/K6Tizf9///+CjeLN/3//f9fWstPkMP9///+y0/9///+CjbLT/3//f9fWrsz/f///go2uzBrP/3///67MU8L/fyukBeEaz/9///8F4f9///+CjQXh/aj/fy9Sw+L/f///go3D4v9//38AAMPi/aj/fy9S1t////9/yGHW3/9///+CjdbfU8L/fyukb9f/f///go1v1////3/IYW/XFWzSPxVs0j8VbNI/kV+FRZFfhUWRX4VFF3JSSxdyUksXclJLZXDCQGVwwkBlcMJA8GXYWPBl2FjwZdhYhG8fUIRvH1CEbx9QE10bVRNdG1UTXRtVyGJ/Wchif1nIYn9ZGl3xSBpd8UgaXfFIDFwnUgxcJ1IMXCdSYKpEt2CqRLdgqkS317F9sNexfbDXsX2wv51rsL+da7C/nWuwwaXEt8GlxLfBpcS3haaboIWmm6CFppugcp6sq3KerKtynqyreLD0oHiw9KB4sPSgrrHRo66x0aOusdGjmLIlrZiyJa2YsiWt9qmvnvapr572qa+e")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_l8jlq")
 
 [node name="starfruit" type="CharacterBody3D" unique_id=503213655 groups=["enemy"]]
 script = ExtResource("1_uk2yf")
 health = 15.0
 givenfruit = "starfruit"
 
-[node name="starfruit" parent="." unique_id=239681472 instance=ExtResource("2_rhue5")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1856156969]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.057434082, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.0041736364, 0.08511734, -0.015141003)
 shape = SubResource("BoxShape3D_uk2yf")
 
 [node name="buffarea" type="Area3D" parent="." unique_id=451433940]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="buffarea" unique_id=711390496]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, -1.8670807, 0)
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, -4.046665, 0)
 shape = SubResource("CylinderShape3D_uk2yf")
+
+[node name="model" type="MeshInstance3D" parent="." unique_id=461220218]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, -0.01520288, -0.021233916, 0.9890816)
+sorting_offset = -1.0
+mesh = SubResource("ArrayMesh_rhue5")
 
 [connection signal="body_entered" from="buffarea" to="." method="_on_buffarea_body_entered"]
 [connection signal="body_exited" from="buffarea" to="." method="_on_buffarea_body_exited"]

@@ -11,7 +11,7 @@ enum enemystate {parrying, everythingelse, blasted, attacking}
 @export var givenfruit : String
 @onready var ParryVFX = load("res://ParryBlueVFX.tscn")
 @export var sightrange : float
-@export var attackready : bool = true
+@export var attackready : bool = false
 @onready var punch = preload("res://enemies/applepunch.tscn")
 @onready var attackcooldown = $Timer2
 @export var diff : Vector3
@@ -23,6 +23,7 @@ func _ready() -> void:
 		player = players[0]
 	else:
 		push_error("Error locating player")
+	attackcooldown.start()
 
 func _physics_process(delta: float) -> void:
 	if Engine.get_frames_drawn() % 5 == 0:

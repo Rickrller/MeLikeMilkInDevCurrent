@@ -44,11 +44,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ndb50")
 
-[node name="grape" type="CharacterBody3D" unique_id=1621887031]
+[sub_resource type="SphereShape3D" id="SphereShape3D_3xd47"]
+
+[node name="grape" type="CharacterBody3D" unique_id=1621887031 groups=["enemy"]]
 script = ExtResource("1_3xd47")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1262129501]
 shape = SubResource("SphereShape3D_0ixxu")
 
-[node name="Icosphere" type="MeshInstance3D" parent="." unique_id=1080293486]
+[node name="model" type="MeshInstance3D" parent="." unique_id=1080293486]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_jmnoe")
+
+[node name="hitshii" type="Area3D" parent="." unique_id=1608427389]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hitshii" unique_id=1558896016]
+shape = SubResource("SphereShape3D_3xd47")
+
+[connection signal="body_entered" from="hitshii" to="." method="_on_hitshii_body_entered"]

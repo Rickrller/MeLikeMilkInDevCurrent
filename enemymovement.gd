@@ -25,8 +25,7 @@ func _ready() -> void:
 		player = players[0]
 	else:
 		push_error("Error locating player")
-	await get_tree().create_timer(1).timeout
-	attackready = true
+	attackcooldown.start()
 
 func _physics_process(delta: float) -> void:
 	if state == enemystate.blasted:

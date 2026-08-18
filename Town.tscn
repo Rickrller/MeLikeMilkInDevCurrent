@@ -3,17 +3,10 @@
 [ext_resource type="Script" uid="uid://b18ryxoet0sr6" path="res://town.gd" id="1_24t42"]
 [ext_resource type="PackedScene" uid="uid://cxkemj5q5ftp1" path="res://player.tscn" id="1_crgjs"]
 [ext_resource type="Shader" uid="uid://vcnano0bkesh" path="res://Sky.gdshader" id="2_ios02"]
-[ext_resource type="PackedScene" uid="uid://cjis0enmu1243" path="res://enemies/coconut.tscn" id="3_24t42"]
 [ext_resource type="Texture2D" uid="uid://blwx5y33w6d0l" path="res://Clouds.png" id="3_n4wug"]
-[ext_resource type="PackedScene" uid="uid://u1ean8an17tk" path="res://enemies/carrot.tscn" id="4_4kemo"]
-[ext_resource type="PackedScene" uid="uid://bv3ddxucnf4rq" path="res://enemies/strawberry.tscn" id="6_4kemo"]
-[ext_resource type="PackedScene" uid="uid://bq67rk83banep" path="res://enemies/starfruit.tscn" id="13_ykxim"]
 [ext_resource type="PackedScene" uid="uid://xlkowwqt7421" path="res://HouseModels.tscn" id="14_ykxim"]
-[ext_resource type="PackedScene" uid="uid://2k4hx0qjyd3h" path="res://enemies/aloevera.tscn" id="16_tbyl1"]
 [ext_resource type="Texture2D" uid="uid://cno613y7cf45x" path="res://RedGradient.png" id="17_fllgw"]
-[ext_resource type="PackedScene" uid="uid://dmidhahr23ew3" path="res://enemies/durian.tscn" id="18_4jyq1"]
 [ext_resource type="Script" uid="uid://dqdw2l18ytl8x" path="res://health_indicator.gd" id="18_76vxh"]
-[ext_resource type="PackedScene" uid="uid://dm75h6sa1wvaj" path="res://enemies/grapes.tscn" id="18_yv7ed"]
 [ext_resource type="Script" uid="uid://bssbuwif5umc8" path="res://damage_indicator.gd" id="19_4jyq1"]
 [ext_resource type="Script" uid="uid://ccay4d4u8ljka" path="res://spawner_test.gd" id="19_yv7ed"]
 [ext_resource type="Texture2D" uid="uid://6yqaatssfhve" path="res://CyanGradient.png" id="20_typi0"]
@@ -78,7 +71,7 @@ text = "Chicken Nuggets
 font_size = 127
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_76vxh"]
-size = Vector3(19.47815, 9.332031, 10.668518)
+size = Vector3(49.87741, 9.332031, 27.235733)
 
 [node name="Town2" type="Node3D" unique_id=2006889649]
 script = ExtResource("1_24t42")
@@ -106,23 +99,8 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 4
 transform = Transform3D(-0.9888692, 0.13163356, 0.069356486, 0.14563383, 0.95178294, 0.26999968, -0.030471299, 0.27709505, -0.9603592, -9.348953, 6.225483, -5.783332)
 mesh = SubResource("TextMesh_63qkx")
 
-[node name="SimpleRigidBodyEnemy4" parent="." unique_id=593736368 instance=ExtResource("3_24t42")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.222103, 9.6063, -28.059433)
-
-[node name="FlyingEnemy" parent="." unique_id=1780070971 instance=ExtResource("4_4kemo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7657619, 27.655228, -30.813675)
-
-[node name="strawberry" parent="." unique_id=1355039543 instance=ExtResource("6_4kemo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.801029, 21.312294, -92.58604)
-
 [node name="Map1" parent="." unique_id=1023809160 instance=ExtResource("14_ykxim")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -34.757614, 0)
-
-[node name="starfruit" parent="." unique_id=503213655 instance=ExtResource("13_ykxim")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 18.105068, -40.689026)
-
-[node name="aloevera" parent="." unique_id=222285199 instance=ExtResource("16_tbyl1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.214355, 9.2713585, -114.886375)
 
 [node name="HealthIndicator" type="Sprite2D" parent="." unique_id=1460165704]
 z_index = -1
@@ -145,12 +123,6 @@ scale = Vector2(2, 2.056)
 texture = ExtResource("20_typi0")
 script = ExtResource("21_6xtxr")
 
-[node name="Durian" parent="." unique_id=751157666 instance=ExtResource("18_4jyq1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.702711, 9.6063, -86.16556)
-
-[node name="grapes" parent="." unique_id=1874956871 instance=ExtResource("18_yv7ed")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -25, -125)
-
 [node name="Spawner" type="Node3D" parent="." unique_id=1833533121]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.613808, -81.26091)
 script = ExtResource("19_yv7ed")
@@ -158,5 +130,5 @@ script = ExtResource("19_yv7ed")
 [node name="SpawnArea" type="Area3D" parent="Spawner" unique_id=437096697]
 
 [node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner/SpawnArea" unique_id=792077890]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15496826, -4.1660156, -1.108551)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0915985, -4.1660156, -1.1298447)
 shape = SubResource("BoxShape3D_76vxh")
