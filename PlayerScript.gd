@@ -24,7 +24,7 @@ extends CharacterBody3D
 @export var regen : float = 1.0 #vitamins
 @export var damagemult : float = 1.0 #protien
 @export var basepunchCD : float = 0.2
-
+@export var defensemult : float = 1.0
 
 # Camera/children Variables
 @onready var neck := $Neck
@@ -159,6 +159,7 @@ func _on_hurtbox_body_entered(body: Node3D) -> void:
 		##iframesnode.start()""" 
 	if body.is_in_group("rigidbody") and parrying == false: #elif for stringed out if statement above
 		health -= body.damage / defense
+		#print(defense)
 		$hurtbox/PlayerHurtbox.disabled = true
 		$iframes.start()
 

@@ -12,12 +12,15 @@ func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("eat"):
 		eat()
 func ability():
-	player.basedefense += 1
+	$Timer.stop()
+	player.basedefense *= 2
+	print(player.basedefense)
+	print(player.defense)
 	eventbus.Transistioned.emit(self, "empty")
 	$"..".currentfruit = ""
 	await get_tree().create_timer(6).timeout
-	player.basedefense -= 1
-
+	#$Timer.start()
+	player.basedefense /= 2
 func eat():
 	nutrition.hydration += 30
 	nutrition.protien += 20

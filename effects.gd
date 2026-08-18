@@ -22,6 +22,7 @@ func applyweakness(tier):
 		return
 
 func applyslowness(tier):
+	slowness = tier
 	if tier == 4:
 		player.speedmult = 0.95
 	elif tier == 3:
@@ -35,13 +36,13 @@ func applyslowness(tier):
 
 func applyfragility(tier):
 	if tier == 4:
-		player.defense = 0.95 * player.basedefense
+		player.defensemult = 0.95
 	elif tier == 3:
-		player.defense = 0.85 * player.basedefense
+		player.defensemult = 0.85 
 	elif tier == 2:
-		player.defense = 0.7 * player.basedefense
+		player.defensemult = 0.7
 	elif tier == 1: 
-		player.defense = 0.5 * player.basedefense
+		player.defensemult = 0.5 
 	else:
 		return
 
@@ -56,3 +57,6 @@ func applyfatigue(tier):
 		player.stamina = 0.5
 	else:
 		return
+
+func _process(_delta: float) -> void:
+	player.defense = player.basedefense * player.defensemult

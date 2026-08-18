@@ -86,16 +86,16 @@ unique_name_in_owner = true
 [node name="arm2" parent="Neck" unique_id=207769933 instance=ExtResource("5_2wuci")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.4007164, -0.5511283, 0)
 
-[node name="Cube_002" parent="Neck/arm2/metarig_001/Skeleton3D" parent_id_path=PackedInt32Array(207769933, 545454325) index="0" unique_id=1631849677]
+[node name="Cube_002" parent="Neck/arm2/metarig_001/Skeleton3D" parent_id_path=PackedInt32Array(207769933, 204296824) index="0" unique_id=1717039991]
 gi_mode = 0
 
-[node name="AnimationPlayer" parent="Neck/arm2" index="1" unique_id=1962950394]
+[node name="AnimationPlayer" parent="Neck/arm2" index="1" unique_id=666593611]
 root_node = NodePath("../../arm2")
 
 [node name="arm" parent="Neck" unique_id=1318632943 instance=ExtResource("5_iruf7")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.4007164, -0.5511283, 0)
 
-[node name="Cube_001" parent="Neck/arm/metarig/Skeleton3D" parent_id_path=PackedInt32Array(1318632943, 100309300) index="0" unique_id=947445986]
+[node name="Cube_001" parent="Neck/arm/metarig/Skeleton3D" parent_id_path=PackedInt32Array(1318632943, 326584647) index="0" unique_id=843360915]
 gi_mode = 0
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=636670200]
