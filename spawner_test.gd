@@ -13,7 +13,7 @@ const durian = preload("res://enemies/durian.tscn") # Bugs
 
 func _ready() -> void:
 	await get_tree().create_timer(2.0).timeout
-	spawn_enemy(pearto, 1000, 0.01)
+	spawn_enemy(pearto, 500, 0.01)
 
 func spawn_enemy(enemy_type, enemy_amount, delay) -> void:
 	var spawnshape = $SpawnArea/SpawnAreaShape
