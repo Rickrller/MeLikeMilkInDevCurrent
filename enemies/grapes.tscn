@@ -54,7 +54,6 @@ sightrange = 50.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=715742823]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18224502, -0.31282306, -0.22260243)
 shape = SubResource("SphereShape3D_myx2m")
-disabled = true
 
 [node name="Timer2" type="Timer" parent="." unique_id=836635630]
 wait_time = 0.7

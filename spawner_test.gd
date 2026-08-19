@@ -8,12 +8,13 @@ const starfruit = preload("res://enemies/starfruit.tscn")
 const pearto = preload("res://enemies/pearto.tscn") # Bugs
 const orange = preload("res://enemies/orange.tscn")
 const lemon = preload("res://enemies/lemon.tscn") # Bugs
-const grape = preload("res://enemies/grape.tscn")
+const grapes = preload("res://enemies/grapes.tscn")
 const durian = preload("res://enemies/durian.tscn") # Bugs
 
 func _ready() -> void:
 	await get_tree().create_timer(2.0).timeout
-	spawn_enemy(coconut, 1000, 0)
+	spawn_enemy(starfruit, 1, 0)
+	spawn_enemy(grapes, 1, 0)
 
 func spawn_enemy(enemy_type, enemy_amount, delay) -> void:
 	var spawnshape = $SpawnArea/SpawnAreaShape
