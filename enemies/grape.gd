@@ -30,9 +30,6 @@ func getplayer():
 	#move_and_slide()
 		#pass
 func parried():
-	if not active:
-		parent.die()
-
 		
 	parent.interruption()
 	reset()

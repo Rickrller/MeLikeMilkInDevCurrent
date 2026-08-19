@@ -219,3 +219,13 @@ func _on_parrycooldown_timeout() -> void:
 
 func _on_iframes_timeout() -> void:
 	$hurtbox/PlayerHurtbox.disabled = false
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name != "grab" and anim_name != "crush":
+		leftarm.play("idle")
+
+
+func _on_right_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name != "grab" and anim_name != "crush":
+		rightarm.play("idle")

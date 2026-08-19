@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://r4ify3rkpjl0"]
 
-[ext_resource type="Script" uid="uid://b8wnu5ojcxlkm" path="res://enemymovement.gd" id="1_1rpr7"]
+[ext_resource type="Script" uid="uid://clv6p6inx204q" path="res://enemies/pearto.gd" id="1_oq0iw"]
 [ext_resource type="Texture2D" uid="uid://c1onye8lq1dr6" path="res://models/pearto_Untitled.png" id="2_oq0iw"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oq0iw"]
@@ -44,12 +44,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2auhb")
 
 [node name="pear" type="CharacterBody3D" unique_id=506862887 groups=["enemy"]]
-script = ExtResource("1_1rpr7")
+script = ExtResource("1_oq0iw")
 damage = 1.0
-health = 1.0
+health = 10.0
 speed = 20.0
 givenfruit = "pearto"
 sightrange = 45.0
+attackready = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=652057459]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.07116699, 0)

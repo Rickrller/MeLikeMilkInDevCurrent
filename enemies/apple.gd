@@ -139,7 +139,7 @@ func _on_timer_2_timeout() -> void:
 func _on_windup_timeout() -> void:
 	if distancetoplayer < 7:
 		var instance = punch.instantiate()
-		get_tree().root.add_child(instance)
+		get_tree().current_scene.add_child(instance)
 		attackdir = -global_transform.basis.z.normalized()
 		instance.global_position = global_position
 		instance.global_position += 2 * attackdir

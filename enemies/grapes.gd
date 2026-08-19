@@ -28,7 +28,8 @@ func shoot():
 	attackcooldown.start()
 	
 func parried():
-	
+	eventbus.parrykill.emit()
+	eventbus.grantitem.emit(fruitgiven)
 	die()
 
 func _physics_process(delta: float) -> void:

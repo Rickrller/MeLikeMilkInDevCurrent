@@ -1,16 +1,12 @@
 extends CharacterBody3D
-enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attacking}
+enum enemystate { parrying, everythingelse, blasted, attacking}
 @export var state : enemystate = enemystate.everythingelse
 @export var damage : float
 @export var health : float
 @export var speed : float
 @export var fallspeed = ProjectSettings.get_setting("physics/3d/default_gravity") + 25
-@export var pounce_available = true
-@export var ispouncing : bool = false
 @export var direction : Vector3 
 @onready var player: Node3D = null
-@export var pouncerange : float
-@export var pounceforce : float
 @export var givenfruit : String
 @onready var ParryVFX = load("res://ParryBlueVFX.tscn")
 @export var sightrange : float
@@ -26,6 +22,8 @@ func _ready() -> void:
 	else:
 		push_error("Error locating player")
 	attackcooldown.start()
+	distancetoplayer = global_position.distance_to(player.global_position)
+	diff = global_position - player.global_position
 
 func _physics_process(delta: float) -> void:
 	if state == enemystate.blasted:
@@ -55,8 +53,8 @@ func _physics_process(delta: float) -> void:
 				attackready = false
 				state = enemystate.attacking
 				player.getraped(damage)
-				if name == "pear":
-					eventbus.flashbang.emit()
+				
+				eventbus.flashbang.emit()
 				$Timer2.start()
 			
 			else:
@@ -80,37 +78,14 @@ func _physics_process(delta: float) -> void:
 			velocity.x = lerp(velocity.x, 0.0, 0.1)
 			#if Engine.get_process_frames() % 2 == 0:
 			
-	
-	
-	if distancetoplayer < pouncerange:
-		if get_node_or_null("Timer"):
-			if pounce_available == true and is_on_floor() and state == enemystate.everythingelse and self.global_position.distance_to(player.global_position) < 25:
-				pounce()
-				
-			
 
-	if state == enemystate.pouncing:
-		pouncing()
-	
+
 	move_and_slide()
-	if state == enemystate.pouncing or state == enemystate.blasted:
+	if state == enemystate.blasted:
 		if is_on_floor() or is_on_wall():
 			state = enemystate.everythingelse
 			#print("basicenemystate", state)
-			
-func pounce():
 
-	if state == enemystate.everythingelse:
-		state = enemystate.pouncestart
-	else:
-		return
-	pounce_available = false
-	velocity.y += 15
-	pouncing()
-	$Timer.start()
-	
-	
-	
 func parried():
 	#print("parry initiated")
 	state = enemystate.parrying
@@ -134,15 +109,6 @@ func blasting():
 	velocity.z = direction.z * -50
 	velocity.x = direction.x * -50
 
-func pouncing():
-	state = enemystate.pouncing
-	velocity.z = direction.z * pounceforce
-	velocity.x = direction.x * pounceforce
-	
-
-
-func _on_timer_timeout() -> void:
-	pounce_available = true
 
 func lookatplayer(delta):
 	var target_pos : Vector3 = player.position

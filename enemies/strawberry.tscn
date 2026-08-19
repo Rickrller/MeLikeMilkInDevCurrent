@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bv3ddxucnf4rq"]
 
-[ext_resource type="Script" uid="uid://b8wnu5ojcxlkm" path="res://enemymovement.gd" id="1_e8kwr"]
+[ext_resource type="Script" uid="uid://4xhepwaq86rq" path="res://enemies/strawberry.gd" id="1_7v7hx"]
 [ext_resource type="Texture2D" uid="uid://cpxrbbrb32wn6" path="res://models/strawberry_strawberryv2.png" id="3_xh2pe"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e8kwr"]
@@ -45,13 +45,12 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wt7gs")
 
 [node name="strawberry" type="CharacterBody3D" unique_id=1355039543 groups=["enemy"]]
-script = ExtResource("1_e8kwr")
+script = ExtResource("1_7v7hx")
 damage = 4.0
 health = 25.0
 speed = 17.0
 pouncerange = 20.0
-givenfruit = "strawberry"
-sightrange = 25.0
+pounceforce = 18.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=345421478]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7662829, 0)

@@ -1,20 +1,20 @@
 extends Node3D
 
 const apple = preload("res://enemies/apple.tscn")
-const aloe = preload("res://enemies/aloevera.tscn") # Bugs
+const aloe = preload("res://enemies/aloevera.tscn") 
 const coconut = preload("res://enemies/coconut.tscn")
-const strawberry = preload("res://enemies/strawberry.tscn") #Bugs
+const strawberry = preload("res://enemies/strawberry.tscn")
 const starfruit = preload("res://enemies/starfruit.tscn")
-const pearto = preload("res://enemies/pearto.tscn") # Bugs
+const pearto = preload("res://enemies/pearto.tscn") 
 const orange = preload("res://enemies/orange.tscn")
-const lemon = preload("res://enemies/lemon.tscn") # Bugs
+const lemon = preload("res://enemies/lemon.tscn") 
 const grapes = preload("res://enemies/grapes.tscn")
-const durian = preload("res://enemies/durian.tscn") # Bugs
+const durian = preload("res://enemies/durian.tscn") 
 
 func _ready() -> void:
 	await get_tree().create_timer(2.0).timeout
-	spawn_enemy(starfruit, 1, 0)
-	spawn_enemy(grapes, 1, 0)
+	spawn_enemy(lemon, 1, 0)
+	spawn_enemy(pearto, 10, 0)
 
 func spawn_enemy(enemy_type, enemy_amount, delay) -> void:
 	var spawnshape = $SpawnArea/SpawnAreaShape

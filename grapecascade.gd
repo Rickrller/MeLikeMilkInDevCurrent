@@ -19,4 +19,5 @@ func eat():
 	$"../..".health += 5
 	
 func ability():
-	pass
+	eventbus.Transistioned.emit(self, "empty")
+	$"..".currentfruit = ""
