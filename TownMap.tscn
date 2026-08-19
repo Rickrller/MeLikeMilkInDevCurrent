@@ -16,9 +16,10 @@
 [ext_resource type="Material" uid="uid://ca7m8147ic7m1" path="res://BlueGlass.tres" id="5_tl5al"]
 [ext_resource type="Material" uid="uid://dmxf544pr77t" path="res://Yellow.tres" id="6_33o58"]
 [ext_resource type="Material" uid="uid://br66824ryfl2b" path="res://Bricks.tres" id="7_rkaee"]
+[ext_resource type="Material" uid="uid://dobuut67cedeq" path="res://GreenBricks.tres" id="9_0h8vs"]
 [ext_resource type="PackedScene" uid="uid://cxkemj5q5ftp1" path="res://player.tscn" id="9_fenau"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_8bkl3"]
+[sub_resource type="BoxMesh" id="BoxMesh_15c7m"]
 material = ExtResource("1_5t3b5")
 size = Vector3(12, 0.4, 12)
 
@@ -101,6 +102,14 @@ size = Vector3(0.1, 1.3, 1)
 material = ExtResource("5_tl5al")
 top_radius = 0.8
 bottom_radius = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_8bkl3"]
+material = ExtResource("9_0h8vs")
+size = Vector3(12, 0.4, 12)
+
+[sub_resource type="PrismMesh" id="PrismMesh_tl5al"]
+material = ExtResource("9_0h8vs")
+size = Vector3(13, 3, 12)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gafoj"]
 shader = ExtResource("1_jey10")
@@ -300,6 +309,36 @@ top_radius = 30.0
 bottom_radius = 30.0
 height = 4.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_33o58"]
+load_path = "res://.godot/imported/WHITEwall.png-cbf20d4971aea98df27304b1ccc244dd.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkaee"]
+albedo_color = Color(0.3854925, 0.38549247, 0.38549247, 1)
+albedo_texture = SubResource("CompressedTexture2D_33o58")
+metallic_specular = 0.42
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+uv1_scale = Vector3(1, 0.1, 1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+shadow_to_opacity = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kow3v"]
+material = SubResource("StandardMaterial3D_rkaee")
+top_radius = 45.0
+bottom_radius = 45.0
+height = 100.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toa7y"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rs0yp"]
+material = SubResource("StandardMaterial3D_toa7y")
+top_radius = 44.0
+bottom_radius = 44.0
+height = 120.0
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5t3b5"]
 load_path = "res://.godot/imported/WHITEwall.png-cbf20d4971aea98df27304b1ccc244dd.s3tc.ctex"
 
@@ -394,6 +433,9 @@ points = PackedVector3Array(253.96825, 3.9682539, 253.96825, -253.96825, -3.9682
 
 [node name="Town" type="Node3D" unique_id=495490743]
 
+[node name="Player" parent="." unique_id=2021393363 instance=ExtResource("9_fenau")]
+transform = Transform3D(-5.2453665e-08, 0, -1.1999999, 0, 1.1999999, 0, 1.1999999, 0, -5.2453665e-08, -0.020466805, 2.8765593, -0.016745448)
+
 [node name="Buildings" type="Node3D" parent="." unique_id=997222845]
 
 [node name="BigHouseType1" type="Node3D" parent="Buildings" unique_id=1588564919]
@@ -401,7 +443,7 @@ transform = Transform3D(0.01941466, 0, 1.1059356, 0, 1.683, 0, -1.7998953, 0, 0.
 
 [node name="Base" type="MeshInstance3D" parent="Buildings/BigHouseType1" unique_id=1477741354]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-mesh = SubResource("BoxMesh_8bkl3")
+mesh = SubResource("BoxMesh_15c7m")
 
 [node name="Walls" type="MeshInstance3D" parent="Buildings/BigHouseType1" unique_id=375121150]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125158, 0)
@@ -525,6 +567,270 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1
 mesh = SubResource("BoxMesh_rf200")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Buildings/BigHouseType1/CircleWindow" unique_id=1867156561]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, 1.4017477, -4.757486)
+mesh = SubResource("CylinderMesh_c5m7e")
+
+[node name="BigHouseType2" type="Node3D" parent="Buildings" unique_id=534587221]
+transform = Transform3D(-1.4996407, 0, 0.020199627, 0, 1.403, 0, -0.032827128, 0, -0.9227789, 35.857853, 0, -37.85273)
+
+[node name="Base" type="MeshInstance3D" parent="Buildings/BigHouseType2" unique_id=1511336437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_8bkl3")
+
+[node name="Walls" type="MeshInstance3D" parent="Buildings/BigHouseType2" unique_id=1298643508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125158, 0)
+mesh = SubResource("BoxMesh_1p161")
+
+[node name="Roof" type="CSGCombiner3D" parent="Buildings/BigHouseType2" unique_id=1663639067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="Buildings/BigHouseType2/Roof" unique_id=1576063345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_tl5al")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="Buildings/BigHouseType2/Roof" unique_id=992638185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("BoxMesh_toa7y")
+material = ExtResource("9_0h8vs")
+
+[node name="RoofCut" type="CSGMesh3D" parent="Buildings/BigHouseType2/Roof" unique_id=1153911038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_rs0yp")
+
+[node name="RoofInside" type="MeshInstance3D" parent="Buildings/BigHouseType2" unique_id=1100671475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2963176, 0)
+mesh = SubResource("PrismMesh_xgnmy")
+
+[node name="Doorframe" type="CSGCombiner3D" parent="Buildings/BigHouseType2" unique_id=835556863]
+use_collision = true
+
+[node name="Doorframe" type="CSGMesh3D" parent="Buildings/BigHouseType2/Doorframe" unique_id=1784657773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_tbtnm")
+
+[node name="DoorframeCutout" type="CSGMesh3D" parent="Buildings/BigHouseType2/Doorframe" unique_id=303582810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3208761, -5.4093323)
+operation = 2
+mesh = SubResource("BoxMesh_iw6o8")
+
+[node name="Window" type="CSGCombiner3D" parent="Buildings/BigHouseType2" unique_id=994227682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="Buildings/BigHouseType2/Window" unique_id=2105181790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_rt80h")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="Buildings/BigHouseType2/Window" unique_id=1772995674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_p1isk")
+
+[node name="Window2" type="CSGCombiner3D" parent="Buildings/BigHouseType2" unique_id=28018133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="Buildings/BigHouseType2/Window2" unique_id=671889112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_rt80h")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="Buildings/BigHouseType2/Window2" unique_id=1059058894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_p1isk")
+
+[node name="Door" type="MeshInstance3D" parent="Buildings/BigHouseType2" unique_id=179005922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.346551)
+mesh = SubResource("BoxMesh_kovb7")
+
+[node name="SecondFloor2" type="Node3D" parent="Buildings/BigHouseType2" unique_id=1145663661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -0.371)
+
+[node name="Walls" type="MeshInstance3D" parent="Buildings/BigHouseType2/SecondFloor2" unique_id=1486915095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6275067, 0)
+mesh = SubResource("BoxMesh_fa76n")
+
+[node name="Roof" type="CSGCombiner3D" parent="Buildings/BigHouseType2/SecondFloor2" unique_id=161150134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="Buildings/BigHouseType2/SecondFloor2/Roof" unique_id=1920936802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_x4x62")
+material = ExtResource("9_0h8vs")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="Buildings/BigHouseType2/SecondFloor2/Roof" unique_id=1736105827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4292421, 0)
+mesh = SubResource("BoxMesh_3lmmn")
+material = ExtResource("9_0h8vs")
+
+[node name="RoofCut" type="CSGMesh3D" parent="Buildings/BigHouseType2/SecondFloor2/Roof" unique_id=643266782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_l6pg1")
+
+[node name="RoofInside" type="MeshInstance3D" parent="Buildings/BigHouseType2/SecondFloor2" unique_id=1410989696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.3593674, 0)
+mesh = SubResource("PrismMesh_dgn22")
+
+[node name="CircleWindow" type="CSGCombiner3D" parent="Buildings/BigHouseType2" unique_id=1066105513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5020514, 0.6115489)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="Buildings/BigHouseType2/CircleWindow" unique_id=744293696]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3904247, -4.8226953)
+mesh = SubResource("CylinderMesh_3dv0u")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="Buildings/BigHouseType2/CircleWindow" unique_id=1568372441]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3999996, -5.343495)
+operation = 2
+mesh = SubResource("CylinderMesh_himqq")
+
+[node name="WindowFrame" type="MeshInstance3D" parent="Buildings/BigHouseType2/CircleWindow" unique_id=1105564299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_rf200")
+
+[node name="WindowFrame2" type="MeshInstance3D" parent="Buildings/BigHouseType2/CircleWindow" unique_id=820499154]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_rf200")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buildings/BigHouseType2/CircleWindow" unique_id=1277262889]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, 1.4017477, -4.757486)
+mesh = SubResource("CylinderMesh_c5m7e")
+
+[node name="BigHouseType3" type="Node3D" parent="Buildings" unique_id=91308756]
+transform = Transform3D(1.4998207, 0, -0.0142562855, 0, 1.403, 0, 0.023168398, 0, 0.92288965, 35.857853, 0, 39.783325)
+
+[node name="Base" type="MeshInstance3D" parent="Buildings/BigHouseType3" unique_id=981347998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_8bkl3")
+
+[node name="Walls" type="MeshInstance3D" parent="Buildings/BigHouseType3" unique_id=720777736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125158, 0)
+mesh = SubResource("BoxMesh_1p161")
+
+[node name="Roof" type="CSGCombiner3D" parent="Buildings/BigHouseType3" unique_id=330405088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="Buildings/BigHouseType3/Roof" unique_id=353191151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_tl5al")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="Buildings/BigHouseType3/Roof" unique_id=932990755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("BoxMesh_toa7y")
+material = ExtResource("9_0h8vs")
+
+[node name="RoofCut" type="CSGMesh3D" parent="Buildings/BigHouseType3/Roof" unique_id=1450214563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_rs0yp")
+
+[node name="RoofInside" type="MeshInstance3D" parent="Buildings/BigHouseType3" unique_id=1739052720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2963176, 0)
+mesh = SubResource("PrismMesh_xgnmy")
+
+[node name="Doorframe" type="CSGCombiner3D" parent="Buildings/BigHouseType3" unique_id=835145479]
+use_collision = true
+
+[node name="Doorframe" type="CSGMesh3D" parent="Buildings/BigHouseType3/Doorframe" unique_id=1485993281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_tbtnm")
+
+[node name="DoorframeCutout" type="CSGMesh3D" parent="Buildings/BigHouseType3/Doorframe" unique_id=834228501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3208761, -5.4093323)
+operation = 2
+mesh = SubResource("BoxMesh_iw6o8")
+
+[node name="Window" type="CSGCombiner3D" parent="Buildings/BigHouseType3" unique_id=141193463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="Buildings/BigHouseType3/Window" unique_id=380706928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_rt80h")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="Buildings/BigHouseType3/Window" unique_id=1565260203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_p1isk")
+
+[node name="Window2" type="CSGCombiner3D" parent="Buildings/BigHouseType3" unique_id=102132557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="Buildings/BigHouseType3/Window2" unique_id=1783459848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_rt80h")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="Buildings/BigHouseType3/Window2" unique_id=1017161982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_p1isk")
+
+[node name="Door" type="MeshInstance3D" parent="Buildings/BigHouseType3" unique_id=614588454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.346551)
+mesh = SubResource("BoxMesh_kovb7")
+
+[node name="SecondFloor2" type="Node3D" parent="Buildings/BigHouseType3" unique_id=759551238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -0.371)
+
+[node name="Walls" type="MeshInstance3D" parent="Buildings/BigHouseType3/SecondFloor2" unique_id=1599134680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6275067, 0)
+mesh = SubResource("BoxMesh_fa76n")
+
+[node name="Roof" type="CSGCombiner3D" parent="Buildings/BigHouseType3/SecondFloor2" unique_id=1185262883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="Buildings/BigHouseType3/SecondFloor2/Roof" unique_id=2096621442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_x4x62")
+material = ExtResource("9_0h8vs")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="Buildings/BigHouseType3/SecondFloor2/Roof" unique_id=2115668813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4292421, 0)
+mesh = SubResource("BoxMesh_3lmmn")
+material = ExtResource("9_0h8vs")
+
+[node name="RoofCut" type="CSGMesh3D" parent="Buildings/BigHouseType3/SecondFloor2/Roof" unique_id=2021163711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_l6pg1")
+
+[node name="RoofInside" type="MeshInstance3D" parent="Buildings/BigHouseType3/SecondFloor2" unique_id=2028006785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.3593674, 0)
+mesh = SubResource("PrismMesh_dgn22")
+
+[node name="CircleWindow" type="CSGCombiner3D" parent="Buildings/BigHouseType3" unique_id=1938328113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5020514, 0.6115489)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="Buildings/BigHouseType3/CircleWindow" unique_id=2139484828]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3904247, -4.8226953)
+mesh = SubResource("CylinderMesh_3dv0u")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="Buildings/BigHouseType3/CircleWindow" unique_id=1084541243]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3999996, -5.343495)
+operation = 2
+mesh = SubResource("CylinderMesh_himqq")
+
+[node name="WindowFrame" type="MeshInstance3D" parent="Buildings/BigHouseType3/CircleWindow" unique_id=249193538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_rf200")
+
+[node name="WindowFrame2" type="MeshInstance3D" parent="Buildings/BigHouseType3/CircleWindow" unique_id=1886268439]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_rf200")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buildings/BigHouseType3/CircleWindow" unique_id=553330737]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, 1.4017477, -4.757486)
 mesh = SubResource("CylinderMesh_c5m7e")
 
@@ -1728,10 +2034,25 @@ operation = 2
 mesh = SubResource("CylinderMesh_38sg7")
 
 [node name="Cutout2" type="CSGBox3D" parent="Road/CircularRoadCurb" unique_id=1243512115]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6148934, 0.566, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4008527, 0.566, 0)
 operation = 2
 size = Vector3(7.859, 2.133, 11.546)
 material = ExtResource("2_ylbrk")
+
+[node name="Barrier" type="CSGCombiner3D" parent="Road" unique_id=320129122]
+transform = Transform3D(0.3984462, 0, 0, 0, 0.8341843, 0, 0, 0, 0.8341841, 44.987156, -0.72907704, 0)
+use_collision = true
+
+[node name="RoadOutside" type="CSGMesh3D" parent="Road/Barrier" unique_id=1297773483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_kow3v")
+
+[node name="RoadCutout" type="CSGMesh3D" parent="Road/Barrier" unique_id=1707676219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+cast_shadow = 0
+operation = 2
+mesh = SubResource("CylinderMesh_rs0yp")
 
 [node name="CircularRoadCurbInside" type="CSGCombiner3D" parent="Road" unique_id=357917756]
 transform = Transform3D(0.3984462, 0, 0, 0, 0.8341843, 0, 0, 0, 0.8341841, 44.987156, -0.72907704, 0)
@@ -1848,6 +2169,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.8921907, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1099041480]
 shape = SubResource("ConvexPolygonShape3D_rt80h")
-
-[node name="Player" parent="Floor" unique_id=2021393363 instance=ExtResource("9_fenau")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4269645, 0)
