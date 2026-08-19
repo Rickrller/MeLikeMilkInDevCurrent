@@ -1,5 +1,5 @@
 extends Sprite2D
-@onready var player = %Player
+@onready var player = get_parent()
 var last_health: float
 var damage_tween: Tween
 

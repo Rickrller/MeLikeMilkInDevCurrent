@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://dmdy4maulc353"]
+
+[ext_resource type="FontFile" uid="uid://d20rfwk5g6tyt" path="res://Freedom-10eM.ttf" id="1_0rqvh"]
+[ext_resource type="Script" uid="uid://gmv4tdts8dbi" path="res://levels/LevelSpinny.gd" id="1_o86p3"]
+[ext_resource type="Script" uid="uid://x3j10428w6tw" path="res://LevelData.gd" id="2_xx8bb"]
+[ext_resource type="Resource" uid="uid://crsq2oljmkwk7" path="res://levels/Level1.tres" id="3_lugvg"]
+[ext_resource type="Resource" uid="uid://cugl6nxdh3eke" path="res://levels/Level2.tres" id="4_ohj36"]
+[ext_resource type="Resource" uid="uid://bvutjsofo2all" path="res://levels/Level3.tres" id="5_gnc5d"]
+[ext_resource type="Resource" uid="uid://bqh0av67p3mqw" path="res://levels/Level4.tres" id="6_ohj36"]
+[ext_resource type="Resource" uid="uid://l2f7pkuow5f4" path="res://levels/Level5.tres" id="7_gnc5d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khnqj"]
+bg_color = Color(0.17283267, 0.17283267, 0.17283261, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.61339027, 0.61339027, 0.61339027, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_5csg4"]
+font = ExtResource("1_0rqvh")
+font_size = 70
+font_color = Color(0, 0, 0, 1)
+outline_size = 15
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1901266073]
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1569234743]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelSpinny" type="Control" parent="CenterContainer" unique_id=743221857]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("1_o86p3")
+levels = Array[ExtResource("2_xx8bb")]([ExtResource("3_lugvg"), ExtResource("4_ohj36"), ExtResource("5_gnc5d"), ExtResource("6_ohj36"), ExtResource("7_gnc5d")])
+
+[node name="Levels" type="Control" parent="CenterContainer/LevelSpinny" unique_id=1281063320]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Left" type="Button" parent="CenterContainer/LevelSpinny" unique_id=235672631]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = -390.0
+offset_top = -120.0
+offset_right = 1910.0
+offset_bottom = 3974.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.19076204, 0.19076237, 0.19076279, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 200
+theme_override_font_sizes/font_size = 3000
+text = "<"
+
+[node name="Right" type="Button" parent="CenterContainer/LevelSpinny" unique_id=926081556]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = 280.0
+offset_top = -120.0
+offset_right = 2580.0
+offset_bottom = 3974.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 200
+theme_override_font_sizes/font_size = 3000
+text = ">"
+
+[node name="Play" type="Button" parent="CenterContainer/LevelSpinny" unique_id=689910457]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = -126.000015
+offset_top = 179.99998
+offset_right = 4854.0
+offset_bottom = 2040.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.16470589, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 200
+theme_override_fonts/font = ExtResource("1_0rqvh")
+theme_override_font_sizes/font_size = 1500
+text = "Play"
+
+[node name="Control" type="Control" parent="CenterContainer" unique_id=1591009524]
+z_index = -1
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer/Control" unique_id=1431184260]
+z_index = -1
+custom_minimum_size = Vector2(900, 600)
+layout_mode = 0
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_khnqj")
+
+[node name="Label" type="Label" parent="CenterContainer/Control" unique_id=1543498820]
+layout_mode = 0
+offset_left = -331.0
+offset_top = -286.0
+offset_right = 331.0
+offset_bottom = -194.0
+text = "Level Selection"
+label_settings = SubResource("LabelSettings_5csg4")
+horizontal_alignment = 1
+vertical_alignment = 1

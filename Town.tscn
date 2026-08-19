@@ -5,12 +5,7 @@
 [ext_resource type="Shader" uid="uid://vcnano0bkesh" path="res://Sky.gdshader" id="2_ios02"]
 [ext_resource type="Texture2D" uid="uid://blwx5y33w6d0l" path="res://Clouds.png" id="3_n4wug"]
 [ext_resource type="PackedScene" uid="uid://xlkowwqt7421" path="res://HouseModels.tscn" id="14_ykxim"]
-[ext_resource type="Texture2D" uid="uid://cno613y7cf45x" path="res://RedGradient.png" id="17_fllgw"]
-[ext_resource type="Script" uid="uid://dqdw2l18ytl8x" path="res://health_indicator.gd" id="18_76vxh"]
-[ext_resource type="Script" uid="uid://bssbuwif5umc8" path="res://damage_indicator.gd" id="19_4jyq1"]
 [ext_resource type="Script" uid="uid://ccay4d4u8ljka" path="res://spawner_test.gd" id="19_yv7ed"]
-[ext_resource type="Texture2D" uid="uid://6yqaatssfhve" path="res://CyanGradient.png" id="20_typi0"]
-[ext_resource type="Script" uid="uid://cfupu75s0dq80" path="res://parry_recovery.gd" id="21_6xtxr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2hxns"]
 shader = ExtResource("2_ios02")
@@ -93,7 +88,7 @@ shadow_normal_bias = 0.0
 
 [node name="Player" parent="." unique_id=2021393363 instance=ExtResource("1_crgjs")]
 unique_name_in_owner = true
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 4.829541, -133.94028)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 210.5371, -31.607983, -20.742405)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2090040327]
 transform = Transform3D(-0.9888692, 0.13163356, 0.069356486, 0.14563383, 0.95178294, 0.26999968, -0.030471299, 0.27709505, -0.9603592, -9.348953, 6.225483, -5.783332)
@@ -101,27 +96,6 @@ mesh = SubResource("TextMesh_63qkx")
 
 [node name="Map1" parent="." unique_id=1023809160 instance=ExtResource("14_ykxim")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -34.757614, 0)
-
-[node name="HealthIndicator" type="Sprite2D" parent="." unique_id=1460165704]
-z_index = -1
-position = Vector2(570, 333)
-scale = Vector2(2, 2.056)
-texture = ExtResource("17_fllgw")
-script = ExtResource("18_76vxh")
-
-[node name="DamageIndicator" type="Sprite2D" parent="." unique_id=67414782]
-z_index = -1
-position = Vector2(570, 333)
-scale = Vector2(2, 2.056)
-texture = ExtResource("17_fllgw")
-script = ExtResource("19_4jyq1")
-
-[node name="ParryRecovery" type="Sprite2D" parent="." unique_id=1821662688]
-z_index = -1
-position = Vector2(570, 333)
-scale = Vector2(2, 2.056)
-texture = ExtResource("20_typi0")
-script = ExtResource("21_6xtxr")
 
 [node name="Spawner" type="Node3D" parent="." unique_id=1833533121]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.613808, -81.26091)

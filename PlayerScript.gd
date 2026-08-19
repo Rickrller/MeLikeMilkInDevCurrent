@@ -46,6 +46,7 @@ var health = 100
 var maxhealth = 100
 
 signal parry_ready
+signal parry_cast
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -133,6 +134,7 @@ func _physics_process(delta):
 		parrying = true
 		parrycooldown = true
 		parrycooldownnode.start()
+		parry_cast.emit()
 		$iframes.stop()
 		$iframes.timeout.emit()
 		eventbus.Transistioned.emit(handstate.current_state, "parry")

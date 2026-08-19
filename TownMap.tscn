@@ -18,6 +18,7 @@
 [ext_resource type="Material" uid="uid://br66824ryfl2b" path="res://Bricks.tres" id="7_rkaee"]
 [ext_resource type="Material" uid="uid://dobuut67cedeq" path="res://GreenBricks.tres" id="9_0h8vs"]
 [ext_resource type="PackedScene" uid="uid://cxkemj5q5ftp1" path="res://player.tscn" id="9_fenau"]
+[ext_resource type="Script" uid="uid://lqd5chgc14ux" path="res://StageSelectEntry.gd" id="19_15c7m"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_15c7m"]
 material = ExtResource("1_5t3b5")
@@ -430,6 +431,16 @@ colors = PackedColorArray(1, 1, 1, 1, 0.8625222, 0.8625217, 0.8625216, 1, 1, 1, 
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rt80h"]
 points = PackedVector3Array(253.96825, 3.9682539, 253.96825, -253.96825, -3.9682539, -253.96825, -253.96825, 3.9682539, -253.96825, 253.96825, -3.9682539, -253.96825, -253.96825, -3.9682539, 253.96825, -253.96825, 3.9682539, 253.96825, 253.96825, 3.9682539, -253.96825, 253.96825, -3.9682539, 253.96825)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tl5al"]
+points = PackedVector3Array(-1.5790545, -0.57936513, -5.077377, 1.5, 0.49851492, 4.773669, 1.5949274, -0.57936513, 5.077377, -1.5790545, -0.57936513, 5.077377, 1.5949274, -0.57936513, -5.077377, -1.4883693, 0.5, -4.787241, -1.4883693, 0.5, 4.787241, 1.5, 0.49851492, -4.773669)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15c7m"]
+shading_mode = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_tl5al"]
+material = SubResource("StandardMaterial3D_15c7m")
+size = Vector3(3, 1, 10)
 
 [node name="Town" type="Node3D" unique_id=495490743]
 
@@ -2169,3 +2180,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.8921907, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1099041480]
 shape = SubResource("ConvexPolygonShape3D_rt80h")
+
+[node name="LevelSelect" type="Node3D" parent="." unique_id=564276454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9233694, 0, 0)
+
+[node name="EntryPrompt" type="Area3D" parent="LevelSelect" unique_id=542123464]
+script = ExtResource("19_15c7m")
+
+[node name="EntryPromptShape" type="CollisionShape3D" parent="LevelSelect/EntryPrompt" unique_id=1164936552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2233112, 0)
+shape = SubResource("ConvexPolygonShape3D_tl5al")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelSelect" unique_id=183205529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33538556, 0)
+mesh = SubResource("BoxMesh_tl5al")
