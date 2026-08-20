@@ -28,7 +28,9 @@ func _ready() -> void:
 		push_error("Error locating player")
 	attackcooldown.start()
 
+
 func _physics_process(delta: float) -> void:
+	
 	if state == enemystate.blasted:
 		blasting()
 	if Engine.get_frames_drawn() % 5 == 0: #optimization shii
@@ -46,11 +48,11 @@ func _physics_process(delta: float) -> void:
 		#if sqrt(((global_position.x - player.global_position.x) **2)+(global_position.z - player.global_position.z) ** 2) < 5:
 		if (diff.x * diff.x + diff.z * diff.z) < 16:
 			if state != enemystate.pouncing and state != enemystate.blasted:
-				state = enemystate.attackready
+				#state = enemystate.attackready
 			#print("closetoplayer")
 			#direction.y = 0.0
-			velocity.z = lerp(velocity.z, 0.0, 0.1)
-			velocity.x = lerp(velocity.x, 0.0, 0.1)
+				velocity.z = lerp(velocity.z, 0.0, 0.1)
+				velocity.x = lerp(velocity.x, 0.0, 0.1)
 			
 			
 			if attackready == true and state == enemystate.everythingelse and distancetoplayer < 7:
@@ -60,9 +62,9 @@ func _physics_process(delta: float) -> void:
 				if name == "pear":
 					eventbus.flashbang.emit()
 				$Timer2.start()
-				state = enemystate.attackready
+				#state = enemystate.attackready
 			else:
-				if state == enemystate.attackready:
+				if state == enemystate.attacking:
 					state = enemystate.everythingelse
 			move_and_slide()
 			return
@@ -101,10 +103,13 @@ func _physics_process(delta: float) -> void:
 			#print("basicenemystate", state)
 	if state == enemystate.pouncing:
 		if is_on_floor():
+			
 			state = enemystate.everythingelse
 			area.monitoring = true
+			$Area3D/CollisionShape3D.set_deferred("disabled", false)
 			area.global_position = global_position
 			deactivatearea()
+			
 func pounce():
 
 	if state == enemystate.everythingelse:
@@ -112,11 +117,11 @@ func pounce():
 	else:
 		return
 	pounce_available = false
-	velocity.y += 25
+	velocity.y += 30
 	pouncing()
 	$Timer.start()
 	await get_tree().create_timer(1).timeout
-	velocity.y -= 50
+	velocity.y -= 80
 	
 	
 func parried():
@@ -172,7 +177,9 @@ func _on_timer_2_timeout() -> void:
 
 func deactivatearea():
 	await get_tree().create_timer(0.1).timeout
+
 	area.monitoring = false
+	$Area3D/CollisionShape3D.set_deferred("disabled", true)
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:

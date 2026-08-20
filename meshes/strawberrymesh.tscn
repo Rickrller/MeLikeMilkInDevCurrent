@@ -1,15 +1,11 @@
-[gd_scene format=4 uid="uid://bv3ddxucnf4rq"]
+[gd_scene format=4 uid="uid://djc2ebs61jgf6"]
 
-[ext_resource type="Script" uid="uid://4xhepwaq86rq" path="res://enemies/strawberry.gd" id="1_7v7hx"]
-[ext_resource type="Texture2D" uid="uid://cpxrbbrb32wn6" path="res://models/strawberry_strawberryv2.png" id="3_xh2pe"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_e8kwr"]
-radius = 0.8843032
+[ext_resource type="Texture2D" uid="uid://cpxrbbrb32wn6" path="res://models/strawberry_strawberryv2.png" id="1_exfdi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvm1h"]
 resource_name = "Material.001"
 cull_mode = 2
-albedo_texture = ExtResource("3_xh2pe")
+albedo_texture = ExtResource("1_exfdi")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wt7gs"]
@@ -44,41 +40,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wt7gs")
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_7v7hx"]
-radius = 10.770508
-
-[node name="strawberry" type="CharacterBody3D" unique_id=1355039543 groups=["enemy"]]
-script = ExtResource("1_7v7hx")
-damage = 4.0
-health = 25.0
-speed = 12.0
-pouncerange = 10.0
-pounceforce = 3.0
-sightrange = 20.0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=345421478]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7662829, 0)
-shape = SubResource("SphereShape3D_e8kwr")
-
-[node name="Timer" type="Timer" parent="." unique_id=1793278917]
-wait_time = 4.0
-one_shot = true
-
-[node name="Timer2" type="Timer" parent="." unique_id=1178555579]
-one_shot = true
-
-[node name="model" type="MeshInstance3D" parent="." unique_id=2105464025]
+[node name="strawberrymesh" type="MeshInstance3D" unique_id=611398285]
 transform = Transform3D(4.371139e-08, -6.600236e-15, 1, -1.509958e-07, -1, 0, 1, -1.509958e-07, -4.371139e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_fn2d2")
-
-[node name="Area3D" type="Area3D" parent="." unique_id=821949648]
-top_level = true
-monitoring = false
-monitorable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1373316002]
-shape = SubResource("CylinderShape3D_7v7hx")
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

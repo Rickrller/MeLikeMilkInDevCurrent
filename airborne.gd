@@ -20,10 +20,10 @@ func Enable():
 	if dashing.isactive:
 		
 		dashing.frames += 10
-		diminishingfactor = 1.5
+		diminishingfactor = 2
 		if player.dashcharges >= 1:
 			wasdashingonfloor = true
-			player.dashcharges -= 1
+		#	player.dashcharges -= 1
 		t = 0.0
 
 	
@@ -36,10 +36,10 @@ func Physics_Update(delta: float):
 	if player.is_on_floor():
 		eventbus.switch_activity.emit(self, "disable")
 	if wasdashingonfloor == true:
-		player.velocity.z = dashing.dash * diminishingfactor * longjumpdirection.z 
-		player.velocity.x = dashing.dash * diminishingfactor * longjumpdirection.x
+		player.velocity.z = 18 * diminishingfactor * longjumpdirection.z 
+		player.velocity.x = 18 * diminishingfactor * longjumpdirection.x
 		t = min(t + delta * duration, 1.0)
-		diminishingfactor = lerp(1.4, 1.1, t)
+		diminishingfactor = lerp(1.8, 1.25, t)
 		
 		
 	elif wasdashingonfloor != true and dashing.isactive:

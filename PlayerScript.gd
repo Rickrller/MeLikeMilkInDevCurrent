@@ -2,7 +2,7 @@ extends CharacterBody3D
 @export_group("Settings")
 
 # Movement Variables
-@export var speed = 13.5
+@export var speed = 13.0
 @export var acceleration = 6.0
 @export var friction = 5.0
 @export var mouse_sensitivity = 0.004
@@ -39,7 +39,7 @@ extends CharacterBody3D
 
 # Jump Variables
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") + 25
-var jump_velocity = 12
+var jump_velocity = 10
 @export var max_jumps = 1
 var jump_count = 0
 var health = 100
@@ -72,7 +72,7 @@ func _physics_process(delta):
 		velocity.y = jump_velocity
 		jump_count += 1
 	elif jump_count < max_jumps and Input.is_action_just_pressed("ui_accept"):
-		velocity.y = jump_velocity + 10
+		velocity.y = jump_velocity + 8
 		jump_count += 1
 	if not is_on_floor():
 		velocity.y -= gravity * delta

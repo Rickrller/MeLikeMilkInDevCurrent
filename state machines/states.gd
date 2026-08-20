@@ -1,5 +1,8 @@
 extends Node
 class_name State
+
+@onready var fruitmesh = %fruitmodel
+
 func Enter():
 	pass
 	

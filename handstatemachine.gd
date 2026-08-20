@@ -2,6 +2,21 @@ extends Node
 
 @export var initial_state : State
 @export var current_state : State
+
+@onready var fruitmesh = $"../Neck/arm"
+var currentfruitmesh : ArrayMesh
+
+const aloemesh = preload("res://meshes/aloemesh.tscn")
+const carrotmesh = preload("res://meshes/carrotmesh.tscn")
+const coconutmesh = preload("res://meshes/coconutmesh.tscn")
+const grapemesh = preload("res://meshes/grapemesh.tscn")
+const lemonmesh = preload("res://meshes/lemonmesh.tscn")
+const orangemesh = preload("res://meshes/orangemesh.tscn")
+const peartomesh = preload("res://meshes/peartomesh.tscn")
+const starfruitmesh = preload("res://meshes/starfruitmesh.tscn")
+const strawberrymesh = preload("res://meshes/strawberrymesh.tscn")
+
+
 var states : Dictionary = {}
 var currentfruit = ""
 func _ready():
@@ -13,6 +28,8 @@ func _ready():
 	if initial_state:
 		initial_state.Enter()
 		current_state = initial_state
+
+	
 func _process(delta):
 	if current_state:
 		current_state.Update(delta)

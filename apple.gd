@@ -5,9 +5,14 @@ extends State
 @onready var rootnodeofscene = get_tree().current_scene
 @onready var neck = $"../../Neck"
 @onready var nutrition = $"../../nutrition"
+const applemesh = preload("res://meshes/applemesh.tscn")
 func Enter():
 	#print('apple entered')
-	pass
+	var inst = applemesh.instantiate()
+	fruitmesh.mesh = inst.mesh
+	print(fruitmesh)
+	
+	
 func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("ability"):
 		ability()

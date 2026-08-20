@@ -13,8 +13,8 @@ const durian = preload("res://enemies/durian.tscn")
 
 func _ready() -> void:
 	await get_tree().create_timer(2.0).timeout
-	spawn_enemy(strawberry, 1, 0)
-#	spawn_enemy(aloe, 10, 0)
+#	spawn_enemy(strawberry, 1, 0)
+	spawn_enemy(apple, 1, 0)
 
 func spawn_enemy(enemy_type, enemy_amount, delay) -> void:
 	var spawnshape = $SpawnArea/SpawnAreaShape
