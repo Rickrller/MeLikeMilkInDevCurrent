@@ -1,5 +1,5 @@
 extends CharacterBody3D
-enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attacking}
+enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attacking, attackready}
 @export var state : enemystate = enemystate.everythingelse
 @export var damage : float
 @export var health : float
@@ -18,6 +18,7 @@ enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attac
 @onready var attackcooldown = $Timer2
 @export var distancetoplayer : float
 @export var diff : Vector3
+@onready var area = $Area3D
 
 func _ready() -> void:
 	var players = get_tree().get_nodes_in_group("player")
@@ -44,7 +45,8 @@ func _physics_process(delta: float) -> void:
 	if player:
 		#if sqrt(((global_position.x - player.global_position.x) **2)+(global_position.z - player.global_position.z) ** 2) < 5:
 		if (diff.x * diff.x + diff.z * diff.z) < 16:
-			
+			if state != enemystate.pouncing and state != enemystate.blasted:
+				state = enemystate.attackready
 			#print("closetoplayer")
 			#direction.y = 0.0
 			velocity.z = lerp(velocity.z, 0.0, 0.1)
@@ -58,9 +60,9 @@ func _physics_process(delta: float) -> void:
 				if name == "pear":
 					eventbus.flashbang.emit()
 				$Timer2.start()
-			
+				state = enemystate.attackready
 			else:
-				if state == enemystate.attacking:
+				if state == enemystate.attackready:
 					state = enemystate.everythingelse
 			move_and_slide()
 			return
@@ -84,7 +86,7 @@ func _physics_process(delta: float) -> void:
 	
 	if distancetoplayer < pouncerange:
 		if get_node_or_null("Timer"):
-			if pounce_available == true and is_on_floor() and state == enemystate.everythingelse and self.global_position.distance_to(player.global_position) < 25:
+			if pounce_available == true and is_on_floor() and state != enemystate.blasted and self.global_position.distance_to(player.global_position) < 25:
 				pounce()
 				
 			
@@ -93,11 +95,16 @@ func _physics_process(delta: float) -> void:
 		pouncing()
 	
 	move_and_slide()
-	if state == enemystate.pouncing or state == enemystate.blasted:
+	if state == enemystate.blasted:
 		if is_on_floor() or is_on_wall():
 			state = enemystate.everythingelse
 			#print("basicenemystate", state)
-			
+	if state == enemystate.pouncing:
+		if is_on_floor():
+			state = enemystate.everythingelse
+			area.monitoring = true
+			area.global_position = global_position
+			deactivatearea()
 func pounce():
 
 	if state == enemystate.everythingelse:
@@ -105,10 +112,11 @@ func pounce():
 	else:
 		return
 	pounce_available = false
-	velocity.y += 15
+	velocity.y += 25
 	pouncing()
 	$Timer.start()
-	
+	await get_tree().create_timer(1).timeout
+	velocity.y -= 50
 	
 	
 func parried():
@@ -138,6 +146,7 @@ func pouncing():
 	state = enemystate.pouncing
 	velocity.z = direction.z * pounceforce
 	velocity.x = direction.x * pounceforce
+
 	
 
 
@@ -160,3 +169,13 @@ func lookatplayer(delta):
 
 func _on_timer_2_timeout() -> void:
 	attackready = true
+
+func deactivatearea():
+	await get_tree().create_timer(0.1).timeout
+	area.monitoring = false
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		body.velocity.y += 20
+		body.health -= 10 * body.defense
