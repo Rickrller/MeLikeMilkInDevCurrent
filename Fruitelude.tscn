@@ -80,7 +80,7 @@ environment = ExtResource("1_33cra")
 [node name="Sun" type="DirectionalLight3D" parent="Lighting" unique_id=1981582734]
 transform = Transform3D(-1, -8.742278e-08, -3.821371e-15, 0, -4.371139e-08, 1, -8.742278e-08, 1, 4.371139e-08, 0, 0, 0)
 visible = false
-light_color = Color(1, 0, 0, 1)
+light_color = Color(1, 0.3764706, 0, 1)
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_angular_distance = 25.0
