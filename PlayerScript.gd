@@ -36,6 +36,7 @@ extends CharacterBody3D
 @onready var punchcooldownnode = $punchcooldown
 @onready var rightarm = $Neck/arm2/AnimationPlayer
 @onready var leftarm = $Neck/arm/AnimationPlayer
+@onready var dashdisplay = $Panel/dashcahrges
 
 # Jump Variables
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") + 25
@@ -86,6 +87,7 @@ func _physics_process(delta):
 		if dashcharges == 3:
 			$dashcooldown.start()
 		dashcharges -= 1
+		dashdisplay.value = dashcharges
 
 
 	# Movement
@@ -146,7 +148,7 @@ func _on_dashcooldown_timeout() -> void:
 		dashcharges += 1
 	if dashcharges < 3:
 		$dashcooldown.start()
-
+	dashdisplay.value = dashcharges
 func _on_hurtbox_body_entered(body: Node3D) -> void:
 	#"""if body.is_in_group("enemy") and parrying == true:
 		#body.parried()

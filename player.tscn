@@ -50,6 +50,7 @@ material = SubResource("StandardMaterial3D_djscl")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ek41f"]
 transparency = 1
+vertex_color_use_as_albedo = true
 albedo_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eantr"]
@@ -5304,7 +5305,7 @@ script = ExtResource("9_q13i1")
 script = ExtResource("10_pylmc")
 
 [node name="dashcooldown" type="Timer" parent="." unique_id=1617558287]
-wait_time = 2.5
+wait_time = 3.0
 one_shot = true
 
 [node name="punchcooldown" type="Timer" parent="." unique_id=187235543]
@@ -5339,10 +5340,10 @@ text = "parry
 modulate = Color(18.892157, 18.892157, 0, 1)
 self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
 layout_mode = 0
-offset_left = 17.0
-offset_top = 628.0
-offset_right = 348.0
-offset_bottom = 639.0
+offset_left = 986.0
+offset_top = 630.0
+offset_right = 1317.0
+offset_bottom = 641.0
 scale = Vector2(0.48000002, 1)
 value = 100.0
 show_percentage = false
@@ -5350,10 +5351,10 @@ show_percentage = false
 [node name="carbs" type="ProgressBar" parent="Panel" unique_id=310810180]
 modulate = Color(18.892002, 18.892002, 18.892002, 1)
 layout_mode = 0
-offset_left = 17.0
-offset_top = 612.0
-offset_right = 348.0
-offset_bottom = 623.0
+offset_left = 986.0
+offset_top = 614.0
+offset_right = 1317.0
+offset_bottom = 625.0
 scale = Vector2(0.48000002, 1)
 value = 100.0
 show_percentage = false
@@ -5361,10 +5362,10 @@ show_percentage = false
 [node name="vitamins" type="ProgressBar" parent="Panel" unique_id=950570887]
 modulate = Color(1, 0.65210927, 0.3179172, 1)
 layout_mode = 0
-offset_left = 17.0
-offset_top = 595.0
-offset_right = 348.0
-offset_bottom = 606.0
+offset_left = 986.0
+offset_top = 597.0
+offset_right = 1317.0
+offset_bottom = 608.0
 scale = Vector2(0.48000002, 1)
 value = 100.0
 show_percentage = false
@@ -5372,10 +5373,10 @@ show_percentage = false
 [node name="hydration" type="ProgressBar" parent="Panel" unique_id=434773841]
 modulate = Color(0.5631181, 0.86535984, 0.9691853, 1)
 layout_mode = 0
-offset_left = 17.0
-offset_top = 578.0
-offset_right = 348.0
-offset_bottom = 589.0
+offset_left = 986.0
+offset_top = 580.0
+offset_right = 1317.0
+offset_bottom = 591.0
 scale = Vector2(0.48000002, 1)
 value = 100.0
 show_percentage = false
@@ -5383,12 +5384,23 @@ show_percentage = false
 [node name="protien" type="ProgressBar" parent="Panel" unique_id=1880359571]
 modulate = Color(0.57083243, 0.3054969, 0.29292062, 1)
 layout_mode = 0
-offset_left = 17.0
-offset_top = 563.0
-offset_right = 348.0
-offset_bottom = 574.0
+offset_left = 986.0
+offset_top = 565.0
+offset_right = 1317.0
+offset_bottom = 576.0
 scale = Vector2(0.48000002, 1)
 value = 100.0
+show_percentage = false
+
+[node name="dashcahrges" type="ProgressBar" parent="Panel" unique_id=1071234932]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 593.0
+offset_right = 111.0
+offset_bottom = 620.0
+scale = Vector2(1.2354308, 1.8424386)
+max_value = 3.0
+step = 1.0
 show_percentage = false
 
 [node name="effects" type="Node" parent="." unique_id=1924522806]

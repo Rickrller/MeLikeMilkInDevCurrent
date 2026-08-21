@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dah08t6ttiajt"]
 
-[ext_resource type="Script" uid="uid://b8wnu5ojcxlkm" path="res://enemymovement.gd" id="1_2q1lq"]
+[ext_resource type="Script" uid="uid://bil1svwab5ebk" path="res://enemies/lemon.gd" id="1_2q1lq"]
 [ext_resource type="Texture2D" uid="uid://brgtfmvq0y6x" path="res://models/lemon_Sphere Base Color.png" id="3_h03xd"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ovpdu"]

@@ -22,8 +22,8 @@ func Enable():
 		
 		dashing.frames += 10
 		diminishingfactor = 2
-		if player.dashcharges >= 1:
-			wasdashingonfloor = true
+		#if player.dashcharges >= 1:
+		wasdashingonfloor = true
 		#	player.dashcharges -= 1
 		t = 0.0
 

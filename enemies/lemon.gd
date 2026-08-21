@@ -18,16 +18,17 @@ enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attac
 @onready var attackcooldown = $Timer2
 @export var distancetoplayer : float
 @export var diff : Vector3
-@onready var smoke = preload("res://enemies/duriansmoke.tscn")
+@onready var soursplash = preload("res://enemies/lemonpuddle.tscn")
+
 
 func _ready() -> void:
-	$smokecooldown.start()
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
 	else:
 		push_error("Error locating player")
 	attackcooldown.start()
+
 func _physics_process(delta: float) -> void:
 	if state == enemystate.blasted:
 		blasting()
@@ -56,7 +57,7 @@ func _physics_process(delta: float) -> void:
 				attackready = false
 				state = enemystate.attacking
 				player.getraped(damage)
-				if self.name == "pear":
+				if name == "pear":
 					eventbus.flashbang.emit()
 				$Timer2.start()
 			
@@ -92,6 +93,11 @@ func _physics_process(delta: float) -> void:
 
 	if state == enemystate.pouncing:
 		pouncing()
+		if is_on_floor():
+			var instance = soursplash.instantiate()
+			get_tree().current_scene.add_child(instance)
+			instance.global_position = global_position
+			instance.target_type = "player"
 	
 	move_and_slide()
 	if state == enemystate.pouncing or state == enemystate.blasted:
@@ -134,7 +140,7 @@ func blasting():
 		return
 	velocity.z = direction.z * -50
 	velocity.x = direction.x * -50
-	
+
 func pouncing():
 	state = enemystate.pouncing
 	velocity.z = direction.z * pounceforce
@@ -161,17 +167,3 @@ func lookatplayer(delta):
 
 func _on_timer_2_timeout() -> void:
 	attackready = true
-
-func fart():
-	
-	var instance = smoke.instantiate()
-	get_tree().current_scene.add_child(instance)
-	
-	instance.target = "player"
-	instance.global_position = global_position
-	instance.time = 5
-
-
-func _on_smokecooldown_timeout() -> void:
-	fart()
-	$smokecooldown.start()
