@@ -13,6 +13,7 @@ var longjumpdirection : Vector3
 var inputdir : Vector2
 var cameradirZ
 var cameradirX
+var longjumpspeed = 18
 func Enable():
 	inputdir = player.input_dir 
 	playerdx = player.direction.x
@@ -36,8 +37,8 @@ func Physics_Update(delta: float):
 	if player.is_on_floor():
 		eventbus.switch_activity.emit(self, "disable")
 	if wasdashingonfloor == true:
-		player.velocity.z = 18 * diminishingfactor * longjumpdirection.z 
-		player.velocity.x = 18 * diminishingfactor * longjumpdirection.x
+		player.velocity.z = longjumpspeed * diminishingfactor * longjumpdirection.z 
+		player.velocity.x = longjumpspeed * diminishingfactor * longjumpdirection.x
 		t = min(t + delta * duration, 1.0)
 		diminishingfactor = lerp(1.8, 1.25, t)
 		

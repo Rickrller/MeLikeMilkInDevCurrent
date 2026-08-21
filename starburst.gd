@@ -19,13 +19,13 @@ func eat():
 	$"..".currentfruit = ""
 
 func ability():
-	var resetspeed = player.speed
-	var resetcd = player.basepunchCD
+	
 	player.speed += 10
 	player.basepunchCD /= 3
+	$"../../movementstatemachine/airborne".longjumpspeed += 12
 	eventbus.Transistioned.emit(self, "empty")
 	$"..".currentfruit = ""
 	await get_tree().create_timer(5).timeout
-	player.speed = resetspeed
-	player.basepunchCD = resetcd
-	
+	player.speed -= 10
+	player.basepunchCD *= 3
+	$"../../movementstatemachine/airborne".longjumpspeed -= 12

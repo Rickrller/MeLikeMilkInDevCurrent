@@ -78,7 +78,7 @@ func _physics_process(delta: float) -> void:
 
 	
 func parried():
-	eventbus.grantitem.emit(givenfruit)
+	#eventbus.grantitem.emit(givenfruit)
 	queue_free()
 	
 	

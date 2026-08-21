@@ -5,7 +5,7 @@ var pos
 var count
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	count = 55
+	count = 60
 	if not damagemult:
 		damagemult = 1
 	

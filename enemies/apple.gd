@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 		diff = global_position - player.global_position
 		distancetoplayer = global_position.distance_to(player.global_position)
 	if health <= 0:
-		eventbus.grantitem.emit(givenfruit)
+		#eventbus.grantitem.emit(givenfruit)
 		queue_free()
 	if not is_on_floor():
 		velocity.y -= fallspeed * delta

@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	if distancetoplayer < sightrange:
 		lookatplayer(delta)
 	if health <= 0:
-		eventbus.grantitem.emit(givenfruit)
+		#eventbus.grantitem.emit(givenfruit)
 		queue_free()
 	if not is_on_floor():
 		velocity.y -= fallspeed * delta

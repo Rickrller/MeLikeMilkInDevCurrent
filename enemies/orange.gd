@@ -26,7 +26,7 @@ func _ready() -> void:
 	attackcooldown.start()
 func _physics_process(delta: float) -> void:
 	if health <= 0:
-		eventbus.grantitem.emit(givenfruit)
+		#eventbus.grantitem.emit(givenfruit)
 		queue_free()
 	if not is_on_floor():
 		velocity.y -= fallspeed * delta

@@ -9,6 +9,7 @@ func _on_body_entered(body: Node3D) -> void:
 		damagemult = player.damagemult
 		if body.health - (damage * damagemult) <= 0:
 			eventbus.parrykill.emit()
+			eventbus.grantitem.emit(body.givenfruit)
 		body.health -= (damage * damagemult)
 		
 		player.health += 5

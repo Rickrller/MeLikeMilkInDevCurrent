@@ -20,7 +20,12 @@ enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attac
 @export var diff : Vector3
 @onready var area = $Area3D
 
+
+	
+
+
 func _ready() -> void:
+	
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
@@ -39,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	if distancetoplayer < sightrange:
 		lookatplayer(delta)
 	if health <= 0:
-		eventbus.grantitem.emit(givenfruit)
+		#eventbus.grantitem.emit(givenfruit)
 		queue_free()
 	if not is_on_floor():
 		velocity.y -= fallspeed * delta

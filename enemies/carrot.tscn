@@ -6,6 +6,10 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_4kemo"]
 size = Vector3(0.65693665, 1.3224548, 0.66010743)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmlg0"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0mxn"]
 resource_name = "Material.001"
 cull_mode = 2
@@ -56,4 +60,5 @@ shape = SubResource("BoxShape3D_4kemo")
 
 [node name="model" type="MeshInstance3D" parent="." unique_id=894368848]
 transform = Transform3D(-0.7, -1.8225194e-07, 0, 1.0569706e-07, -1.207, 0, 0, 0, 0.7, 0, 0, 0)
+material_overlay = SubResource("StandardMaterial3D_cmlg0")
 mesh = SubResource("ArrayMesh_m70ie")
