@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ced8ww06tob87"]
 
+[ext_resource type="Environment" uid="uid://bmdbrx4x2vubn" path="res://RedEnvironment.tres" id="1_33cra"]
 [ext_resource type="Material" uid="uid://cmptt1iar8hnh" path="res://GreenGreenGrass.tres" id="1_pa0ms"]
 [ext_resource type="Material" uid="uid://clvfjt5wy64vq" path="res://Road.tres" id="3_prkjd"]
 [ext_resource type="Material" uid="uid://bjnhc1tfb6cto" path="res://RoadCurb.tres" id="4_31nhs"]
@@ -7,8 +8,6 @@
 [ext_resource type="Material" uid="uid://b2rj36yucvk8k" path="res://GreenTreeGrass.tres" id="6_pna45"]
 [ext_resource type="Material" uid="uid://balumk05moncr" path="res://Curb.tres" id="7_nntvb"]
 [ext_resource type="PackedScene" uid="uid://cxkemj5q5ftp1" path="res://player.tscn" id="8_33cra"]
-[ext_resource type="Shader" uid="uid://vcnano0bkesh" path="res://Sky.gdshader" id="9_31nhs"]
-[ext_resource type="Texture2D" uid="uid://blwx5y33w6d0l" path="res://Clouds.png" id="10_3xujm"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o1q5p"]
 material = ExtResource("1_pa0ms")
@@ -28,58 +27,6 @@ size = Vector3(200, 0.15, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_c0p3d"]
 material = ExtResource("5_3xujm")
 size = Vector3(200, 0.15, 0.2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pna45"]
-shader = ExtResource("9_31nhs")
-shader_parameter/cloud_noise_texture = ExtResource("10_3xujm")
-shader_parameter/sky_exposure = 1.0
-shader_parameter/sky_tint = Color(0.75686276, 1, 1, 1)
-shader_parameter/cloud_scale = 0.2
-shader_parameter/cloud_density = 0.0
-shader_parameter/cloud_softness = 1.0
-shader_parameter/detail_strength = 1.038000049305
-shader_parameter/cloud_contrast = 1.1670000316825
-shader_parameter/cloud_bright_color = Color(1, 1, 1, 1)
-shader_parameter/cloud_mid_color = Color(0.82, 0.84, 0.88, 1)
-shader_parameter/cloud_dark_color = Color(0.5, 0.54, 0.62, 1)
-shader_parameter/cloud_brightness = 1.15
-shader_parameter/atmosphere_blend = 0.22
-shader_parameter/atmosphere_horizon_strength = 1.0
-shader_parameter/atmosphere_zenith_strength = 2.0
-shader_parameter/cloud_direction = Vector2(0, -0.5)
-shader_parameter/cloud_speed = 0.01
-shader_parameter/cloud_evolution_speed = 0.01
-shader_parameter/edge_warp_strength = 0.08
-shader_parameter/edge_warp_scale = 3.0
-shader_parameter/horizon_fade = 0.18
-shader_parameter/zenith_density = 1.0
-shader_parameter/horizon_blend = 0.35
-shader_parameter/sun_direction = Vector3(0.4, 0.5, 0.2)
-shader_parameter/sun_color = Color(1, 0.96, 0.88, 1)
-shader_parameter/sun_size = 0.004
-shader_parameter/sun_intensity = 14.0
-shader_parameter/random_light_strength = 0.4
-shader_parameter/random_light_scale = 0.7
-
-[sub_resource type="Sky" id="Sky_typi0"]
-sky_material = SubResource("ShaderMaterial_pna45")
-
-[sub_resource type="Environment" id="Environment_nntvb"]
-background_mode = 2
-background_energy_multiplier = 0.6
-sky = SubResource("Sky_typi0")
-ambient_light_color = Color(1, 1, 1, 1)
-tonemap_mode = 3
-fog_mode = 1
-fog_light_color = Color(0.76247585, 0.78586566, 0.82225716, 1)
-fog_sun_scatter = 0.05
-fog_density = 1.0
-fog_aerial_perspective = 1.0
-fog_depth_begin = 0.0
-fog_depth_end = 244.4
-volumetric_fog_density = 0.001
-volumetric_fog_emission = Color(1, 1, 1, 1)
-volumetric_fog_detail_spread = 6.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_b1nol"]
 material = ExtResource("6_pna45")
@@ -123,6 +70,24 @@ height = 1.0
 radial_segments = 5
 
 [node name="ForestRoad" type="Node3D" unique_id=460276277]
+
+[node name="Lighting" type="Node3D" parent="." unique_id=298701387]
+transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, -0.020466805, -4.7064266, -0.016745448)
+
+[node name="Environment" type="WorldEnvironment" parent="Lighting" unique_id=513492338]
+environment = ExtResource("1_33cra")
+
+[node name="Sun" type="DirectionalLight3D" parent="Lighting" unique_id=1981582734]
+transform = Transform3D(-1, -8.742278e-08, -3.821371e-15, 0, -4.371139e-08, 1, -8.742278e-08, 1, 4.371139e-08, 0, 0, 0)
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_angular_distance = 25.0
+light_specular = 0.0
+light_bake_mode = 0
+shadow_enabled = true
+shadow_normal_bias = 0.0
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=824030345]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -0.020466805, -1.0001413, -0.016745446)
@@ -171,22 +136,6 @@ mesh = SubResource("BoxMesh_c0p3d")
 
 [node name="Player" parent="." unique_id=2021393363 instance=ExtResource("8_33cra")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 377.0458, 1.9073486e-06, 0.44942236)
-
-[node name="Lighting" type="Node3D" parent="." unique_id=298701387]
-transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, -0.020466805, -4.7064266, -0.016745448)
-
-[node name="Environment" type="WorldEnvironment" parent="Lighting" unique_id=513492338]
-environment = SubResource("Environment_nntvb")
-
-[node name="Sun" type="DirectionalLight3D" parent="Lighting" unique_id=1981582734]
-transform = Transform3D(-1, 6.1817246e-08, -6.1817246e-08, 0, 0.7071068, 0.7071068, 8.742278e-08, 0.7071068, -0.7071068, 0, 0, 0)
-light_color = Color(0.9990608, 0.9999998, 0.95401555, 1)
-light_indirect_energy = 0.0
-light_volumetric_fog_energy = 0.0
-light_specular = 0.0
-light_bake_mode = 0
-shadow_enabled = true
-shadow_normal_bias = 0.0
 
 [node name="TreeEntireLine" type="Node3D" parent="." unique_id=1449664684]
 transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, -0.020466805, -4.7064266, -0.016745448)

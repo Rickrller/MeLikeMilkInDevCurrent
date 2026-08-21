@@ -1,0 +1,59 @@
+[gd_resource type="Environment" format=3 uid="uid://bmdbrx4x2vubn"]
+
+[ext_resource type="Shader" uid="uid://vcnano0bkesh" path="res://Sky.gdshader" id="1_8dba6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_33cra"]
+load_path = "res://.godot/imported/Clouds.png-281d2ae040b08329aa4a5f44b56b3b45.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_prkjd"]
+shader = ExtResource("1_8dba6")
+shader_parameter/cloud_noise_texture = SubResource("CompressedTexture2D_33cra")
+shader_parameter/sky_exposure = 1.0
+shader_parameter/sky_tint = Color(0.43326208, 0, 0.06678009, 1)
+shader_parameter/cloud_scale = 0.2
+shader_parameter/cloud_density = 0.0
+shader_parameter/cloud_softness = 1.0
+shader_parameter/detail_strength = 1.038000049305
+shader_parameter/cloud_contrast = 1.1670000316825
+shader_parameter/cloud_bright_color = Color(0, 0, 0, 1)
+shader_parameter/cloud_mid_color = Color(0.06565761, 0.077134304, 0.10045803, 1)
+shader_parameter/cloud_dark_color = Color(0.06567536, 0.07716157, 0.10027256, 1)
+shader_parameter/cloud_brightness = 1.15
+shader_parameter/atmosphere_blend = 0.22
+shader_parameter/atmosphere_horizon_strength = 1.0
+shader_parameter/atmosphere_zenith_strength = 2.0
+shader_parameter/cloud_direction = Vector2(0, -0.5)
+shader_parameter/cloud_speed = 0.01
+shader_parameter/cloud_evolution_speed = 0.01
+shader_parameter/edge_warp_strength = 0.08
+shader_parameter/edge_warp_scale = 3.0
+shader_parameter/horizon_fade = 0.18
+shader_parameter/zenith_density = 1.0
+shader_parameter/horizon_blend = 0.35
+shader_parameter/sun_direction = Vector3(0.4, 0.5, 0.2)
+shader_parameter/sun_color = Color(1, 0.96, 0.88, 1)
+shader_parameter/sun_size = 0.004
+shader_parameter/sun_intensity = 0.0
+shader_parameter/random_light_strength = 0.4
+shader_parameter/random_light_scale = 0.7
+
+[sub_resource type="Sky" id="Sky_31nhs"]
+sky_material = SubResource("ShaderMaterial_prkjd")
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 0.6
+sky = SubResource("Sky_31nhs")
+ambient_light_color = Color(1, 0, 0, 1)
+tonemap_mode = 3
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_sun_scatter = 0.05
+fog_density = 1.0
+fog_aerial_perspective = 1.0
+fog_depth_begin = 0.0
+fog_depth_end = 50.0
+volumetric_fog_density = 0.001
+volumetric_fog_emission = Color(1, 1, 1, 1)
+volumetric_fog_detail_spread = 6.0
