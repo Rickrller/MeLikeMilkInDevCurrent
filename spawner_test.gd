@@ -10,11 +10,12 @@ const orange = preload("res://enemies/orange.tscn")
 const lemon = preload("res://enemies/lemon.tscn") 
 const grapes = preload("res://enemies/grapes.tscn")
 const durian = preload("res://enemies/durian.tscn") 
-
+const grapebomb = preload("res://clustergrape.tscn")
 func _ready() -> void:
 	await get_tree().create_timer(2.0).timeout
 	#spawn_enemy(strawberry, 1, 0)
 	spawn_enemy(apple, 1, 0)
+	spawn_enemy(grapebomb, 1, 0)
 	#spawn_enemy(starfruit, 1, 0)
 	#spawn_enemy(durian, 1, 0)
 	#spawn_enemy(lemon, 1, 0)

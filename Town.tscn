@@ -102,6 +102,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 261.01428, -0.18795657, -30.7
 script = ExtResource("19_yv7ed")
 
 [node name="SpawnArea" type="Area3D" parent="Spawner" unique_id=437096697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.792587)
 
 [node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner/SpawnArea" unique_id=792077890]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0915985, -4.1660156, -1.1298447)

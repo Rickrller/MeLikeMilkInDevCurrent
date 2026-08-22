@@ -15,7 +15,7 @@ func Enter():
 	add_child(instance)
 	instance.global_position = player.global_position
 	$"../../Neck/arm2/metarig/Skeleton3D/Cube_001".material_overlay.albedo_color = Color(0.0, 4.48, 4.48, 1.0)
-	
+
 
 func _on_duration_timeout() -> void:
 	player.parrying = false

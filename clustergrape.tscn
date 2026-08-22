@@ -1,0 +1,115 @@
+[gd_scene format=4 uid="uid://dgq8vrvyli2rg"]
+
+[ext_resource type="Script" uid="uid://dvn830o08gjrq" path="res://clustergrape.gd" id="1_1hl77"]
+[ext_resource type="Texture2D" uid="uid://d1vfvoxsg7qdw" path="res://models/singlegrape_Untitled.png" id="1_7tui2"]
+[ext_resource type="Script" uid="uid://c1xyaspu7t6u6" path="res://minigrape.gd" id="3_sum84"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1hl77"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxa3y"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_7tui2")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ndb50"]
+_surfaces = [{
+"aabb": AABB(-0.894425, -1, -0.85064, 1.78885, 2, 1.70128),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAgAEAAAAAgADAAUAAgAFAAQAAwAGAAUABAAFAAcABQAGAAcAAAAEAAgABAAHAAgAAAAJAAEAAAAIAAkAAQAKAAMACgAGAAMACQAKAAEABwAGAAsACAAHAAsACwAGAAoACAALAAkACQALAAoA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/38AAP9/AAByWMFG//8AAIznwUYazwAAjKc9uf//AACM58FG5DAAAP//Pbn/fwAA/3////9/AACMpz25AAAAAHJYwUYAAAAAAADBRv9/AAByGD25Gs8AAHIYPbnkMAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sum84"]
+resource_name = "singlegrape_Icosphere"
+_surfaces = [{
+"aabb": AABB(-0.894425, -1, -0.85064, 1.78885, 2, 1.70128),
+"attribute_data": PackedByteArray("QTSamK1uhYmtbtvFrW7bxUYq0+FBNJqYJYjyEf+/yCj/f7tN2TfyEf8/u00AAMgoQTSamEYq0+EAAMa2rW7bxYde//9GKtPh2XfyEf9/vE3/P8go/7/IKP+/rnL/f7tN/z+7TQAArnIAAMgo///IKP+/vE0lyPIR/z/IKP9/vE3/P69y/3+7Tf+/rnIliIWJNM2FiVrdqMPzmLCn/z+7Tdk3hYkAAK5y///IKP//r3L/v7xN/3+8Tdl3hYn/P69y85iwp+6i6fCtbr3SWt2ow+6i6fDzmLCnWt3//+6i6fBa3ajD//+vciXIhYn/v7xN"),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgATABQAFQAWABcAGAAZABoAGwAcAB0AHgAfACAAIQAiACMAJAAlACYAJwAoACkAKgArACwALQAuAC8AMAAxADIAMwA0ADUANgA3ADgAOQA6ADsA"),
+"material": SubResource("StandardMaterial3D_sxa3y"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray("/38AAP9/0MxyWMFG///QzIznwUYaz9DMjOfBRhrPy9uM58FG5DDL2/9/AAD/f8vb/38AAP9/cvoAAMFG/39y+nJYwUb//3L6/38AAP9/0tRyWMFGAADS1AAAwUb/f9LU/38AAP9/zuCM58FG5DDO4HJYwUYAAM7gjOfBRhrPTuz//z25/39O7IznwUbkME7scljBRv//P++Mpz25//8/74znwUYazz/vAADBRv9/kPByGD25Gs+Q8HJYwUb//5DwcljBRgAAv+9yGD255DC/7wAAwUb/f7/vjOfBRuQw//qMpz25AAD/+nJYwUYAAP/6jOfBRhrPkPCMpz25//+Q8P//Pbn/f5DwcljBRv//P+9yGD25Gs8/74ynPbn//z/vAADBRv9///ZyGD255DD/9nIYPbkaz//2cljBRgAA//qMpz25AAD/+nIYPbnkMP/6jOfBRuQwv+///z25/3+/74ynPbkAAL/vjKc9uf//cvr/f////39y+v//Pbn/f3L6chg9uRrP5OP/f////3/k44ynPbn//+Tjchg9ueQwz/D/f////3/P8HIYPbkaz8/wjKc9uQAAF+r/f////38X6nIYPbnkMBfq//89uf9/0tT/f////3/S1IynPbkAANLUAxo92wMaPdsDGj3bmBDhwpgQ4cKYEOHCJNcz6yTXM+sk1zPrUySYh1MkmIdTJJiHUh5atlIeWrZSHlq2kgmmPJIJpjySCaY8kQax7ZEGse2RBrHt4O4j3ODuI9zg7iPcejRhkHo0YZB6NGGQihPjo4oT46OKE+OjHhHbIx4R2yMeEdsjbflNEm35TRJt+U0S30oak99KGpPfShqTdOwbXHTsG1x07BtchMudb4TLnW+Ey51v2ijLFNooyxTaKMsUT99zF0/fcxdP33MXIN/xKiDf8Sog3/Eq0dFUNNHRVDTR0VQ0q9tmeKvbZnir22Z4")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ndb50")
+
+[node name="clustergrape" type="CharacterBody3D" unique_id=921289066]
+script = ExtResource("1_1hl77")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=199996279]
+shape = SubResource("SphereShape3D_1hl77")
+
+[node name="model" type="MeshInstance3D" parent="." unique_id=1491324122]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_sum84")
+
+[node name="grape" type="RigidBody3D" parent="." unique_id=2038931662]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8280959)
+visible = false
+script = ExtResource("3_sum84")
+
+[node name="model" type="MeshInstance3D" parent="grape" unique_id=1598344025]
+transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_sum84")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grape" unique_id=1957782669]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_1hl77")
+disabled = true
+
+[node name="grape2" type="RigidBody3D" parent="." unique_id=422158800]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.82355213)
+visible = false
+script = ExtResource("3_sum84")
+
+[node name="model" type="MeshInstance3D" parent="grape2" unique_id=84094979]
+transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_sum84")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grape2" unique_id=1140908458]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_1hl77")
+disabled = true
+
+[node name="grape3" type="RigidBody3D" parent="." unique_id=1993506475]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8079233, 0, -0.01628846)
+visible = false
+script = ExtResource("3_sum84")
+
+[node name="model" type="MeshInstance3D" parent="grape3" unique_id=1569480948]
+transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_sum84")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grape3" unique_id=975386426]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_1hl77")
+disabled = true
+
+[node name="grape4" type="RigidBody3D" parent="." unique_id=85535550]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8536134, 0, -0.01628846)
+visible = false
+script = ExtResource("3_sum84")
+
+[node name="model" type="MeshInstance3D" parent="grape4" unique_id=1330682106]
+transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_sum84")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grape4" unique_id=1788291301]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_1hl77")
+disabled = true

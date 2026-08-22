@@ -120,7 +120,7 @@ func everythingelse(delta):
 func attacking(delta):
 	if not (diff.x * diff.x + diff.z * diff.z) < 16:
 		state = enemystate.everythingelse
-	print("in attacking state")
+	#print("in attacking state")
 	attackready = false
 	lookatplayer(delta)
 	velocity.z = lerp(velocity.z, 0.0, 0.1)
@@ -149,8 +149,9 @@ func _on_timer_2_timeout() -> void:
 
 func _on_windup_timeout() -> void:
 	if distancetoplayer < 7:
-		print("attackple")
+		#print("attackple")
 		var instance = punch.instantiate()
+		instance.parent = self
 		get_tree().current_scene.add_child(instance)
 		attackdir = -global_transform.basis.z.normalized()
 		instance.global_position = global_position

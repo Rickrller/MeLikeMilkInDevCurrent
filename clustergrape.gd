@@ -1,0 +1,37 @@
+extends CharacterBody3D
+
+var check : bool = true
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+@onready var childrenpos : Array = [$grape.global_position, $grape2.global_position, $grape3.global_position, $grape4.global_position]
+@onready var collisionshapes : Array = [$grape/CollisionShape3D, $grape2/CollisionShape3D, $grape3/CollisionShape3D, $grape4/CollisionShape3D]
+@onready var children : Array = [$grape, $grape2, $grape3, $grape4]
+func _ready() -> void:
+	velocity.y += 10
+
+func _physics_process(delta: float) -> void:
+	#childrenpos = [$grape.global_position, $grape2.global_position, $grape3.global_position, $grape4.global_position]
+	if is_on_floor() and check:
+		explode()
+		check = false
+	else:
+		velocity.y -= gravity * delta
+		move_and_slide()
+
+
+
+func explode():
+	childrenpos = [$grape.global_position, $grape2.global_position, $grape3.global_position, $grape4.global_position]
+	var count = 0
+	for hitbox in collisionshapes:
+		hitbox.disabled = false
+	for child in children:
+		child.process_mode = Node.PROCESS_MODE_INHERIT 
+		child.visible = true
+		print(count)
+		remove_child(child)
+		get_tree().current_scene.add_child(child)
+		child.global_position = childrenpos[count]
+		if count <= 2:
+			count += 1
+			
+	queue_free()

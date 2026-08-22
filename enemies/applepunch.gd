@@ -1,6 +1,6 @@
 extends Area3D
 @export var damage : float = 10
-
+@export var parent : Node3D
 func _ready() -> void:
 	$Timer.start()
 
@@ -9,8 +9,8 @@ func _on_body_entered(body: Node3D) -> void:
 		#body.parried()
 		if body.parrying == false:
 			body.getraped(25)
-			body.velocity.z -= 50 * body.camera.direction.z
-			body.velocity.x -= 50 * body.camera.direction.x
+			body.velocity.z -= 50 * -parent.attackdir.z#body.camera.direction.z
+			body.velocity.x -= 50 * -parent.attackdir.x#body.camera.direction.x
 			body.velocity.y += 20
 		
 		
