@@ -1,0 +1,425 @@
+[gd_scene format=3 uid="uid://dgpp6qt7sjdb2"]
+
+[ext_resource type="Texture2D" uid="uid://dvmirdm6cat3t" path="res://RedTexture.jpg" id="1_swigd"]
+[ext_resource type="Material" uid="uid://bjnhc1tfb6cto" path="res://RoadCurb.tres" id="2_hp7xp"]
+[ext_resource type="Material" uid="uid://jdf7u6btn8q7" path="res://YellowLine.tres" id="3_tpsgm"]
+[ext_resource type="Material" uid="uid://cmptt1iar8hnh" path="res://GreenGreenGrass.tres" id="4_538ju"]
+[ext_resource type="Material" uid="uid://c1wjhtox6rsx3" path="res://Wood.tres" id="5_su8sl"]
+[ext_resource type="Material" uid="uid://loh78rx77ghn" path="res://WhiteWall.tres" id="6_6r586"]
+[ext_resource type="Material" uid="uid://br66824ryfl2b" path="res://Bricks.tres" id="7_jltxb"]
+[ext_resource type="Texture2D" uid="uid://demsqoao81t8b" path="res://BricksFixed.png" id="8_yu35h"]
+[ext_resource type="Material" uid="uid://ca7m8147ic7m1" path="res://BlueGlass.tres" id="9_i4d8a"]
+[ext_resource type="Material" uid="uid://dmxf544pr77t" path="res://Yellow.tres" id="10_rata2"]
+[ext_resource type="PackedScene" uid="uid://cxkemj5q5ftp1" path="res://player.tscn" id="11_hp7xp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bk57i"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_swigd")
+
+[sub_resource type="BoxMesh" id="BoxMesh_fbnd0"]
+material = SubResource("StandardMaterial3D_bk57i")
+size = Vector3(200, 0.1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ck4lk"]
+material = ExtResource("2_hp7xp")
+size = Vector3(200, 0.15, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3vxch"]
+material = ExtResource("3_tpsgm")
+size = Vector3(200, 0.15, 0.2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xuucq"]
+material = ExtResource("4_538ju")
+size = Vector2(500, 500)
+
+[sub_resource type="BoxMesh" id="BoxMesh_140dr"]
+material = ExtResource("5_su8sl")
+size = Vector3(12, 0.4, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7kah5"]
+material = ExtResource("6_6r586")
+size = Vector3(11.5, 4, 11.5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_q1sef"]
+material = ExtResource("7_jltxb")
+size = Vector3(13, 3, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yd1tc"]
+albedo_texture = ExtResource("8_yu35h")
+
+[sub_resource type="BoxMesh" id="BoxMesh_qvgrg"]
+material = SubResource("StandardMaterial3D_yd1tc")
+size = Vector3(13, 0.5, 12)
+
+[sub_resource type="PrismMesh" id="PrismMesh_g52a0"]
+size = Vector3(13, 3, 13)
+
+[sub_resource type="PrismMesh" id="PrismMesh_p2ppl"]
+material = ExtResource("6_6r586")
+size = Vector3(11.5, 2.5, 11.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6i0bb"]
+material = ExtResource("5_su8sl")
+size = Vector3(1.5, 2.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3srsw"]
+size = Vector3(1.3, 2.05, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_as3so"]
+size = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b0lte"]
+material = ExtResource("9_i4d8a")
+size = Vector3(2.8, 1.8, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7ebqh"]
+material = ExtResource("10_rata2")
+size = Vector3(1.4, 2.19, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fenod"]
+material = ExtResource("6_6r586")
+size = Vector3(5.75, 4, 9.5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_w1422"]
+material = ExtResource("7_jltxb")
+size = Vector3(6.5, 2, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mt4c8"]
+size = Vector3(6.5, 0.5, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ewjbe"]
+albedo_texture = ExtResource("8_yu35h")
+
+[sub_resource type="PrismMesh" id="PrismMesh_o7tml"]
+size = Vector3(6.5, 2, 11)
+
+[sub_resource type="PrismMesh" id="PrismMesh_qtwgh"]
+material = ExtResource("6_6r586")
+size = Vector3(5.7, 2.2, 9.5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ntmqn"]
+material = ExtResource("5_su8sl")
+top_radius = 0.7
+bottom_radius = 0.7
+radial_segments = 15
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xlmc1"]
+material = ExtResource("5_su8sl")
+top_radius = 0.3
+bottom_radius = 0.6
+height = 1.0
+radial_segments = 15
+
+[sub_resource type="BoxMesh" id="BoxMesh_rjgc8"]
+material = ExtResource("5_su8sl")
+size = Vector3(0.1, 1.3, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7u6wr"]
+material = ExtResource("9_i4d8a")
+top_radius = 0.8
+bottom_radius = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_rsdau"]
+material = ExtResource("5_su8sl")
+size = Vector3(12, 0.4, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t5vel"]
+material = ExtResource("6_6r586")
+size = Vector3(11.5, 4, 11.5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_eu5iv"]
+material = ExtResource("7_jltxb")
+size = Vector3(13, 3, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4gvqw"]
+albedo_texture = ExtResource("8_yu35h")
+
+[sub_resource type="BoxMesh" id="BoxMesh_sphy6"]
+material = SubResource("StandardMaterial3D_4gvqw")
+size = Vector3(13, 0.5, 12)
+
+[sub_resource type="PrismMesh" id="PrismMesh_avtjd"]
+size = Vector3(13, 3, 13)
+
+[sub_resource type="PrismMesh" id="PrismMesh_xejmy"]
+material = ExtResource("6_6r586")
+size = Vector3(11.5, 2.5, 11.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4t8jr"]
+material = ExtResource("5_su8sl")
+size = Vector3(1.5, 2.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jaqus"]
+size = Vector3(1.3, 2.05, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2karb"]
+size = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u8jpl"]
+material = ExtResource("9_i4d8a")
+size = Vector3(2.8, 1.8, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_av7so"]
+material = ExtResource("10_rata2")
+size = Vector3(1.4, 2.19, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_78018"]
+size = Vector3(1, 33.136658, 37.345215)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_twdup"]
+size = Vector3(299.927, 33.136658, 0.6525879)
+
+[node name="Tutorial" type="Node3D" unique_id=846463757]
+
+[node name="Road" type="Node3D" parent="." unique_id=258110317]
+transform = Transform3D(2.6700103, 0, 0, 0, 1.1975535, 0, 0, 0, 1.2225746, -156.82375, 1.3236078, -11.819653)
+
+[node name="Road" type="MeshInstance3D" parent="Road" unique_id=147959432]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 1, 0.00400409, 7.390976e-06, -0.105587006)
+mesh = SubResource("BoxMesh_fbnd0")
+
+[node name="Curb1" type="MeshInstance3D" parent="Road" unique_id=735768795]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 0.8, 0.0006996708, 0.03, -5.216135)
+mesh = SubResource("BoxMesh_ck4lk")
+
+[node name="Curb2" type="MeshInstance3D" parent="Road" unique_id=565805774]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 0.8, 0.0006996708, 0.03, 5.2159996)
+mesh = SubResource("BoxMesh_ck4lk")
+
+[node name="Curb3" type="MeshInstance3D" parent="Road" unique_id=119290878]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006996708, -0.01710844, -0.14999962)
+mesh = SubResource("BoxMesh_3vxch")
+
+[node name="Curb4" type="MeshInstance3D" parent="Road" unique_id=823359486]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006996708, -0.01710844, 0.14999962)
+mesh = SubResource("BoxMesh_3vxch")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=2019882535]
+transform = Transform3D(2.5097501, 0, 0, 0, 1.1987761, 0, 0, 0, 1.198776, -13.405105, 1.3284304, -28.45765)
+mesh = SubResource("PlaneMesh_xuucq")
+
+[node name="BigHouseType1" type="Node3D" parent="." unique_id=551323507]
+transform = Transform3D(-7.1129755e-08, 0, 1.0000002, 0, 1.5208864, 0, -1.6272591, 0, -4.37114e-08, -22.330936, 1.137006, -11.528967)
+
+[node name="Base" type="MeshInstance3D" parent="BigHouseType1" unique_id=749990088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_140dr")
+
+[node name="Walls" type="MeshInstance3D" parent="BigHouseType1" unique_id=1877554645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125158, 0)
+mesh = SubResource("BoxMesh_7kah5")
+
+[node name="Roof" type="CSGCombiner3D" parent="BigHouseType1" unique_id=1566109768]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="BigHouseType1/Roof" unique_id=94944070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_q1sef")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="BigHouseType1/Roof" unique_id=278476806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("BoxMesh_qvgrg")
+
+[node name="RoofCut" type="CSGMesh3D" parent="BigHouseType1/Roof" unique_id=632208525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_g52a0")
+
+[node name="RoofInside" type="MeshInstance3D" parent="BigHouseType1" unique_id=354726112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2963176, 0)
+mesh = SubResource("PrismMesh_p2ppl")
+
+[node name="Doorframe" type="CSGCombiner3D" parent="BigHouseType1" unique_id=788909329]
+use_collision = true
+
+[node name="Doorframe" type="CSGMesh3D" parent="BigHouseType1/Doorframe" unique_id=1522592344]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_6i0bb")
+
+[node name="DoorframeCutout" type="CSGMesh3D" parent="BigHouseType1/Doorframe" unique_id=1933735107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3208761, -5.4093323)
+operation = 2
+mesh = SubResource("BoxMesh_3srsw")
+
+[node name="Window" type="CSGCombiner3D" parent="BigHouseType1" unique_id=206165726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="BigHouseType1/Window" unique_id=47131896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_as3so")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="BigHouseType1/Window" unique_id=1579831518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_b0lte")
+
+[node name="Window2" type="CSGCombiner3D" parent="BigHouseType1" unique_id=1950482296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="BigHouseType1/Window2" unique_id=1212644559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_as3so")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="BigHouseType1/Window2" unique_id=280775260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_b0lte")
+
+[node name="Door" type="MeshInstance3D" parent="BigHouseType1" unique_id=470600602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.346551)
+mesh = SubResource("BoxMesh_7ebqh")
+
+[node name="SecondFloor2" type="Node3D" parent="BigHouseType1" unique_id=57190875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -0.371)
+
+[node name="Walls" type="MeshInstance3D" parent="BigHouseType1/SecondFloor2" unique_id=719700185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6275067, 0)
+mesh = SubResource("BoxMesh_fenod")
+
+[node name="Roof" type="CSGCombiner3D" parent="BigHouseType1/SecondFloor2" unique_id=423498628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="BigHouseType1/SecondFloor2/Roof" unique_id=2140383853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_w1422")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="BigHouseType1/SecondFloor2/Roof" unique_id=1162204348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4292421, 0)
+mesh = SubResource("BoxMesh_mt4c8")
+material = SubResource("StandardMaterial3D_ewjbe")
+
+[node name="RoofCut" type="CSGMesh3D" parent="BigHouseType1/SecondFloor2/Roof" unique_id=653226767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_o7tml")
+
+[node name="RoofInside" type="MeshInstance3D" parent="BigHouseType1/SecondFloor2" unique_id=545106347]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.3593674, 0)
+mesh = SubResource("PrismMesh_qtwgh")
+
+[node name="CircleWindow" type="CSGCombiner3D" parent="BigHouseType1" unique_id=1658548513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5020514, 0.6115489)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="BigHouseType1/CircleWindow" unique_id=2022408368]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3904247, -4.8226953)
+mesh = SubResource("CylinderMesh_ntmqn")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="BigHouseType1/CircleWindow" unique_id=2114122331]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3999996, -5.343495)
+operation = 2
+mesh = SubResource("CylinderMesh_xlmc1")
+
+[node name="WindowFrame" type="MeshInstance3D" parent="BigHouseType1/CircleWindow" unique_id=17711967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_rjgc8")
+
+[node name="WindowFrame2" type="MeshInstance3D" parent="BigHouseType1/CircleWindow" unique_id=1396358476]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_rjgc8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BigHouseType1/CircleWindow" unique_id=1056876090]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, 1.4017477, -4.757486)
+mesh = SubResource("CylinderMesh_7u6wr")
+
+[node name="HouseType2" type="Node3D" parent="." unique_id=896809269]
+transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, -288.4654, 1.382184, -11.874666)
+
+[node name="Base" type="MeshInstance3D" parent="HouseType2" unique_id=619205285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_rsdau")
+
+[node name="Walls" type="MeshInstance3D" parent="HouseType2" unique_id=1617406633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125158, 0)
+mesh = SubResource("BoxMesh_t5vel")
+
+[node name="Roof" type="CSGCombiner3D" parent="HouseType2" unique_id=1988293311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="HouseType2/Roof" unique_id=1391060249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_eu5iv")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="HouseType2/Roof" unique_id=1627263739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("BoxMesh_sphy6")
+
+[node name="RoofCut" type="CSGMesh3D" parent="HouseType2/Roof" unique_id=1722378700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_avtjd")
+
+[node name="RoofInside" type="MeshInstance3D" parent="HouseType2" unique_id=1736242989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2963176, 0)
+mesh = SubResource("PrismMesh_xejmy")
+
+[node name="Doorframe" type="CSGCombiner3D" parent="HouseType2" unique_id=41393055]
+use_collision = true
+
+[node name="Doorframe" type="CSGMesh3D" parent="HouseType2/Doorframe" unique_id=1056993043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_4t8jr")
+
+[node name="DoorframeCutout" type="CSGMesh3D" parent="HouseType2/Doorframe" unique_id=1962513316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3208761, -5.4093323)
+operation = 2
+mesh = SubResource("BoxMesh_jaqus")
+
+[node name="Window" type="CSGCombiner3D" parent="HouseType2" unique_id=930111203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="HouseType2/Window" unique_id=1462064670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_2karb")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="HouseType2/Window" unique_id=864690294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_u8jpl")
+
+[node name="Window2" type="CSGCombiner3D" parent="HouseType2" unique_id=896001067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="HouseType2/Window2" unique_id=510652698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_2karb")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="HouseType2/Window2" unique_id=1214206716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_u8jpl")
+
+[node name="Door" type="MeshInstance3D" parent="HouseType2" unique_id=1870816062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.346551)
+mesh = SubResource("BoxMesh_av7so")
+
+[node name="Barriers" type="StaticBody3D" parent="." unique_id=652195790]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers" unique_id=1669422619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -302.07727, 16.068329, -11.556152)
+shape = SubResource("BoxShape3D_78018")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Barriers" unique_id=431240985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.634895, 16.068329, -11.556152)
+shape = SubResource("BoxShape3D_78018")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Barriers" unique_id=420492718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.09839, 16.068329, -29.902466)
+shape = SubResource("BoxShape3D_twdup")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Barriers" unique_id=1634072950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.09839, 16.068329, 3.9864922)
+shape = SubResource("BoxShape3D_twdup")
+
+[node name="Player" parent="." unique_id=2021393363 instance=ExtResource("11_hp7xp")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -280.42, 2.7168252, -11.815353)
