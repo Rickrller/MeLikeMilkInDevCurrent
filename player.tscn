@@ -5244,7 +5244,7 @@ mouse_filter = 2
 
 [node name="handstatemachine" type="Node" parent="." unique_id=47888081 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("5_bwjto")
-initial_state = NodePath("empty")
+initial_state = NodePath("grapes")
 
 [node name="empty" type="Node" parent="handstatemachine" unique_id=213338977]
 script = ExtResource("6_nvl01")

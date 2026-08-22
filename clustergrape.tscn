@@ -44,6 +44,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ndb50")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_w05k2"]
+radius = 3.3546188
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sum84"]
+radius = 5.980258
+
 [node name="clustergrape" type="CharacterBody3D" unique_id=921289066]
 script = ExtResource("1_1hl77")
 
@@ -69,6 +75,15 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_1hl77")
 disabled = true
 
+[node name="AOE" type="Area3D" parent="grape" unique_id=1828375697]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grape/AOE" unique_id=1457496883]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_w05k2")
+disabled = true
+
 [node name="grape2" type="RigidBody3D" parent="." unique_id=422158800]
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.82355213)
@@ -82,6 +97,15 @@ mesh = SubResource("ArrayMesh_sum84")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="grape2" unique_id=1140908458]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_1hl77")
+disabled = true
+
+[node name="AOE" type="Area3D" parent="grape2" unique_id=1914491001]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grape2/AOE" unique_id=854757708]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_w05k2")
 disabled = true
 
 [node name="grape3" type="RigidBody3D" parent="." unique_id=1993506475]
@@ -99,6 +123,15 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_1hl77")
 disabled = true
 
+[node name="AOE" type="Area3D" parent="grape3" unique_id=877254896]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grape3/AOE" unique_id=270937157]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_w05k2")
+disabled = true
+
 [node name="grape4" type="RigidBody3D" parent="." unique_id=85535550]
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8536134, 0, -0.01628846)
@@ -113,3 +146,24 @@ mesh = SubResource("ArrayMesh_sum84")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_1hl77")
 disabled = true
+
+[node name="AOE" type="Area3D" parent="grape4" unique_id=1473015736]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grape4/AOE" unique_id=1141425389]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_w05k2")
+disabled = true
+
+[node name="AOE" type="Area3D" parent="." unique_id=1774143760]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AOE" unique_id=276984855]
+shape = SubResource("SphereShape3D_sum84")
+disabled = true
+
+[connection signal="body_entered" from="grape/AOE" to="grape" method="_on_aoe_body_entered"]
+[connection signal="body_entered" from="grape2/AOE" to="grape2" method="_on_aoe_body_entered"]
+[connection signal="body_entered" from="grape3/AOE" to="grape3" method="_on_aoe_body_entered"]
+[connection signal="body_entered" from="grape4/AOE" to="grape4" method="_on_aoe_body_entered"]
+[connection signal="body_entered" from="AOE" to="." method="_on_aoe_body_entered"]
