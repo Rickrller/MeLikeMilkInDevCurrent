@@ -48,7 +48,7 @@ shadow_mesh = SubResource("ArrayMesh_kh0vt")
 rotation_edit_mode = 1
 script = ExtResource("1_r05cu")
 damage = 5.0
-health = 21.0
+health = 30.0
 speed = 10.0
 givenfruit = "apple"
 sightrange = 50.0
@@ -56,12 +56,11 @@ sightrange = 50.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=75538227]
 shape = SubResource("SphereShape3D_mwvcl")
 
-[node name="Timer2" type="Timer" parent="." unique_id=607786369]
-wait_time = 4.0
+[node name="Timer2" type="Timer" parent="." unique_id=607786369 groups=["hasattack"]]
+wait_time = 5.0
 one_shot = true
 
 [node name="windup" type="Timer" parent="." unique_id=1311803510]
-wait_time = 0.5
 one_shot = true
 
 [node name="model" type="MeshInstance3D" parent="." unique_id=1547688809]

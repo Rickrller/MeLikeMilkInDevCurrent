@@ -76,7 +76,7 @@ func _physics_process(delta: float) -> void:
 				velocity.x = lerp(velocity.x, direction.x * speed, 0.03)
 				#velocity.x = direction.x * speed
 				#velocity.z = direction.x * speed
-		else: 
+		else:
 			direction.y = 0.0
 			velocity.z = lerp(velocity.z, 0.0, 0.1)
 			velocity.x = lerp(velocity.x, 0.0, 0.1)

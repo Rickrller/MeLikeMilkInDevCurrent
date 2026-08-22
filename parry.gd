@@ -8,7 +8,7 @@ extends State
 func _ready():
 	eventbus.parrykill.connect(grab)
 func Enter():
-	duration.wait_time = 0.25
+	duration.wait_time = 0.4
 	clear()
 	duration.start()
 	var instance = instantiatedparry.instantiate()

@@ -44,7 +44,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_owg3y")
 
-[node name="Durian" type="CharacterBody3D" unique_id=751157666 groups=["enemy"]]
+[node name="Durian" type="CharacterBody3D" unique_id=751157666 groups=["enemy", "hasattack"]]
 script = ExtResource("1_ohh1l")
 damage = 7.0
 health = 28.0

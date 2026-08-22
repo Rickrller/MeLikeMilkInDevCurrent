@@ -5256,7 +5256,6 @@ script = ExtResource("9_bwjto")
 script = ExtResource("8_urp6f")
 
 [node name="duration" type="Timer" parent="handstatemachine/parry" unique_id=1960152815]
-wait_time = 0.25
 one_shot = true
 
 [node name="orange" type="Node" parent="handstatemachine" unique_id=2043904157]

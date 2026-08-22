@@ -7,8 +7,11 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		#body.parried()
-		body.getraped(25)
-		body.velocity -= 100 * body.camera.direction
+		if body.parrying == false:
+			body.getraped(25)
+			body.velocity.z -= 50 * body.camera.direction.z
+			body.velocity.x -= 50 * body.camera.direction.x
+			body.velocity.y += 20
 		
 		
 	
