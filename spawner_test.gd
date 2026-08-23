@@ -14,8 +14,8 @@ const grapebomb = preload("res://clustergrape.tscn")
 func _ready() -> void:
 	await get_tree().create_timer(2.0).timeout
 	#spawn_enemy(strawberry, 1, 0)
-	spawn_enemy(orange, 10, 0)
-	spawn_enemy(grapebomb, 10, 0.1)
+	spawn_enemy(strawberry, 10, 0)
+	#spawn_enemy(grapebomb, 10, 0.1)
 	#spawn_enemy(starfruit, 1, 0)
 	#spawn_enemy(durian, 1, 0)
 	#spawn_enemy(lemon, 1, 0)

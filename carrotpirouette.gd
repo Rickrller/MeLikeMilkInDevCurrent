@@ -1,6 +1,9 @@
 extends State
-
+@onready var player = $"../.."
 @onready var nutrition = $"../../nutrition"
+@onready var neck = $"../../Neck"
+var tornado = preload("res://carrotnado.tscn")
+
 
 func Enter():
 	print("carrot entered")
@@ -19,5 +22,10 @@ func eat():
 	$"..".currentfruit = ""
 
 func ability():
+	var instance = tornado.instantiate()
+
+	get_tree().current_scene.add_child(instance)
+	instance.global_position = player.global_position
+	instance.global_rotation = neck.global_rotation
 	eventbus.Transistioned.emit(self, "empty")
 	$"..".currentfruit = ""

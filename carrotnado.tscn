@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cl8ku5hhn6jv3"]
+
+[ext_resource type="Script" uid="uid://bae23hib8ftso" path="res://carrotnado.gd" id="1_gul6s"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_r7owd"]
+radius = 7.0
+
+[node name="carrotnado" type="Area3D" unique_id=445011639]
+script = ExtResource("1_gul6s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=37560629]
+shape = SubResource("SphereShape3D_r7owd")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=412211346]
+target_position = Vector3(0, 0, -50)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
