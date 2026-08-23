@@ -19,8 +19,10 @@ func _on_dmgtick() -> void:
 func _on_body_exited(body: Node3D) -> void:
 	if body.is_in_group(target_type):
 		targets.erase(body)
+		body.speed *= 1.5
 	
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group(target_type):
 		targets.append(body)
+		body.speed /= 1.5

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cj0asv0jyrmkn"]
+
+[ext_resource type="Script" uid="uid://bdahku6wke1nv" path="res://timestop.gd" id="1_pv3mw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vdwuj"]
+radius = 100.0
+
+[node name="timestop" type="Area3D" unique_id=2045953214]
+script = ExtResource("1_pv3mw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1877819931]
+shape = SubResource("SphereShape3D_vdwuj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

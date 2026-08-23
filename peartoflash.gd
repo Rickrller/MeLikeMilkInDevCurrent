@@ -1,6 +1,7 @@
 extends State
-
+@onready var player = $"../.."
 @onready var nutrition = $"../../nutrition"
+var timestop = preload("res://timestop.tscn")
 var flashready = true
 func _ready():
 	eventbus.connect("flashbang", on_pearto_flash)
@@ -34,5 +35,8 @@ func on_pearto_flash():
 		
 	
 func ability():
+	var instance = timestop.instantiate()
+	get_tree().current_scene.add_child(instance)
+	instance.global_position = player.global_position
 	eventbus.Transistioned.emit(self, "empty")
 	$"..".currentfruit = ""

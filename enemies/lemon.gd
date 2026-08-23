@@ -93,11 +93,8 @@ func _physics_process(delta: float) -> void:
 
 	if state == enemystate.pouncing:
 		pouncing()
-		if is_on_floor():
-			var instance = soursplash.instantiate()
-			get_tree().current_scene.add_child(instance)
-			instance.global_position = global_position
-			instance.target_type = "player"
+		checkforsplash()
+
 	
 	move_and_slide()
 	if state == enemystate.pouncing or state == enemystate.blasted:
@@ -106,14 +103,16 @@ func _physics_process(delta: float) -> void:
 			#print("basicenemystate", state)
 			
 func pounce():
-
+	velocity.y += 15
 	if state == enemystate.everythingelse:
 		state = enemystate.pouncestart
 	else:
 		return
 	pounce_available = false
-	velocity.y += 15
+	await get_tree().physics_frame
+	await get_tree().physics_frame
 	pouncing()
+	
 	$Timer.start()
 	
 	
@@ -167,3 +166,11 @@ func lookatplayer(delta):
 
 func _on_timer_2_timeout() -> void:
 	attackready = true
+	
+func checkforsplash():
+	await get_tree().physics_frame
+	if is_on_floor():
+			var instance = soursplash.instantiate()
+			get_tree().current_scene.add_child(instance)
+			instance.global_position = global_position
+			instance.target_type = "player"
