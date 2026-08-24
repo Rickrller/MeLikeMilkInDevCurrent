@@ -6,6 +6,9 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_e8kwr"]
 radius = 0.8843032
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7v7hx"]
+transparency = 1
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvm1h"]
 resource_name = "Material.001"
 cull_mode = 2
@@ -103,11 +106,13 @@ wait_time = 8.0
 one_shot = true
 
 [node name="Timer2" type="Timer" parent="." unique_id=1178555579]
+wait_time = 2.0
 one_shot = true
 
 [node name="model" type="MeshInstance3D" parent="." unique_id=2105464025]
 transform = Transform3D(0, 3.5527128e-15, 1.0000001, -8.74228e-08, -0.99999976, 0, 1.0000002, -8.742276e-08, 0, 0, 0, 0)
 rotation_edit_mode = 1
+material_overlay = SubResource("StandardMaterial3D_7v7hx")
 mesh = SubResource("ArrayMesh_fn2d2")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=821949648]

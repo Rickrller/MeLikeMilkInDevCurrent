@@ -19,8 +19,8 @@ enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attac
 @export var distancetoplayer : float
 @export var diff : Vector3
 @onready var area = $Area3D
-
-
+@export var parryable = false
+@onready var model = $model
 
 
 
@@ -35,6 +35,11 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if parryable:
+		model.material_overlay.albedo_color = Color(1.0, 1.0, 1.0, 1.0)
+	else:
+		model.material_overlay.albedo_color = Color(1.0, 1.0, 1.0, 0.0)
+	
 	if Engine.get_frames_drawn() % 5 == 0: #optimization shii
 		distancetoplayer = global_position.distance_to(player.global_position)
 		diff = global_position - player.global_position
@@ -73,11 +78,11 @@ func pounce():
 	
 func parried():
 	
-	if not attackready:
+	if not parryable:
 		return
 		
-	if state != enemystate.pouncing and state != enemystate.attacking:
-		return
+	#if state != enemystate.pouncing and state != enemystate.attacking:
+	#	return
 	print("got parried")
 	velocity.y += 15
 	move_and_slide()
@@ -91,7 +96,7 @@ func parried():
 	
 func everythingelse(delta):
 	if player:
-		
+		parryable = false
 		if (diff.x * diff.x + diff.z * diff.z) < 16:
 			velocity.z = lerp(velocity.z, 0.0, 0.1)
 			velocity.x = lerp(velocity.x, 0.0, 0.1)
@@ -125,12 +130,14 @@ func everythingelse(delta):
 		if pounce_available == true and is_on_floor()  and self.global_position.distance_to(player.global_position) < 25:
 			state = enemystate.pouncestart
 				
-			
+	
 
 	move_and_slide()
 	if state == enemystate.blasted:
 		if is_on_floor() or is_on_wall():
 			state = enemystate.everythingelse
+
+
 
 
 
@@ -149,6 +156,7 @@ func blasting():
 		state = enemystate.everythingelse
 
 func pouncing():
+	parryable = true
 	state = enemystate.pouncing
 	velocity.z = direction.z * pounceforce
 	velocity.x = direction.x * pounceforce
@@ -176,15 +184,19 @@ func windup(delta):
 	move_and_slide()
 
 func attack():
+	parryable = true
 	$AnimationPlayer.play("attack")
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.3).timeout
+	parryable = false
 	if not (diff.x * diff.x + diff.z * diff.z) < 16:
 		state = enemystate.everythingelse
 		$AnimationPlayer.stop()
+		$Timer2.start()
 		return
 #	$AnimationPlayer.play("attack")
-	player.getraped(damage)
-	$Timer2.start()
+	if state != enemystate.blasted and state != enemystate.parrying:
+		player.getraped(damage)
+		$Timer2.start()
 
 
 
