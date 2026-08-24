@@ -1,6 +1,6 @@
 extends multistate
 
-@onready var player = get_tree().get_first_node_in_group("player")
+
 var dash = 30.0
 var frames : int
 var t

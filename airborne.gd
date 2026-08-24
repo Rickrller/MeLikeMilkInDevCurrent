@@ -1,5 +1,5 @@
 extends multistate
-@onready var player = get_tree().get_first_node_in_group("player")
+
 @onready var dashing = $"../dashing"
 @onready var camera = %Camera3D
 var t

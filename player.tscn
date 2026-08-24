@@ -29,6 +29,7 @@
 [ext_resource type="Script" uid="uid://n4s7m4kvc2t6" path="res://grapecascade.gd" id="20_iruf7"]
 [ext_resource type="AudioStream" uid="uid://c3n5opgcgd1md" path="res://Delivery_Time.mp3" id="23_7lmhl"]
 [ext_resource type="Texture2D" uid="uid://dqdiecp557i5v" path="res://enemies/Kasane_Pearto_Original.webp" id="24_dx0e4"]
+[ext_resource type="Script" uid="uid://d1gve3scvi2eh" path="res://jump.gd" id="26_khis8"]
 [ext_resource type="Texture2D" uid="uid://cno613y7cf45x" path="res://RedGradient.png" id="30_tkwlq"]
 [ext_resource type="Script" uid="uid://dqdw2l18ytl8x" path="res://health_indicator.gd" id="31_hl5qd"]
 [ext_resource type="Script" uid="uid://bssbuwif5umc8" path="res://damage_indicator.gd" id="32_ek41f"]
@@ -5244,7 +5245,7 @@ mouse_filter = 2
 
 [node name="handstatemachine" type="Node" parent="." unique_id=47888081 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("5_bwjto")
-initial_state = NodePath("pearto")
+initial_state = NodePath("strawberry")
 
 [node name="empty" type="Node" parent="handstatemachine" unique_id=213338977]
 script = ExtResource("6_nvl01")
@@ -5302,6 +5303,9 @@ script = ExtResource("9_q13i1")
 
 [node name="airborne" type="Node" parent="movementstatemachine" unique_id=1542197345]
 script = ExtResource("10_pylmc")
+
+[node name="jump" type="Node" parent="movementstatemachine" unique_id=621712365]
+script = ExtResource("26_khis8")
 
 [node name="dashcooldown" type="Timer" parent="." unique_id=1617558287]
 wait_time = 3.0

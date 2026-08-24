@@ -1,5 +1,4 @@
 extends multistate
-@onready var player = get_tree().get_first_node_in_group("player")
 func Physics_Update(delta: float):
 	if player:
 		player.velocity.x = lerp(player.velocity.x, 0.0, player.friction * delta)
