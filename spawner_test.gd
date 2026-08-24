@@ -11,26 +11,47 @@ const lemon = preload("res://enemies/lemon.tscn")
 const grapes = preload("res://enemies/grapes.tscn")
 const durian = preload("res://enemies/durian.tscn") 
 const grapebomb = preload("res://clustergrape.tscn")
+
+@export var activated = false
+@export var applespawns : int
+@export var aloespawns : int
+@export var coconutspawns : int
+@export var strawberryspawns : int
+@export var starfruitspawns : int
+@export var peartospawns : int
+@export var orangespawns : int
+@export var lemonspawns : int
+@export var grapesspawns : int
+@export var durianspawns : int
+@export var grapebombspawns : int
+
 func _ready() -> void:
 	await get_tree().create_timer(2.0).timeout
-	#spawn_enemy(strawberry, 1, 0)
-	spawn_enemy(lemon, 10, 0)
-	#spawn_enemy(grapebomb, 10, 0.1)
-	#spawn_enemy(starfruit, 1, 0)
-	#spawn_enemy(durian, 1, 0)
-	#spawn_enemy(lemon, 1, 0)
-	#spawn_enemy(orange, 1, 0)
-	#spawn_enemy(aloe, 4, 1)
-	
 
 func spawn_enemy(enemy_type, enemy_amount, delay) -> void:
-	var spawnshape = $SpawnArea/SpawnAreaShape
+	var spawnshape = $SpawnAreaShape
 	var spawnshapesize = spawnshape.shape.size
+	var spawnshapepos = spawnshape.position
 	for loops in enemy_amount:
-		var random_x = randf_range(-spawnshapesize.x / 2, spawnshapesize.x / 2)
-		var random_z = randf_range(-spawnshapesize.z / 2, spawnshapesize.z / 2)
-		var random_y = randf_range(-spawnshapesize.y / 2, spawnshapesize.y / 2)
+		var random_x = randf_range(-spawnshapesize.x / 2, spawnshapesize.x / 2) + spawnshapepos.x
+		var random_z = randf_range(-spawnshapesize.z / 2, spawnshapesize.z / 2) + spawnshapepos.z
+		var random_y = randf_range(-spawnshapesize.y / 2, spawnshapesize.y / 2) + spawnshapepos.y
 		var enemy_instance = enemy_type.instantiate()
 		enemy_instance.position = position + Vector3(random_x, random_y, random_z)
 		get_tree().current_scene.add_child(enemy_instance)
 		await get_tree().create_timer(delay).timeout
+
+
+func _on_spawn_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player") and activated == false:
+		activated = true
+		spawn_enemy(coconut, coconutspawns, 0)
+		spawn_enemy(strawberry, strawberryspawns, 0)
+		spawn_enemy(lemon, lemonspawns, 0)
+		spawn_enemy(grapes, grapesspawns, 0)
+		spawn_enemy(starfruit, starfruitspawns, 0)
+		spawn_enemy(durian, durianspawns, 0)
+		spawn_enemy(lemon, lemonspawns, 0)
+		spawn_enemy(orange, orangespawns, 0)
+		spawn_enemy(aloe, aloespawns, 0)
+		spawn_enemy(apple, applespawns, 0)
