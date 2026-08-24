@@ -83,7 +83,7 @@ func parried():
 		
 	#if state != enemystate.pouncing and state != enemystate.attacking:
 	#	return
-	print("got parried")
+	#print("got parried")
 	velocity.y += 15
 	move_and_slide()
 	var ParryVFXInstance = ParryVFX.instantiate()
@@ -145,7 +145,7 @@ func everythingelse(delta):
 
 
 func blasting():
-	print(state)
+	#print(state)
 
 	state = enemystate.blasted
 	
@@ -171,10 +171,12 @@ func pouncing():
 func windup(delta):
 	if not (diff.x * diff.x + diff.z * diff.z) < 16:
 		state = enemystate.everythingelse
+		#print("failed attack")
+		return
 	if attackready:
 		attackready = false
 		attack()
-		
+		$Timer2.start()
 	
 	
 	lookatplayer(delta)
@@ -184,19 +186,23 @@ func windup(delta):
 	move_and_slide()
 
 func attack():
-	parryable = true
+	
 	$AnimationPlayer.play("attack")
+	await get_tree().create_timer(0.1).timeout
+	parryable = true
 	await get_tree().create_timer(0.3).timeout
 	parryable = false
 	if not (diff.x * diff.x + diff.z * diff.z) < 16:
 		state = enemystate.everythingelse
 		$AnimationPlayer.stop()
-		$Timer2.start()
+		
+		#print("cooldown")
 		return
 #	$AnimationPlayer.play("attack")
 	if state != enemystate.blasted and state != enemystate.parrying:
 		player.getraped(damage)
-		$Timer2.start()
+		
+		#print("cooldown")
 
 
 

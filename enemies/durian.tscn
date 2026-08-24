@@ -6,6 +6,9 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_7k104"]
 radius = 0.4643721
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ohh1l"]
+transparency = 1
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4svt1"]
 resource_name = "Material"
 cull_mode = 2
@@ -116,7 +119,7 @@ givenfruit = "durian"
 sightrange = 40.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1730944178]
-wait_time = 4.0
+wait_time = 6.0
 one_shot = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=111966732]
@@ -127,12 +130,13 @@ shape = SubResource("SphereShape3D_7k104")
 one_shot = true
 
 [node name="smokecooldown" type="Timer" parent="." unique_id=926887697]
-wait_time = 10.0
+wait_time = 12.0
 one_shot = true
 
 [node name="model" type="MeshInstance3D" parent="." unique_id=1637496067]
 transform = Transform3D(-0.0028613822, 0, 0.99999684, 0, 1, 0, -0.9999966, 0, -0.002861383, 0, 0, 0)
 rotation_edit_mode = 1
+material_overlay = SubResource("StandardMaterial3D_ohh1l")
 mesh = SubResource("ArrayMesh_8jp7a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=728107608]
