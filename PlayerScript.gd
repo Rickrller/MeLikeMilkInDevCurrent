@@ -70,7 +70,7 @@ func _physics_process(delta):
 	# Jumping
 
 	if is_on_floor() and Input.is_action_pressed("ui_accept"):
-		velocity.y = jump_velocity
+		eventbus.switch_activity.emit("jump", "active")
 		jump_count += 1
 	elif jump_count < max_jumps and Input.is_action_just_pressed("ui_accept"):
 		velocity.y = jump_velocity + 8
