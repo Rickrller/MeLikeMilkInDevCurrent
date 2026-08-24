@@ -55,6 +55,7 @@ func _physics_process(delta: float) -> void:
 			if attackready == true and state == enemystate.everythingelse and distancetoplayer < 7:
 				attackready = false
 				state = enemystate.attacking
+				$AnimationPlayer.play("attack")
 				player.getraped(damage)
 				if self.name == "pear":
 					eventbus.flashbang.emit()

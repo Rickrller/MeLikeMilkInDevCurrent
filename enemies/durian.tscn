@@ -44,6 +44,67 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_owg3y")
 
+[sub_resource type="Animation" id="Animation_7v7hx"]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("model:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(0, 0.7081177, 0, 0.70609444)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("model:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xh2pe"]
+resource_name = "attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("model:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(0.36602202, 1.8660661, 1.4142138, 1),
+"update": 0,
+"values": [Quaternion(0, 0.70358014, 0, 0.71061593), Quaternion(0.058594156, 0.704675, 0.058594197, 0.7046748), Quaternion(-0.22858597, 0.6691403, -0.22858611, 0.66913986), Quaternion(0, 0.70358014, 0, 0.71061593)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("model:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.23333335, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(0.36602202, 1.8660661, 0.4665164, 0.5547847, 0.36602202),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.2), Vector3(0, 0, -0.19567762), Vector3(0, -0.17251675, -0.64285034), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ohh1l"]
+_data = {
+&"RESET": SubResource("Animation_7v7hx"),
+&"attack": SubResource("Animation_xh2pe")
+}
+
 [node name="Durian" type="CharacterBody3D" unique_id=751157666 groups=["enemy", "hasattack"]]
 script = ExtResource("1_ohh1l")
 damage = 7.0
@@ -70,8 +131,12 @@ wait_time = 10.0
 one_shot = true
 
 [node name="model" type="MeshInstance3D" parent="." unique_id=1637496067]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(-0.002861382, 0, 0.9999967, 0, 1, 0, -0.9999965, 0, -0.0028613827, 0, 0, 0)
+rotation_edit_mode = 1
 mesh = SubResource("ArrayMesh_8jp7a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=728107608]
+libraries/ = SubResource("AnimationLibrary_ohh1l")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

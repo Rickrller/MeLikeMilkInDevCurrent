@@ -128,7 +128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -34.757614, 0)
 [node name="Spawner" type="Node3D" parent="." unique_id=1833533121]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 190.61911, -30.885183, -20.748177)
 script = ExtResource("19_yv7ed")
-applespawns = 4
+durianspawns = 1
 
 [node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner" unique_id=792077890]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.500336, -2.3313618, 0)
@@ -144,8 +144,7 @@ debug_color = Color(1, 1, 0, 0.41960785)
 [node name="Spawner2" type="Node3D" parent="." unique_id=212992814]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.82509, -30.885183, -20.748177)
 script = ExtResource("19_yv7ed")
-applespawns = 3
-aloespawns = 1
+strawberryspawns = 1
 
 [node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner2" unique_id=706819950]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.500336, -2.3313618, 0)

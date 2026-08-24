@@ -61,14 +61,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7662829, 0)
 shape = SubResource("SphereShape3D_e8kwr")
 
 [node name="Timer" type="Timer" parent="." unique_id=1793278917]
-wait_time = 4.0
+wait_time = 8.0
 one_shot = true
 
 [node name="Timer2" type="Timer" parent="." unique_id=1178555579]
 one_shot = true
 
 [node name="model" type="MeshInstance3D" parent="." unique_id=2105464025]
-transform = Transform3D(4.371139e-08, -6.600236e-15, 1, -1.509958e-07, -1, 0, 1, -1.509958e-07, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1.0000002, -8.74228e-08, -0.99999976, 0, 1.0000002, -8.7422755e-08, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_fn2d2")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=821949648]
