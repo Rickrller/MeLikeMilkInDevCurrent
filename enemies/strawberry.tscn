@@ -47,13 +47,51 @@ shadow_mesh = SubResource("ArrayMesh_wt7gs")
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_7v7hx"]
 radius = 10.770508
 
+[sub_resource type="Animation" id="Animation_xh2pe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("model:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(0.70710677, -3.090862e-08, 0.70710677, -3.090862e-08)]
+}
+
+[sub_resource type="Animation" id="Animation_7v7hx"]
+resource_name = "attack"
+length = 0.53333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("model:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.23333335, 0.33333334, 0.53333336),
+"transitions": PackedFloat32Array(0.36602202, 1.8660661, 0.40612632, 0.59460354, 1),
+"update": 0,
+"values": [Quaternion(0.70710677, -3.090862e-08, 0.70710677, -3.090862e-08), Quaternion(0.7047918, -0.057170533, 0.70479184, -0.057170533), Quaternion(0.7013549, 0.090007365, 0.70135486, 0.09000738), Quaternion(0.66668403, 0.2356531, 0.66668403, 0.23565315), Quaternion(0.70710677, -3.090862e-08, 0.70710677, -3.090862e-08)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xh2pe"]
+_data = {
+&"RESET": SubResource("Animation_xh2pe"),
+&"attack": SubResource("Animation_7v7hx")
+}
+
 [node name="strawberry" type="CharacterBody3D" unique_id=1355039543 groups=["enemy", "hasattack"]]
 script = ExtResource("1_7v7hx")
 damage = 4.0
-health = 25.0
+health = 100.0
 speed = 12.0
 pouncerange = 10.0
 pounceforce = 3.0
+givenfruit = "strawberry"
 sightrange = 20.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=345421478]
@@ -68,7 +106,8 @@ one_shot = true
 one_shot = true
 
 [node name="model" type="MeshInstance3D" parent="." unique_id=2105464025]
-transform = Transform3D(4.37114e-08, -3.82137e-15, 1.0000002, -8.74228e-08, -0.99999976, 0, 1.0000002, -8.7422755e-08, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(0, 3.5527128e-15, 1.0000001, -8.74228e-08, -0.99999976, 0, 1.0000002, -8.742276e-08, 0, 0, 0, 0)
+rotation_edit_mode = 1
 mesh = SubResource("ArrayMesh_fn2d2")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=821949648]
@@ -78,6 +117,9 @@ monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1373316002]
 shape = SubResource("CylinderShape3D_7v7hx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=943809168]
+libraries/ = SubResource("AnimationLibrary_xh2pe")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

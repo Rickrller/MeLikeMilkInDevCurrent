@@ -1,5 +1,5 @@
 extends CharacterBody3D
-enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attacking, attackready}
+enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attacking}
 @export var state : enemystate = enemystate.everythingelse
 @export var damage : float
 @export var health : float
@@ -21,7 +21,7 @@ enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attac
 @onready var area = $Area3D
 
 
-	
+
 
 
 func _ready() -> void:
@@ -35,55 +35,84 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	
-	if state == enemystate.blasted:
-		blasting()
 	if Engine.get_frames_drawn() % 5 == 0: #optimization shii
 		distancetoplayer = global_position.distance_to(player.global_position)
 		diff = global_position - player.global_position
-	if distancetoplayer < sightrange:
-		lookatplayer(delta)
+	
 	if health <= 0:
 		#eventbus.grantitem.emit(givenfruit)
 		queue_free()
 	if not is_on_floor():
 		velocity.y -= fallspeed * delta
 	
+	
+	
+	if state == enemystate.everythingelse:
+		everythingelse(delta)
+	elif state == enemystate.pouncestart:
+		pounce()
+	elif state == enemystate.pouncing:
+		pouncing()
+	elif state == enemystate.blasted:
+		blasting()
+	elif state == enemystate.attacking:
+		windup(delta)
+			
+func pounce():
+	state = enemystate.pouncing
+	
+	
+	pounce_available = false
+	velocity.y += 30
+	await get_tree().physics_frame
+	pouncing()
+	$Timer.start()
+	await get_tree().create_timer(1).timeout
+	velocity.y -= 80
+	
+	
+func parried():
+	
+	if not attackready:
+		return
+		
+	if state != enemystate.pouncing and state != enemystate.attacking:
+		return
+	print("got parried")
+	velocity.y += 15
+	move_and_slide()
+	var ParryVFXInstance = ParryVFX.instantiate()
+	ParryVFXInstance.global_transform = self.global_transform
+	get_tree().root.add_child(ParryVFXInstance)
+	await get_tree().process_frame
+	
+	state = enemystate.blasted
+	
+	
+func everythingelse(delta):
 	if player:
-		#if sqrt(((global_position.x - player.global_position.x) **2)+(global_position.z - player.global_position.z) ** 2) < 5:
+		
 		if (diff.x * diff.x + diff.z * diff.z) < 16:
-			if state != enemystate.pouncing and state != enemystate.blasted:
-				#state = enemystate.attackready
-			#print("closetoplayer")
+			velocity.z = lerp(velocity.z, 0.0, 0.1)
+			velocity.x = lerp(velocity.x, 0.0, 0.1)
 			#direction.y = 0.0
-				velocity.z = lerp(velocity.z, 0.0, 0.1)
-				velocity.x = lerp(velocity.x, 0.0, 0.1)
-			
-			
-			if attackready == true and state == enemystate.everythingelse and distancetoplayer < 7:
-				attackready = false
+			lookatplayer(delta)
+			if attackready == true:
 				state = enemystate.attacking
-				$AnimationPlayer.play("attack")
-				player.getraped(damage)
-				if name == "pear":
-					eventbus.flashbang.emit()
-				$Timer2.start()
-				#state = enemystate.attackready
-			else:
-				if state == enemystate.attacking:
-					state = enemystate.everythingelse
+				
 			move_and_slide()
 			return
+			
 		if distancetoplayer < sightrange:
-			if state == enemystate.everythingelse:
-				
-				direction = global_position.direction_to(player.global_position)
-				direction.y = 0.0
-				direction = direction.normalized()
-				velocity.z = lerp(velocity.z, direction.z * speed, 0.03)
-				velocity.x = lerp(velocity.x, direction.x * speed, 0.03)
-				#velocity.x = direction.x * speed
-				#velocity.z = direction.x * speed
+			
+			lookatplayer(delta)
+			direction = global_position.direction_to(player.global_position)
+			direction.y = 0.0
+			direction = direction.normalized()
+			velocity.z = lerp(velocity.z, direction.z * speed, 0.03)
+			velocity.x = lerp(velocity.x, direction.x * speed, 0.03)
+			#velocity.x = direction.x * speed
+			#velocity.z = direction.x * speed
 		else: 
 			direction.y = 0.0
 			velocity.z = lerp(velocity.z, 0.0, 0.1)
@@ -93,72 +122,70 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if distancetoplayer < pouncerange:
-		if get_node_or_null("Timer"):
-			if pounce_available == true and is_on_floor() and state != enemystate.blasted and self.global_position.distance_to(player.global_position) < 25:
-				pounce()
+		if pounce_available == true and is_on_floor()  and self.global_position.distance_to(player.global_position) < 25:
+			state = enemystate.pouncestart
 				
 			
 
-	if state == enemystate.pouncing:
-		pouncing()
-	
 	move_and_slide()
 	if state == enemystate.blasted:
 		if is_on_floor() or is_on_wall():
 			state = enemystate.everythingelse
-			#print("basicenemystate", state)
-	if state == enemystate.pouncing:
-		if is_on_floor():
-			
-			state = enemystate.everythingelse
-			area.monitoring = true
-			$Area3D/CollisionShape3D.set_deferred("disabled", false)
-			area.global_position = global_position
-			deactivatearea()
-			
-func pounce():
 
-	if state == enemystate.everythingelse:
-		state = enemystate.pouncestart
-	else:
-		return
-	pounce_available = false
-	velocity.y += 30
-	pouncing()
-	$Timer.start()
-	await get_tree().create_timer(1).timeout
-	velocity.y -= 80
-	
-	
-func parried():
-	#print("parry initiated")
-	state = enemystate.parrying
-	velocity.y += 15
-	
-	var ParryVFXInstance = ParryVFX.instantiate()
-	ParryVFXInstance.global_transform = self.global_transform
-	get_tree().root.add_child(ParryVFXInstance)
-	
-	blasting()
-	
-	
+
+
+
 
 
 func blasting():
-	#print(state)
-	if state != enemystate.everythingelse:
-		state = enemystate.blasted
-	else:
-		return
+	print(state)
+
+	state = enemystate.blasted
+	
 	velocity.z = direction.z * -50
 	velocity.x = direction.x * -50
+	move_and_slide()
+	if is_on_floor() or is_on_wall():
+		state = enemystate.everythingelse
 
 func pouncing():
 	state = enemystate.pouncing
 	velocity.z = direction.z * pounceforce
 	velocity.x = direction.x * pounceforce
+	move_and_slide()
+	if is_on_floor():
+		state = enemystate.everythingelse
+		area.monitoring = true
+		$Area3D/CollisionShape3D.set_deferred("disabled", false)
+		area.global_position = global_position
+		deactivatearea()
 
+func windup(delta):
+	if not (diff.x * diff.x + diff.z * diff.z) < 16:
+		state = enemystate.everythingelse
+	if attackready:
+		attackready = false
+		attack()
+		
 	
+	
+	lookatplayer(delta)
+	velocity.z = lerp(velocity.z, 0.0, 0.1)
+	velocity.x = lerp(velocity.x, 0.0, 0.1)
+	
+	move_and_slide()
+
+func attack():
+	$AnimationPlayer.play("attack")
+	await get_tree().create_timer(0.1).timeout
+	if not (diff.x * diff.x + diff.z * diff.z) < 16:
+		state = enemystate.everythingelse
+		$AnimationPlayer.stop()
+		return
+#	$AnimationPlayer.play("attack")
+	player.getraped(damage)
+	$Timer2.start()
+
 
 
 func _on_timer_timeout() -> void:

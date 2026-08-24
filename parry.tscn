@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://in70xok2q5v1" path="res://parryinst.gd" id="1_ymktk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xspql"]
+radius = 1.0
 
 [node name="parry" type="Area3D" unique_id=405881900]
 script = ExtResource("1_ymktk")

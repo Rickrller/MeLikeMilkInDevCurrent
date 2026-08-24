@@ -84,8 +84,8 @@ func everythingelse(delta):
 			velocity.z = lerp(velocity.z, 0.0, 0.1)
 			velocity.x = lerp(velocity.x, 0.0, 0.1)
 			#direction.y = 0.0
-			lookatplayer(delta)
-			if attackready == true and state == enemystate.everythingelse:
+			
+			if attackready == true:
 				$windup.start()
 				state = enemystate.attacking
 				
@@ -93,7 +93,6 @@ func everythingelse(delta):
 			return
 		if distancetoplayer < sightrange:
 			
-			lookatplayer(delta)
 			direction = global_position.direction_to(player.global_position)
 			direction.y = 0.0
 			direction = direction.normalized()

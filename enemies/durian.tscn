@@ -131,7 +131,7 @@ wait_time = 10.0
 one_shot = true
 
 [node name="model" type="MeshInstance3D" parent="." unique_id=1637496067]
-transform = Transform3D(-0.002861382, 0, 0.9999967, 0, 1, 0, -0.9999965, 0, -0.0028613827, 0, 0, 0)
+transform = Transform3D(-0.0028613822, 0, 0.99999684, 0, 1, 0, -0.9999966, 0, -0.002861383, 0, 0, 0)
 rotation_edit_mode = 1
 mesh = SubResource("ArrayMesh_8jp7a")
 
