@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://cugl6nxdh3eke"]
 
 [ext_resource type="Texture2D" uid="uid://bckc05fqg3l56" path="res://Wood.png" id="1_uvmw4"]
-[ext_resource type="PackedScene" uid="uid://bh0v5dmluqvca" path="res://Town.tscn" id="2_6p6yf"]
+[ext_resource type="PackedScene" uid="uid://bh0v5dmluqvca" path="res://StraightRoad.tscn" id="2_6p6yf"]
 [ext_resource type="Script" uid="uid://x3j10428w6tw" path="res://LevelData.gd" id="2_n78h1"]
 
 [resource]

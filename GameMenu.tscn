@@ -1,0 +1,2336 @@
+[gd_scene format=3 uid="uid://bwl2u7u06lauq"]
+
+[ext_resource type="Shader" uid="uid://vcnano0bkesh" path="res://Sky.gdshader" id="1_u8jli"]
+[ext_resource type="Texture2D" uid="uid://blwx5y33w6d0l" path="res://Clouds.png" id="2_b6b1f"]
+[ext_resource type="Material" uid="uid://ng6ioslup1d" path="res://PurpleRoof.tres" id="3_hnidg"]
+[ext_resource type="Material" uid="uid://loh78rx77ghn" path="res://WhiteWall.tres" id="4_nmt77"]
+[ext_resource type="Texture2D" uid="uid://demsqoao81t8b" path="res://BricksFixed.png" id="5_tpdbe"]
+[ext_resource type="Material" uid="uid://c1wjhtox6rsx3" path="res://Wood.tres" id="6_nnwpj"]
+[ext_resource type="Material" uid="uid://ca7m8147ic7m1" path="res://BlueGlass.tres" id="7_c5lou"]
+[ext_resource type="Material" uid="uid://dmxf544pr77t" path="res://Yellow.tres" id="8_5hpli"]
+[ext_resource type="Material" uid="uid://br66824ryfl2b" path="res://Bricks.tres" id="9_47xby"]
+[ext_resource type="Material" uid="uid://dobuut67cedeq" path="res://GreenBricks.tres" id="10_5rfvp"]
+[ext_resource type="Material" uid="uid://b2rj36yucvk8k" path="res://GreenTreeGrass.tres" id="11_l54u3"]
+[ext_resource type="Material" uid="uid://balumk05moncr" path="res://Curb.tres" id="12_hjp7v"]
+[ext_resource type="Material" uid="uid://clvfjt5wy64vq" path="res://Road.tres" id="13_00f02"]
+[ext_resource type="Material" uid="uid://bjnhc1tfb6cto" path="res://RoadCurb.tres" id="14_otrmt"]
+[ext_resource type="Material" uid="uid://jdf7u6btn8q7" path="res://YellowLine.tres" id="15_uts4i"]
+[ext_resource type="Material" uid="uid://cmptt1iar8hnh" path="res://GreenGreenGrass.tres" id="16_odd2q"]
+[ext_resource type="Texture2D" uid="uid://d12hejdp07kry" path="res://Grass2.png" id="17_0oqxe"]
+[ext_resource type="Script" uid="uid://pxwn56ubbynm" path="res://MenuCamera.gd" id="18_lps0c"]
+[ext_resource type="FontFile" uid="uid://d20rfwk5g6tyt" path="res://Freedom-10eM.ttf" id="19_b6b1f"]
+[ext_resource type="Script" uid="uid://18gri5q53t0t" path="res://LabelColours.gd" id="20_hnidg"]
+[ext_resource type="Script" uid="uid://dcjowt558lvvp" path="res://QuitButton.gd" id="20_nmt77"]
+[ext_resource type="Script" uid="uid://t0as40rgvqa5" path="res://PlayButton.gd" id="20_nnwpj"]
+[ext_resource type="Script" uid="uid://bx5bc84j0s7mp" path="res://TutorialButton.gd" id="21_c5lou"]
+[ext_resource type="Script" uid="uid://dj27a0khis6s3" path="res://AboutButton.gd" id="22_c5lou"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uvmgb"]
+shader = ExtResource("1_u8jli")
+shader_parameter/cloud_noise_texture = ExtResource("2_b6b1f")
+shader_parameter/sky_exposure = 1.0
+shader_parameter/sky_tint = Color(0.75686276, 1, 1, 1)
+shader_parameter/cloud_scale = 0.2
+shader_parameter/cloud_density = 0.0
+shader_parameter/cloud_softness = 1.0
+shader_parameter/detail_strength = 1.038000049305
+shader_parameter/cloud_contrast = 1.1670000316825
+shader_parameter/cloud_bright_color = Color(1, 1, 1, 1)
+shader_parameter/cloud_mid_color = Color(0.82, 0.84, 0.88, 1)
+shader_parameter/cloud_dark_color = Color(0.5, 0.54, 0.62, 1)
+shader_parameter/cloud_brightness = 1.15
+shader_parameter/atmosphere_blend = 0.22
+shader_parameter/atmosphere_horizon_strength = 1.0
+shader_parameter/atmosphere_zenith_strength = 2.0
+shader_parameter/cloud_direction = Vector2(0, -0.5)
+shader_parameter/cloud_speed = 0.01
+shader_parameter/cloud_evolution_speed = 0.01
+shader_parameter/edge_warp_strength = 0.08
+shader_parameter/edge_warp_scale = 3.0
+shader_parameter/horizon_fade = 0.18
+shader_parameter/zenith_density = 1.0
+shader_parameter/horizon_blend = 0.35
+shader_parameter/sun_direction = Vector3(0.4, 0.5, 0.2)
+shader_parameter/sun_color = Color(1, 0.96, 0.88, 1)
+shader_parameter/sun_size = 0.004
+shader_parameter/sun_intensity = 14.0
+shader_parameter/random_light_strength = 0.4
+shader_parameter/random_light_scale = 0.7
+
+[sub_resource type="Sky" id="Sky_typi0"]
+sky_material = SubResource("ShaderMaterial_uvmgb")
+
+[sub_resource type="Environment" id="Environment_ufxl1"]
+background_mode = 2
+background_energy_multiplier = 0.6
+sky = SubResource("Sky_typi0")
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 3
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.76247585, 0.78586566, 0.82225716, 1)
+fog_sun_scatter = 0.05
+fog_density = 1.0
+fog_aerial_perspective = 1.0
+fog_depth_begin = 0.0
+fog_depth_end = 244.4
+volumetric_fog_density = 0.001
+volumetric_fog_emission = Color(1, 1, 1, 1)
+volumetric_fog_detail_spread = 6.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_2fd4w"]
+material = ExtResource("3_hnidg")
+size = Vector3(12, 0.4, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1w80w"]
+material = ExtResource("4_nmt77")
+size = Vector3(11.5, 4, 11.5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_0mjhh"]
+material = ExtResource("3_hnidg")
+size = Vector3(13, 3, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qg4u2"]
+albedo_texture = ExtResource("5_tpdbe")
+
+[sub_resource type="BoxMesh" id="BoxMesh_tj2aq"]
+material = SubResource("StandardMaterial3D_qg4u2")
+size = Vector3(13, 0.5, 12)
+
+[sub_resource type="PrismMesh" id="PrismMesh_nli4h"]
+size = Vector3(13, 3, 13)
+
+[sub_resource type="PrismMesh" id="PrismMesh_e0tc2"]
+material = ExtResource("4_nmt77")
+size = Vector3(11.5, 2.5, 11.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mdcqr"]
+material = ExtResource("6_nnwpj")
+size = Vector3(1.5, 2.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n4cwv"]
+size = Vector3(1.3, 2.05, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3ju1h"]
+size = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tjoph"]
+material = ExtResource("7_c5lou")
+size = Vector3(2.8, 1.8, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_on4tw"]
+material = ExtResource("8_5hpli")
+size = Vector3(1.4, 2.19, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_72wwg"]
+material = ExtResource("4_nmt77")
+size = Vector3(5.75, 4, 9.5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_vkigm"]
+material = ExtResource("9_47xby")
+size = Vector3(6.5, 2, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kl0cw"]
+size = Vector3(6.5, 0.5, 10)
+
+[sub_resource type="PrismMesh" id="PrismMesh_qxc1d"]
+size = Vector3(6.5, 2, 11)
+
+[sub_resource type="PrismMesh" id="PrismMesh_ffqkb"]
+material = ExtResource("4_nmt77")
+size = Vector3(5.7, 2.2, 9.5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_npad4"]
+material = ExtResource("6_nnwpj")
+top_radius = 0.7
+bottom_radius = 0.7
+radial_segments = 15
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fmd86"]
+material = ExtResource("6_nnwpj")
+top_radius = 0.3
+bottom_radius = 0.6
+height = 1.0
+radial_segments = 15
+
+[sub_resource type="BoxMesh" id="BoxMesh_blfio"]
+material = ExtResource("6_nnwpj")
+size = Vector3(0.1, 1.3, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hgp8o"]
+material = ExtResource("7_c5lou")
+top_radius = 0.8
+bottom_radius = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_1uqp8"]
+material = ExtResource("10_5rfvp")
+size = Vector3(12, 0.4, 12)
+
+[sub_resource type="PrismMesh" id="PrismMesh_4ahqm"]
+material = ExtResource("10_5rfvp")
+size = Vector3(13, 3, 12)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_skt6y"]
+shader = ExtResource("1_u8jli")
+shader_parameter/cloud_noise_texture = ExtResource("2_b6b1f")
+shader_parameter/sky_exposure = 1.0
+shader_parameter/sky_tint = Color(0.75686276, 1, 1, 1)
+shader_parameter/cloud_scale = 0.2
+shader_parameter/cloud_density = 0.0
+shader_parameter/cloud_softness = 1.0
+shader_parameter/detail_strength = 1.038000049305
+shader_parameter/cloud_contrast = 1.1670000316825
+shader_parameter/cloud_bright_color = Color(1, 1, 1, 1)
+shader_parameter/cloud_mid_color = Color(0.82, 0.84, 0.88, 1)
+shader_parameter/cloud_dark_color = Color(0.5, 0.54, 0.62, 1)
+shader_parameter/cloud_brightness = 1.15
+shader_parameter/atmosphere_blend = 0.22
+shader_parameter/atmosphere_horizon_strength = 1.0
+shader_parameter/atmosphere_zenith_strength = 2.0
+shader_parameter/cloud_direction = Vector2(0, -0.5)
+shader_parameter/cloud_speed = 0.01
+shader_parameter/cloud_evolution_speed = 0.01
+shader_parameter/edge_warp_strength = 0.08
+shader_parameter/edge_warp_scale = 3.0
+shader_parameter/horizon_fade = 0.18
+shader_parameter/zenith_density = 1.0
+shader_parameter/horizon_blend = 0.35
+shader_parameter/sun_direction = Vector3(0.4, 0.5, 0.2)
+shader_parameter/sun_color = Color(1, 0.96, 0.88, 1)
+shader_parameter/sun_size = 0.004
+shader_parameter/sun_intensity = 14.0
+shader_parameter/random_light_strength = 0.4
+shader_parameter/random_light_scale = 0.7
+
+[sub_resource type="Sky" id="Sky_bur4k"]
+sky_material = SubResource("ShaderMaterial_skt6y")
+
+[sub_resource type="Environment" id="Environment_geebr"]
+background_mode = 2
+background_energy_multiplier = 0.6
+sky = SubResource("Sky_bur4k")
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 3
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.76247585, 0.78586566, 0.82225716, 1)
+fog_sun_scatter = 0.05
+fog_density = 1.0
+fog_aerial_perspective = 1.0
+fog_depth_begin = 0.0
+fog_depth_end = 244.4
+volumetric_fog_density = 0.001
+volumetric_fog_emission = Color(1, 1, 1, 1)
+volumetric_fog_detail_spread = 6.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_w8brg"]
+material = ExtResource("11_l54u3")
+radius = 1.6
+height = 3.2
+radial_segments = 4
+rings = 4
+
+[sub_resource type="SphereMesh" id="SphereMesh_3806j"]
+material = ExtResource("11_l54u3")
+radius = 1.6
+height = 3.2
+radial_segments = 4
+rings = 3
+
+[sub_resource type="SphereMesh" id="SphereMesh_5huw8"]
+material = ExtResource("11_l54u3")
+radius = 1.6
+height = 3.2
+radial_segments = 4
+rings = 3
+
+[sub_resource type="SphereMesh" id="SphereMesh_dy1gj"]
+material = ExtResource("11_l54u3")
+radius = 1.6
+height = 3.2
+radial_segments = 4
+rings = 4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2w73l"]
+material = ExtResource("12_hjp7v")
+top_radius = 0.3
+bottom_radius = 0.4
+height = 7.0
+radial_segments = 5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nv43u"]
+material = ExtResource("12_hjp7v")
+top_radius = 0.3
+height = 1.0
+radial_segments = 5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xdygh"]
+material = ExtResource("6_nnwpj")
+top_radius = 0.2
+height = 1.0
+radial_segments = 5
+
+[sub_resource type="SphereMesh" id="SphereMesh_epeca"]
+material = ExtResource("11_l54u3")
+radius = 1.5
+height = 3.0
+radial_segments = 4
+rings = 4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mkm8p"]
+top_radius = 0.2
+bottom_radius = 0.3
+height = 6.0
+radial_segments = 5
+
+[sub_resource type="SphereMesh" id="SphereMesh_wivn8"]
+material = ExtResource("11_l54u3")
+radius = 1.5
+height = 3.0
+radial_segments = 4
+rings = 4
+
+[sub_resource type="SphereMesh" id="SphereMesh_jnvfg"]
+radius = 1.2
+height = 2.4
+radial_segments = 4
+rings = 3
+
+[sub_resource type="SphereMesh" id="SphereMesh_g6fb3"]
+radius = 1.5
+height = 3.0
+radial_segments = 4
+rings = 4
+
+[sub_resource type="SphereMesh" id="SphereMesh_htxov"]
+radius = 1.2
+height = 2.4
+radial_segments = 4
+rings = 4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4y5e5"]
+top_radius = 0.2
+bottom_radius = 0.3
+height = 4.0
+radial_segments = 5
+
+[sub_resource type="SphereMesh" id="SphereMesh_gk4ef"]
+material = ExtResource("11_l54u3")
+radius = 1.2
+height = 2.4
+radial_segments = 4
+rings = 4
+
+[sub_resource type="SphereMesh" id="SphereMesh_rws0q"]
+radius = 1.0
+height = 2.0
+radial_segments = 4
+rings = 4
+
+[sub_resource type="BoxMesh" id="BoxMesh_1hfgy"]
+material = ExtResource("13_00f02")
+size = Vector3(200, 0.1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rfkc3"]
+material = ExtResource("14_otrmt")
+size = Vector3(200, 0.15, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xxyq7"]
+material = ExtResource("15_uts4i")
+size = Vector3(200, 0.15, 0.2)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jfqjj"]
+material = ExtResource("13_00f02")
+top_radius = 30.0
+bottom_radius = 30.0
+height = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ge026"]
+material = ExtResource("13_00f02")
+top_radius = 18.0
+bottom_radius = 18.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pqetc"]
+material = ExtResource("14_otrmt")
+top_radius = 31.0
+bottom_radius = 31.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4051s"]
+load_path = "res://.godot/imported/RedTexture.jpg-a4ef2b99f006577faf14e32090a1853d.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rfy1v"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_4051s")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_n1oyq"]
+material = SubResource("StandardMaterial3D_rfy1v")
+top_radius = 30.0
+bottom_radius = 30.0
+height = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l41lg"]
+load_path = "res://.godot/imported/WHITEwall.png-cbf20d4971aea98df27304b1ccc244dd.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t18jw"]
+albedo_color = Color(0.3854925, 0.38549247, 0.38549247, 1)
+albedo_texture = SubResource("CompressedTexture2D_l41lg")
+metallic_specular = 0.42
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+uv1_scale = Vector3(1, 0.1, 1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1kaaf"]
+material = SubResource("StandardMaterial3D_t18jw")
+top_radius = 19.0
+bottom_radius = 19.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u1bat"]
+load_path = "res://.godot/imported/RedTexture.jpg-a4ef2b99f006577faf14e32090a1853d.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gks8s"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_u1bat")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_d36cf"]
+material = SubResource("StandardMaterial3D_gks8s")
+top_radius = 18.0
+bottom_radius = 18.0
+height = 4.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kxxio"]
+material = ExtResource("15_uts4i")
+top_radius = 25.3
+bottom_radius = 25.3
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ava26"]
+load_path = "res://.godot/imported/RedTexture.jpg-a4ef2b99f006577faf14e32090a1853d.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wg0tf"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_ava26")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3h81x"]
+material = SubResource("StandardMaterial3D_wg0tf")
+top_radius = 24.7
+bottom_radius = 24.7
+height = 4.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_33tw6"]
+material = ExtResource("16_odd2q")
+size = Vector2(500, 500)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rlqp2"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.7379664, 0.80518776, 0.7235965, 1)
+albedo_texture = ExtResource("17_0oqxe")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_distance = 0.01
+distance_fade_max_distance = 5.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_mxeoh"]
+material = SubResource("StandardMaterial3D_rlqp2")
+
+[sub_resource type="Curve" id="Curve_ha1ft"]
+_limits = [-50.0, 50.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(0.4, -1), 0.0, 0.0, 0, 0, Vector2(0.6, 1), 0.0, 0.0, 0, 0, Vector2(0.8, -1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Curve" id="Curve_fabcq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.28042328, 1), 0.0, 0.0, 0, 0, Vector2(0.52116406, 1), 0.0, 0.0, 0, 0, Vector2(0.6269841, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_xgow2"]
+offsets = PackedFloat32Array(0, 0.20679012, 0.79320985, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_fq54w"]
+offsets = PackedFloat32Array(0.0030864198, 0.40432099, 0.69135803, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.8625222, 0.8625217, 0.8625216, 1, 1, 1, 1, 1, 0.89275575, 0.89275575, 0.8927557, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hnidg"]
+font = ExtResource("19_b6b1f")
+font_size = 120
+font_color = Color(0, 0, 0, 1)
+outline_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_5hpli"]
+font_size = 20
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="GameMenu" type="Node3D" unique_id=229098661]
+
+[node name="Lighting" type="Node3D" parent="." unique_id=11813510]
+transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, -0.020466805, -4.7064266, -0.016745448)
+
+[node name="Environment" type="WorldEnvironment" parent="Lighting" unique_id=1340696137]
+environment = SubResource("Environment_ufxl1")
+
+[node name="Sun" type="DirectionalLight3D" parent="Lighting" unique_id=1269302160]
+transform = Transform3D(-1, 6.1817246e-08, -6.1817246e-08, 0, 0.7071068, 0.7071068, 8.742278e-08, 0.7071068, -0.7071068, 0, 0, 0)
+light_color = Color(0.9990608, 0.9999998, 0.95401555, 1)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+light_bake_mode = 0
+shadow_enabled = true
+shadow_normal_bias = 0.0
+
+[node name="CoolMap" type="Node3D" parent="." unique_id=71255366]
+
+[node name="Buildings" type="Node3D" parent="CoolMap" unique_id=499261209]
+
+[node name="BigHouseType1" type="Node3D" parent="CoolMap/Buildings" unique_id=1231649831]
+transform = Transform3D(0.01941466, 0, 1.1059356, 0, 1.683, 0, -1.7998953, 0, 0.01192923, 74.01652, 0, -0.18873358)
+
+[node name="Base" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType1" unique_id=6951220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_2fd4w")
+
+[node name="Walls" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType1" unique_id=1027581552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125158, 0)
+mesh = SubResource("BoxMesh_1w80w")
+
+[node name="Roof" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType1" unique_id=1958474504]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType1/Roof" unique_id=1300861842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_0mjhh")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType1/Roof" unique_id=1694112645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("BoxMesh_tj2aq")
+material = ExtResource("3_hnidg")
+
+[node name="RoofCut" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType1/Roof" unique_id=400405584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_nli4h")
+
+[node name="RoofInside" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType1" unique_id=1044635519]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2963176, 0)
+mesh = SubResource("PrismMesh_e0tc2")
+
+[node name="Doorframe" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType1" unique_id=1888013590]
+use_collision = true
+
+[node name="Doorframe" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType1/Doorframe" unique_id=1251327809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_mdcqr")
+
+[node name="DoorframeCutout" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType1/Doorframe" unique_id=769327304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3208761, -5.4093323)
+operation = 2
+mesh = SubResource("BoxMesh_n4cwv")
+
+[node name="Window" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType1" unique_id=727555120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType1/Window" unique_id=1606603117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_3ju1h")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType1/Window" unique_id=1587049381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_tjoph")
+
+[node name="Window2" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType1" unique_id=363542686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType1/Window2" unique_id=1657172820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_3ju1h")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType1/Window2" unique_id=1736472172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_tjoph")
+
+[node name="Door" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType1" unique_id=808469669]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.346551)
+mesh = SubResource("BoxMesh_on4tw")
+
+[node name="SecondFloor2" type="Node3D" parent="CoolMap/Buildings/BigHouseType1" unique_id=1991158345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -0.371)
+
+[node name="Walls" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType1/SecondFloor2" unique_id=2143225617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6275067, 0)
+mesh = SubResource("BoxMesh_72wwg")
+
+[node name="Roof" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType1/SecondFloor2" unique_id=965869894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType1/SecondFloor2/Roof" unique_id=206123192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_vkigm")
+material = ExtResource("3_hnidg")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType1/SecondFloor2/Roof" unique_id=1009863517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4292421, 0)
+mesh = SubResource("BoxMesh_kl0cw")
+material = ExtResource("3_hnidg")
+
+[node name="RoofCut" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType1/SecondFloor2/Roof" unique_id=2135984379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_qxc1d")
+
+[node name="RoofInside" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType1/SecondFloor2" unique_id=1263380527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.3593674, 0)
+mesh = SubResource("PrismMesh_ffqkb")
+
+[node name="CircleWindow" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType1" unique_id=1154833314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5020514, 0.6115489)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType1/CircleWindow" unique_id=250206722]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3904247, -4.8226953)
+mesh = SubResource("CylinderMesh_npad4")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType1/CircleWindow" unique_id=70833229]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3999996, -5.343495)
+operation = 2
+mesh = SubResource("CylinderMesh_fmd86")
+
+[node name="WindowFrame" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType1/CircleWindow" unique_id=1271962946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_blfio")
+
+[node name="WindowFrame2" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType1/CircleWindow" unique_id=1145590185]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_blfio")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType1/CircleWindow" unique_id=898568152]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, 1.4017477, -4.757486)
+mesh = SubResource("CylinderMesh_hgp8o")
+
+[node name="BigHouseType2" type="Node3D" parent="CoolMap/Buildings" unique_id=1841672375]
+transform = Transform3D(-1.4996407, 0, 0.020199627, 0, 1.403, 0, -0.032827128, 0, -0.9227789, 35.857853, 0, -37.85273)
+
+[node name="Base" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType2" unique_id=597441494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_1uqp8")
+
+[node name="Walls" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType2" unique_id=1235335416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125158, 0)
+mesh = SubResource("BoxMesh_1w80w")
+
+[node name="Roof" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType2" unique_id=1768477946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType2/Roof" unique_id=769155778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_4ahqm")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType2/Roof" unique_id=2085858678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("BoxMesh_tj2aq")
+material = ExtResource("10_5rfvp")
+
+[node name="RoofCut" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType2/Roof" unique_id=893215725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_nli4h")
+
+[node name="RoofInside" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType2" unique_id=1039985498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2963176, 0)
+mesh = SubResource("PrismMesh_e0tc2")
+
+[node name="Doorframe" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType2" unique_id=434499933]
+use_collision = true
+
+[node name="Doorframe" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType2/Doorframe" unique_id=20322191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_mdcqr")
+
+[node name="DoorframeCutout" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType2/Doorframe" unique_id=749056125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3208761, -5.4093323)
+operation = 2
+mesh = SubResource("BoxMesh_n4cwv")
+
+[node name="Window" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType2" unique_id=509021137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType2/Window" unique_id=674252647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_3ju1h")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType2/Window" unique_id=1724259572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_tjoph")
+
+[node name="Window2" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType2" unique_id=1505291690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType2/Window2" unique_id=1263419198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_3ju1h")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType2/Window2" unique_id=1742364760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_tjoph")
+
+[node name="Door" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType2" unique_id=1260876784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.346551)
+mesh = SubResource("BoxMesh_on4tw")
+
+[node name="SecondFloor2" type="Node3D" parent="CoolMap/Buildings/BigHouseType2" unique_id=1888029444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -0.371)
+
+[node name="Walls" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType2/SecondFloor2" unique_id=911596589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6275067, 0)
+mesh = SubResource("BoxMesh_72wwg")
+
+[node name="Roof" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType2/SecondFloor2" unique_id=933796991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType2/SecondFloor2/Roof" unique_id=1707075398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_vkigm")
+material = ExtResource("10_5rfvp")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType2/SecondFloor2/Roof" unique_id=248245658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4292421, 0)
+mesh = SubResource("BoxMesh_kl0cw")
+material = ExtResource("10_5rfvp")
+
+[node name="RoofCut" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType2/SecondFloor2/Roof" unique_id=1198710578]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_qxc1d")
+
+[node name="RoofInside" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType2/SecondFloor2" unique_id=737684300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.3593674, 0)
+mesh = SubResource("PrismMesh_ffqkb")
+
+[node name="CircleWindow" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType2" unique_id=1508350277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5020514, 0.6115489)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType2/CircleWindow" unique_id=1252623197]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3904247, -4.8226953)
+mesh = SubResource("CylinderMesh_npad4")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType2/CircleWindow" unique_id=944517816]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3999996, -5.343495)
+operation = 2
+mesh = SubResource("CylinderMesh_fmd86")
+
+[node name="WindowFrame" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType2/CircleWindow" unique_id=1785844216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_blfio")
+
+[node name="WindowFrame2" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType2/CircleWindow" unique_id=1603938610]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_blfio")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType2/CircleWindow" unique_id=1281105009]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, 1.4017477, -4.757486)
+mesh = SubResource("CylinderMesh_hgp8o")
+
+[node name="BigHouseType3" type="Node3D" parent="CoolMap/Buildings" unique_id=1364063402]
+transform = Transform3D(1.4998207, 0, -0.0142562855, 0, 1.403, 0, 0.023168398, 0, 0.92288965, 35.857853, 0, 39.783325)
+
+[node name="Base" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType3" unique_id=746549740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_1uqp8")
+
+[node name="Walls" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType3" unique_id=1546056711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125158, 0)
+mesh = SubResource("BoxMesh_1w80w")
+
+[node name="Roof" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType3" unique_id=2141561260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType3/Roof" unique_id=1820715335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_4ahqm")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType3/Roof" unique_id=1460539707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("BoxMesh_tj2aq")
+material = ExtResource("10_5rfvp")
+
+[node name="RoofCut" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType3/Roof" unique_id=2043626590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_nli4h")
+
+[node name="RoofInside" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType3" unique_id=1228356477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2963176, 0)
+mesh = SubResource("PrismMesh_e0tc2")
+
+[node name="Doorframe" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType3" unique_id=2069251003]
+use_collision = true
+
+[node name="Doorframe" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType3/Doorframe" unique_id=2084726857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_mdcqr")
+
+[node name="DoorframeCutout" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType3/Doorframe" unique_id=314253051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3208761, -5.4093323)
+operation = 2
+mesh = SubResource("BoxMesh_n4cwv")
+
+[node name="Window" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType3" unique_id=1060786884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType3/Window" unique_id=510201038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_3ju1h")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType3/Window" unique_id=1164581925]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_tjoph")
+
+[node name="Window2" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType3" unique_id=1344780116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0.8, 0)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType3/Window2" unique_id=1216118134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.386176)
+mesh = SubResource("BoxMesh_3ju1h")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType3/Window2" unique_id=1026661262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3999999, -6.3357873)
+operation = 2
+mesh = SubResource("BoxMesh_tjoph")
+
+[node name="Door" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType3" unique_id=678738885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3904247, -5.346551)
+mesh = SubResource("BoxMesh_on4tw")
+
+[node name="SecondFloor2" type="Node3D" parent="CoolMap/Buildings/BigHouseType3" unique_id=1633098531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -0.371)
+
+[node name="Walls" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType3/SecondFloor2" unique_id=141063236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6275067, 0)
+mesh = SubResource("BoxMesh_72wwg")
+
+[node name="Roof" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType3/SecondFloor2" unique_id=587925270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8141217, 0)
+operation = 2
+use_collision = true
+
+[node name="Roof" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType3/SecondFloor2/Roof" unique_id=665737746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2694111, 0)
+mesh = SubResource("PrismMesh_vkigm")
+material = ExtResource("10_5rfvp")
+
+[node name="RoofBeam" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType3/SecondFloor2/Roof" unique_id=1864137456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4292421, 0)
+mesh = SubResource("BoxMesh_kl0cw")
+material = ExtResource("10_5rfvp")
+
+[node name="RoofCut" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType3/SecondFloor2/Roof" unique_id=752007775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.83332634, 0)
+operation = 2
+mesh = SubResource("PrismMesh_qxc1d")
+
+[node name="RoofInside" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType3/SecondFloor2" unique_id=256273552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.3593674, 0)
+mesh = SubResource("PrismMesh_ffqkb")
+
+[node name="CircleWindow" type="CSGCombiner3D" parent="CoolMap/Buildings/BigHouseType3" unique_id=549142108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5020514, 0.6115489)
+use_collision = true
+
+[node name="Windowframe" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType3/CircleWindow" unique_id=519740746]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3904247, -4.8226953)
+mesh = SubResource("CylinderMesh_npad4")
+
+[node name="WindowCutout" type="CSGMesh3D" parent="CoolMap/Buildings/BigHouseType3/CircleWindow" unique_id=806023478]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.3999996, -5.343495)
+operation = 2
+mesh = SubResource("CylinderMesh_fmd86")
+
+[node name="WindowFrame" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType3/CircleWindow" unique_id=1293447728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_blfio")
+
+[node name="WindowFrame2" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType3/CircleWindow" unique_id=910315172]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.3807235, -5.301)
+mesh = SubResource("BoxMesh_blfio")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CoolMap/Buildings/BigHouseType3/CircleWindow" unique_id=385378649]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, 1.4017477, -4.757486)
+mesh = SubResource("CylinderMesh_hgp8o")
+
+[node name="Lighting2" type="Node3D" parent="CoolMap" unique_id=545285313]
+transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, -0.020466805, -4.7064266, -0.016745448)
+
+[node name="Environment" type="WorldEnvironment" parent="CoolMap/Lighting2" unique_id=475858190]
+environment = SubResource("Environment_geebr")
+
+[node name="Sun" type="DirectionalLight3D" parent="CoolMap/Lighting2" unique_id=369327170]
+transform = Transform3D(-1, 6.1817246e-08, -6.1817246e-08, 0, 0.7071068, 0.7071068, 8.742278e-08, 0.7071068, -0.7071068, 0, 0, 0)
+light_color = Color(0.9990608, 0.9999998, 0.95401555, 1)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+light_bake_mode = 0
+shadow_enabled = true
+shadow_normal_bias = 0.0
+
+[node name="Greenery" type="Node3D" parent="CoolMap" unique_id=1792140041]
+
+[node name="TreeTall" type="Node3D" parent="CoolMap/Greenery" unique_id=1505284477]
+transform = Transform3D(1.142504, 0, 0.36699387, 0, 1.1999999, 0, -0.36699387, 0, 1.142504, 44.001842, 0.49509972, -3.1826305)
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall" unique_id=1670328767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, 0)
+mesh = SubResource("SphereMesh_w8brg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall" unique_id=1825035846]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.31711388)
+mesh = SubResource("SphereMesh_3806j")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall" unique_id=1746266502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.55119514)
+mesh = SubResource("SphereMesh_5huw8")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall" unique_id=1356335928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.3726754, -0.37444496)
+mesh = SubResource("SphereMesh_dy1gj")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall" unique_id=1901948237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_2w73l")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall" unique_id=1214166376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_nv43u")
+
+[node name="TreeTall5" type="Node3D" parent="CoolMap/Greenery" unique_id=525938804]
+transform = Transform3D(0.99347275, 0, 0.67306155, 0, 1.1999999, 0, -0.67306155, 0, 0.99347275, 48.957253, 0.49509972, -5.1834764)
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall5" unique_id=1187122609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, 0)
+mesh = SubResource("SphereMesh_w8brg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall5" unique_id=926987716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.31711388)
+mesh = SubResource("SphereMesh_3806j")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall5" unique_id=391792763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.55119514)
+mesh = SubResource("SphereMesh_5huw8")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall5" unique_id=302467555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.3726754, -0.37444496)
+mesh = SubResource("SphereMesh_dy1gj")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall5" unique_id=1293437924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_2w73l")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall5" unique_id=1519220880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_nv43u")
+
+[node name="TreeTall2" type="Node3D" parent="CoolMap/Greenery" unique_id=681080925]
+transform = Transform3D(1.0820813, 0, 0.5187484, 0, 1.1999999, 0, -0.5187484, 0, 1.0820813, 43.339962, 0.49509972, -13.316774)
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall2" unique_id=392326976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, 0)
+mesh = SubResource("SphereMesh_w8brg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall2" unique_id=399520547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.31711388)
+mesh = SubResource("SphereMesh_3806j")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall2" unique_id=1139311532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.55119514)
+mesh = SubResource("SphereMesh_5huw8")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall2" unique_id=120241291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.3726754, -0.37444496)
+mesh = SubResource("SphereMesh_dy1gj")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall2" unique_id=2052019435]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_2w73l")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall2" unique_id=20127180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_nv43u")
+
+[node name="TreeTall3" type="Node3D" parent="CoolMap/Greenery" unique_id=1840796056]
+transform = Transform3D(0.9439083, 0, 0.74097025, 0, 1.1999999, 0, -0.74097025, 0, 0.9439083, 38.373894, 0.49509972, 11.231585)
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall3" unique_id=707350105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, 0)
+mesh = SubResource("SphereMesh_w8brg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall3" unique_id=1741542257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.31711388)
+mesh = SubResource("SphereMesh_3806j")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall3" unique_id=1425565903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.55119514)
+mesh = SubResource("SphereMesh_5huw8")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall3" unique_id=620430892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.3726754, -0.37444496)
+mesh = SubResource("SphereMesh_dy1gj")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall3" unique_id=1995601047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_2w73l")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall3" unique_id=1312263473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_nv43u")
+
+[node name="TreeTall4" type="Node3D" parent="CoolMap/Greenery" unique_id=1349900778]
+transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, 32.134808, 0.49509972, -9.946497)
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall4" unique_id=1597719480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, 0)
+mesh = SubResource("SphereMesh_w8brg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall4" unique_id=902389404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.31711388)
+mesh = SubResource("SphereMesh_3806j")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall4" unique_id=185660325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.55119514)
+mesh = SubResource("SphereMesh_5huw8")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall4" unique_id=2027788137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.3726754, -0.37444496)
+mesh = SubResource("SphereMesh_dy1gj")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall4" unique_id=835310320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_2w73l")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall4" unique_id=886331501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_nv43u")
+
+[node name="TreeTall6" type="Node3D" parent="CoolMap/Greenery" unique_id=1360245614]
+transform = Transform3D(1.1822569, 0, 0.20559275, 0, 1.1999999, 0, -0.20559275, 0, 1.1822569, 34.648293, 0.49509972, 7.03594)
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall6" unique_id=43125066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, 0)
+mesh = SubResource("SphereMesh_w8brg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall6" unique_id=1676652526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.31711388)
+mesh = SubResource("SphereMesh_3806j")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall6" unique_id=1183031129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.55119514)
+mesh = SubResource("SphereMesh_5huw8")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall6" unique_id=1493664312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.3726754, -0.37444496)
+mesh = SubResource("SphereMesh_dy1gj")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall6" unique_id=1010845118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_2w73l")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/TreeTall6" unique_id=1829085552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_nv43u")
+
+[node name="Tree" type="Node3D" parent="CoolMap/Greenery" unique_id=40783744]
+transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, 39.298275, 0.49509972, -9.288339)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/Tree" unique_id=91117131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/Greenery/Tree" unique_id=803332602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8941922, 0)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/Tree" unique_id=802052153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 3.2314253, -0.31711388)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/Tree" unique_id=1339933439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 2.8782606, 0.55119467)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/Greenery/Tree" unique_id=1891238071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1945539, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_mkm8p")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/Tree" unique_id=897787694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 3.025011, -0.37444496)
+mesh = SubResource("SphereMesh_wivn8")
+
+[node name="Tree2" type="Node3D" parent="CoolMap/Greenery" unique_id=229141002]
+transform = Transform3D(0.93116313, 0, -0.7569247, 0, 1.1999999, 0, 0.7569247, 0, 0.93116313, 47.456345, 0.49509972, 4.1045475)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/Tree2" unique_id=1994421777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/Greenery/Tree2" unique_id=315264133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8941922, 0)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/Tree2" unique_id=1334149972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 3.2314253, -0.31711388)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/Tree2" unique_id=769276299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 2.8782606, 0.55119467)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/Greenery/Tree2" unique_id=1208377658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1945539, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_mkm8p")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/Tree2" unique_id=280006805]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 3.025011, -0.37444496)
+mesh = SubResource("SphereMesh_wivn8")
+
+[node name="Tree5" type="Node3D" parent="CoolMap/Greenery" unique_id=497081810]
+transform = Transform3D(1.0277151, 0, -0.6195171, 0, 1.1999999, 0, 0.6195171, 0, 1.0277151, 42.802452, 0.49509972, 6.5358334)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/Tree5" unique_id=797735269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/Greenery/Tree5" unique_id=469325691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8941922, 0)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/Tree5" unique_id=2136622029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 3.2314253, -0.31711388)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/Tree5" unique_id=2035440412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 2.8782606, 0.55119467)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/Greenery/Tree5" unique_id=1905253221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1945539, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_mkm8p")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/Tree5" unique_id=558398531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 3.025011, -0.37444496)
+mesh = SubResource("SphereMesh_wivn8")
+
+[node name="Tree4" type="Node3D" parent="CoolMap/Greenery" unique_id=1880667293]
+transform = Transform3D(0.93116313, 0, -0.7569247, 0, 1.1999999, 0, 0.7569247, 0, 0.93116313, 23.569359, 0.49509972, -8.711399)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/Tree4" unique_id=353869690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/Greenery/Tree4" unique_id=678275970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8941922, 0)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/Tree4" unique_id=1544240203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 3.2314253, -0.31711388)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/Tree4" unique_id=232251237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 2.8782606, 0.55119467)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/Greenery/Tree4" unique_id=1784967385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1945539, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_mkm8p")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/Tree4" unique_id=1937570713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 3.025011, -0.37444496)
+mesh = SubResource("SphereMesh_wivn8")
+
+[node name="Tree3" type="Node3D" parent="CoolMap/Greenery" unique_id=1447639280]
+transform = Transform3D(0.6597198, 0, -1.0023819, 0, 1.1999999, 0, 1.0023819, 0, 0.6597198, 30.134842, 0.49509972, 11.807309)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/Tree3" unique_id=488630852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/Greenery/Tree3" unique_id=1200436814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8941922, 0)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/Tree3" unique_id=1337891314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 3.2314253, -0.31711388)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/Tree3" unique_id=1940631352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 2.8782606, 0.55119467)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/Greenery/Tree3" unique_id=661466078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1945539, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_mkm8p")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/Tree3" unique_id=486283899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 3.025011, -0.37444496)
+mesh = SubResource("SphereMesh_wivn8")
+
+[node name="TreeShort" type="Node3D" parent="CoolMap/Greenery" unique_id=946351123]
+transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, 23.450993, 0.49509972, 7.7831454)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort" unique_id=760209138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort" unique_id=463395338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8511744, 0)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_jnvfg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort" unique_id=892991531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 2.1884074, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_g6fb3")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort" unique_id=584600225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 1.8352426, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort" unique_id=1636323725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6353148, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_4y5e5")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort" unique_id=744265562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 1.9819931, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="TreeShort3" type="Node3D" parent="CoolMap/Greenery" unique_id=843304883]
+transform = Transform3D(1.0984918, 0, -0.4830276, 0, 1.1999999, 0, 0.4830276, 0, 1.0984918, 48.562164, 0.49509972, -0.46666002)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort3" unique_id=360024577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort3" unique_id=630388434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8511744, 0)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_jnvfg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort3" unique_id=146513240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 2.1884074, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_g6fb3")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort3" unique_id=861260447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 1.8352426, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort3" unique_id=1103462969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6353148, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_4y5e5")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort3" unique_id=1801749340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 1.9819931, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="TreeShort4" type="Node3D" parent="CoolMap/Greenery" unique_id=4656333]
+transform = Transform3D(1.1935221, 0, -0.12451762, 0, 1.1999998, 0, 0.12451762, 0, 1.1935221, 44.73314, 0.49509972, 11.063585)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort4" unique_id=1525590415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort4" unique_id=2074822177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8511744, 0)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_jnvfg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort4" unique_id=1718343927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 2.1884074, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_g6fb3")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort4" unique_id=889476194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 1.8352426, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort4" unique_id=1990968709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6353148, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_4y5e5")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort4" unique_id=1858104117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 1.9819931, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="TreeShort5" type="Node3D" parent="CoolMap/Greenery" unique_id=809040477]
+transform = Transform3D(0.8376484, 0, -0.8592699, 0, 1.1999997, 0, 0.8592699, 0, 0.8376484, 46.29511, 0.49509972, -9.377197)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort5" unique_id=1869708897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort5" unique_id=194625621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8511744, 0)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_jnvfg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort5" unique_id=1469438083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 2.1884074, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_g6fb3")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort5" unique_id=673804933]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 1.8352426, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort5" unique_id=77729224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6353148, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_4y5e5")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/TreeShort5" unique_id=517269110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 1.9819931, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="Bush" type="Node3D" parent="CoolMap/Greenery" unique_id=959073918]
+transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, 26.880486, 0.49509972, 12.479229)
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/Bush" unique_id=1583203354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 0.16740954, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves5" type="MeshInstance3D" parent="CoolMap/Greenery/Bush" unique_id=2096915245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17313766, -0.10440767, -0.7487197)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves6" type="MeshInstance3D" parent="CoolMap/Greenery/Bush" unique_id=1198457724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46074486, 0.3269564, -0.13806748)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves7" type="MeshInstance3D" parent="CoolMap/Greenery/Bush" unique_id=1942320178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48673344, -0.23988616, 0.22208858)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/Bush" unique_id=869198169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/Bush" unique_id=1631164491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, -0.18575513, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/Bush" unique_id=1035951540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, -0.039004683, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="Bush2" type="Node3D" parent="CoolMap/Greenery" unique_id=765488929]
+transform = Transform3D(1.0533288, 0, 0.57488984, 0, 1.1999999, 0, -0.57488984, 0, 1.0533288, 35.99355, 0.49509972, 14.671448)
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/Bush2" unique_id=56906912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 0.16740954, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves5" type="MeshInstance3D" parent="CoolMap/Greenery/Bush2" unique_id=1011694072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17313766, -0.10440767, -0.7487197)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves6" type="MeshInstance3D" parent="CoolMap/Greenery/Bush2" unique_id=888868283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46074486, 0.3269564, -0.13806748)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves7" type="MeshInstance3D" parent="CoolMap/Greenery/Bush2" unique_id=2121073615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48673344, -0.23988616, 0.22208858)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/Bush2" unique_id=1311046548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/Bush2" unique_id=990242702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, -0.18575513, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/Bush2" unique_id=2082620665]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, -0.039004683, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="Bush3" type="Node3D" parent="CoolMap/Greenery" unique_id=218317138]
+transform = Transform3D(0.8720478, 0, 0.8243375, 0, 1.1999999, 0, -0.8243375, 0, 0.8720478, 35.99355, 0.49509972, -13.775917)
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/Bush3" unique_id=1644244663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 0.16740954, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves5" type="MeshInstance3D" parent="CoolMap/Greenery/Bush3" unique_id=1612506371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17313766, -0.10440767, -0.7487197)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves6" type="MeshInstance3D" parent="CoolMap/Greenery/Bush3" unique_id=41136353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46074486, 0.3269564, -0.13806748)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves7" type="MeshInstance3D" parent="CoolMap/Greenery/Bush3" unique_id=2125134435]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48673344, -0.23988616, 0.22208858)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/Bush3" unique_id=355974315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/Bush3" unique_id=1243388711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, -0.18575513, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/Bush3" unique_id=1208157813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, -0.039004683, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="Bush4" type="Node3D" parent="CoolMap/Greenery" unique_id=1097347648]
+transform = Transform3D(0.5734737, 0, 1.0541003, 0, 1.1999999, 0, -1.0541003, 0, 0.5734737, 27.638184, 0.49509972, -11.702862)
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/Greenery/Bush4" unique_id=2025415996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 0.16740954, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves5" type="MeshInstance3D" parent="CoolMap/Greenery/Bush4" unique_id=1585944998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17313766, -0.10440767, -0.7487197)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves6" type="MeshInstance3D" parent="CoolMap/Greenery/Bush4" unique_id=580858369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46074486, 0.3269564, -0.13806748)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves7" type="MeshInstance3D" parent="CoolMap/Greenery/Bush4" unique_id=860666751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48673344, -0.23988616, 0.22208858)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/Greenery/Bush4" unique_id=1144753234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/Greenery/Bush4" unique_id=1220609528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, -0.18575513, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/Greenery/Bush4" unique_id=2042547336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, -0.039004683, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="GreeneryLarge" type="Node3D" parent="CoolMap" unique_id=697129195]
+transform = Transform3D(4.303902, 0, 0, 0, 4.3634033, 0, 0, 0, 4.8329425, -106.53357, 0, 0)
+
+[node name="TreeTall" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=1003735406]
+transform = Transform3D(1.142504, 0, 0.36699387, 0, 1.1999999, 0, -0.36699387, 0, 1.142504, 44.001842, 0.49509972, -3.1826305)
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall" unique_id=1147501299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, 0)
+mesh = SubResource("SphereMesh_w8brg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall" unique_id=1926663801]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.31711388)
+mesh = SubResource("SphereMesh_3806j")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall" unique_id=542645922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.55119514)
+mesh = SubResource("SphereMesh_5huw8")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall" unique_id=170782268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.3726754, -0.37444496)
+mesh = SubResource("SphereMesh_dy1gj")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall" unique_id=478531929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_2w73l")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall" unique_id=1170625430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_nv43u")
+
+[node name="TreeTall5" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=1530608776]
+transform = Transform3D(0.99347275, 0, 0.67306155, 0, 1.1999999, 0, -0.67306155, 0, 0.99347275, 48.957253, 0.49509972, -5.1834764)
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall5" unique_id=749183819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, 0)
+mesh = SubResource("SphereMesh_w8brg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall5" unique_id=538497880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.31711388)
+mesh = SubResource("SphereMesh_3806j")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall5" unique_id=824628001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.55119514)
+mesh = SubResource("SphereMesh_5huw8")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall5" unique_id=1107471760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.3726754, -0.37444496)
+mesh = SubResource("SphereMesh_dy1gj")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall5" unique_id=1207468822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_2w73l")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall5" unique_id=724446152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_nv43u")
+
+[node name="TreeTall2" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=1900526059]
+transform = Transform3D(1.0820813, 0, 0.5187484, 0, 1.1999999, 0, -0.5187484, 0, 1.0820813, 43.339962, 0.49509972, -13.316774)
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall2" unique_id=1486934327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, 0)
+mesh = SubResource("SphereMesh_w8brg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall2" unique_id=1698152203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.31711388)
+mesh = SubResource("SphereMesh_3806j")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall2" unique_id=1540492463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.55119514)
+mesh = SubResource("SphereMesh_5huw8")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall2" unique_id=23676867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.3726754, -0.37444496)
+mesh = SubResource("SphereMesh_dy1gj")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall2" unique_id=648378503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_2w73l")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall2" unique_id=2058702313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_nv43u")
+
+[node name="TreeTall3" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=279083816]
+transform = Transform3D(0.9439083, 0, 0.74097025, 0, 1.1999999, 0, -0.74097025, 0, 0.9439083, 38.373894, 0.49509972, 11.231585)
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall3" unique_id=32873035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, 0)
+mesh = SubResource("SphereMesh_w8brg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall3" unique_id=782624569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.31711388)
+mesh = SubResource("SphereMesh_3806j")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall3" unique_id=772973629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.55119514)
+mesh = SubResource("SphereMesh_5huw8")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall3" unique_id=547038270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.3726754, -0.37444496)
+mesh = SubResource("SphereMesh_dy1gj")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall3" unique_id=1370925642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_2w73l")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall3" unique_id=1237086504]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_nv43u")
+
+[node name="TreeTall4" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=1219483665]
+transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, 32.134808, 0.49509972, -9.946497)
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall4" unique_id=2005225787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, 0)
+mesh = SubResource("SphereMesh_w8brg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall4" unique_id=1001450294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.31711388)
+mesh = SubResource("SphereMesh_3806j")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall4" unique_id=2061221350]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.55119514)
+mesh = SubResource("SphereMesh_5huw8")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall4" unique_id=181014135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.3726754, -0.37444496)
+mesh = SubResource("SphereMesh_dy1gj")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall4" unique_id=1742218703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_2w73l")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall4" unique_id=1864941929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_nv43u")
+
+[node name="Tree" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=73291948]
+transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, 39.298275, 0.49509972, -9.288339)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree" unique_id=704689106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree" unique_id=532574294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8941922, 0)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree" unique_id=251718881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 3.2314253, -0.31711388)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree" unique_id=302309080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 2.8782606, 0.55119467)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree" unique_id=1586395568]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1945539, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_mkm8p")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree" unique_id=552941709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 3.025011, -0.37444496)
+mesh = SubResource("SphereMesh_wivn8")
+
+[node name="Tree2" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=1711491715]
+transform = Transform3D(0.93116313, 0, -0.7569247, 0, 1.1999999, 0, 0.7569247, 0, 0.93116313, 47.456345, 0.49509972, 4.1045475)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree2" unique_id=1716318824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree2" unique_id=608395877]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8941922, 0)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree2" unique_id=1014090083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 3.2314253, -0.31711388)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree2" unique_id=869736653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 2.8782606, 0.55119467)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree2" unique_id=781549706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1945539, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_mkm8p")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree2" unique_id=1507519206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 3.025011, -0.37444496)
+mesh = SubResource("SphereMesh_wivn8")
+
+[node name="Tree5" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=975608375]
+transform = Transform3D(1.0277151, 0, -0.6195171, 0, 1.1999999, 0, 0.6195171, 0, 1.0277151, 42.802452, 0.49509972, 6.5358334)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree5" unique_id=529630469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree5" unique_id=416758503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8941922, 0)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree5" unique_id=1656222218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 3.2314253, -0.31711388)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree5" unique_id=501100585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 2.8782606, 0.55119467)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree5" unique_id=700674959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1945539, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_mkm8p")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree5" unique_id=64449292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 3.025011, -0.37444496)
+mesh = SubResource("SphereMesh_wivn8")
+
+[node name="Tree4" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=101818750]
+transform = Transform3D(0.93116313, 0, -0.7569247, 0, 1.1999999, 0, 0.7569247, 0, 0.93116313, 23.569359, 0.49509972, -8.711399)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree4" unique_id=1166449644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree4" unique_id=240609483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8941922, 0)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree4" unique_id=1865682569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 3.2314253, -0.31711388)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree4" unique_id=1487746895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 2.8782606, 0.55119467)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree4" unique_id=1461150542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1945539, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_mkm8p")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree4" unique_id=1575130512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 3.025011, -0.37444496)
+mesh = SubResource("SphereMesh_wivn8")
+
+[node name="Tree3" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=1657812494]
+transform = Transform3D(0.6597198, 0, -1.0023819, 0, 1.1999999, 0, 1.0023819, 0, 0.6597198, 30.134842, 0.49509972, 11.807309)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree3" unique_id=1799570510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree3" unique_id=1821038667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8941922, 0)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree3" unique_id=516557085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 3.2314253, -0.31711388)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree3" unique_id=823405697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 2.8782606, 0.55119467)
+mesh = SubResource("SphereMesh_epeca")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree3" unique_id=1483295085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1945539, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_mkm8p")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Tree3" unique_id=250218386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 3.025011, -0.37444496)
+mesh = SubResource("SphereMesh_wivn8")
+
+[node name="TreeShort" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=1218993484]
+transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, 23.450993, 0.49509972, 7.7831454)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort" unique_id=1569748437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort" unique_id=1528603747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8511744, 0)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_jnvfg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort" unique_id=2135132122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 2.1884074, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_g6fb3")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort" unique_id=422672980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 1.8352426, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort" unique_id=629574035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6353148, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_4y5e5")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort" unique_id=1812388081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 1.9819931, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="TreeShort3" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=385801038]
+transform = Transform3D(1.0984918, 0, -0.4830276, 0, 1.1999999, 0, 0.4830276, 0, 1.0984918, 48.562164, 0.49509972, -0.46666002)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort3" unique_id=1578034607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort3" unique_id=210591712]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8511744, 0)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_jnvfg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort3" unique_id=1301092201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 2.1884074, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_g6fb3")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort3" unique_id=435102491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 1.8352426, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort3" unique_id=1623079634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6353148, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_4y5e5")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort3" unique_id=1732676353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 1.9819931, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="TreeShort4" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=148945656]
+transform = Transform3D(1.1935221, 0, -0.12451762, 0, 1.1999998, 0, 0.12451762, 0, 1.1935221, 44.73314, 0.49509972, 11.063585)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort4" unique_id=396417474]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort4" unique_id=1837239235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8511744, 0)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_jnvfg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort4" unique_id=412850122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 2.1884074, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_g6fb3")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort4" unique_id=610216867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 1.8352426, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort4" unique_id=1112534211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6353148, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_4y5e5")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort4" unique_id=95892602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 1.9819931, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="TreeShort5" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=2070661606]
+transform = Transform3D(0.8376484, 0, -0.8592699, 0, 1.1999997, 0, 0.8592699, 0, 0.8376484, 46.29511, 0.49509972, -9.377197)
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort5" unique_id=950213929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort5" unique_id=1740340876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8511744, 0)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_jnvfg")
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort5" unique_id=307931719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 2.1884074, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_g6fb3")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort5" unique_id=42982910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 1.8352426, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Trunk" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort5" unique_id=1469158881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6353148, 0)
+material_override = ExtResource("12_hjp7v")
+mesh = SubResource("CylinderMesh_4y5e5")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeShort5" unique_id=522565126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 1.9819931, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="Bush" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=2022577840]
+transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, 26.880486, 0.49509972, 12.479229)
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush" unique_id=1374786059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 0.16740954, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves5" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush" unique_id=1699427265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17313766, -0.10440767, -0.7487197)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves6" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush" unique_id=1656668156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46074486, 0.3269564, -0.13806748)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves7" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush" unique_id=1270880760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48673344, -0.23988616, 0.22208858)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush" unique_id=537956125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush" unique_id=1253560134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, -0.18575513, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush" unique_id=1284084867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, -0.039004683, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="Bush2" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=1196295950]
+transform = Transform3D(1.0533288, 0, 0.57488984, 0, 1.1999999, 0, -0.57488984, 0, 1.0533288, 35.99355, 0.49509972, 14.671448)
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush2" unique_id=271153819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 0.16740954, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves5" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush2" unique_id=1864761573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17313766, -0.10440767, -0.7487197)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves6" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush2" unique_id=1597532889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46074486, 0.3269564, -0.13806748)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves7" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush2" unique_id=1310195725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48673344, -0.23988616, 0.22208858)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush2" unique_id=1561243956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush2" unique_id=2008167287]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, -0.18575513, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush2" unique_id=1439406597]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, -0.039004683, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="Bush3" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=1363039337]
+transform = Transform3D(0.8720478, 0, 0.8243375, 0, 1.1999999, 0, -0.8243375, 0, 0.8720478, 35.99355, 0.49509972, -13.775917)
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush3" unique_id=766292783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 0.16740954, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves5" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush3" unique_id=97921012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17313766, -0.10440767, -0.7487197)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves6" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush3" unique_id=6407139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46074486, 0.3269564, -0.13806748)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves7" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush3" unique_id=659365943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48673344, -0.23988616, 0.22208858)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush3" unique_id=1279061711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush3" unique_id=600937612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, -0.18575513, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush3" unique_id=533825346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, -0.039004683, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="Bush4" type="Node3D" parent="CoolMap/GreeneryLarge" unique_id=748702155]
+transform = Transform3D(0.5734737, 0, 1.0541003, 0, 1.1999999, 0, -1.0541003, 0, 0.5734737, 27.638184, 0.49509972, -11.702862)
+
+[node name="Leaves2" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush4" unique_id=821091215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 0.16740954, -0.31711388)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves5" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush4" unique_id=1264177431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17313766, -0.10440767, -0.7487197)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves6" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush4" unique_id=1295496813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46074486, 0.3269564, -0.13806748)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="Leaves7" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush4" unique_id=203102011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48673344, -0.23988616, 0.22208858)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_rws0q")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush4" unique_id=804835532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_xdygh")
+
+[node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush4" unique_id=1616588314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, -0.18575513, 0.55119467)
+material_override = ExtResource("11_l54u3")
+mesh = SubResource("SphereMesh_htxov")
+
+[node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/Bush4" unique_id=623814725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, -0.039004683, -0.37444496)
+mesh = SubResource("SphereMesh_gk4ef")
+
+[node name="Road" type="Node3D" parent="CoolMap" unique_id=1731141238]
+transform = Transform3D(2.5097492, 0, 0, 0, 1.1987759, 0, 0, 0, 1.198776, -112.90648, -0.037, 0)
+
+[node name="Road" type="MeshInstance3D" parent="CoolMap/Road" unique_id=178416084]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 1, 0.00400409, 7.390976e-06, -0.105587006)
+mesh = SubResource("BoxMesh_1hfgy")
+
+[node name="Curb1" type="MeshInstance3D" parent="CoolMap/Road" unique_id=960916378]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 0.79999983, -1.2987823, 0.03, -5.216134)
+mesh = SubResource("BoxMesh_rfkc3")
+
+[node name="Curb2" type="MeshInstance3D" parent="CoolMap/Road" unique_id=1564946448]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 0.79999983, -1.2987823, 0.03, 5.2159986)
+mesh = SubResource("BoxMesh_rfkc3")
+
+[node name="Line1" type="MeshInstance3D" parent="CoolMap/Road" unique_id=1442853585]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0.68, -0.017108437, -0.14999959)
+mesh = SubResource("BoxMesh_xxyq7")
+
+[node name="Line2" type="MeshInstance3D" parent="CoolMap/Road" unique_id=1085915945]
+transform = Transform3D(0.485746, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0.68, -0.017108437, 0.14999959)
+mesh = SubResource("BoxMesh_xxyq7")
+
+[node name="CircularRoad" type="CSGCombiner3D" parent="CoolMap/Road" unique_id=2014892219]
+transform = Transform3D(0.3984462, 0, 0, 0, 0.8341843, 0, 0, 0, 0.8341841, 44.987156, -0.36522126, 0)
+
+[node name="RoadOutside" type="CSGMesh3D" parent="CoolMap/Road/CircularRoad" unique_id=771708252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+mesh = SubResource("CylinderMesh_jfqjj")
+
+[node name="RoadCutout" type="CSGMesh3D" parent="CoolMap/Road/CircularRoad" unique_id=1620490206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_ge026")
+
+[node name="CircularRoadCurb" type="CSGCombiner3D" parent="CoolMap/Road" unique_id=664251027]
+transform = Transform3D(0.3984462, 0, 0, 0, 0.8341843, 0, 0, 0, 0.8341841, 44.987156, -0.72907704, 0)
+
+[node name="RoadOutside" type="CSGMesh3D" parent="CoolMap/Road/CircularRoadCurb" unique_id=336738532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+mesh = SubResource("CylinderMesh_pqetc")
+
+[node name="RoadCutout" type="CSGMesh3D" parent="CoolMap/Road/CircularRoadCurb" unique_id=253645090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_n1oyq")
+
+[node name="Cutout2" type="CSGBox3D" parent="CoolMap/Road/CircularRoadCurb" unique_id=1760344225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4008527, 0.566, 0)
+operation = 2
+size = Vector3(7.859, 2.133, 11.546)
+material = ExtResource("14_otrmt")
+
+[node name="CircularRoadCurbInside" type="CSGCombiner3D" parent="CoolMap/Road" unique_id=756833449]
+transform = Transform3D(0.3984462, 0, 0, 0, 0.8341843, 0, 0, 0, 0.8341841, 44.987156, -0.72907704, 0)
+
+[node name="RoadOutside" type="CSGMesh3D" parent="CoolMap/Road/CircularRoadCurbInside" unique_id=1117116227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+mesh = SubResource("CylinderMesh_1kaaf")
+
+[node name="RoadCutout" type="CSGMesh3D" parent="CoolMap/Road/CircularRoadCurbInside" unique_id=747796074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.80671, 0, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_d36cf")
+
+[node name="CircularRoadLine1" type="CSGCombiner3D" parent="CoolMap/Road" unique_id=563278523]
+transform = Transform3D(0.3984462, 0, 0, 0, 0.8341843, 0, 0, 0, 0.8341841, 44.987156, -0.7735751, 0)
+
+[node name="RoadOutside" type="CSGMesh3D" parent="CoolMap/Road/CircularRoadLine1" unique_id=1163133197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+mesh = SubResource("CylinderMesh_kxxio")
+
+[node name="RoadCutout" type="CSGMesh3D" parent="CoolMap/Road/CircularRoadLine1" unique_id=1658363046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.802433, 0, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_3h81x")
+
+[node name="LineCutout1" type="CSGTorus3D" parent="CoolMap/Road/CircularRoadLine1" unique_id=98714943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8, 0.97845876, 0)
+operation = 2
+inner_radius = 24.92
+outer_radius = 25.08
+sides = 64
+
+[node name="LineCutout2" type="CSGBox3D" parent="CoolMap/Road/CircularRoadLine1" unique_id=1327492030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.317402, 0.8396782, -0.00033038855)
+operation = 2
+size = Vector3(1, 1, 0.12269592)
+material = ExtResource("15_uts4i")
+
+[node name="Floor" type="MeshInstance3D" parent="CoolMap" unique_id=891910352]
+transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, -0.020466805, -0.035798073, -0.016745448)
+mesh = SubResource("PlaneMesh_33tw6")
+
+[node name="GrassParticles" type="CPUParticles3D" parent="CoolMap/Floor" unique_id=1534693290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35113, -0.090501696, -39.3456)
+cast_shadow = 0
+emitting = false
+amount = 500
+lifetime = 15.0
+draw_order = 2
+mesh = SubResource("QuadMesh_mxeoh")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 100000, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 25.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 45.0
+gravity = Vector3(0, -0.1, 0)
+angular_velocity_min = 1.0
+angular_velocity_max = 2.0
+angular_velocity_curve = SubResource("Curve_ha1ft")
+linear_accel_min = -0.3
+scale_amount_min = 0.2
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_fabcq")
+color_ramp = SubResource("Gradient_xgow2")
+color_initial_ramp = SubResource("Gradient_fq54w")
+
+[node name="GrassParticles2" type="CPUParticles3D" parent="CoolMap/Floor" unique_id=360620628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35113, -0.090501696, -37.457287)
+cast_shadow = 0
+emitting = false
+amount = 6000
+lifetime = 15.0
+local_coords = true
+draw_order = 2
+mesh = SubResource("QuadMesh_mxeoh")
+emission_shape = 3
+emission_box_extents = Vector3(250, 0, 20)
+gravity = Vector3(0, -0.1, 0)
+angular_velocity_min = 1.0
+angular_velocity_max = 2.0
+angular_velocity_curve = SubResource("Curve_ha1ft")
+linear_accel_min = -0.3
+scale_amount_min = 0.2
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_fabcq")
+color_ramp = SubResource("Gradient_xgow2")
+color_initial_ramp = SubResource("Gradient_fq54w")
+
+[node name="GrassParticles3" type="CPUParticles3D" parent="CoolMap/Floor" unique_id=1864280127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35113, -0.090501696, 15.741048)
+cast_shadow = 0
+emitting = false
+amount = 6000
+lifetime = 15.0
+local_coords = true
+draw_order = 2
+mesh = SubResource("QuadMesh_mxeoh")
+emission_shape = 3
+emission_box_extents = Vector3(250, 0, 20)
+gravity = Vector3(0, -0.1, 0)
+angular_velocity_min = 1.0
+angular_velocity_max = 2.0
+angular_velocity_curve = SubResource("Curve_ha1ft")
+linear_accel_min = -0.3
+scale_amount_min = 0.2
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_fabcq")
+color_ramp = SubResource("Gradient_xgow2")
+color_initial_ramp = SubResource("Gradient_fq54w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CoolMap/Floor" unique_id=2032263558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.8921907, 0)
+
+[node name="MenuCameraNode" type="Node3D" parent="." unique_id=891968058]
+script = ExtResource("18_lps0c")
+max_yaw = 2.0
+max_pitch = 2.0
+smoothing_speed = 0.4
+
+[node name="MenuCamera" type="Camera3D" parent="MenuCameraNode" unique_id=438916033]
+transform = Transform3D(-0.090765014, 0.32167026, -0.9424915, -0.06685882, 0.94229436, 0.32804167, 0.9936255, 0.09278857, -0.06402088, 4.811227, 15.623981, -13.971745)
+
+[node name="Ui" type="CenterContainer" parent="." unique_id=1715714610]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI" type="Control" parent="Ui" unique_id=1242504393]
+layout_mode = 2
+
+[node name="Buttons" type="Control" parent="Ui/UI" unique_id=1210399091]
+anchors_preset = 0
+offset_left = -120.0
+offset_top = -20.0
+offset_right = -120.0
+offset_bottom = -20.0
+scale = Vector2(0.8, 0.8)
+
+[node name="Play" type="Button" parent="Ui/UI/Buttons" unique_id=32932564]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = -559.0
+offset_top = -42.0
+offset_right = -20.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0.44752336, 0.4475239, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("19_b6b1f")
+theme_override_font_sizes/font_size = 100
+text = "Play"
+script = ExtResource("20_nnwpj")
+
+[node name="Tutorial" type="Button" parent="Ui/UI/Buttons" unique_id=596259615]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = -559.0
+offset_top = 75.0
+offset_right = -20.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0, 0.28631213, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("19_b6b1f")
+theme_override_font_sizes/font_size = 100
+text = "tutorial"
+script = ExtResource("21_c5lou")
+
+[node name="About" type="Button" parent="Ui/UI/Buttons" unique_id=933194910]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = -559.0
+offset_top = 192.0
+offset_right = -20.0
+offset_bottom = 300.0
+theme_override_colors/font_color = Color(7.941574e-07, 0, 0.41334903, 1)
+theme_override_colors/font_hover_color = Color(0, 0.16470589, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("19_b6b1f")
+theme_override_font_sizes/font_size = 100
+text = "About"
+script = ExtResource("22_c5lou")
+
+[node name="Quit" type="Button" parent="Ui/UI/Buttons" unique_id=720361403]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = -559.0
+offset_top = 309.0
+offset_right = -20.0
+offset_bottom = 417.0
+theme_override_colors/font_color = Color(0.47479695, 1.1130236e-06, 3.6098064e-07, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("19_b6b1f")
+theme_override_font_sizes/font_size = 100
+text = "Quit"
+script = ExtResource("20_nmt77")
+
+[node name="NameControl" type="Control" parent="Ui/UI" unique_id=278626515]
+anchors_preset = 0
+
+[node name="Name" type="Label" parent="Ui/UI/NameControl" unique_id=342930994]
+layout_mode = 0
+offset_left = -564.0
+offset_top = -337.0
+offset_right = 197.0
+offset_bottom = -197.0
+text = "Insert TItle"
+label_settings = SubResource("LabelSettings_hnidg")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+script = ExtResource("20_hnidg")
+
+[node name="AboutCanvasItem" type="CanvasLayer" parent="Ui/UI" unique_id=686247597]
+unique_name_in_owner = true
+
+[node name="Label" type="Label" parent="Ui/UI/AboutCanvasItem" unique_id=115042821]
+offset_left = 487.0
+offset_top = 288.0
+offset_right = 1104.0
+offset_bottom = 650.0
+text = "We're no strangers to love you know the rules and so do I a full commitment's what I'm thinking of you wouldn't get this from any other guy I just wanna tell you how I'm feeling gotta make you understand never gonna give you up never gonna let you down never gonna run around and desert you never gonna make you cry never gonna say goodbye never gonna tell a lie and hurt you."
+label_settings = SubResource("LabelSettings_5hpli")
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="Ui/UI/AboutCanvasItem/Label" unique_id=1994941492]
+z_index = -5
+layout_mode = 0
+offset_left = -22.0
+offset_top = -18.0
+offset_right = 628.0
+offset_bottom = 708.0

@@ -17,6 +17,8 @@ enum enemystate {parrying, everythingelse, blasted, attacking}
 @export var diff : Vector3
 @export var distancetoplayer : float
 
+signal defeated
+
 func _ready() -> void:
 	
 	var players = get_tree().get_nodes_in_group("player")
@@ -43,6 +45,7 @@ func _physics_process(delta: float) -> void:
 		distancetoplayer = global_position.distance_to(player.global_position)
 	if health <= 0:
 		#eventbus.grantitem.emit(givenfruit)
+		defeated.emit()
 		queue_free()
 	if not is_on_floor():
 		velocity.y -= fallspeed * delta
