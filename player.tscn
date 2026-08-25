@@ -4699,7 +4699,7 @@ script = ExtResource("3_ivps1")
 unique_name_in_owner = true
 
 [node name="arm2" type="Node3D" parent="Neck" unique_id=257334631]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.4822302, -0.6166763, -0.14937139)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.4822302, -0.5791902, -0.14937139)
 
 [node name="metarig" type="Node3D" parent="Neck/arm2" unique_id=565377058]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56685257, 1.9468377, -2.4995673)
@@ -4954,7 +4954,7 @@ mesh = SubResource("ArrayMesh_r1wsa")
 libraries/ = SubResource("AnimationLibrary_f1cm3")
 
 [node name="arm" type="Node3D" parent="Neck" unique_id=2104609990]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.43955547, -0.61669254, -0.12141898)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.43955547, -0.57920647, -0.12141898)
 
 [node name="metarig" type="Node3D" parent="Neck/arm" unique_id=1623836295]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56685257, 1.9468377, -2.4995673)
