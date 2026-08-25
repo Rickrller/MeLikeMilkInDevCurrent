@@ -1,5 +1,5 @@
 extends Area3D
-var damage = 20
+
 @onready var player = get_parent().player
 var damagemult = 1.0
 var pos
@@ -8,9 +8,9 @@ func _on_body_entered(body: Node3D) -> void:
 		
 		body.parried()
 		damagemult = player.damagemult
-		if body.health - (damage * damagemult) <= 0:
-			eventbus.parrykill.emit()
-			eventbus.grantitem.emit(body.givenfruit)
+		#if body.health - (eventbus.parrydamage * damagemult) <= 0:
+			#eventbus.parrykill.emit()
+			#eventbus.grantitem.emit(body.givenfruit)
 		#body.health -= (damage * damagemult)
 		
 		player.health += 5

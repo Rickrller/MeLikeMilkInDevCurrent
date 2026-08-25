@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7sn8d8igcqv3"]
 
-[ext_resource type="PackedScene" uid="uid://bi1in8gjuvgmx" path="res://arms/leftarm.glb" id="1_tgrpb"]
+[ext_resource type="PackedScene" uid="uid://chjot3sluvc5j" path="res://arms/glb/leftarm.glb" id="1_tgrpb"]
 
-[node name="leftarm" unique_id=2104609990 instance=ExtResource("1_tgrpb")]
+[node name="leftarm" unique_id=900577432 instance=ExtResource("1_tgrpb")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

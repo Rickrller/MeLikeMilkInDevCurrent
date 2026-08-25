@@ -7,7 +7,7 @@ const damage = 1
 
 func _ready() -> void:
 	tick.start()
-	await get_tree().create_timer(20).timeout
+	await get_tree().create_timer(5).timeout
 	queue_free()
 func _on_dmgtick() -> void:
 	for target in targets:

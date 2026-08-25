@@ -34,8 +34,8 @@ extends CharacterBody3D
 @onready var parrycooldownnode = $parrycooldown
 @onready var iframesnode = $iframes
 @onready var punchcooldownnode = $punchcooldown
-@onready var rightarm = $Neck/arm2/AnimationPlayer
-@onready var leftarm = $Neck/arm/AnimationPlayer
+@onready var rightarm = $Neck/rightarm/AnimationPlayer
+@onready var leftarm = $Neck/leftarm/AnimationPlayer
 @onready var dashdisplay = $Panel/dashcahrges
 
 # Jump Variables

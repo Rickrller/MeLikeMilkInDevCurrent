@@ -47,7 +47,6 @@ func _on_spawn_area_body_entered(body: Node3D) -> void:
 		activated = true
 		spawn_enemy(coconut, coconutspawns, 0)
 		spawn_enemy(strawberry, strawberryspawns, 0)
-		spawn_enemy(lemon, lemonspawns, 0)
 		spawn_enemy(grapes, grapesspawns, 0)
 		spawn_enemy(starfruit, starfruitspawns, 0)
 		spawn_enemy(durian, durianspawns, 0)

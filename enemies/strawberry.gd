@@ -89,6 +89,9 @@ func parried():
 	var ParryVFXInstance = ParryVFX.instantiate()
 	ParryVFXInstance.global_transform = self.global_transform
 	get_tree().root.add_child(ParryVFXInstance)
+	if health <= 0:
+		eventbus.parrykill.emit()
+		eventbus.grantitem.emit(givenfruit)
 	await get_tree().process_frame
 	
 	state = enemystate.blasted

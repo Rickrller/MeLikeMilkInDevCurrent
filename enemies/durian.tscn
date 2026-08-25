@@ -111,13 +111,21 @@ _data = {
 
 [node name="Durian" type="CharacterBody3D" unique_id=751157666 groups=["enemy", "hasattack"]]
 script = ExtResource("1_ohh1l")
+state = null
 damage = 7.0
 health = 28.0
 speed = 14.0
+pounce_available = null
+ispouncing = null
+direction = null
 pouncerange = 20.0
 pounceforce = 20.0
 givenfruit = "durian"
 sightrange = 40.0
+attackready = null
+distancetoplayer = null
+diff = null
+parryable = null
 
 [node name="Timer" type="Timer" parent="." unique_id=1730944178]
 wait_time = 6.0

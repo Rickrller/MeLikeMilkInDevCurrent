@@ -57,14 +57,19 @@ func _physics_process(delta: float) -> void:
 func parried():
 	if not state == enemystate.attacking:
 		return
+	health -= eventbus.parrydamage
 	#print("parry initiated")
-	state = enemystate.parrying
-	velocity.y += 15
 	
+	velocity.y += 15
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	state = enemystate.parrying
 	var ParryVFXInstance = ParryVFX.instantiate()
 	ParryVFXInstance.global_transform = self.global_transform
 	get_tree().root.add_child(ParryVFXInstance)
-	
+	if health <= 0:
+		eventbus.parrykill.emit()
+		eventbus.grantitem.emit(givenfruit)
 	blasting()
 	
 	
@@ -77,12 +82,14 @@ func blasting():
 	
 	velocity.z = direction.z * -50
 	velocity.x = direction.x * -50
+	move_and_slide()
 	if is_on_floor() or is_on_wall():
 		state = enemystate.everythingelse
 
 
 func everythingelse(delta):
 	if player:
+		lookatplayer(delta)
 		if (diff.x * diff.x + diff.z * diff.z) < 16:
 			velocity.z = lerp(velocity.z, 0.0, 0.1)
 			velocity.x = lerp(velocity.x, 0.0, 0.1)

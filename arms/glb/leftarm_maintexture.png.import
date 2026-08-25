@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do7t2eg38dkaw"
-path.s3tc="res://.godot/imported/arm_maintexture.png-207788d6e07f4a18520d0e01a56aaee8.s3tc.ctex"
+uid="uid://bm4pw6heiq5h8"
+path.s3tc="res://.godot/imported/leftarm_maintexture.png-1fe2d3a67885e51216ed61031a7089ad.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://arms/arm_maintexture.png"
-dest_files=["res://.godot/imported/arm_maintexture.png-207788d6e07f4a18520d0e01a56aaee8.s3tc.ctex"]
+source_file="res://arms/glb/leftarm_maintexture.png"
+dest_files=["res://.godot/imported/leftarm_maintexture.png-1fe2d3a67885e51216ed61031a7089ad.s3tc.ctex"]
 
 [params]
 

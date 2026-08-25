@@ -6,6 +6,10 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_ovpdu"]
 radius = 0.71271306
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2q1lq"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hoyl"]
 resource_name = "Material"
 cull_mode = 2
@@ -67,6 +71,7 @@ one_shot = true
 
 [node name="model" type="MeshInstance3D" parent="." unique_id=796988473]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.1158051, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_overlay = SubResource("StandardMaterial3D_2q1lq")
 mesh = SubResource("ArrayMesh_wksml")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
