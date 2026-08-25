@@ -8,6 +8,7 @@ radius = 0.4643721
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ohh1l"]
 transparency = 1
+albedo_color = Color(0, 3.294, 3.294, 0.039)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4svt1"]
 resource_name = "Material"
@@ -134,7 +135,7 @@ wait_time = 12.0
 one_shot = true
 
 [node name="model" type="MeshInstance3D" parent="." unique_id=1637496067]
-transform = Transform3D(-0.0028613827, 0, 0.99999696, 0, 1, 0, -0.9999967, 0, -0.0028613834, 0, 0, 0)
+transform = Transform3D(-0.002861383, 0, 0.9999971, 0, 1, 0, -0.99999684, 0, -0.0028613836, 0, 0, 0)
 rotation_edit_mode = 1
 material_overlay = SubResource("StandardMaterial3D_ohh1l")
 mesh = SubResource("ArrayMesh_8jp7a")

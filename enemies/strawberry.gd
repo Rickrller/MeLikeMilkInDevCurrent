@@ -21,7 +21,7 @@ enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attac
 @onready var area = $Area3D
 @export var parryable = false
 @onready var model = $model
-
+const parrycolor = Color(0.0, 3.294, 3.294, 0.039)
 
 
 func _ready() -> void:
@@ -36,7 +36,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if parryable:
-		model.material_overlay.albedo_color = Color(1.0, 1.0, 1.0, 1.0)
+		model.material_overlay.albedo_color = parrycolor
 	else:
 		model.material_overlay.albedo_color = Color(1.0, 1.0, 1.0, 0.0)
 	
@@ -80,7 +80,7 @@ func parried():
 	
 	if not parryable:
 		return
-		
+	health -= eventbus.parrydamage
 	#if state != enemystate.pouncing and state != enemystate.attacking:
 	#	return
 	#print("got parried")
