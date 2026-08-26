@@ -1,12 +1,75 @@
 [gd_scene format=4 uid="uid://2k4hx0qjyd3h"]
 
 [ext_resource type="Script" uid="uid://cbapui31gg4xq" path="res://enemies/aloevera.gd" id="1_qctjv"]
+[ext_resource type="Texture2D" uid="uid://cc3rdy4unh0ew" path="res://FaintAirBurst.png" id="2_2om4g"]
 [ext_resource type="Texture2D" uid="uid://ufrajosvoqom" path="res://models/aloevera_Untitled.png" id="2_qctjv"]
+[ext_resource type="Texture2D" uid="uid://bste6uo2mompy" path="res://FaintSmoke.png" id="3_llaoy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qctjv"]
 radius = 0.9838938
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pujrq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5o6vg"]
+load_path = "res://.godot/imported/AirSpikes.png-78f7e67af9670a4dd6671c08bb3d5fe4.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrkct"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("CompressedTexture2D_5o6vg")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_t67ja"]
+material = SubResource("StandardMaterial3D_xrkct")
+
+[sub_resource type="Curve" id="Curve_ms7rv"]
+_data = [Vector2(0, 0), 0.0, 0.8256181, 0, 0, Vector2(1e-05, 0.56140345), 1.2600001, 1.2600001, 0, 0, Vector2(1, 1), 0.14354074, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_46ckh"]
+offsets = PackedFloat32Array(0, 0.3425926, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.34117648, 1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mcsc"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_2om4g")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_idbox"]
+material = SubResource("StandardMaterial3D_1mcsc")
+
+[sub_resource type="Gradient" id="Gradient_yr3ed"]
+offsets = PackedFloat32Array(0.0061728396, 0.24382716, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.21960784, 1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eescv"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_llaoy")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_ratmh"]
+material = SubResource("StandardMaterial3D_eescv")
+
+[sub_resource type="Gradient" id="Gradient_wckfy"]
+offsets = PackedFloat32Array(0.021604938, 0.17283951, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo8kt"]
 resource_name = "Material"
@@ -65,6 +128,52 @@ one_shot = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=361992909]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 shape = SubResource("SphereShape3D_pujrq")
+
+[node name="Spikes" type="CPUParticles3D" parent="Area3D/CollisionShape3D" unique_id=1188226821]
+amount = 5
+local_coords = true
+mesh = SubResource("QuadMesh_t67ja")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_ms7rv")
+color = Color(0, 1, 0, 1)
+color_ramp = SubResource("Gradient_46ckh")
+
+[node name="Burst" type="CPUParticles3D" parent="Area3D/CollisionShape3D" unique_id=1277210079]
+amount = 1
+lifetime = 0.4
+local_coords = true
+mesh = SubResource("QuadMesh_idbox")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_ms7rv")
+color_ramp = SubResource("Gradient_yr3ed")
+
+[node name="Smoke" type="CPUParticles3D" parent="Area3D/CollisionShape3D" unique_id=1405430116]
+amount = 3
+lifetime = 3.0
+local_coords = true
+mesh = SubResource("QuadMesh_ratmh")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_ms7rv")
+color = Color(0, 1, 0, 1)
+color_ramp = SubResource("Gradient_yr3ed")
+
+[node name="WhiteCenter" type="CPUParticles3D" parent="Area3D/CollisionShape3D" unique_id=1106451454]
+amount = 3
+local_coords = true
+mesh = SubResource("QuadMesh_ratmh")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_ms7rv")
+color_ramp = SubResource("Gradient_wckfy")
 
 [node name="model" type="MeshInstance3D" parent="." unique_id=1735606011]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)

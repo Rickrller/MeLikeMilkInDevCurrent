@@ -10,5 +10,9 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("enemy"):
+		$CollisionShape3D/Ring.emitting = true
+		$CollisionShape3D/Ring2.emitting = true
+		$CollisionShape3D/BigBoom.emitting = true
+		$CollisionShape3D/Spikes.emitting = true
 		body.parried()
 		body.health -= damage * damagemult

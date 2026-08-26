@@ -1,14 +1,58 @@
 [gd_scene format=3 uid="uid://g0c74llc3w1q"]
 
 [ext_resource type="Script" uid="uid://dddcv3med7a1k" path="res://duriansmoke.gd" id="1_sfpo6"]
+[ext_resource type="Texture2D" uid="uid://bste6uo2mompy" path="res://FaintSmoke.png" id="2_wufah"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wufah"]
 radius = 8.682
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0v5h"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_wufah")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_rf4f6"]
+material = SubResource("StandardMaterial3D_h0v5h")
+
+[sub_resource type="Curve" id="Curve_005bt"]
+_data = [Vector2(0, 0), 0.0, 2.5789452, 0, 0, Vector2(0.11375661, 0.9619883), 3.9473686, 3.9473686, 0, 0, Vector2(1, 0.7953216), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_3uk6d"]
+colors = PackedColorArray(1, 1, 1, 0.4117647, 1, 1, 1, 0)
 
 [node name="smoke" type="Area3D" unique_id=685237340]
 script = ExtResource("1_sfpo6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2113266582]
 shape = SubResource("SphereShape3D_wufah")
+
+[node name="SmokeLong" type="CPUParticles3D" parent="CollisionShape3D" unique_id=925749799]
+emitting = false
+amount = 80
+lifetime = 4.0
+one_shot = true
+local_coords = true
+mesh = SubResource("QuadMesh_rf4f6")
+emission_shape = 1
+emission_sphere_radius = 7.0
+direction = Vector3(1, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -60.0
+angular_velocity_max = 60.0
+radial_accel_max = 1.0
+angle_max = 360.0
+scale_amount_min = 6.0
+scale_amount_max = 6.0
+scale_amount_curve = SubResource("Curve_005bt")
+color = Color(0.827451, 1, 0, 1)
+color_ramp = SubResource("Gradient_3uk6d")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpiqg8dwprqjd"
-path.s3tc="res://.godot/imported/RingEffect.png-64a2a9af3b1ffcfa7a10e839faf4a7ab.s3tc.ctex"
+uid="uid://dtngqewsjjkfi"
+path.s3tc="res://.godot/imported/Rock?.png-90bc3428993c91c6f2cbfa92712173d0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://RingEffect.png"
-dest_files=["res://.godot/imported/RingEffect.png-64a2a9af3b1ffcfa7a10e839faf4a7ab.s3tc.ctex"]
+source_file="res://Rock?.png"
+dest_files=["res://.godot/imported/Rock?.png-90bc3428993c91c6f2cbfa92712173d0.s3tc.ctex"]
 
 [params]
 

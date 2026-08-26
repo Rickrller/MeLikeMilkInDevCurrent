@@ -10,6 +10,7 @@ enum enemystate {parrying, everythingelse, blasted, attacking}
 @export var attackdir : Vector3
 @export var givenfruit : String
 @onready var ParryVFX = load("res://ParryBlueVFX.tscn")
+@onready var AppleVFX = load("res://AppleHit.tscn")
 @export var sightrange : float
 @export var attackready : bool = false
 @onready var punch = preload("res://enemies/applepunch.tscn")
@@ -165,5 +166,8 @@ func _on_windup_timeout() -> void:
 		attackdir = -global_transform.basis.z.normalized()
 		instance.global_position = global_position
 		instance.global_position += 2 * attackdir
+		var AppleAttackInstance = AppleVFX.instantiate()
+		AppleAttackInstance.global_transform = self.global_transform
+		get_tree().root.add_child(AppleAttackInstance)
 	state = enemystate.everythingelse
 	$Timer2.start()

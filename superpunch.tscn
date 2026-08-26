@@ -1,9 +1,79 @@
 [gd_scene format=3 uid="uid://ccbwj2fb2o1yt"]
 
 [ext_resource type="Script" uid="uid://ba3c1rqjhecpm" path="res://superpunch.gd" id="1_32re8"]
+[ext_resource type="Texture2D" uid="uid://dpiqg8dwprqjd" path="res://RingEffect.png" id="2_pgnro"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jpf8s"]
 radius = 1.2795784
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnt8o"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_pgnro")
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_ms75c"]
+material = SubResource("StandardMaterial3D_rnt8o")
+orientation = 1
+
+[sub_resource type="Curve" id="Curve_uxq8h"]
+_data = [Vector2(0, 0), 0.0, 0.8256181, 0, 0, Vector2(1e-05, 0.56140345), 1.2600001, 1.2600001, 0, 0, Vector2(1, 1), 0.14354074, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_ynwsb"]
+offsets = PackedFloat32Array(0.0061728396, 0.24382716, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.21960784, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ax7dh"]
+load_path = "res://.godot/imported/Sparks.png-997edff6ef6163bdc757efd54796730a.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gd4sm"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_ax7dh")
+emission_enabled = true
+emission = Color(0.98297876, 0.06669975, 0, 1)
+emission_energy_multiplier = 0.5
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_qdu8a"]
+material = SubResource("StandardMaterial3D_gd4sm")
+
+[sub_resource type="Curve" id="Curve_muxcw"]
+_data = [Vector2(0, 0), 0.0, 1.1929823, 0, 0, Vector2(1, 1), 1.0327872, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_y2wmn"]
+offsets = PackedFloat32Array(0, 0.3425926, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.34117648, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n7aoo"]
+load_path = "res://.godot/imported/AirSpikes.png-78f7e67af9670a4dd6671c08bb3d5fe4.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrkct"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("CompressedTexture2D_n7aoo")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_58bns"]
+material = SubResource("StandardMaterial3D_xrkct")
+
+[sub_resource type="Curve" id="Curve_wsv1e"]
+_data = [Vector2(0, 0), 0.0, 0.997076, 0, 0, Vector2(1, 1), 1.0111983, 0.0, 0, 0]
+point_count = 2
 
 [node name="superpunch" type="Area3D" unique_id=1673137985]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -13,5 +83,80 @@ script = ExtResource("1_32re8")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_jpf8s")
 debug_fill = false
+
+[node name="Ring" type="CPUParticles3D" parent="CollisionShape3D" unique_id=1574970112]
+emitting = false
+amount = 35
+lifetime = 0.1
+one_shot = true
+explosiveness = 0.71
+local_coords = true
+mesh = SubResource("QuadMesh_ms75c")
+particle_flag_align_y = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 0.1
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 3.0
+scale_amount_max = 12.0
+scale_amount_curve = SubResource("Curve_uxq8h")
+color_ramp = SubResource("Gradient_ynwsb")
+
+[node name="Ring2" type="CPUParticles3D" parent="CollisionShape3D" unique_id=297161120]
+emitting = false
+amount = 35
+one_shot = true
+explosiveness = 0.71
+local_coords = true
+mesh = SubResource("QuadMesh_ms75c")
+particle_flag_align_y = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 0.1
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 3.0
+scale_amount_max = 12.0
+scale_amount_curve = SubResource("Curve_uxq8h")
+color_ramp = SubResource("Gradient_ynwsb")
+
+[node name="BigBoom" type="CPUParticles3D" parent="CollisionShape3D" unique_id=1212368482]
+emitting = false
+amount = 10
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_qdu8a")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 12.0
+scale_amount_max = 12.0
+scale_amount_curve = SubResource("Curve_muxcw")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_y2wmn")
+
+[node name="Spikes" type="CPUParticles3D" parent="CollisionShape3D" unique_id=929911208]
+emitting = false
+amount = 5
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.85
+local_coords = true
+mesh = SubResource("QuadMesh_58bns")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 12.0
+scale_amount_max = 12.0
+scale_amount_curve = SubResource("Curve_wsv1e")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_y2wmn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

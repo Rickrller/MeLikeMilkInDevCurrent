@@ -1,0 +1,245 @@
+[gd_scene format=3 uid="uid://6rhkuldo7d07"]
+
+[ext_resource type="Texture2D" uid="uid://bste6uo2mompy" path="res://FaintSmoke.png" id="1_ci0w4"]
+[ext_resource type="Script" uid="uid://duabqnwcau7w2" path="res://VFXCleanup.gd" id="2_6kgc8"]
+[ext_resource type="Texture2D" uid="uid://cc3rdy4unh0ew" path="res://FaintAirBurst.png" id="2_tf8w0"]
+[ext_resource type="Texture2D" uid="uid://dtngqewsjjkfi" path="res://Rock?.png" id="3_6kgc8"]
+[ext_resource type="QuadMesh" uid="uid://dstqc8djbwfa8" path="res://BlueSparks.tres" id="4_q6rv2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eescv"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ci0w4")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_rburc"]
+material = SubResource("StandardMaterial3D_eescv")
+
+[sub_resource type="Curve" id="Curve_ipp32"]
+_data = [Vector2(0, 0), 0.0, 0.8256181, 0, 0, Vector2(1e-05, 0.56140345), 1.2600001, 1.2600001, 0, 0, Vector2(1, 1), 0.14354074, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_xarlr"]
+offsets = PackedFloat32Array(0.0061728396, 0.24382716, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.21960784, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_ebd1l"]
+_data = [Vector2(0, 0), 0.0, 2.5789452, 0, 0, Vector2(0.11375661, 0.9619883), 3.9473686, 3.9473686, 0, 0, Vector2(1, 0.7953216), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_xrkct"]
+colors = PackedColorArray(1, 1, 1, 0.10980392, 1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ebd1l"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_tf8w0")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_xrkct"]
+material = SubResource("StandardMaterial3D_ebd1l")
+
+[sub_resource type="Curve" id="Curve_vuhl4"]
+_data = [Vector2(0, 0), 0.0, 2.5789452, 0, 0, Vector2(0.050264552, 0.9444444), 3.9473686, 3.9473686, 0, 0, Vector2(1, 0.7953216), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_ipp32"]
+colors = PackedColorArray(1, 1, 1, 0.105882354, 1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vuhl4"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_6kgc8")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_ipp32"]
+material = SubResource("StandardMaterial3D_vuhl4")
+
+[sub_resource type="Gradient" id="Gradient_1mcsc"]
+offsets = PackedFloat32Array(0, 0.9351852)
+colors = PackedColorArray(0.47317708, 0.187873, 4.813075e-08, 1, 0.4745098, 0.1882353, 0, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ebd1l"]
+load_path = "res://.godot/imported/AirSpikes.png-78f7e67af9670a4dd6671c08bb3d5fe4.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrkct"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("CompressedTexture2D_ebd1l")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_vuhl4"]
+material = SubResource("StandardMaterial3D_xrkct")
+
+[sub_resource type="Curve" id="Curve_o0yg1"]
+_data = [Vector2(0, 0), 0.0, 0.997076, 0, 0, Vector2(1, 1), 1.0111983, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_o0yg1"]
+offsets = PackedFloat32Array(0, 0.3425926, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.34117648, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_1mcsc"]
+_data = [Vector2(0, 0), 0.0, 1.1929823, 0, 0, Vector2(1, 1), 1.0327872, 0.0, 0, 0]
+point_count = 2
+
+[node name="AppleHit" type="Node3D" unique_id=610093652]
+
+[node name="Smoke" type="CPUParticles3D" parent="." unique_id=407287727]
+emitting = false
+amount = 1
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_rburc")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 16.0
+scale_amount_max = 16.0
+scale_amount_curve = SubResource("Curve_ipp32")
+color_ramp = SubResource("Gradient_xarlr")
+script = ExtResource("2_6kgc8")
+
+[node name="SmokeLong" type="CPUParticles3D" parent="." unique_id=1911255116]
+emitting = false
+amount = 6
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_rburc")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(1, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -60.0
+angular_velocity_max = 60.0
+radial_accel_max = 1.0
+angle_max = 360.0
+scale_amount_min = 12.0
+scale_amount_max = 12.0
+scale_amount_curve = SubResource("Curve_ebd1l")
+color_ramp = SubResource("Gradient_xrkct")
+script = ExtResource("2_6kgc8")
+
+[node name="SmokeLong2" type="CPUParticles3D" parent="." unique_id=1714651511]
+emitting = false
+amount = 15
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_xrkct")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -15, 0)
+initial_velocity_min = 8.0
+initial_velocity_max = 8.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+radial_accel_max = 1.0
+angle_max = 360.0
+scale_amount_min = 4.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_vuhl4")
+color_ramp = SubResource("Gradient_ipp32")
+script = ExtResource("2_6kgc8")
+
+[node name="Rocks" type="CPUParticles3D" parent="." unique_id=940327440]
+emitting = false
+amount = 15
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_ipp32")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 6.0
+initial_velocity_max = 8.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.0
+scale_amount_max = 0.4
+scale_amount_curve = SubResource("Curve_ebd1l")
+color_ramp = SubResource("Gradient_1mcsc")
+script = ExtResource("2_6kgc8")
+
+[node name="RocksLarge" type="CPUParticles3D" parent="." unique_id=568530010]
+emitting = false
+amount = 3
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_ipp32")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -8, 0)
+initial_velocity_min = 6.0
+initial_velocity_max = 8.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 1.2
+scale_amount_max = 1.6
+scale_amount_curve = SubResource("Curve_ebd1l")
+color_ramp = SubResource("Gradient_1mcsc")
+script = ExtResource("2_6kgc8")
+
+[node name="Spikes" type="CPUParticles3D" parent="." unique_id=357344927]
+emitting = false
+amount = 1
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_vuhl4")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 16.0
+scale_amount_max = 16.0
+scale_amount_curve = SubResource("Curve_o0yg1")
+color_ramp = SubResource("Gradient_o0yg1")
+script = ExtResource("2_6kgc8")
+
+[node name="BigBoom" type="CPUParticles3D" parent="." unique_id=2074336757]
+emitting = false
+amount = 2
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = ExtResource("4_q6rv2")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 16.0
+scale_amount_max = 16.0
+scale_amount_curve = SubResource("Curve_1mcsc")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_o0yg1")
+script = ExtResource("2_6kgc8")

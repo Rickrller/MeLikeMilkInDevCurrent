@@ -2206,9 +2206,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.8921907, 0)
 
 [node name="MenuCameraNode" type="Node3D" parent="." unique_id=891968058]
 script = ExtResource("18_lps0c")
-max_yaw = 2.0
-max_pitch = 2.0
-smoothing_speed = 0.4
+max_pitch = 1.0
+smoothing_speed = 1.0
 
 [node name="MenuCamera" type="Camera3D" parent="MenuCameraNode" unique_id=438916033]
 transform = Transform3D(-0.090765014, 0.32167026, -0.9424915, -0.06685882, 0.94229436, 0.32804167, 0.9936255, 0.09278857, -0.06402088, 4.811227, 15.623981, -13.971745)

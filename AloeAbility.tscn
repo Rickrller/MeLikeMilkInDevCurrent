@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://dqlfpr406nyto"]
+
+[ext_resource type="Texture2D" uid="uid://dq2uxomlxcik6" path="res://FaintAirBurst.png" id="1_35osr"]
+[ext_resource type="Texture2D" uid="uid://baltbej3hm6ej" path="res://FaintSmoke.png" id="2_7xr3o"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ebd1l"]
+load_path = "res://.godot/imported/AirSpikes.png-78f7e67af9670a4dd6671c08bb3d5fe4.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrkct"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("CompressedTexture2D_ebd1l")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_vuhl4"]
+material = SubResource("StandardMaterial3D_xrkct")
+
+[sub_resource type="Curve" id="Curve_ipp32"]
+_data = [Vector2(0, 0), 0.0, 0.8256181, 0, 0, Vector2(1e-05, 0.56140345), 1.2600001, 1.2600001, 0, 0, Vector2(1, 1), 0.14354074, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_o0yg1"]
+offsets = PackedFloat32Array(0, 0.3425926, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.34117648, 1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mcsc"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_35osr")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_gd4sm"]
+material = SubResource("StandardMaterial3D_1mcsc")
+
+[sub_resource type="Gradient" id="Gradient_xarlr"]
+offsets = PackedFloat32Array(0.0061728396, 0.24382716, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.21960784, 1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eescv"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_7xr3o")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_rburc"]
+material = SubResource("StandardMaterial3D_eescv")
+
+[sub_resource type="Gradient" id="Gradient_wl5pb"]
+offsets = PackedFloat32Array(0.021604938, 0.17283951, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="AloeVeraAbility" type="Node3D" unique_id=1320382580]
+
+[node name="Spikes" type="CPUParticles3D" parent="." unique_id=1465688278]
+emitting = false
+amount = 15
+one_shot = true
+local_coords = true
+mesh = SubResource("QuadMesh_vuhl4")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 6.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_ipp32")
+color = Color(0, 1, 0, 1)
+color_ramp = SubResource("Gradient_o0yg1")
+
+[node name="Burst" type="CPUParticles3D" parent="." unique_id=404859615]
+emitting = false
+amount = 3
+lifetime = 0.4
+one_shot = true
+local_coords = true
+mesh = SubResource("QuadMesh_gd4sm")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_ipp32")
+color_ramp = SubResource("Gradient_xarlr")
+
+[node name="Smoke" type="CPUParticles3D" parent="." unique_id=1590443958]
+emitting = false
+amount = 5
+lifetime = 3.0
+one_shot = true
+local_coords = true
+mesh = SubResource("QuadMesh_rburc")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 16.0
+scale_amount_max = 16.0
+scale_amount_curve = SubResource("Curve_ipp32")
+color = Color(0, 1, 0, 1)
+color_ramp = SubResource("Gradient_xarlr")
+
+[node name="WhiteCenter" type="CPUParticles3D" parent="." unique_id=1110301049]
+emitting = false
+amount = 5
+one_shot = true
+local_coords = true
+mesh = SubResource("QuadMesh_rburc")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 8.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_ipp32")
+color_ramp = SubResource("Gradient_wl5pb")

@@ -3,6 +3,7 @@ var time = 8
 @export var target : String
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$CollisionShape3D/SmokeLong.emitting = true
 	await get_tree().create_timer(time).timeout
 	queue_free()
 
