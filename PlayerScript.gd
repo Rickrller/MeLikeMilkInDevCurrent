@@ -37,7 +37,8 @@ extends CharacterBody3D
 #@onready var rightarm = $Neck/rightarm/AnimationPlayer
 #@onready var leftarm = $Neck/leftarm/AnimationPlayer
 @onready var dashdisplay = $Panel/dashcahrges
-@onready var anims = $Anims/R_AnimationTree["parameters/playback"]
+@onready var anims_R = $Anims/R_AnimationTree["parameters/playback"]
+@onready var anims_L = $Anims/L_Animation_Tree["parameters/playback"]
 # Jump Variables
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") + 25
 var jump_velocity = 10
@@ -52,8 +53,6 @@ signal parry_cast
 func _ready():
 	punchcheck.add_exception(self)
 	#punchcheck.add_exception($Playercollision)
-	#rightarm.play("idle")
-	#leftarm.play("idle")
 func _unhandled_input(event):
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
@@ -140,7 +139,7 @@ func _physics_process(delta):
 		$iframes.timeout.emit()
 		eventbus.Transistioned.emit(handstate.current_state, "parry")
 		#rightarm.play("parry")
-		anims.start("parry")
+		anims_R.start("parry")
 
 func _on_dashcooldown_timeout() -> void:
 	#print(dashcharges)
@@ -163,24 +162,28 @@ func punch():
 	
 	
 	var animvariant = randi_range(0,3)
-	#if handedness == false:
-		#if animvariant == 0:
-			#leftarm.play("punch2")
-		#elif animvariant == 1:
-			#leftarm.play("punch1")
-		#elif animvariant == 2:
-			#leftarm.play("punch")
-		#elif animvariant == 3:
-			#leftarm.play("punch3")
+	if handedness == false:
+		if animvariant == 0:
+			anims_L.start("punch")
+		elif animvariant == 1:
+			anims_L.start("punch1")
+		elif animvariant == 2:
+			anims_L.start("punch2")
+		elif animvariant == 3:
+			anims_L.start("punch3")
+		elif animvariant == 4:
+			anims_L.start("punch4")
 	if handedness == true:
 		if animvariant == 0:
-			anims.start("punch")
+			anims_R.start("punch")
 		elif animvariant == 1:
-			anims.start("punch1")
+			anims_R.start("punch1")
 		elif animvariant == 2:
-			anims.start("punch2")
+			anims_R.start("punch2")
 		elif animvariant == 3:
-			anims.start("punch3")
+			anims_R.start("punch3")
+		elif animvariant == 4:
+			anims_R.start("punch4")
 	punchcheck.enabled = true
 	punchcheck.force_raycast_update()
 	if punchcheck.is_colliding():
@@ -214,4 +217,9 @@ func _on_iframes_timeout() -> void:
 
 func _on_r_animation_tree_animation_finished(anim_name: StringName) -> void:
 	if anim_name != "strawberry" and anim_name != "grab":
-		anims.travel("idle")
+		anims_R.travel("idle")
+
+
+func _on_l_animation_tree_animation_finished(_anim_name: StringName) -> void:
+	anims_L.travel("idle")
+	
