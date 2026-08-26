@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bste6uo2mompy" path="res://FaintSmoke.png" id="1_ci0w4"]
 [ext_resource type="Script" uid="uid://duabqnwcau7w2" path="res://VFXCleanup.gd" id="2_6kgc8"]
 [ext_resource type="Texture2D" uid="uid://cc3rdy4unh0ew" path="res://FaintAirBurst.png" id="2_tf8w0"]
-[ext_resource type="Texture2D" uid="uid://dtngqewsjjkfi" path="res://Rock?.png" id="3_6kgc8"]
+[ext_resource type="Texture2D" uid="uid://dtngqewsjjkfi" path="res://Rock.png" id="3_6kgc8"]
 [ext_resource type="QuadMesh" uid="uid://dstqc8djbwfa8" path="res://BlueSparks.tres" id="4_q6rv2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eescv"]
