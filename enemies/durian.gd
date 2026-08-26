@@ -32,7 +32,7 @@ func _ready() -> void:
 	else:
 		push_error("Error locating player")
 	attackcooldown.start()
-
+	$smokecooldown.start()
 
 func _physics_process(delta: float) -> void:
 	if parryable:
@@ -167,7 +167,7 @@ func pouncing():
 
 
 func windup(delta):
-	if not (diff.x * diff.x + diff.z * diff.z) < 16:
+	if distancetoplayer > 7:
 		state = enemystate.everythingelse
 		#print("failed attack")
 		return
@@ -190,7 +190,7 @@ func attack():
 	parryable = true
 	await get_tree().create_timer(0.3).timeout
 	parryable = false
-	if not (diff.x * diff.x + diff.z * diff.z) < 16:
+	if distancetoplayer > 7:
 		state = enemystate.everythingelse
 		$AnimationPlayer.stop()
 		

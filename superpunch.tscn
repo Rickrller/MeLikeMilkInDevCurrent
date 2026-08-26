@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ccbwj2fb2o1yt"]
 
 [ext_resource type="Script" uid="uid://ba3c1rqjhecpm" path="res://superpunch.gd" id="1_32re8"]
+[ext_resource type="Script" uid="uid://bhpf2m3i7uoq4" path="res://applefx.gd" id="2_ms75c"]
 [ext_resource type="Texture2D" uid="uid://dpiqg8dwprqjd" path="res://RingEffect.png" id="2_pgnro"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jpf8s"]
@@ -84,7 +85,11 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_jpf8s")
 debug_fill = false
 
-[node name="Ring" type="CPUParticles3D" parent="CollisionShape3D" unique_id=1574970112]
+[node name="FX" type="Node" parent="." unique_id=2136652807]
+script = ExtResource("2_ms75c")
+
+[node name="Ring" type="CPUParticles3D" parent="FX" unique_id=1574970112]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 emitting = false
 amount = 35
 lifetime = 0.1
@@ -106,7 +111,8 @@ scale_amount_max = 12.0
 scale_amount_curve = SubResource("Curve_uxq8h")
 color_ramp = SubResource("Gradient_ynwsb")
 
-[node name="Ring2" type="CPUParticles3D" parent="CollisionShape3D" unique_id=297161120]
+[node name="Ring2" type="CPUParticles3D" parent="FX" unique_id=297161120]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 emitting = false
 amount = 35
 one_shot = true
@@ -127,7 +133,8 @@ scale_amount_max = 12.0
 scale_amount_curve = SubResource("Curve_uxq8h")
 color_ramp = SubResource("Gradient_ynwsb")
 
-[node name="BigBoom" type="CPUParticles3D" parent="CollisionShape3D" unique_id=1212368482]
+[node name="BigBoom" type="CPUParticles3D" parent="FX" unique_id=1212368482]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 emitting = false
 amount = 10
 lifetime = 0.1
@@ -143,7 +150,8 @@ scale_amount_curve = SubResource("Curve_muxcw")
 color = Color(1, 0, 0, 1)
 color_ramp = SubResource("Gradient_y2wmn")
 
-[node name="Spikes" type="CPUParticles3D" parent="CollisionShape3D" unique_id=929911208]
+[node name="Spikes" type="CPUParticles3D" parent="FX" unique_id=929911208]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 emitting = false
 amount = 5
 lifetime = 0.2

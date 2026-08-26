@@ -4,6 +4,11 @@ const grapemesh = preload("res://meshes/grapemesh.tscn")
 @onready var clustergrape = preload("res://clustergrape.tscn")
 @onready var player = $"../.."
 @onready var cam = $"../../Neck/Camera3D"
+
+func Enter():
+	var inst = grapemesh.instantiate()
+	fruitmesh.mesh = inst.mesh
+
 func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("eat"):
 		eat()

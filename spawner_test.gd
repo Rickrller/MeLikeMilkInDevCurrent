@@ -57,3 +57,4 @@ func _on_spawn_area_body_entered(body: Node3D) -> void:
 		spawn_enemy(aloe, aloespawns, 0)
 		spawn_enemy(apple, applespawns, 0)
 		spawn_enemy(carrot, carrotspawns, 0)
+		spawn_enemy(pearto, peartospawns, 0)

@@ -111,21 +111,13 @@ _data = {
 
 [node name="Durian" type="CharacterBody3D" unique_id=751157666 groups=["enemy", "hasattack"]]
 script = ExtResource("1_ohh1l")
-state = null
 damage = 7.0
 health = 28.0
 speed = 14.0
-pounce_available = null
-ispouncing = null
-direction = null
 pouncerange = 20.0
 pounceforce = 20.0
 givenfruit = "durian"
 sightrange = 40.0
-attackready = null
-distancetoplayer = null
-diff = null
-parryable = null
 
 [node name="Timer" type="Timer" parent="." unique_id=1730944178]
 wait_time = 6.0
@@ -143,7 +135,7 @@ wait_time = 12.0
 one_shot = true
 
 [node name="model" type="MeshInstance3D" parent="." unique_id=1637496067]
-transform = Transform3D(-0.002861383, 0, 0.9999971, 0, 1, 0, -0.99999684, 0, -0.0028613836, 0, 0, 0)
+transform = Transform3D(-0.0028613834, 0, 0.9999972, 0, 1, 0, -0.99999696, 0, -0.002861384, 0, 0, 0)
 rotation_edit_mode = 1
 material_overlay = SubResource("StandardMaterial3D_ohh1l")
 mesh = SubResource("ArrayMesh_8jp7a")

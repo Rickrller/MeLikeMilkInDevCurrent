@@ -60,7 +60,9 @@ func parried():
 		return
 	health -= eventbus.parrydamage
 	#print("parry initiated")
-	
+	if health <= 0:
+		eventbus.parrykill.emit()
+		eventbus.grantitem.emit(givenfruit)
 	velocity.y += 15
 	await get_tree().physics_frame
 	await get_tree().physics_frame
@@ -68,9 +70,7 @@ func parried():
 	var ParryVFXInstance = ParryVFX.instantiate()
 	ParryVFXInstance.global_transform = self.global_transform
 	get_tree().root.add_child(ParryVFXInstance)
-	if health <= 0:
-		eventbus.parrykill.emit()
-		eventbus.grantitem.emit(givenfruit)
+
 	blasting()
 	
 	

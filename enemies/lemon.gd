@@ -22,7 +22,7 @@ enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attac
 @export var parryable = false
 @onready var model = $model
 const parrycolor = Color(0.0, 3.294, 3.294, 0.039)
-
+@onready var animationplayer = $AnimationPlayer
 
 func _ready() -> void:
 	
@@ -176,7 +176,7 @@ func splash():
 
 
 func windup(delta):
-	if not (diff.x * diff.x + diff.z * diff.z) < 16:
+	if distancetoplayer > 7:
 		state = enemystate.everythingelse
 		#print("failed attack")
 		return
@@ -194,18 +194,18 @@ func windup(delta):
 
 func attack():
 	
-	#$AnimationPlayer.play("attack")
+	animationplayer.play("attack")
 	await get_tree().create_timer(0.1).timeout
 	parryable = true
 	await get_tree().create_timer(0.3).timeout
 	parryable = false
-	if not (diff.x * diff.x + diff.z * diff.z) < 16:
+	if distancetoplayer > 7:
 		state = enemystate.everythingelse
-		#$AnimationPlayer.stop()
+		animationplayer.stop()
 		
 		#print("cooldown")
 		return
-#	$AnimationPlayer.play("attack")
+	animationplayer.play("attack")
 	if state != enemystate.blasted and state != enemystate.parrying:
 		player.getraped(damage)
 		#print("cooldown")

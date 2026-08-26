@@ -128,9 +128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -34.757614, 0)
 [node name="Spawner" type="Node3D" parent="." unique_id=1833533121]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 190.61911, -30.885183, -20.748177)
 script = ExtResource("19_yv7ed")
-applespawns = 1
-aloespawns = 1
-durianspawns = 1
+peartospawns = 1
 
 [node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner" unique_id=792077890]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.500336, -2.3313618, 0)

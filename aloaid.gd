@@ -1,7 +1,9 @@
 extends State
 const aloemesh = preload("res://meshes/aloemesh.tscn")
 @onready var nutrition = $"../../nutrition"
-
+func Enter():
+	var inst = aloemesh.instantiate()
+	fruitmesh.mesh = inst.mesh
 
 func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("eat"):

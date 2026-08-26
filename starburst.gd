@@ -8,6 +8,9 @@ func Update(_delta: float):
 	if Input.is_action_just_pressed("ability"):
 		ability()
 
+func Enter():
+	var inst = starfruitmesh.instantiate()
+	fruitmesh.mesh = inst.mesh
 
 func eat():
 	nutrition.hydration += 35
