@@ -128,7 +128,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -34.757614, 0)
 [node name="Spawner" type="Node3D" parent="." unique_id=1833533121]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 190.61911, -30.885183, -20.748177)
 script = ExtResource("19_yv7ed")
-lemonspawns = 1
+coconutspawns = 1
+carrotspawns = 1
 
 [node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner" unique_id=792077890]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.500336, -2.3313618, 0)
@@ -160,7 +161,6 @@ debug_color = Color(1, 1, 0, 0.41960785)
 [node name="Spawner3" type="Node3D" parent="." unique_id=472249622]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.64856, -30.885183, -20.748177)
 script = ExtResource("19_yv7ed")
-applespawns = 5
 aloespawns = 1
 starfruitspawns = 1
 orangespawns = 2
@@ -179,9 +179,9 @@ debug_color = Color(1, 1, 0, 0.41960785)
 [node name="Spawner4" type="Node3D" parent="." unique_id=1964049449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.903427, -30.885183, -20.748177)
 script = ExtResource("19_yv7ed")
-coconutspawns = 10
-orangespawns = 5
-lemonspawns = 5
+peartospawns = 1
+lemonspawns = 1
+grapesspawns = 1
 
 [node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner4" unique_id=732668898]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.500336, -2.3313618, 0)

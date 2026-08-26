@@ -12,6 +12,7 @@ func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("eat"):
 		eat()
 func ability():
+	anims.start("crush")
 	player.basedefense *= 2
 	print(player.basedefense)
 	print(player.defense)

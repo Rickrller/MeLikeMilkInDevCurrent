@@ -11,6 +11,7 @@ func Physics_Update(_delta: float):
 		ability()
 	if slammin:
 		if player.is_on_floor():
+			anims.start("slam")
 			print("yes")
 			slammin = false
 			var instance = jellyjamslam.instantiate()
@@ -27,7 +28,7 @@ func eat():
 	$"..".currentfruit = ""
 
 func ability():
-	
+	anims.start("strawberry")
 	
 	jumpnode.jumpmult *= 3
 	eventbus.switch_activity.emit("jump", "active")

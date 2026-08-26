@@ -9,7 +9,7 @@ func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("eat"):
 		eat()
 func ability():
-	
+	anims.start("crush")
 	var instance = smoke.instantiate()
 	get_tree().root.add_child(instance)
 	

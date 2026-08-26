@@ -19,9 +19,9 @@ func eat():
 	$"../..".health += 5
 	
 func ability():
+	anims.start("crush")
 	eventbus.Transistioned.emit(self, "empty")
 	$"..".currentfruit = ""
-	$"../../Neck/arm2/AnimationPlayer".play("crush")
 	var count = 10
 	for i in count:
 		$"../..".health += 4

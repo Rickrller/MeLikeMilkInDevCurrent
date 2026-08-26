@@ -22,6 +22,7 @@ func eat():
 	$"..".currentfruit = ""
 
 func ability():
+	anims.start("carrot")
 	var instance = tornado.instantiate()
 
 	get_tree().current_scene.add_child(instance)

@@ -21,12 +21,14 @@ func eat():
 	
 	
 func ability():
+	anims.start("grapes")
+	await animnode.animation_finished
 	var instance = clustergrape.instantiate()
 
 	get_tree().current_scene.add_child(instance)
 	instance.global_position = player.global_position
 	instance.global_position += 2 * cam.direction
-	instance.velocity.x = 8 * cam.direction.x
-	instance.velocity.z = 8 * cam.direction.z
+	instance.velocity.x = 10 * cam.direction.x
+	instance.velocity.z = 10 * cam.direction.z
 	eventbus.Transistioned.emit(self, "empty")
 	$"..".currentfruit = ""

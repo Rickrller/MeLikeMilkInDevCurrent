@@ -35,6 +35,7 @@ func on_pearto_flash():
 		
 	
 func ability():
+	anims.start("crush")
 	var instance = timestop.instantiate()
 	get_tree().current_scene.add_child(instance)
 	instance.global_position = player.global_position

@@ -90,12 +90,12 @@ _data = {
 [node name="strawberry" type="CharacterBody3D" unique_id=1355039543 groups=["enemy", "hasattack"]]
 script = ExtResource("1_7v7hx")
 damage = 4.0
-health = 100.0
+health = 30.0
 speed = 12.0
 pouncerange = 10.0
 pounceforce = 3.0
 givenfruit = "strawberry"
-sightrange = 20.0
+sightrange = 30.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=345421478]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7662829, 0)

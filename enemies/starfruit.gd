@@ -35,5 +35,6 @@ func _on_buffarea_body_exited(body: Node3D) -> void:
 
 
 func parried():
+	eventbus.parrykill.emit()
 	eventbus.grantitem.emit(givenfruit)
 	queue_free()

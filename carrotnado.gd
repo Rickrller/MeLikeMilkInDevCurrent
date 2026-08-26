@@ -19,10 +19,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
+	
 	for body in members:
-		body.velocity = 8 * body.global_position.direction_to(global_position)
+		if body:
+			body.velocity = 8 * body.global_position.direction_to(global_position)
 	for body in rigidmebers:
-		body.linear_velocity = 8 * body.global_position.direction_to(global_position)
+		if body:
+			body.linear_velocity = 8 * body.global_position.direction_to(global_position)
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("enemy"):

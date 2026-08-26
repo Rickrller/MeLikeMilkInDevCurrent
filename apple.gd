@@ -19,7 +19,9 @@ func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("eat"):
 		eat()
 func ability():
-	$"../../Neck/arm2/AnimationPlayer".play("crush")
+	#$"../../Neck/arm2/AnimationPlayer".play("crush")
+	anims.start("apple")
+	await animnode.animation_finished
 	var instance = superpunch.instantiate()
 	get_tree().root.add_child(instance)
 	
@@ -29,6 +31,7 @@ func ability():
 	instance.global_position.y = player.position.y
 	instance.global_rotation = neck.global_rotation
 	instance.global_position += 2 * camera.direction
+	
 	eventbus.Transistioned.emit(self, "empty")
 	$"..".currentfruit = ""
 func eat():

@@ -3,10 +3,8 @@ extends Node
 @export var initial_state : State
 @export var current_state : State
 
-@onready var fruitmesh = $"../Neck/arm"
 var currentfruitmesh : ArrayMesh
-
-
+@onready var anims = $"../Anims/R_AnimationTree"
 const aloemesh = preload("res://meshes/aloemesh.tscn")
 const carrotmesh = preload("res://meshes/carrotmesh.tscn")
 const coconutmesh = preload("res://meshes/coconutmesh.tscn")
@@ -24,8 +22,10 @@ func _ready():
 	for child in get_children():
 		if child is State:
 			states[child.name] = child
+	#anims.connect("animation_finished", )
 	eventbus.Transistioned.connect(on_child_transistion)
 	eventbus.grantitem.connect(grantitem)
+
 	if initial_state:
 		initial_state.Enter()
 		current_state = initial_state

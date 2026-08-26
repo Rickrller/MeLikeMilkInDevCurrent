@@ -33,6 +33,7 @@ func clear():
 
 func grab():
 	#rightarm.play("grab")
+	anims.start("grab")
 	pass
 func Exit():
 	#$"../../Neck/arm2/metarig/Skeleton3D/Cube_001".material_overlay.albedo_color = Color(1.0, 1.0, 1.0, 0.0)

@@ -11,6 +11,8 @@ const lemon = preload("res://enemies/lemon.tscn")
 const grapes = preload("res://enemies/grapes.tscn")
 const durian = preload("res://enemies/durian.tscn") 
 const grapebomb = preload("res://clustergrape.tscn")
+const carrot = preload("res://enemies/carrot.tscn")
+
 
 @export var activated = false
 @export var applespawns : int
@@ -24,7 +26,7 @@ const grapebomb = preload("res://clustergrape.tscn")
 @export var grapesspawns : int
 @export var durianspawns : int
 @export var grapebombspawns : int
-
+@export var carrotspawns : int
 func _ready() -> void:
 	await get_tree().create_timer(2.0).timeout
 
@@ -54,3 +56,4 @@ func _on_spawn_area_body_entered(body: Node3D) -> void:
 		spawn_enemy(orange, orangespawns, 0)
 		spawn_enemy(aloe, aloespawns, 0)
 		spawn_enemy(apple, applespawns, 0)
+		spawn_enemy(carrot, carrotspawns, 0)

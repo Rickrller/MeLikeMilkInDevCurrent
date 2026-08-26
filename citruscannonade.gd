@@ -16,6 +16,7 @@ func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("eat"):
 		eat()
 func ability():
+	anims.start("orange")
 	#print("abillity orange yaya")
 	var instance = shot.instantiate()
 	instance.pos = neck.global_position

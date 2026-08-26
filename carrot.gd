@@ -37,6 +37,10 @@ func _physics_process(_delta: float) -> void:
 		#if Engine.get_frames_drawn() % 2 == 0:
 
 func parried():
+	health -= eventbus.parrydamage
+	if health <= 0:
+		eventbus.parrykill.emit()
+		eventbus.grantitem.emit(givenfruit)
 	var dir = player.camera.direction
 	var ParryVFXInstance = ParryVFX.instantiate()
 	ParryVFXInstance.global_transform = self.global_transform

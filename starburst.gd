@@ -19,7 +19,7 @@ func eat():
 	$"..".currentfruit = ""
 
 func ability():
-	
+	anims.start("crush")
 	player.speed += 10
 	player.basepunchCD /= 3
 	$"../../movementstatemachine/airborne".longjumpspeed += 12

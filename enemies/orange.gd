@@ -103,10 +103,13 @@ func pounce(delta):
 	
 	
 func parried():
+	health -= eventbus.parrydamage
 	#print("parry initiated")
 	state = enemystate.parrying
 	velocity.y += 15
-	
+	if health <= 0:
+		eventbus.parrykill.emit()
+		eventbus.grantitem.emit(givenfruit)
 	var ParryVFXInstance = ParryVFX.instantiate()
 	ParryVFXInstance.global_transform = self.global_transform
 	get_tree().root.add_child(ParryVFXInstance)

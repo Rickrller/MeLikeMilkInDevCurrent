@@ -34,10 +34,10 @@ extends CharacterBody3D
 @onready var parrycooldownnode = $parrycooldown
 @onready var iframesnode = $iframes
 @onready var punchcooldownnode = $punchcooldown
-@onready var rightarm = $Neck/rightarm/AnimationPlayer
-@onready var leftarm = $Neck/leftarm/AnimationPlayer
+#@onready var rightarm = $Neck/rightarm/AnimationPlayer
+#@onready var leftarm = $Neck/leftarm/AnimationPlayer
 @onready var dashdisplay = $Panel/dashcahrges
-
+@onready var anims = $Anims/R_AnimationTree["parameters/playback"]
 # Jump Variables
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") + 25
 var jump_velocity = 10
@@ -52,8 +52,8 @@ signal parry_cast
 func _ready():
 	punchcheck.add_exception(self)
 	#punchcheck.add_exception($Playercollision)
-	rightarm.play("idle")
-	leftarm.play("idle")
+	#rightarm.play("idle")
+	#leftarm.play("idle")
 func _unhandled_input(event):
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
@@ -116,12 +116,12 @@ func _physics_process(delta):
 		
 		if handedness == false: #left hand punch
 			#print("left hand punched")
-			rightarm.play("idle")
+			#rightarm.play("idle")
 			punch()
 			handedness = true
 		elif handedness == true and handstate.current_state.name == "empty": #right hand punch
 			#print("right hand punched")
-			leftarm.play("idle")
+			#leftarm.play("idle")
 			punch()
 			handedness = false
 		elif handedness == true and handstate.current_state.name != "empty": #if right hand is occupied, punch with left instead
@@ -139,7 +139,8 @@ func _physics_process(delta):
 		$iframes.stop()
 		$iframes.timeout.emit()
 		eventbus.Transistioned.emit(handstate.current_state, "parry")
-		rightarm.play("parry")
+		#rightarm.play("parry")
+		anims.start("parry")
 
 func _on_dashcooldown_timeout() -> void:
 	#print(dashcharges)
@@ -149,17 +150,6 @@ func _on_dashcooldown_timeout() -> void:
 		$dashcooldown.start()
 	dashdisplay.value = dashcharges
 func _on_hurtbox_body_entered(body: Node3D) -> void:
-	#"""if body.is_in_group("enemy") and parrying == true:
-		#body.parried()
-		#body.health -= 20
-		#health += 5
-		
-		#punchcooldownnode.stop()
-		#punchcooldownnode.timeout.emit()
-		#parrycooldownnode.stop()
-		#parrycooldownnode.timeout.emit()
-		##$hurtbox/PlayerHurtbox.disabled = true
-		##iframesnode.start()""" 
 	if body.is_in_group("rigidbody") and parrying == false: #elif for stringed out if statement above
 		health -= body.damage / defense
 		#print(defense)
@@ -173,24 +163,24 @@ func punch():
 	
 	
 	var animvariant = randi_range(0,3)
-	if handedness == false:
+	#if handedness == false:
+		#if animvariant == 0:
+			#leftarm.play("punch2")
+		#elif animvariant == 1:
+			#leftarm.play("punch1")
+		#elif animvariant == 2:
+			#leftarm.play("punch")
+		#elif animvariant == 3:
+			#leftarm.play("punch3")
+	if handedness == true:
 		if animvariant == 0:
-			leftarm.play("punch2")
+			anims.start("punch")
 		elif animvariant == 1:
-			leftarm.play("punch1")
+			anims.start("punch1")
 		elif animvariant == 2:
-			leftarm.play("punch")
+			anims.start("punch2")
 		elif animvariant == 3:
-			leftarm.play("punch3")
-	elif handedness == true:
-		if animvariant == 0:
-			rightarm.play("punch2")
-		elif animvariant == 1:
-			rightarm.play("punch1")
-		elif animvariant == 2:
-			rightarm.play("punch")
-		elif animvariant == 3:
-			rightarm.play("punch3")
+			anims.start("punch3")
 	punchcheck.enabled = true
 	punchcheck.force_raycast_update()
 	if punchcheck.is_colliding():
@@ -222,11 +212,6 @@ func _on_iframes_timeout() -> void:
 	$hurtbox/PlayerHurtbox.disabled = false
 
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name != "grab" and anim_name != "crush":
-		leftarm.play("idle")
-
-
-func _on_right_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name != "grab" and anim_name != "crush":
-		rightarm.play("idle")
+func _on_r_animation_tree_animation_finished(anim_name: StringName) -> void:
+	if anim_name != "strawberry" and anim_name != "grab":
+		anims.travel("idle")

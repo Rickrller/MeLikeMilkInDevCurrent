@@ -22,5 +22,6 @@ func ability():
 	instance.target_type = "enemy"
 	get_tree().current_scene.add_child(instance)
 	instance.global_position = player.global_position
+	anims.start("lemon")
 	eventbus.Transistioned.emit(self, "empty")
 	$"..".currentfruit = ""

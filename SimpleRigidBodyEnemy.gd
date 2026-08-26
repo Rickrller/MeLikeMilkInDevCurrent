@@ -52,6 +52,10 @@ func _physics_process(_delta: float) -> void:
 		eventbus.grantitem.emit(givenfruit)
 	
 func parried():
+	health -= eventbus.parrydamage
+	if health <= 0:
+		eventbus.parrykill.emit()
+	
 	
 	look_at(player.global_position)
 	var ParryVFXInstance = ParryVFX.instantiate()
