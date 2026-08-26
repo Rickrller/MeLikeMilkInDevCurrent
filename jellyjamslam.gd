@@ -4,6 +4,12 @@ extends State
 @onready var jumpnode = $"../../movementstatemachine/jump"
 const jellyjamslam = preload("res://jellyjamslaminst.tscn")
 @export var slammin : bool = false
+const strawberrymesh = preload("res://meshes/strawberrymesh.tscn")
+
+func Enter():
+	var inst = strawberrymesh.instantiate()
+	fruitmesh.mesh = inst.mesh
+
 func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("eat"):
 		eat()

@@ -1,6 +1,7 @@
 extends State
 @onready var player = $"../.."
 @onready var nutrition = $"../../nutrition"
+const peartomesh = preload("res://meshes/peartomesh.tscn")
 var timestop = preload("res://timestop.tscn")
 var flashready = true
 func _ready():

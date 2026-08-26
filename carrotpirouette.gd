@@ -3,11 +3,12 @@ extends State
 @onready var nutrition = $"../../nutrition"
 @onready var neck = $"../../Neck"
 var tornado = preload("res://carrotnado.tscn")
-
+const carrotmesh = preload("res://meshes/carrotmesh.tscn")
 
 func Enter():
 	print("carrot entered")
-
+	var inst = carrotmesh.instantiate()
+	fruitmesh.mesh = inst.mesh
 func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("eat"):
 		eat()

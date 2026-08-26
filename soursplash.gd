@@ -1,8 +1,14 @@
 extends State
-
+const lemonmesh = preload("res://meshes/lemonmesh.tscn")
 @onready var nutrition = $"../../nutrition"
 @onready var soursplash = preload("res://enemies/lemonpuddle.tscn")
 @onready var player = $"../.."
+
+func Enter():
+	var inst = lemonmesh.instantiate()
+	fruitmesh.mesh = inst.mesh
+
+
 func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("eat"):
 		eat()

@@ -1,4 +1,5 @@
 extends State
+const orangemesh = preload("res://meshes/orangemesh.tscn")
 @onready var player = $"../.."
 @onready var shot = load("res://citruscannonade.tscn")
 @onready var neck = $"../../Neck"
@@ -9,7 +10,8 @@ extends State
 
 func Enter():
 	print("orange fruit gotten")
-
+	var inst = orangemesh.instantiate()
+	fruitmesh.mesh = inst.mesh
 func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("ability"):
 		ability()

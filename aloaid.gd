@@ -1,5 +1,5 @@
 extends State
-
+const aloemesh = preload("res://meshes/aloemesh.tscn")
 @onready var nutrition = $"../../nutrition"
 
 

@@ -1,5 +1,5 @@
 extends State
-
+const grapemesh = preload("res://meshes/grapemesh.tscn")
 @onready var nutrition = $"../../nutrition"
 @onready var clustergrape = preload("res://clustergrape.tscn")
 @onready var player = $"../.."
