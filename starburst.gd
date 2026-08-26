@@ -1,5 +1,5 @@
 extends State
-
+const starfruitmesh = preload("res://meshes/starfruitmesh.tscn")
 @onready var nutrition = $"../../nutrition"
 @onready var player = $"../.."
 func Update(_delta: float):

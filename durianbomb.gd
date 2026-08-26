@@ -3,6 +3,12 @@ extends State
 @onready var nutrition = $"../../nutrition"
 @onready var smoke = preload("res://enemies/duriansmoke.tscn")
 @onready var player = $"../.."
+const durianmesh = preload("res://meshes/durianmesh.tscn")
+func Enter():
+	var inst = durianmesh.instantiate()
+	fruitmesh.mesh = inst.mesh
+
+
 func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("ability"):
 		ability()

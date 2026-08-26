@@ -5,15 +5,15 @@ extends Node
 
 var currentfruitmesh : ArrayMesh
 @onready var anims = $"../Anims/R_AnimationTree"
-const aloemesh = preload("res://meshes/aloemesh.tscn")
-const carrotmesh = preload("res://meshes/carrotmesh.tscn")
-const coconutmesh = preload("res://meshes/coconutmesh.tscn")
-const grapemesh = preload("res://meshes/grapemesh.tscn")
-const lemonmesh = preload("res://meshes/lemonmesh.tscn")
-const orangemesh = preload("res://meshes/orangemesh.tscn")
-const peartomesh = preload("res://meshes/peartomesh.tscn")
-const starfruitmesh = preload("res://meshes/starfruitmesh.tscn")
-const strawberrymesh = preload("res://meshes/strawberrymesh.tscn")
+
+
+
+
+
+
+
+
+
 
 
 var states : Dictionary = {}

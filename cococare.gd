@@ -1,9 +1,11 @@
 extends State
 @onready var player = $"../.."
 @onready var nutrition = $"../../nutrition"
+const coconutmesh = preload("res://meshes/coconutmesh.tscn")
 func Enter():
 	print("coconut gotten")
-
+	var inst = coconutmesh.instantiate()
+	fruitmesh.mesh = inst.mesh
 
 
 func Physics_Update(_delta: float):
