@@ -6086,9 +6086,6 @@ _data = {
 &"punch4": SubResource("Animation_0qul2")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b88wv"]
-animation = &"apple"
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pgbbb"]
 animation = &"idle"
 
@@ -6104,21 +6101,15 @@ xfade_curve = ExtResource("6_b88wv")
 switch_mode = 2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3iwfv"]
-xfade_curve = ExtResource("6_b88wv")
-switch_mode = 2
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qwsg1"]
-states/End/position = Vector2(900, 141)
+states/End/position = Vector2(812.6666, 165.66666)
 states/Start/position = Vector2(136, 130)
-states/apple/node = SubResource("AnimationNodeAnimation_b88wv")
-states/apple/position = Vector2(312, 385)
 states/idle/node = SubResource("AnimationNodeAnimation_pgbbb")
 states/idle/position = Vector2(320, 156)
 states/parry/node = SubResource("AnimationNodeAnimation_331ug")
-states/parry/position = Vector2(136, 398)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_ny14h"), "parry", "idle", SubResource("AnimationNodeStateMachineTransition_ibah8"), "apple", "idle", SubResource("AnimationNodeStateMachineTransition_3iwfv")]
+states/parry/position = Vector2(209.33334, 266)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_ny14h"), "parry", "idle", SubResource("AnimationNodeStateMachineTransition_ibah8")]
+graph_offset = Vector2(58, 93)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4kemo"]
 shader = ExtResource("4_urp6f")
@@ -6178,7 +6169,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.6507613, 0.14220208, 0.5448967, 0.5092896)
+bones/0/rotation = Quaternion(-0.650534, 0.14244518, 0.5448332, 0.50957996)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0

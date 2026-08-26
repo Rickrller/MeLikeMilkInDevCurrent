@@ -6,6 +6,7 @@ extends Node
 @onready var fruitmesh = $"../Neck/arm"
 var currentfruitmesh : ArrayMesh
 
+
 const aloemesh = preload("res://meshes/aloemesh.tscn")
 const carrotmesh = preload("res://meshes/carrotmesh.tscn")
 const coconutmesh = preload("res://meshes/coconutmesh.tscn")

@@ -13,8 +13,9 @@ var pressedp = false
 @export var enemydefeated = false
 
 func wait_until(predicate: Callable) -> void:
-	while not predicate.call():
-		await get_tree().process_frame
+	if self:
+		while not predicate.call():
+			await get_tree().process_frame
 
 func _ready() -> void:
 	await get_tree().create_timer(4).timeout
