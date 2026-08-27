@@ -6312,6 +6312,7 @@ visible = false
 mesh = SubResource("CapsuleMesh_63qkx")
 
 [node name="Neck" type="Node3D" parent="." unique_id=293218289]
+unique_name_in_owner = true
 script = ExtResource("2_nvl01")
 
 [node name="punchcheck" type="RayCast3D" parent="Neck" unique_id=1198875924]
@@ -6343,7 +6344,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.651663, 0.14123607, 0.5451481, 0.50813526)
+bones/0/rotation = Quaternion(-0.6516966, 0.14119996, 0.5451574, 0.50809205)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -6593,7 +6594,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.651663, 0.14123607, 0.5451481, 0.50813526)
+bones/0/rotation = Quaternion(-0.6516966, 0.14119996, 0.5451574, 0.50809205)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -6831,16 +6832,19 @@ skeleton = NodePath("..")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Neck/leftarm" unique_id=492550704]
 libraries/ = SubResource("AnimationLibrary_s3r71")
 
+[node name="PunchVFXLocation" type="Node3D" parent="Neck" unique_id=367285393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2037872)
+
 [node name="Anims" type="Node" parent="." unique_id=1104727514]
 script = ExtResource("6_pgbbb")
 
 [node name="R_AnimationTree" type="AnimationTree" parent="Anims" unique_id=1834101912]
-root_node = NodePath("../../Neck/rightarm")
+root_node = NodePath("%Neck/rightarm")
 tree_root = SubResource("AnimationNodeStateMachine_qwsg1")
 anim_player = NodePath("../../Neck/rightarm/AnimationPlayer")
 
 [node name="L_Animation_Tree" type="AnimationTree" parent="Anims" unique_id=1235650816]
-root_node = NodePath("../../Neck/leftarm")
+root_node = NodePath("%Neck/leftarm")
 tree_root = SubResource("AnimationNodeStateMachine_ibah8")
 anim_player = NodePath("../../Neck/leftarm/AnimationPlayer")
 

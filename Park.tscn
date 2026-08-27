@@ -18,6 +18,8 @@
 [ext_resource type="Shader" uid="uid://vcnano0bkesh" path="res://Sky.gdshader" id="16_00nt1"]
 [ext_resource type="Texture2D" uid="uid://blwx5y33w6d0l" path="res://Clouds.png" id="17_y25ee"]
 [ext_resource type="PackedScene" uid="uid://cxkemj5q5ftp1" path="res://player.tscn" id="18_xmiex"]
+[ext_resource type="Script" uid="uid://qjqx8hdoa401" path="res://ExitTutorial.gd" id="19_347nj"]
+[ext_resource type="PackedScene" uid="uid://c6s1xq4cb4280" path="res://milkcarton.glb" id="20_00nt1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uqbd5"]
 albedo_color = Color(0.6647001, 0.37613204, 0.3757312, 1)
@@ -1545,6 +1547,9 @@ points = PackedVector3Array(0.11904761, 0.6095238, 0.041666664, -0.1095238, -0.6
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bnafw"]
 points = PackedVector3Array(0.11904761, 0.6095238, 0.041666664, -0.1095238, -0.6095238, -0.034523807, -0.1095238, -0.6095238, 0.041666664, -0.1095238, 0.6095238, -0.034523807, 0.11904761, -0.6095238, -0.034523807, 0.11904761, -0.6095238, 0.041666664, -0.1095238, 0.6095238, 0.041666664, 0.11904761, 0.6095238, -0.034523807)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y25ee"]
+size = Vector3(1.7717438, 5.0558777, 2.3621216)
 
 [node name="Node3D" type="Node3D" unique_id=418822707]
 
@@ -7641,3 +7646,16 @@ shape = SubResource("ConvexPolygonShape3D_5sb1t")
 [node name="CollisionShape3D372" type="CollisionShape3D" parent="Colliders" unique_id=540347097]
 transform = Transform3D(-1.3113416e-07, -3, 0, 3, -1.3113416e-07, 0, 0, 0, 3, 24.864899, 2.17302, 38.66939)
 shape = SubResource("ConvexPolygonShape3D_bnafw")
+
+[node name="End" type="Area3D" parent="." unique_id=486489280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.60644, 2.376583, -0.0024261475)
+script = ExtResource("19_347nj")
+
+[node name="ExitTutorialCollision" type="CollisionShape3D" parent="End" unique_id=221587749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030273438, 0.7152252, 0)
+shape = SubResource("BoxShape3D_y25ee")
+
+[node name="milkcarton" parent="End" unique_id=1628146384 instance=ExtResource("20_00nt1")]
+transform = Transform3D(7.1549286e-09, 0, -0.6, 0, 0.6, 0, 0.6, 0, 7.1549286e-09, 0, 0, 0)
+
+[connection signal="body_entered" from="End" to="End" method="_on_body_entered"]

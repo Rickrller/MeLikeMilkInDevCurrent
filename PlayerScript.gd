@@ -50,6 +50,8 @@ var maxhealth = 100
 signal parry_ready
 signal parry_cast
 
+@onready var PunchVFX = load("res://PunchVFX.tscn")
+
 func _ready():
 	punchcheck.add_exception(self)
 	#punchcheck.add_exception($Playercollision)
@@ -192,6 +194,9 @@ func punch():
 			#print(hit)
 			if hit.is_in_group("enemy"):
 				hit.health -= basedamage * damagemult
+				var PunchVFXInstance = PunchVFX.instantiate()
+				PunchVFXInstance.global_transform = %Neck/PunchVFXLocation.global_transform
+				get_tree().root.add_child(PunchVFXInstance)
 				#print("dealt" + str(basedamage * damagemult) + "damage")
 	else:
 		#print("nothing hit")

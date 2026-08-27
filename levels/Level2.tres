@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("2_n78h1")
-level_name = "Two"
+level_name = "Long road"
 icon = ExtResource("1_uvmw4")
 level_scene = ExtResource("2_6p6yf")
 metadata/_custom_type_script = "uid://x3j10428w6tw"

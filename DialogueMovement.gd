@@ -15,7 +15,7 @@ var pressedp = false
 func wait_until(predicate: Callable) -> void:
 	if self:
 		while not predicate.call():
-			await get_tree().process_frame
+			await Engine.get_main_loop().process_frame
 
 func _ready() -> void:
 	await get_tree().create_timer(4).timeout

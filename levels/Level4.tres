@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://bqh0av67p3mqw"]
 
 [ext_resource type="Texture2D" uid="uid://dwygwmmtj5c6h" path="res://BlueGlass.png" id="1_rt2j6"]
-[ext_resource type="PackedScene" uid="uid://bh0v5dmluqvca" path="res://StraightRoad.tscn" id="2_rt2j6"]
+[ext_resource type="PackedScene" uid="uid://ced8ww06tob87" path="res://Fruitelude.tscn" id="2_rt2j6"]
 [ext_resource type="Script" uid="uid://x3j10428w6tw" path="res://LevelData.gd" id="3_c2b2h"]
 
 [resource]
 script = ExtResource("3_c2b2h")
-level_name = "Four"
+level_name = "Fruitelude"
 icon = ExtResource("1_rt2j6")
 level_scene = ExtResource("2_rt2j6")
 metadata/_custom_type_script = "uid://x3j10428w6tw"

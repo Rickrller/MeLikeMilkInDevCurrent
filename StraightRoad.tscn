@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cxkemj5q5ftp1" path="res://player.tscn" id="1_crgjs"]
 [ext_resource type="Shader" uid="uid://vcnano0bkesh" path="res://Sky.gdshader" id="2_ios02"]
 [ext_resource type="Texture2D" uid="uid://blwx5y33w6d0l" path="res://Clouds.png" id="3_n4wug"]
+[ext_resource type="Script" uid="uid://qjqx8hdoa401" path="res://ExitTutorial.gd" id="7_8i21p"]
+[ext_resource type="PackedScene" uid="uid://c6s1xq4cb4280" path="res://milkcarton.glb" id="8_iwliv"]
 [ext_resource type="PackedScene" uid="uid://xlkowwqt7421" path="res://HouseModels.tscn" id="14_ykxim"]
 [ext_resource type="Script" uid="uid://ccay4d4u8ljka" path="res://spawner_test.gd" id="19_yv7ed"]
 
@@ -76,6 +78,9 @@ size = Vector3(1.1978064, 1.0224531, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4kemo"]
 size = Vector3(10, 50, 133.0708)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iwliv"]
+size = Vector3(1.7717438, 5.0558777, 2.3621216)
 
 [node name="Town2" type="Node3D" unique_id=2006889649]
 script = ExtResource("1_24t42")
@@ -191,7 +196,19 @@ debug_color = Color(0.9882353, 0, 0, 1)
 shape = SubResource("BoxShape3D_4kemo")
 debug_color = Color(1, 1, 0, 0.41960785)
 
+[node name="End" type="Area3D" parent="." unique_id=1027021493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -223.9495, -33.672485, -20.686178)
+script = ExtResource("7_8i21p")
+
+[node name="ExitTutorialCollision" type="CollisionShape3D" parent="End" unique_id=1776827778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030273438, 0.7152252, 0)
+shape = SubResource("BoxShape3D_iwliv")
+
+[node name="milkcarton" parent="End" unique_id=1628146384 instance=ExtResource("8_iwliv")]
+transform = Transform3D(7.1549286e-09, 0, -0.6, 0, 0.6, 0, 0.6, 0, 7.1549286e-09, 0, 0, 0)
+
 [connection signal="body_entered" from="Spawner/SpawnArea" to="Spawner" method="_on_spawn_area_body_entered"]
 [connection signal="body_entered" from="Spawner2/SpawnArea" to="Spawner2" method="_on_spawn_area_body_entered"]
 [connection signal="body_entered" from="Spawner3/SpawnArea" to="Spawner3" method="_on_spawn_area_body_entered"]
 [connection signal="body_entered" from="Spawner4/SpawnArea" to="Spawner4" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="End" to="End" method="_on_body_entered"]

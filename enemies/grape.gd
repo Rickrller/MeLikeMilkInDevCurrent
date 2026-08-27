@@ -39,7 +39,6 @@ func reset():
 	visible = false
 	global_position = returnpos
 	active = false
-	print("i, rick wang, love DIH")
 
 func physicsgo():
 	velocity = dir * speed
