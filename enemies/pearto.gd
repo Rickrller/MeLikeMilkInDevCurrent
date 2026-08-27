@@ -16,14 +16,15 @@ enum enemystate { parrying, everythingelse, blasted, attacking}
 @export var diff : Vector3
 
 func _ready() -> void:
-	var players = get_tree().get_nodes_in_group("player")
-	if players.size() > 0:
-		player = players[0]
-	else:
-		push_error("Error locating player")
-	attackcooldown.start()
-	distancetoplayer = global_position.distance_to(player.global_position)
-	diff = global_position - player.global_position
+
+		var players = get_tree().get_nodes_in_group("player")
+		if players.size() > 0:
+			player = players[0]
+	#	else:
+	#		push_error("Error locating player")
+		attackcooldown.start()
+	#	distancetoplayer = global_position.distance_to(player.global_position)
+	#	diff = global_position - player.global_position
 
 func _physics_process(delta: float) -> void:
 	if state == enemystate.blasted:
@@ -87,6 +88,11 @@ func _physics_process(delta: float) -> void:
 			#print("basicenemystate", state)
 
 func parried():
+	health -= eventbus.parrydamage
+	if health <= 0:
+		eventbus.parrykill.emit()
+		eventbus.grantitem.emit(givenfruit)
+	
 	#print("parry initiated")
 	state = enemystate.parrying
 	velocity.y += 15

@@ -17,10 +17,11 @@ func _ready() -> void:
 	getplayer()
 
 func getplayer():
-	visible = true
-	active = true
-	dir = global_position.direction_to(player.global_position)
-	look_at(player.global_position)
+	if player:
+		visible = true
+		active = true
+		dir = global_position.direction_to(player.global_position)
+		look_at(player.global_position)
 
 #func _physics_process(_delta: float) -> void:
 	#if Engine.get_frames_drawn() % 2 == 0:

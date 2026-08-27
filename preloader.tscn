@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c8ftckfihbjua"]
+
+[ext_resource type="Script" uid="uid://dmhsoeeqro2o8" path="res://preloader.gd" id="1_lhshc"]
+
+[node name="Preloader" type="Node3D" unique_id=1454632537]
+script = ExtResource("1_lhshc")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=264071456]
+offset_left = 473.0
+offset_top = 232.0
+offset_right = 477.0
+offset_bottom = 259.0

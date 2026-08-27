@@ -8,6 +8,7 @@ func _ready() -> void:
 	for body in affected_enemies:
 		body.set_physics_process(true)
 	Engine.time_scale = 1
+	queue_free()
 
 
 

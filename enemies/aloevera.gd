@@ -19,8 +19,8 @@ func _ready() -> void:
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
-	else:
-		push_error("Error locating player")
+	#else:
+	#	push_error("Error locating player")
 	attackcooldown.start()
 
 func _physics_process(delta: float) -> void:

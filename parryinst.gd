@@ -1,8 +1,13 @@
 extends Area3D
 
-@onready var player = get_parent().player
+@export var player : Node3D
 var damagemult = 1.0
 var pos
+
+
+func _ready() -> void:
+	if "player" in get_parent():
+		player = get_parent().player
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("enemy") and player.parrying == true:
 		
