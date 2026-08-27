@@ -20,7 +20,7 @@ enum enemystate {parrying, everythingelse, blasted, attacking}
 const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
 @export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
 signal defeated
-@onready var albedo = $model.material_overlay.albedo_color 
+@onready var model = $model
 func _ready() -> void:
 	
 	var players = get_tree().get_nodes_in_group("player")
