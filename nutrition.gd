@@ -4,7 +4,7 @@ extends Node
 @export var vitamins : float = 100 #stamina
 @export var carbs : float = 100 #movement speed
 @export var hydration : float = 100 #regen
-var max_value = 110.0
+var max_value = 125.0
 @onready var player = $".."
 @onready var effects = $"../effects"
 func _ready() -> void:

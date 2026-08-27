@@ -9,7 +9,7 @@ var enemies : Array = [load("uid://2k4hx0qjyd3h"), load("uid://buqyie0fr8stu"), 
  load("uid://bq67rk83banep"), load("uid://bv3ddxucnf4rq")]
 var effects : Array = [load("uid://dqlfpr406nyto"), load("uid://6rhkuldo7d07"), load("uid://dnxk3x6sgqljk"), load("uid://bl1g0yqnispp1"), load("uid://dcfsgvigmplhe"), load("uid://iuhtixcyxp5d")]
 var playerscenes : Array = [load("uid://cl8ku5hhn6jv3"), load("uid://xk2j588d8c7o"), load("uid://biy5cxl3wcx4u"), load("uid://cknxkcdlf0md1"), load("uid://ccbwj2fb2o1yt"),\
- load("uid://cj0asv0jyrmkn")]
+ ]
 var enemyscenes : Array = [load("uid://dc1babpphgfai"), load("uid://g0c74llc3w1q"), load("uid://b16eqne2tquov"), load("uid://dgq8vrvyli2rg")]
 var totalscenes = enemies.size() + effects.size() + playerscenes.size() + enemyscenes.size() + 1
 

@@ -50,5 +50,5 @@ func _on_hitshii_body_entered(body: Node3D) -> void:
 	#print("parent: " + str(parent))
 	if body.is_in_group("player"):
 		body.health -= damage * body.defense
-		parent.interruption()
+		#parent.interruption()
 	reset()
