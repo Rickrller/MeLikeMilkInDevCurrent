@@ -6344,7 +6344,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.6516966, 0.14119996, 0.5451574, 0.50809205)
+bones/0/rotation = Quaternion(-0.652208, 0.14065081, 0.5452993, 0.5074355)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -6594,7 +6594,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.6516966, 0.14119996, 0.5451574, 0.50809205)
+bones/0/rotation = Quaternion(-0.652208, 0.14065081, 0.5452993, 0.5074355)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -6881,7 +6881,7 @@ mouse_filter = 2
 
 [node name="handstatemachine" type="Node" parent="." unique_id=47888081 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("5_bwjto")
-initial_state = NodePath("apple")
+initial_state = NodePath("empty")
 
 [node name="empty" type="Node" parent="handstatemachine" unique_id=213338977]
 script = ExtResource("6_nvl01")

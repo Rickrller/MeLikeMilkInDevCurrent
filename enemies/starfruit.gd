@@ -1,23 +1,34 @@
 extends CharacterBody3D
+@onready var player : Node3D = null
 @export var touchedfloor : bool = false
 @export var health : float
 @export var givenfruit : String
 @onready var heighvariation = randf_range(0.04,0.06)
-
+@export var distancetoplayer : float
+const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
+@export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
+@onready var model = $CollisionShape3D/model
 func _ready() -> void:
+	var players = get_tree().get_nodes_in_group("player")
+	if players.size() > 0:
+		player = players[0]
 	$AnimationPlayer.play("float")
-
 
 var speed = 0
 var attackcooldown = {"wait_time" : 0}
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _physics_process(delta: float) -> void:
+	if Engine.get_frames_drawn() % 5 == 0:
+		distancetoplayer = global_position.distance_to(player.global_position)
 	if health <= 0:
 		queue_free()
 	if is_on_floor():
 		velocity.y += 20
 		touchedfloor = true
-		
+	if distancetoplayer <= 7:
+		model.material_overlay.albedo_color = parrycolor
+	else:
+		model.material_overlay.albedo_color = normal_albedo
 	if not is_on_floor() and touchedfloor == false:
 		velocity.y -= gravity * delta
 	else:

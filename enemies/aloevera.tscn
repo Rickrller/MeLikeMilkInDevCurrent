@@ -71,6 +71,9 @@ material = SubResource("StandardMaterial3D_eescv")
 offsets = PackedFloat32Array(0.021604938, 0.17283951, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2om4g"]
+transparency = 1
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo8kt"]
 resource_name = "Material"
 cull_mode = 2
@@ -240,6 +243,7 @@ color_ramp = SubResource("Gradient_wckfy")
 [node name="model" type="MeshInstance3D" parent="." unique_id=1735606011]
 transform = Transform3D(0, 0, 0.99999994, 0, 1.0000001, 0, -1, 0, 0, 0, 0, 0)
 rotation_edit_mode = 1
+material_overlay = SubResource("StandardMaterial3D_2om4g")
 mesh = SubResource("ArrayMesh_pujrq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=209001008]
