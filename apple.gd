@@ -30,7 +30,7 @@ func ability():
 	instance.global_position.z = player.position.z #+ 2
 	instance.global_position.y = player.position.y
 	instance.global_rotation = neck.global_rotation
-	instance.global_position += 2 * camera.direction
+	instance.global_position += 5 * camera.direction
 	
 	eventbus.Transistioned.emit(self, "empty")
 	$"..".currentfruit = ""

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dpiqg8dwprqjd" path="res://RingEffect.png" id="2_pgnro"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jpf8s"]
-radius = 0.6719453
+radius = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnt8o"]
 transparency = 1
