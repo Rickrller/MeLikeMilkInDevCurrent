@@ -6,6 +6,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_uk2yf"]
 size = Vector3(1.9424438, 0.44863892, 1.801117)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uk2yf"]
+transparency = 1
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0m0l8"]
 resource_name = "Material.001"
 cull_mode = 2
@@ -99,6 +102,7 @@ shape = SubResource("BoxShape3D_uk2yf")
 [node name="model" type="MeshInstance3D" parent="CollisionShape3D" unique_id=461220218]
 transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 8.742278e-08, -1, 8.742278e-08, -3.821371e-15, 8.742278e-08, 1, -0.01520288, -0.24291265, 0.9890816)
 sorting_offset = -1.0
+material_overlay = SubResource("StandardMaterial3D_uk2yf")
 mesh = SubResource("ArrayMesh_rhue5")
 
 [node name="buffarea" type="Area3D" parent="." unique_id=451433940]

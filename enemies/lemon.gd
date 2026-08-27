@@ -20,8 +20,9 @@ enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attac
 @export var diff : Vector3
 @onready var soursplash = preload("res://enemies/lemonpuddle.tscn")
 @export var parryable = false
-@onready var model = $model
-const parrycolor = Color(0.0, 3.294, 3.294, 0.039)
+const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
+@export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
+@onready var model = $CollisionShape3D/model
 @onready var animationplayer = $AnimationPlayer
 
 func _ready() -> void:
@@ -38,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	if parryable:
 		model.material_overlay.albedo_color = parrycolor
 	else:
-		model.material_overlay.albedo_color = Color(1.0, 1.0, 1.0, 0.0)
+		model.material_overlay.albedo_color = normal_albedo
 	
 	if Engine.get_frames_drawn() % 5 == 0: #optimization shii
 		distancetoplayer = global_position.distance_to(player.global_position)
