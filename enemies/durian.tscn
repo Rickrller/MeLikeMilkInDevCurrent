@@ -8,7 +8,7 @@ radius = 0.4643721
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ohh1l"]
 transparency = 1
-albedo_color = Color(0, 3.294, 3.294, 0.039)
+albedo_color = Color(0.96622807, 3.2944162, 3.2944162, 0.039215688)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4svt1"]
 resource_name = "Material"

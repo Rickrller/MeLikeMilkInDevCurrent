@@ -9,6 +9,10 @@ extends RigidBody3D
 @onready var player : Node3D = null
 @onready var ParryVFX = load("res://ParryBlueVFX.tscn")
 @export var givenfruit : String
+const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
+@export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
+@onready var model = $model
+@export var distancetoplayer : float
 
 func _ready() -> void:
 	var players = get_tree().get_nodes_in_group("player")
@@ -31,11 +35,16 @@ func _integrate_forces(_state: PhysicsDirectBodyState3D) -> void:
 		#angular_damp = 10000000
 
 func _physics_process(_delta: float) -> void:
+		if Engine.get_frames_drawn() % 2 == 0:
+			distancetoplayer = global_position.distance_to(player.global_position)
 		if health <= 0:
 			eventbus.grantitem.emit(givenfruit)
 			queue_free()
 		#if Engine.get_frames_drawn() % 2 == 0:
-
+		if distancetoplayer <= 7:
+			model.material_overlay.albedo_color = parrycolor
+		else:
+			model.material_overlay.albedo_color = normal_albedo
 func parried():
 	health -= eventbus.parrydamage
 	if health <= 0:

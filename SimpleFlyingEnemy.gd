@@ -1,5 +1,6 @@
 extends CharacterBody3D
-
+const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
+@export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5

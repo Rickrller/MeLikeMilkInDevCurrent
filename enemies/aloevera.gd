@@ -14,7 +14,9 @@ enum enemystate {everythingelse, attacking}
 @onready var attackcooldown = $Timer2
 @export var distancetoplayer : float
 @export var diff : Vector3
-
+const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
+@export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
+@onready var model = $model
 func _ready() -> void:
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
@@ -31,7 +33,10 @@ func _physics_process(delta: float) -> void:
 		diff = global_position - player.global_position
 	if distancetoplayer < sightrange:
 		lookatplayer(delta)
-		
+	if distancetoplayer <= 7:
+		model.material_overlay.albedo_color = parrycolor
+	else:
+		model.material_overlay.albedo_color = normal_albedo
 	if not is_on_floor():
 		velocity.y -= fallspeed * delta
 	

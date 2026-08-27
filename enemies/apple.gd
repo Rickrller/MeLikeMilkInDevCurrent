@@ -17,9 +17,10 @@ enum enemystate {parrying, everythingelse, blasted, attacking}
 @onready var attackcooldown = $Timer2
 @export var diff : Vector3
 @export var distancetoplayer : float
-
+const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
+@export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
 signal defeated
-
+@onready var albedo = $model.material_overlay.albedo_color 
 func _ready() -> void:
 	
 	var players = get_tree().get_nodes_in_group("player")

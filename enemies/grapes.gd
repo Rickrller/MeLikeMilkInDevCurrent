@@ -13,6 +13,10 @@ extends CharacterBody3D
 @export var distancetoplayer : float
 @onready var heighvariation = randf_range(0.04,0.06)
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
+@export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
+@onready var albedo = $model.material_overlay.albedo_color 
+@onready var model = $model
 func _ready():
 
 #	await get_tree().create_timer(1).timeout
@@ -49,7 +53,10 @@ func _physics_process(delta: float) -> void:
 		distancetoplayer = global_position.distance_to(player.global_position)
 		if distancetoplayer > sightrange:
 			return
-		
+	if distancetoplayer <= 7:
+		model.material_overlay.albedo_color = parrycolor
+	else:
+		model.material_overlay.albedo_color = normal_albedo
 			#attackcooldown
 	
 	if not child:

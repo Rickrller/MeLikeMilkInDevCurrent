@@ -21,7 +21,8 @@ enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attac
 @onready var area = $Area3D
 @export var parryable = false
 @onready var model = $model
-const parrycolor = Color(0.0, 3.294, 3.294, 0.039)
+const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
+@export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
 
 
 func _ready() -> void:

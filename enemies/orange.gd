@@ -16,7 +16,10 @@ enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attac
 @export var sightrange : float
 @export var attackready : bool = false
 @onready var attackcooldown = $Timer2
-
+const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
+@export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
+@onready var model = $model
+@export var distancetoplayer : float
 func _ready() -> void:
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
@@ -25,13 +28,18 @@ func _ready() -> void:
 	#	push_error("Error locating player")
 	attackcooldown.start()
 func _physics_process(delta: float) -> void:
+	if Engine.get_frames_drawn() % 5 == 0:
+		distancetoplayer = global_position.distance_to(player.global_position)
 	if health <= 0:
 		#eventbus.grantitem.emit(givenfruit)
 		queue_free()
 	if not is_on_floor():
 		velocity.y -= fallspeed * delta
-	
-	if self.global_position.distance_to(player.global_position) < pouncerange:
+	if distancetoplayer <= 7:
+		model.material_overlay.albedo_color = parrycolor
+	else:
+		model.material_overlay.albedo_color = normal_albedo
+	if distancetoplayer < pouncerange:
 		if get_node_or_null("Timer"):
 			if pounce_available == true and is_on_floor() and (state == enemystate.everythingelse or state == enemystate.attacking):
 				pounce(delta)
@@ -63,7 +71,7 @@ func _physics_process(delta: float) -> void:
 			
 				
 			return
-		if global_position.distance_to(player.global_position) < sightrange:
+		if distancetoplayer < sightrange:
 			if state == enemystate.everythingelse:
 				lookatplayer(delta, 2.5)
 				direction = global_position.direction_to(player.global_position)
