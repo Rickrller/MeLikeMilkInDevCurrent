@@ -3,6 +3,11 @@ extends CharacterBody3D
 @export var health : float
 @export var givenfruit : String
 @onready var heighvariation = randf_range(0.04,0.06)
+
+func _ready() -> void:
+	$AnimationPlayer.play("float")
+
+
 var speed = 0
 var attackcooldown = {"wait_time" : 0}
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")

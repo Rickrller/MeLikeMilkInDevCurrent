@@ -6,11 +6,6 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_uk2yf"]
 size = Vector3(1.9424438, 0.44863892, 1.801117)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_uk2yf"]
-margin = 0.0
-height = 1.0839901
-radius = 1.2
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0m0l8"]
 resource_name = "Material.001"
 cull_mode = 2
@@ -49,6 +44,49 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_l8jlq")
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uk2yf"]
+margin = 0.0
+height = 1.0839901
+radius = 1.2
+
+[sub_resource type="Animation" id="Animation_uk2yf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D/model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.01520288, -0.24291265, 0.9890816)]
+}
+
+[sub_resource type="Animation" id="Animation_rhue5"]
+resource_name = "float"
+length = 6.000004
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D/model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6.0000005),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1), Vector3(-0.01520288, -0.24291265, 0.9890816), Vector3(0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0silq"]
+_data = {
+&"RESET": SubResource("Animation_uk2yf"),
+&"float": SubResource("Animation_rhue5")
+}
+
 [node name="starfruit" type="CharacterBody3D" unique_id=503213655 groups=["enemy"]]
 script = ExtResource("1_uk2yf")
 health = 15.0
@@ -58,16 +96,19 @@ givenfruit = "starfruit"
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.0041736364, 0.08511734, -0.015141003)
 shape = SubResource("BoxShape3D_uk2yf")
 
+[node name="model" type="MeshInstance3D" parent="CollisionShape3D" unique_id=461220218]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 8.742278e-08, -1, 8.742278e-08, -3.821371e-15, 8.742278e-08, 1, -0.01520288, -0.24291265, 0.9890816)
+sorting_offset = -1.0
+mesh = SubResource("ArrayMesh_rhue5")
+
 [node name="buffarea" type="Area3D" parent="." unique_id=451433940]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="buffarea" unique_id=711390496]
 transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, -4.046665, 0)
 shape = SubResource("CylinderShape3D_uk2yf")
 
-[node name="model" type="MeshInstance3D" parent="." unique_id=461220218]
-transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, -0.01520288, -0.021233916, 0.9890816)
-sorting_offset = -1.0
-mesh = SubResource("ArrayMesh_rhue5")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1873316813]
+libraries/ = SubResource("AnimationLibrary_0silq")
 
 [connection signal="body_entered" from="buffarea" to="." method="_on_buffarea_body_entered"]
 [connection signal="body_exited" from="buffarea" to="." method="_on_buffarea_body_exited"]

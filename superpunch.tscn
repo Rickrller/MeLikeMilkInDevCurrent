@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dpiqg8dwprqjd" path="res://RingEffect.png" id="2_pgnro"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jpf8s"]
-radius = 1.2795784
+radius = 0.6719453
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnt8o"]
 transparency = 1
@@ -85,7 +85,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_jpf8s")
 debug_fill = false
 
-[node name="FX" type="Node" parent="." unique_id=2136652807]
+[node name="FX" type="Node3D" parent="." unique_id=2106204411]
 script = ExtResource("2_ms75c")
 
 [node name="Ring" type="CPUParticles3D" parent="FX" unique_id=1574970112]
