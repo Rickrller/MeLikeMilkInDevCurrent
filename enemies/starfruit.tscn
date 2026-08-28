@@ -8,6 +8,7 @@ size = Vector3(1.9424438, 0.44863892, 1.801117)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uk2yf"]
 transparency = 1
+albedo_color = Color(1, 1, 0, 0.19607843)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0m0l8"]
 resource_name = "Material.001"

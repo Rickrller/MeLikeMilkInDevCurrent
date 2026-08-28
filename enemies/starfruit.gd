@@ -6,7 +6,8 @@ extends CharacterBody3D
 @onready var heighvariation = randf_range(0.04,0.06)
 @export var distancetoplayer : float
 const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
-@export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
+const normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
+var buffalbedo = Color(1.873, 1.873, 0.0, 0.3)
 @onready var model = $CollisionShape3D/model
 func _ready() -> void:
 	var players = get_tree().get_nodes_in_group("player")
@@ -39,6 +40,7 @@ func _physics_process(delta: float) -> void:
 func _on_buffarea_body_entered(body: Node3D) -> void:
 	if body.is_in_group("enemy") and body != self:
 		body.speed *= 2
+		body.normal_albedo = buffalbedo
 		if not body.is_in_group("rigidbody"):
 			body.attackcooldown.wait_time *= 0.75
 
@@ -46,6 +48,7 @@ func _on_buffarea_body_entered(body: Node3D) -> void:
 func _on_buffarea_body_exited(body: Node3D) -> void:
 	if body.is_in_group("enemy") and body != self:
 		body.speed /= 2
+		body.normal_albedo = normal_albedo
 		if not body.is_in_group("rigidbody"):
 			body.attackcooldown.wait_time /= 0.75
 
