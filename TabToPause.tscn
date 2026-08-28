@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://dvj46lwegqasn"]
+
+[ext_resource type="Script" uid="uid://bmq2lbtfpy1f5" path="res://TabToPause.gd" id="1_fa2fe"]
+[ext_resource type="FontFile" uid="uid://d20rfwk5g6tyt" path="res://Freedom-10eM.ttf" id="2_qcgwy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcgwy"]
+bg_color = Color(0.14406255, 0.14406255, 0.14406249, 1)
+
+[node name="TabToPause" type="CanvasLayer" unique_id=1612920135]
+script = ExtResource("1_fa2fe")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=622066973]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="CenterContainer" unique_id=236573681]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="CenterContainer/Control" unique_id=154515650]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = -193.0
+offset_top = 130.0
+offset_right = 7566.999
+offset_bottom = 1970.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.16470589, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 200
+theme_override_fonts/font = ExtResource("2_qcgwy")
+theme_override_font_sizes/font_size = 1500
+text = "Resume
+"
+
+[node name="GamePaused" type="Button" parent="CenterContainer/Control" unique_id=567848974]
+z_index = 1
+layout_mode = 0
+offset_left = -319.0
+offset_top = -225.0
+offset_right = 12480.998
+offset_bottom = 1615.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.16470589, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 200
+theme_override_fonts/font = ExtResource("2_qcgwy")
+theme_override_font_sizes/font_size = 1500
+text = "GAME PAUSED
+"
+
+[node name="Exit" type="Button" parent="CenterContainer/Control" unique_id=1700729020]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = -476.0
+offset_top = 130.0
+offset_right = 4844.0
+offset_bottom = 1970.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.16470589, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 200
+theme_override_fonts/font = ExtResource("2_qcgwy")
+theme_override_font_sizes/font_size = 1500
+text = "Quit
+"
+
+[node name="Menu" type="Button" parent="CenterContainer/Control" unique_id=2108400188]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = 212.0
+offset_top = 130.0
+offset_right = 5532.0
+offset_bottom = 1970.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.16470589, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 200
+theme_override_fonts/font = ExtResource("2_qcgwy")
+theme_override_font_sizes/font_size = 1500
+text = "Menu
+"
+
+[node name="Panel2" type="Panel" parent="CenterContainer/Control" unique_id=312715134]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -250.0
+offset_right = 500.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qcgwy")
+
+[node name="Panel" type="Panel" parent="CenterContainer/Control" unique_id=1773840735]
+z_index = -2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -1600.0
+offset_right = 600.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

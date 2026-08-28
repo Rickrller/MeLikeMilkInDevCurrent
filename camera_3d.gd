@@ -7,7 +7,9 @@ var direction
 @export var fov_lerp_speed: float = 8.0
 @export var speed_sensitivity: float = 30.0
 
-@onready var player: CharacterBody3D = get_parent().get_parent()
+@onready var player: CharacterBody3D = get_parent().get_parent().get_parent()
+
+
 
 func _process(delta: float) -> void:
 	var vel := player.velocity

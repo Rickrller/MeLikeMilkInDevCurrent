@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://balg1ow4j5jc6" path="res://camera_3d.gd" id="3_ivps1"]
 [ext_resource type="Texture2D" uid="uid://c8s70ijdlvllb" path="res://arms/glb/rightarm_maintexture.png" id="4_khis8"]
 [ext_resource type="Shader" uid="uid://cvdurhmxd85c8" path="res://Experimental1.gdshader" id="4_urp6f"]
+[ext_resource type="Script" uid="uid://bqkt4c86f4y78" path="res://CameraShaker.gd" id="5_3iwfv"]
 [ext_resource type="Texture2D" uid="uid://bm4pw6heiq5h8" path="res://arms/glb/leftarm_maintexture.png" id="5_b88wv"]
 [ext_resource type="Script" uid="uid://dch8n0nnpwt3u" path="res://handstatemachine.gd" id="5_bwjto"]
 [ext_resource type="Script" uid="uid://tek1dlvmtutb" path="res://movementstatemachine.gd" id="6_606se"]
@@ -6321,10 +6322,6 @@ target_position = Vector3(0, 0, -5)
 debug_shape_custom_color = Color(1, 1, 1, 1)
 debug_shape_thickness = 4
 
-[node name="Camera3D" type="Camera3D" parent="Neck" unique_id=81356670]
-unique_name_in_owner = true
-script = ExtResource("3_ivps1")
-
 [node name="CamOriginalPos" type="Marker3D" parent="Neck" unique_id=1955695895]
 unique_name_in_owner = true
 
@@ -6344,7 +6341,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.652208, 0.14065081, 0.5452993, 0.5074355)
+bones/0/rotation = Quaternion(-0.6509844, 0.14196326, 0.544959, 0.5090043)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -6594,7 +6591,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.652208, 0.14065081, 0.5452993, 0.5074355)
+bones/0/rotation = Quaternion(-0.6509844, 0.14196326, 0.544959, 0.5090043)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -6834,6 +6831,13 @@ libraries/ = SubResource("AnimationLibrary_s3r71")
 
 [node name="PunchVFXLocation" type="Node3D" parent="Neck" unique_id=367285393]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2037872)
+
+[node name="CameraShaker" type="Node3D" parent="Neck" unique_id=1068839983]
+script = ExtResource("5_3iwfv")
+
+[node name="Camera3D" type="Camera3D" parent="Neck/CameraShaker" unique_id=81356670]
+unique_name_in_owner = true
+script = ExtResource("3_ivps1")
 
 [node name="Anims" type="Node" parent="." unique_id=1104727514]
 script = ExtResource("6_pgbbb")

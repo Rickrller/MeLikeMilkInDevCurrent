@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://bjlmeujx7idx4" path="res://DialogueMovement.gd" id="14_jltxb"]
 [ext_resource type="Script" uid="uid://cujabq00oarfq" path="res://LabelFloat.gd" id="15_6r586"]
 [ext_resource type="Script" uid="uid://qjqx8hdoa401" path="res://ExitTutorial.gd" id="18_i4d8a"]
+[ext_resource type="PackedScene" uid="uid://dvj46lwegqasn" path="res://TabToPause.tscn" id="19_rata2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i4d8a"]
 size = Vector3(1.1978064, 1.0224531, 4.723633)
@@ -376,7 +377,7 @@ transform = Transform3D(2.5097501, 0, 0, 0, 1.1987761, 0, 0, 0, 1.198776, -13.40
 mesh = SubResource("PlaneMesh_xuucq")
 
 [node name="BigHouseType1" type="Node3D" parent="." unique_id=551323507]
-transform = Transform3D(-7.1129755e-08, 0, 1.0000002, 0, 1.5208864, 0, -1.6272591, 0, -4.37114e-08, -22.330936, 1.137006, -11.528967)
+transform = Transform3D(-7.1129755e-08, 0, 1.0000002, 0, 1.5208864, 0, -1.6272591, 0, -4.37114e-08, -22.330936, 1.137006, -11.803578)
 
 [node name="Base" type="MeshInstance3D" parent="BigHouseType1" unique_id=749990088]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
@@ -620,6 +621,8 @@ script = ExtResource("18_i4d8a")
 [node name="ExitTutorialCollision" type="CollisionShape3D" parent="ExitTutorial" unique_id=611698277]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63723755, 0.17056274, 0.3010559)
 shape = SubResource("BoxShape3D_fbnd0")
+
+[node name="TabToPause" parent="." unique_id=1612920135 instance=ExtResource("19_rata2")]
 
 [connection signal="body_entered" from="Spawner/SpawnArea" to="Spawner" method="_on_spawn_area_body_entered"]
 [connection signal="body_entered" from="ExitTutorial" to="ExitTutorial" method="_on_body_entered"]

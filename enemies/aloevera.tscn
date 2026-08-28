@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cbapui31gg4xq" path="res://enemies/aloevera.gd" id="1_qctjv"]
 [ext_resource type="Texture2D" uid="uid://cc3rdy4unh0ew" path="res://FaintAirBurst.png" id="2_2om4g"]
+[ext_resource type="Script" uid="uid://ixy2avyvefxj" path="res://enemies/AloeHeal.gd" id="2_llaoy"]
 [ext_resource type="Texture2D" uid="uid://ufrajosvoqom" path="res://models/aloevera_Untitled.png" id="2_qctjv"]
 [ext_resource type="Texture2D" uid="uid://bste6uo2mompy" path="res://FaintSmoke.png" id="3_llaoy"]
 
@@ -188,6 +189,7 @@ shape = SubResource("SphereShape3D_qctjv")
 one_shot = true
 
 [node name="Area3D" type="Area3D" parent="." unique_id=392512647]
+script = ExtResource("2_llaoy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=361992909]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
@@ -250,4 +252,5 @@ mesh = SubResource("ArrayMesh_pujrq")
 libraries/ = SubResource("AnimationLibrary_5o6vg")
 
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]

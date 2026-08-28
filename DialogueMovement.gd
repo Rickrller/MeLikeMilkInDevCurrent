@@ -41,7 +41,7 @@ func _ready() -> void:
 	await get_tree().create_timer(2).timeout
 	$DialogueLabel.text = "parry acts as a counter for enemy attacks"
 	await get_tree().create_timer(5).timeout
-	$DialogueLabel.text = "so save it for when an enemy attacks you!"
+	$DialogueLabel.text = "and the enemies light up when parriable"
 	await get_tree().create_timer(5).timeout
 	$DialogueLabel.text = "now, press shift to perform a dash"
 	await wait_until(func(): return dashed == true)

@@ -26,7 +26,7 @@ font_size = 70
 font_color = Color(0, 0, 0, 1)
 outline_size = 15
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=1901266073]
+[node name="LevelSelection" type="CanvasLayer" unique_id=1901266073]
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1569234743]
 anchors_preset = 15
