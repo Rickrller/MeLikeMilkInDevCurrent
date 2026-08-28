@@ -56,21 +56,21 @@ func _physics_process(delta: float) -> void:
 	
 	
 	
-func parried(damage : bool, knockback : bool, vfx : bool):
+func parried(d : bool, k : bool, v : bool):
 	if not state == enemystate.attacking:
 		return
-	if damage:
+	if d:
 		health -= eventbus.parrydamage
 	#print("parry initiated")
 	if health <= 0:
 		eventbus.parrykill.emit()
 		eventbus.grantitem.emit(givenfruit)
-	if knockback:
+	if k:
 		velocity.y += 15
 		await get_tree().physics_frame
 		await get_tree().physics_frame
 		state = enemystate.parrying
-	if vfx:
+	if v:
 		var ParryVFXInstance = ParryVFX.instantiate()
 		ParryVFXInstance.global_transform = self.global_transform
 		get_tree().root.add_child(ParryVFXInstance)

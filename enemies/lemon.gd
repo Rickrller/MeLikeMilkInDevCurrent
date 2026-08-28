@@ -75,25 +75,30 @@ func pounce():
 	$Timer.start()
 	
 	
-func parried():
+func parried(d : bool, k : bool, v : bool):
 	
 	if not parryable:
 		return
-	health -= eventbus.parrydamage
+	if v:
+		health -= eventbus.parrydamage
 	#if state != enemystate.pouncing and state != enemystate.attacking:
 	#	return
 	#print("got parried")
-	velocity.y += 15
-	move_and_slide()
-	var ParryVFXInstance = ParryVFX.instantiate()
-	ParryVFXInstance.global_transform = self.global_transform
-	get_tree().root.add_child(ParryVFXInstance)
+	if k:
+		velocity.y += 15
+		move_and_slide()
+		state = enemystate.blasted
+	if v:
+	
+		var ParryVFXInstance = ParryVFX.instantiate()
+		ParryVFXInstance.global_transform = self.global_transform
+		get_tree().root.add_child(ParryVFXInstance)
 	if health <= 0:
 		eventbus.parrykill.emit()
 		eventbus.grantitem.emit(givenfruit)
 	await get_tree().process_frame
 	
-	state = enemystate.blasted
+	
 	
 	
 func everythingelse(delta):

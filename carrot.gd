@@ -45,20 +45,23 @@ func _physics_process(_delta: float) -> void:
 			model.material_overlay.albedo_color = parrycolor
 		else:
 			model.material_overlay.albedo_color = normal_albedo
-func parried():
-	health -= eventbus.parrydamage
+func parried(d : bool, k : bool, v : bool):
+	if d:
+		health -= eventbus.parrydamage
 	if health <= 0:
 		eventbus.parrykill.emit()
 		eventbus.grantitem.emit(givenfruit)
 	var dir = player.camera.direction
-	var ParryVFXInstance = ParryVFX.instantiate()
-	ParryVFXInstance.global_transform = self.global_transform
-	get_tree().root.add_child(ParryVFXInstance)
-	
-	gettingparried = true
-	linear_velocity.y += 3
-	
-	linear_velocity += 60 * dir
+	if v:
+		
+		var ParryVFXInstance = ParryVFX.instantiate()
+		ParryVFXInstance.global_transform = self.global_transform
+		get_tree().root.add_child(ParryVFXInstance)
+	if k:
+		gettingparried = true
+		linear_velocity.y += 3
+		
+		linear_velocity += 60 * dir
 
-	await get_tree().create_timer(1).timeout
-	gettingparried = false
+		await get_tree().create_timer(1).timeout
+		gettingparried = false

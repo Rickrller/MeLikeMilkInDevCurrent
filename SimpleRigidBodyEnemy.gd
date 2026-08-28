@@ -54,21 +54,24 @@ func _physics_process(_delta: float) -> void:
 		queue_free()
 		eventbus.grantitem.emit(givenfruit)
 	
-func parried():
-	health -= eventbus.parrydamage
+func parried(d : bool, k : bool, v : bool):
+	if d:
+		health -= eventbus.parrydamage
 	if health <= 0:
 		eventbus.parrykill.emit()
 	
 	
 	look_at(player.global_position)
-	var ParryVFXInstance = ParryVFX.instantiate()
-	ParryVFXInstance.global_transform = self.global_transform
-	get_tree().root.add_child(ParryVFXInstance)
-	state = Estate.blasted
-	linear_velocity.y += 3
-	linear_velocity.z -= 50 * direction.z
-	linear_velocity.x -= 50 * direction.x
-	await get_tree().create_timer(0.4).timeout
+	if v:
+		var ParryVFXInstance = ParryVFX.instantiate()
+		ParryVFXInstance.global_transform = self.global_transform
+		get_tree().root.add_child(ParryVFXInstance)
+	if k:
+		state = Estate.blasted
+		linear_velocity.y += 3
+		linear_velocity.z -= 50 * direction.z
+		linear_velocity.x -= 50 * direction.x
+		await get_tree().create_timer(0.4).timeout
 	state = Estate.idle
 	
 func checkforplayer():

@@ -30,8 +30,8 @@ func getplayer():
 	#velocity = dir * speed
 	#move_and_slide()
 		#pass
-func parried():
-		
+func parried(d : bool, k : bool, v : bool):
+	
 	parent.interruption()
 	reset()
 

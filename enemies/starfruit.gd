@@ -53,7 +53,8 @@ func _on_buffarea_body_exited(body: Node3D) -> void:
 			body.attackcooldown.wait_time /= 0.75
 
 
-func parried():
-	eventbus.parrykill.emit()
-	eventbus.grantitem.emit(givenfruit)
-	queue_free()
+func parried(d : bool, _k : bool, _v : bool):
+	if d:
+		eventbus.parrykill.emit()
+		eventbus.grantitem.emit(givenfruit)
+		queue_free()
