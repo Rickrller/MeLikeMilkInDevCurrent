@@ -27,7 +27,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if health <= 0:
-		parried()
+		parried(true, false, false)
 	if Engine.get_frames_drawn() % 5 == 0: #optimization shii
 		distancetoplayer = global_position.distance_to(player.global_position)
 		diff = global_position - player.global_position
@@ -82,10 +82,11 @@ func _physics_process(delta: float) -> void:
 			
 
 	
-func parried():
-	eventbus.parrykill.emit()
-	eventbus.grantitem.emit(givenfruit)
-	queue_free()
+func parried(damage : bool, _knockback : bool, _vfx : bool):
+	if damage:
+		eventbus.parrykill.emit()
+		eventbus.grantitem.emit(givenfruit)
+		queue_free()
 	
 	
 

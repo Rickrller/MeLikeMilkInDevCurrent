@@ -11,7 +11,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("enemy") and player.parrying == true:
 		
-		body.parried()
+		body.parried(true, true, true)
 		damagemult = player.damagemult
 		#if body.health - (eventbus.parrydamage * damagemult) <= 0:
 			#eventbus.parrykill.emit()
