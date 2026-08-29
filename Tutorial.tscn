@@ -588,6 +588,7 @@ transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -280
 
 [node name="DialogueContainer" type="CenterContainer" parent="." unique_id=1497569588]
 unique_name_in_owner = true
+z_index = 5
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

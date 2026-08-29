@@ -34,11 +34,11 @@ func _process(_delta: float) -> void:
 			hydration = max_value
 		if minerals > max_value:
 			minerals = max_value
-		$"../Panel/protien".value = protien
-		$"../Panel/hydration".value = hydration
-		$"../Panel/vitamins".value = vitamins
-		$"../Panel/carbs".value = carbs
-		$"../Panel/minerals".value = minerals
+		$"../Panel/Control/protien".value = protien
+		$"../Panel/Control/hydration".value = hydration
+		$"../Panel/Control/vitamins".value = vitamins
+		$"../Panel/Control/carbs".value = carbs
+		$"../Panel/Control/minerals".value = minerals
 		if fmod(protien, 1) == 0:
 			effects.applyweakness(int(protien) / 25.0)
 		if fmod(carbs, 1) == 0:

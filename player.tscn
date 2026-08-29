@@ -39,8 +39,11 @@
 [ext_resource type="Texture2D" uid="uid://cno613y7cf45x" path="res://RedGradient.png" id="30_tkwlq"]
 [ext_resource type="Script" uid="uid://dqdw2l18ytl8x" path="res://health_indicator.gd" id="31_hl5qd"]
 [ext_resource type="Script" uid="uid://bssbuwif5umc8" path="res://damage_indicator.gd" id="32_ek41f"]
+[ext_resource type="FontFile" uid="uid://d20rfwk5g6tyt" path="res://Freedom-10eM.ttf" id="33_1xqrm"]
+[ext_resource type="Script" uid="uid://cl4uipshhu0b6" path="res://UIDrag.gd" id="33_bfour"]
 [ext_resource type="Texture2D" uid="uid://6yqaatssfhve" path="res://CyanGradient.png" id="33_khis8"]
 [ext_resource type="Script" uid="uid://cfupu75s0dq80" path="res://parry_recovery.gd" id="34_b88wv"]
+[ext_resource type="Script" uid="uid://bqkfjyb4uxax3" path="res://HealthLabel.gd" id="34_bfour"]
 [ext_resource type="Texture2D" uid="uid://bsdlb78m1hbm4" path="res://YellowGradient.png" id="35_ek41f"]
 [ext_resource type="Script" uid="uid://c4nwyx45ak8d7" path="res://parry_cast.gd" id="35_hl5qd"]
 
@@ -6293,6 +6296,89 @@ shader_parameter/offset_x = false
 shader_parameter/offset_y = false
 shader_parameter/inverted = false
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1xqrm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8gr2b"]
+font = ExtResource("33_1xqrm")
+font_size = 48
+font_color = Color(1, 1, 1, 0)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vl8ci"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ieltc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vl8ci"]
+font = ExtResource("33_1xqrm")
+font_size = 48
+font_color = Color(0, 1, 1, 0)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1xqrm"]
+font = ExtResource("33_1xqrm")
+font_size = 40
+font_color = Color(0, 1, 1, 1)
+outline_size = 12
+outline_color = Color(3.85046e-07, 0.58615774, 0.58615774, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gr2b"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+border_width_left = 3
+border_width_top = 2
+border_width_right = 3
+border_width_bottom = 2
+border_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xqrm"]
+bg_color = Color(0, 1, 1, 1)
+border_width_left = 3
+border_width_top = 2
+border_width_right = 5
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfour"]
+bg_color = Color(0.2, 0.2, 0.2, 0)
+border_width_left = 3
+border_width_top = 2
+border_width_right = 3
+border_width_bottom = 2
+border_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bfour"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bfour"]
+font = ExtResource("33_1xqrm")
+font_size = 10
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ieltc"]
+font = ExtResource("33_1xqrm")
+font_size = 40
+
 [node name="Player" type="CharacterBody3D" unique_id=2021393363 groups=["player"]]
 floor_max_angle = 1.3962634
 script = ExtResource("1_n7ghd")
@@ -6341,7 +6427,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.6509844, 0.14196326, 0.544959, 0.5090043)
+bones/0/rotation = Quaternion(-0.6521465, 0.14071701, 0.54528224, 0.50751466)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -6591,7 +6677,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.6509844, 0.14196326, 0.544959, 0.5090043)
+bones/0/rotation = Quaternion(-0.6521465, 0.14071701, 0.54528224, 0.50751466)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -6963,24 +7049,101 @@ one_shot = true
 [node name="iframes" type="Timer" parent="." unique_id=68961472]
 
 [node name="Panel" type="Panel" parent="." unique_id=1689909801]
-offset_right = 178.0
-offset_bottom = 123.0
+offset_left = 22.0
+offset_top = 11.0
+offset_right = 200.0
+offset_bottom = 73.0
+scale = Vector2(0.96, 0.96)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1xqrm")
+script = ExtResource("33_bfour")
 
 [node name="Health" type="Label" parent="Panel" unique_id=1055937492]
 layout_mode = 0
-offset_right = 176.0
+offset_left = 14.0
+offset_top = 10.0
+offset_right = 281.0
 offset_bottom = 122.0
 text = "health"
+label_settings = SubResource("LabelSettings_8gr2b")
+script = ExtResource("34_bfour")
+
+[node name="Bar" type="ProgressBar" parent="Panel/Health" unique_id=520975069]
+layout_mode = 0
+offset_left = -4.0
+offset_right = 311.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+show_percentage = false
+
+[node name="BarBorder" type="ProgressBar" parent="Panel/Health/Bar" unique_id=1274952436]
+layout_mode = 0
+offset_right = 315.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_vl8ci")
+theme_override_styles/fill = SubResource("StyleBoxEmpty_ieltc")
+show_percentage = false
 
 [node name="parryavailable" type="Label" parent="Panel" unique_id=1400142532]
 layout_mode = 0
-offset_top = 30.0
-offset_right = 42.0
-offset_bottom = 79.0
+offset_left = 13.0
+offset_top = 69.0
+offset_right = 238.0
+offset_bottom = 243.0
 text = "parry
 "
+label_settings = SubResource("LabelSettings_vl8ci")
 
-[node name="minerals" type="ProgressBar" parent="Panel" unique_id=2056984790]
+[node name="StaminaLabel" type="Label" parent="Panel" unique_id=708040552]
+z_index = 1
+layout_mode = 0
+offset_left = 7.0
+offset_top = 580.0
+offset_right = 325.0
+offset_bottom = 640.0
+text = "STAMINA"
+label_settings = SubResource("LabelSettings_1xqrm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dashcahrges" type="ProgressBar" parent="Panel" unique_id=1071234932]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 580.0
+offset_right = 264.40005
+offset_bottom = 612.56555
+scale = Vector2(1.2354308, 1.8424386)
+theme_override_styles/background = SubResource("StyleBoxFlat_8gr2b")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1xqrm")
+max_value = 3.0
+step = 1.0
+value = 3.0
+show_percentage = false
+
+[node name="DashBorder" type="ProgressBar" parent="Panel" unique_id=931745474]
+z_index = 1
+layout_mode = 0
+offset_left = 7.0
+offset_top = 580.0
+offset_right = 264.40005
+offset_bottom = 612.56555
+scale = Vector2(1.2354308, 1.8424386)
+theme_override_styles/background = SubResource("StyleBoxFlat_bfour")
+theme_override_styles/fill = SubResource("StyleBoxEmpty_bfour")
+max_value = 3.0
+step = 1.0
+value = 3.0
+show_percentage = false
+
+[node name="Control" type="Control" parent="Panel" unique_id=1161170911]
+anchors_preset = 0
+offset_left = -685.0
+offset_top = -385.0
+offset_right = -645.0
+offset_bottom = -345.0
+scale = Vector2(1.6, 1.6)
+
+[node name="minerals" type="ProgressBar" parent="Panel/Control" unique_id=2056984790]
 modulate = Color(18.892157, 18.892157, 0, 1)
 self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
 layout_mode = 0
@@ -6992,7 +7155,7 @@ scale = Vector2(0.48000002, 1)
 value = 100.0
 show_percentage = false
 
-[node name="carbs" type="ProgressBar" parent="Panel" unique_id=310810180]
+[node name="carbs" type="ProgressBar" parent="Panel/Control" unique_id=310810180]
 modulate = Color(18.892002, 18.892002, 18.892002, 1)
 layout_mode = 0
 offset_left = 986.0
@@ -7003,7 +7166,7 @@ scale = Vector2(0.48000002, 1)
 value = 100.0
 show_percentage = false
 
-[node name="vitamins" type="ProgressBar" parent="Panel" unique_id=950570887]
+[node name="vitamins" type="ProgressBar" parent="Panel/Control" unique_id=950570887]
 modulate = Color(1, 0.65210927, 0.3179172, 1)
 layout_mode = 0
 offset_left = 986.0
@@ -7014,7 +7177,7 @@ scale = Vector2(0.48000002, 1)
 value = 100.0
 show_percentage = false
 
-[node name="hydration" type="ProgressBar" parent="Panel" unique_id=434773841]
+[node name="hydration" type="ProgressBar" parent="Panel/Control" unique_id=434773841]
 modulate = Color(0.5631181, 0.86535984, 0.9691853, 1)
 layout_mode = 0
 offset_left = 986.0
@@ -7025,7 +7188,7 @@ scale = Vector2(0.48000002, 1)
 value = 100.0
 show_percentage = false
 
-[node name="protien" type="ProgressBar" parent="Panel" unique_id=1880359571]
+[node name="protien" type="ProgressBar" parent="Panel/Control" unique_id=1880359571]
 modulate = Color(0.57083243, 0.3054969, 0.29292062, 1)
 layout_mode = 0
 offset_left = 986.0
@@ -7036,16 +7199,66 @@ scale = Vector2(0.48000002, 1)
 value = 100.0
 show_percentage = false
 
-[node name="dashcahrges" type="ProgressBar" parent="Panel" unique_id=1071234932]
+[node name="mineralslabel" type="Label" parent="Panel/Control" unique_id=35462116]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 593.0
-offset_right = 111.0
-offset_bottom = 620.0
-scale = Vector2(1.2354308, 1.8424386)
-max_value = 3.0
-step = 1.0
-show_percentage = false
+offset_left = 985.99994
+offset_top = 629.99994
+offset_right = 1145.0
+offset_bottom = 640.99994
+text = "Minerals"
+label_settings = SubResource("LabelSettings_bfour")
+horizontal_alignment = 1
+
+[node name="carbslabel" type="Label" parent="Panel/Control" unique_id=1543719954]
+layout_mode = 0
+offset_left = 985.99994
+offset_top = 614.28577
+offset_right = 1145.0
+offset_bottom = 625.28577
+text = "carbs"
+label_settings = SubResource("LabelSettings_bfour")
+horizontal_alignment = 1
+
+[node name="vitaminslabel" type="Label" parent="Panel/Control" unique_id=608999243]
+layout_mode = 0
+offset_left = 985.99994
+offset_top = 597.1429
+offset_right = 1145.0
+offset_bottom = 608.1429
+text = "vitamins"
+label_settings = SubResource("LabelSettings_bfour")
+horizontal_alignment = 1
+
+[node name="hydrationlabel" type="Label" parent="Panel/Control" unique_id=2016797396]
+layout_mode = 0
+offset_left = 985.99994
+offset_top = 580.0
+offset_right = 1145.0
+offset_bottom = 591.0
+text = "hydration"
+label_settings = SubResource("LabelSettings_bfour")
+horizontal_alignment = 1
+
+[node name="proteinlabel" type="Label" parent="Panel/Control" unique_id=1888925987]
+layout_mode = 0
+offset_left = 985.99994
+offset_top = 565.0
+offset_right = 1145.0
+offset_bottom = 576.0
+text = "protein"
+label_settings = SubResource("LabelSettings_bfour")
+horizontal_alignment = 1
+
+[node name="HealthText" type="Label" parent="Panel" unique_id=591935409]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 325.0
+offset_bottom = 77.0
+text = "Health"
+label_settings = SubResource("LabelSettings_ieltc")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="effects" type="Node" parent="." unique_id=1924522806]
 script = ExtResource("17_q13i1")
@@ -7089,7 +7302,6 @@ texture = ExtResource("33_khis8")
 script = ExtResource("34_b88wv")
 
 [node name="ParryCast" type="Sprite2D" parent="." unique_id=939656713]
-visible = false
 z_index = -4
 position = Vector2(570, 333)
 scale = Vector2(4, 4.112)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvj46lwegqasn"]
 
-[ext_resource type="Script" uid="uid://bmq2lbtfpy1f5" path="res://TabToPause.gd" id="1_fa2fe"]
+[ext_resource type="Script" path="res://TabToPause.gd" id="1_fa2fe"]
 [ext_resource type="FontFile" uid="uid://d20rfwk5g6tyt" path="res://Freedom-10eM.ttf" id="2_qcgwy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcgwy"]

@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var bob_freq = 1.6
-@export var bob_amp = 0.35
+@export var bob_amp = 0.5
 @export var base_height = 0.8
 
 var t_bob = 0.0
