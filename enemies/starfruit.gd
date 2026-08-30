@@ -13,7 +13,7 @@ func _ready() -> void:
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
-	$AnimationPlayer.play("float")
+	
 
 var speed = 0
 var attackcooldown = {"wait_time" : 0}
@@ -25,6 +25,7 @@ func _physics_process(delta: float) -> void:
 		KillCounter.register_kill()
 		queue_free()
 	if is_on_floor():
+		$AnimationPlayer.play("float")
 		velocity.y += 20
 		touchedfloor = true
 	if distancetoplayer <= 7:

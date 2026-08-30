@@ -61,7 +61,7 @@ func parried(d : bool, k : bool, v : bool):
 		eventbus.parrykill.emit()
 	
 	
-	look_at(player.global_position)
+#	look_at(player.global_position)
 	if v:
 		var ParryVFXInstance = ParryVFX.instantiate()
 		ParryVFXInstance.global_transform = self.global_transform

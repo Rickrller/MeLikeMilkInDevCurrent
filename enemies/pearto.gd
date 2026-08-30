@@ -12,11 +12,12 @@ enum enemystate { parrying, everythingelse, blasted, attacking}
 @export var sightrange : float
 @export var attackready : bool = false
 @onready var attackcooldown = $Timer2
-@export var distancetoplayer : float
+@export var distancetoplayer : float = INF
 @export var diff : Vector3
 const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
 @export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
 @onready var model = $model
+@onready var anims = $AnimationPlayer
 func _ready() -> void:
 
 		var players = get_tree().get_nodes_in_group("player")
@@ -60,9 +61,8 @@ func _physics_process(delta: float) -> void:
 				attackready = false
 				state = enemystate.attacking
 				player.getraped(damage)
+				anims.play("attack")
 				
-				eventbus.flashbang.emit()
-				$Timer2.start()
 			
 			else:
 				if state == enemystate.attacking:
@@ -140,3 +140,8 @@ func lookatplayer(delta):
 
 func _on_timer_2_timeout() -> void:
 	attackready = true
+
+
+func attack():
+	eventbus.flashbang.emit()
+	$Timer2.start()

@@ -74,20 +74,20 @@ func pounce():
 	$Timer.start()
 	
 	
-func parried(damage : bool, knockback : bool, vfx : bool):
+func parried(d : bool, k : bool, v : bool):
 	
 	if not parryable:
 		return
-	if damage:
+	if d:
 		health -= eventbus.parrydamage
 	#if state != enemystate.pouncing and state != enemystate.attacking:
 	#	return
 	#print("got parried")
-	if knockback:
+	if k:
 		velocity.y += 15
 		move_and_slide()
 		state = enemystate.blasted
-	if vfx:
+	if v:
 		var ParryVFXInstance = ParryVFX.instantiate()
 		ParryVFXInstance.global_transform = self.global_transform
 		get_tree().root.add_child(ParryVFXInstance)

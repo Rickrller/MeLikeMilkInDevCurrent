@@ -19,7 +19,7 @@ enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attac
 const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
 @export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
 @onready var model = $model
-@export var distancetoplayer : float
+@export var distancetoplayer : float = INF
 func _ready() -> void:
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:

@@ -1,5 +1,5 @@
 extends Area3D
-@export var damage : float = 50
+@export var damage : float = 5
 var damagemult
 @onready var FX = $FX
 
@@ -16,5 +16,13 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("enemy"):
-		body.parried()
-		body.health -= damage * damagemult
+		#body.parried(false, true, false)
+		body.health -= damage# * damagemult
+		
+		if body.is_in_group("rigidbody"):
+			body.linear_velocity.y += 3
+			body.linear_velocity.z -= 50 * body.direction.z
+			body.linear_velocity.x -= 50 * body.direction.x
+		else:
+			body.velocity.y += 15
+			body.state = body.enemystate.blasted
