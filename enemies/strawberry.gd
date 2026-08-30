@@ -46,6 +46,7 @@ func _physics_process(delta: float) -> void:
 		diff = global_position - player.global_position
 	
 	if health <= 0:
+		KillCounter.register_kill()
 		#eventbus.grantitem.emit(givenfruit)
 		queue_free()
 	if not is_on_floor():

@@ -27,6 +27,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if health <= 0:
+		KillCounter.register_kill()
 		parried(true, false, false)
 	if Engine.get_frames_drawn() % 5 == 0: #optimization shii
 		distancetoplayer = global_position.distance_to(player.global_position)

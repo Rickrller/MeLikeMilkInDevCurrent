@@ -22,6 +22,7 @@ func _physics_process(delta: float) -> void:
 	if Engine.get_frames_drawn() % 5 == 0:
 		distancetoplayer = global_position.distance_to(player.global_position)
 	if health <= 0:
+		KillCounter.register_kill()
 		queue_free()
 	if is_on_floor():
 		velocity.y += 20

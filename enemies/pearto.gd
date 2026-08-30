@@ -37,6 +37,7 @@ func _physics_process(delta: float) -> void:
 	if distancetoplayer < sightrange:
 		lookatplayer(delta)
 	if health <= 0:
+		KillCounter.register_kill()
 		#eventbus.grantitem.emit(givenfruit)
 		queue_free()
 	if not is_on_floor():

@@ -31,6 +31,7 @@ func _physics_process(delta: float) -> void:
 	if Engine.get_frames_drawn() % 5 == 0:
 		distancetoplayer = global_position.distance_to(player.global_position)
 	if health <= 0:
+		KillCounter.register_kill()
 		#eventbus.grantitem.emit(givenfruit)
 		queue_free()
 	if not is_on_floor():
