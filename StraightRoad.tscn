@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c6s1xq4cb4280" path="res://milkcarton.glb" id="8_iwliv"]
 [ext_resource type="PackedScene" uid="uid://dvj46lwegqasn" path="res://TabToPause.tscn" id="9_3d63y"]
 [ext_resource type="Script" uid="uid://p4ff77m780ep" path="res://EndGateCollider.gd" id="10_h00kl"]
+[ext_resource type="AudioStream" uid="uid://c3n5opgcgd1md" path="res://Delivery_Time.mp3" id="11_n8wi7"]
 [ext_resource type="PackedScene" uid="uid://xlkowwqt7421" path="res://HouseModels.tscn" id="14_ykxim"]
 [ext_resource type="Script" uid="uid://ccay4d4u8ljka" path="res://spawner_test.gd" id="19_yv7ed"]
 
@@ -221,6 +222,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -203.7056, 0, -19.03002)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23.701172, -1.1733112)
 shape = SubResource("BoxShape3D_n8wi7")
 script = ExtResource("10_h00kl")
+
+[node name="DeliveryTime" type="AudioStreamPlayer" parent="." unique_id=258617009]
+stream = ExtResource("11_n8wi7")
+volume_db = -3.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Spawner/SpawnArea" to="Spawner" method="_on_spawn_area_body_entered"]
 [connection signal="body_entered" from="Spawner2/SpawnArea" to="Spawner2" method="_on_spawn_area_body_entered"]

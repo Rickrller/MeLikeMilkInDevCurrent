@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dvj46lwegqasn" path="res://TabToPause.tscn" id="21_00nt1"]
 [ext_resource type="Script" uid="uid://p4ff77m780ep" path="res://EndGateCollider.gd" id="22_xmiex"]
 [ext_resource type="Script" uid="uid://ccay4d4u8ljka" path="res://spawner_test.gd" id="23_kxs3x"]
+[ext_resource type="AudioStream" uid="uid://dlurhsrpqylkp" path="res://Milk_Rush.mp3" id="24_kxs3x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uqbd5"]
 albedo_color = Color(0.6647001, 0.37613204, 0.3757312, 1)
@@ -7696,6 +7697,11 @@ debug_color = Color(0.9882353, 0, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.509766, 0, -0.458786)
 shape = SubResource("BoxShape3D_g5n6q")
 debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="MilkRush" type="AudioStreamPlayer" parent="." unique_id=616442000]
+stream = ExtResource("24_kxs3x")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="End" to="End" method="_on_body_entered"]
 [connection signal="body_entered" from="Spawner/SpawnArea" to="Spawner" method="_on_spawn_area_body_entered"]

@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cxkemj5q5ftp1" path="res://player.tscn" id="9_fenau"]
 [ext_resource type="Script" uid="uid://lqd5chgc14ux" path="res://StageSelectEntry.gd" id="19_15c7m"]
 [ext_resource type="PackedScene" uid="uid://dvj46lwegqasn" path="res://TabToPause.tscn" id="20_tl5al"]
+[ext_resource type="AudioStream" uid="uid://c1plhw5xed86" path="res://Town.mp3" id="21_33o58"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_15c7m"]
 material = ExtResource("1_5t3b5")
@@ -2746,3 +2747,9 @@ transform = Transform3D(1.1999999, 0, 0, 0, 1.1999999, 0, 0, 0, 1.1999999, -0.02
 shape = SubResource("ConvexPolygonShape3D_rt80h")
 
 [node name="TabToPause" parent="." unique_id=1612920135 instance=ExtResource("20_tl5al")]
+
+[node name="Town" type="AudioStreamPlayer" parent="." unique_id=139921002]
+stream = ExtResource("21_33o58")
+volume_db = -3.0
+autoplay = true
+parameters/looping = true

@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://t0as40rgvqa5" path="res://PlayButton.gd" id="20_nnwpj"]
 [ext_resource type="Script" uid="uid://bx5bc84j0s7mp" path="res://TutorialButton.gd" id="21_c5lou"]
 [ext_resource type="Script" uid="uid://dj27a0khis6s3" path="res://AboutButton.gd" id="22_c5lou"]
+[ext_resource type="AudioStream" uid="uid://wnnh44s21oc2" path="res://ShopInGameLooped (1).mp3" id="25_5hpli"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uvmgb"]
 shader = ExtResource("1_u8jli")
@@ -2333,3 +2334,8 @@ offset_left = -22.0
 offset_top = -18.0
 offset_right = 628.0
 offset_bottom = 708.0
+
+[node name="ShopInGameLooped(1)" type="AudioStreamPlayer" parent="." unique_id=132222082]
+stream = ExtResource("25_5hpli")
+volume_db = -3.0
+autoplay = true
