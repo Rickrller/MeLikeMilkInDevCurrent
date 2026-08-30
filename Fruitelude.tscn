@@ -9,13 +9,13 @@
 [ext_resource type="Material" uid="uid://balumk05moncr" path="res://Curb.tres" id="7_nntvb"]
 [ext_resource type="PackedScene" uid="uid://cxkemj5q5ftp1" path="res://player.tscn" id="8_33cra"]
 [ext_resource type="Texture2D" uid="uid://bsdlb78m1hbm4" path="res://YellowGradient.png" id="9_3xujm"]
-[ext_resource type="Script" path="res://ScreenBlinkFruitelude.gd" id="10_pna45"]
+[ext_resource type="Script" uid="uid://jkecoh76gijf" path="res://ScreenBlinkFruitelude.gd" id="10_pna45"]
 [ext_resource type="AudioStream" uid="uid://b7box7elpt00n" path="res://FruiteludeIngame.mp3" id="11_nntvb"]
-[ext_resource type="Script" path="res://VisualiserLines.gd" id="12_pna45"]
+[ext_resource type="Script" uid="uid://dxboqg5shj0bi" path="res://VisualiserLines.gd" id="12_pna45"]
 [ext_resource type="FontFile" uid="uid://fnr0yna4jh2" path="res://RushDriver-Italic.otf" id="13_o1q5p"]
-[ext_resource type="Script" path="res://FruiteludeLabel.gd" id="14_o1q5p"]
-[ext_resource type="Script" path="res://FruiteludeGoodLabel.gd" id="15_3wmfj"]
-[ext_resource type="Script" path="res://FruiteludeLuckLabel.gd" id="16_b3kxn"]
+[ext_resource type="Script" uid="uid://bvks2anokevkr" path="res://FruiteludeLabel.gd" id="14_o1q5p"]
+[ext_resource type="Script" uid="uid://dm3h7jps6j187" path="res://FruiteludeGoodLabel.gd" id="15_3wmfj"]
+[ext_resource type="Script" uid="uid://brojjj6exwawf" path="res://FruiteludeLuckLabel.gd" id="16_b3kxn"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o1q5p"]
 material = ExtResource("1_pa0ms")
@@ -93,6 +93,9 @@ outline_size = 5
 outline_color = Color(1, 0.3882353, 0, 1)
 shadow_size = 0
 shadow_color = Color(1, 0.5551061, 0.19510224, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b3kxn"]
+size = Vector3(1, 7.66098, 1)
 
 [node name="ForestRoad" type="Node3D" unique_id=460276277]
 
@@ -26948,3 +26951,34 @@ text = "LUCK"
 label_settings = SubResource("LabelSettings_3wmfj")
 horizontal_alignment = 1
 script = ExtResource("16_b3kxn")
+
+[node name="FallenTree" type="Node3D" parent="." unique_id=1028188099]
+transform = Transform3D(8, 0, 0, 0, -0.19727251, -7.9975677, 0, 7.9975677, -0.19727251, 349.20746, 0.73651505, -16.864304)
+
+[node name="Leaves" type="MeshInstance3D" parent="FallenTree" unique_id=92085885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, 0)
+mesh = SubResource("SphereMesh_b1nol")
+
+[node name="Leaves2" type="MeshInstance3D" parent="FallenTree" unique_id=1419536591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.31711388)
+mesh = SubResource("SphereMesh_m40cc")
+
+[node name="Leaves3" type="MeshInstance3D" parent="FallenTree" unique_id=432090055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.55119514)
+mesh = SubResource("SphereMesh_mnsr4")
+
+[node name="Leaves4" type="MeshInstance3D" parent="FallenTree" unique_id=1007952342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.3726754, -0.37444496)
+mesh = SubResource("SphereMesh_8cf06")
+
+[node name="Trunk" type="MeshInstance3D" parent="FallenTree" unique_id=150882378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="TrunkBottom" type="MeshInstance3D" parent="FallenTree" unique_id=1952009322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+mesh = SubResource("CylinderMesh_lddpg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FallenTree" unique_id=1020942175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9896088, -7.450581e-09)
+shape = SubResource("BoxShape3D_b3kxn")
