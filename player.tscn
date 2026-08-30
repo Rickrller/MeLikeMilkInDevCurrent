@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ckoiiv10m0gpm" path="res://PlayerScript.gd" id="1_n7ghd"]
 [ext_resource type="Script" uid="uid://b2qd52joercdd" path="res://Camera.gd" id="2_nvl01"]
+[ext_resource type="Script" uid="uid://cpyaywm6any4r" path="res://CameraBobber.gd" id="3_ieltc"]
 [ext_resource type="Script" uid="uid://balg1ow4j5jc6" path="res://camera_3d.gd" id="3_ivps1"]
 [ext_resource type="Texture2D" uid="uid://c8s70ijdlvllb" path="res://arms/glb/rightarm_maintexture.png" id="4_khis8"]
 [ext_resource type="Shader" uid="uid://cvdurhmxd85c8" path="res://Experimental1.gdshader" id="4_urp6f"]
@@ -6421,6 +6422,7 @@ mesh = SubResource("CapsuleMesh_63qkx")
 
 [node name="Neck" type="Node3D" parent="." unique_id=293218289]
 unique_name_in_owner = true
+script = ExtResource("2_nvl01")
 
 [node name="CamOriginalPos" type="Marker3D" parent="Neck" unique_id=1955695895]
 unique_name_in_owner = true
@@ -6429,7 +6431,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2037872)
 
 [node name="CameraBobber" type="Node3D" parent="Neck" unique_id=1373314679]
-script = ExtResource("2_nvl01")
+script = ExtResource("3_ieltc")
 
 [node name="CameraShaker" type="Node3D" parent="Neck/CameraBobber" unique_id=1068839983]
 script = ExtResource("5_3iwfv")
@@ -6460,7 +6462,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.6509169, 0.1420356, 0.5449401, 0.5090908)
+bones/0/rotation = Quaternion(-0.6522035, 0.1406557, 0.545298, 0.5074413)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -6710,7 +6712,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.6509169, 0.1420356, 0.5449401, 0.5090908)
+bones/0/rotation = Quaternion(-0.6522035, 0.1406557, 0.545298, 0.5074413)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0

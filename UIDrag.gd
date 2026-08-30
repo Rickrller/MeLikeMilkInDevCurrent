@@ -1,10 +1,10 @@
 extends Control
 
-@export var drag_strength = 30.0
+@export var drag_strength = 15.0
 @export var return_speed = 8.0
-@export var max_offset = 200.0
+@export var max_offset = 100.0
 
-@export var anim_offset = Vector2.ZERO #special thing to make fist animation work
+@export var anim_offset = Vector2.ZERO
 
 @export var bob_freq = 1.6
 @export var bob_amp = 1
