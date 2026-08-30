@@ -1,5 +1,5 @@
 extends Area3D
-@export var damage : float = 5
+@export var damage : float = 50
 var damagemult
 @onready var FX = $FX
 
