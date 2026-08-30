@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 eventbus="*uid://cok3dfdp2r6m3"
 ScreenShake="*uid://dwbeu2utkwl6i"
+KillCounter="*uid://chqsq2odx53hx"
 
 [display]
 

@@ -28,9 +28,9 @@ extends CharacterBody3D
 
 # Camera/children Variables
 @onready var neck := $Neck
-@onready var camera := $Neck/CameraShaker/Camera3D
+@onready var camera := $Neck/CameraBobber/CameraShaker/Camera3D
 @onready var handstate := $handstatemachine
-@onready var punchcheck = $Neck/punchcheck
+@onready var punchcheck = $Neck/CameraBobber/punchcheck
 @onready var parrycooldownnode = $parrycooldown
 @onready var iframesnode = $iframes
 @onready var punchcooldownnode = $punchcooldown
@@ -56,6 +56,7 @@ var _was_on_floor: bool = true
 
 func _ready():
 	punchcheck.add_exception(self)
+	KillCounter.reset()
 	#punchcheck.add_exception($Playercollision)
 func _unhandled_input(event):
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -113,7 +114,6 @@ func _physics_process(delta):
 	move_and_slide()
 	if is_on_floor() and not _was_on_floor:
 		ScreenShake.shake_impulse(Vector3.UP, 1)
-		print('Landed')
 	_was_on_floor = is_on_floor()
 	if Input.is_action_pressed("punch") and ispunchready:
 		

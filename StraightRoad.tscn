@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://qjqx8hdoa401" path="res://ExitTutorial.gd" id="7_8i21p"]
 [ext_resource type="PackedScene" uid="uid://c6s1xq4cb4280" path="res://milkcarton.glb" id="8_iwliv"]
 [ext_resource type="PackedScene" uid="uid://dvj46lwegqasn" path="res://TabToPause.tscn" id="9_3d63y"]
+[ext_resource type="Script" uid="uid://p4ff77m780ep" path="res://EndGateCollider.gd" id="10_h00kl"]
 [ext_resource type="PackedScene" uid="uid://xlkowwqt7421" path="res://HouseModels.tscn" id="14_ykxim"]
 [ext_resource type="Script" uid="uid://ccay4d4u8ljka" path="res://spawner_test.gd" id="19_yv7ed"]
 
@@ -83,6 +84,9 @@ size = Vector3(10, 50, 133.0708)
 [sub_resource type="BoxShape3D" id="BoxShape3D_iwliv"]
 size = Vector3(1.7717438, 5.0558777, 2.3621216)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_n8wi7"]
+size = Vector3(1, 48.402344, 73.02057)
+
 [node name="Town2" type="Node3D" unique_id=2006889649]
 script = ExtResource("1_24t42")
 
@@ -134,6 +138,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -34.757614, 0)
 [node name="Spawner" type="Node3D" parent="." unique_id=1833533121]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 190.61911, -30.885183, -20.748177)
 script = ExtResource("19_yv7ed")
+applespawns = 20
 
 [node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner" unique_id=792077890]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.500336, -2.3313618, 0)
@@ -208,6 +213,14 @@ shape = SubResource("BoxShape3D_iwliv")
 transform = Transform3D(7.1549286e-09, 0, -0.6, 0, 0.6, 0, 0.6, 0, 7.1549286e-09, 0, 0, 0)
 
 [node name="TabToPause" parent="." unique_id=1612920135 instance=ExtResource("9_3d63y")]
+
+[node name="EndGate" type="StaticBody3D" parent="." unique_id=1807773220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -203.7056, 0, -19.03002)
+
+[node name="EndGateCollider" type="CollisionShape3D" parent="EndGate" unique_id=1625705465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23.701172, -1.1733112)
+shape = SubResource("BoxShape3D_n8wi7")
+script = ExtResource("10_h00kl")
 
 [connection signal="body_entered" from="Spawner/SpawnArea" to="Spawner" method="_on_spawn_area_body_entered"]
 [connection signal="body_entered" from="Spawner2/SpawnArea" to="Spawner2" method="_on_spawn_area_body_entered"]

@@ -73,6 +73,12 @@ func _ready() -> void:
 	await get_tree().create_timer(4).timeout
 	$DialogueLabel.text = "So make sure to keep track!"
 	await get_tree().create_timer(4).timeout
+	$DialogueLabel.text = "Your goal is at the end of each level"
+	await get_tree().create_timer(5).timeout
+	$DialogueLabel.text = "Killing enemies fills up your kill bar"
+	await get_tree().create_timer(5).timeout
+	$DialogueLabel.text = "And you can only leave when the bar is full"
+	await get_tree().create_timer(5).timeout
 	$DialogueLabel.text = "And with that, I think you are ready!"
 	await get_tree().create_timer(4).timeout
 	$DialogueLabel.text = "Go into that house to exit the tutorial!"

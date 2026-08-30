@@ -3,7 +3,7 @@ const grapemesh = preload("res://meshes/grapemesh.tscn")
 @onready var nutrition = $"../../nutrition"
 @onready var clustergrape = preload("res://clustergrape.tscn")
 @onready var player = $"../.."
-@onready var cam = $"../../Neck/CameraShaker/Camera3D"
+@onready var cam = $"../../Neck/CameraBobber/CameraShaker/Camera3D"
 
 func Enter():
 	var inst = grapemesh.instantiate()
