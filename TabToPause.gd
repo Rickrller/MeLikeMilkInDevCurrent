@@ -6,8 +6,8 @@ extends CanvasLayer
 @onready var exit_button: Button = $CenterContainer/Control/Exit
 @onready var menu_button: Button = $CenterContainer/Control/Menu
 
-var _slide_distance: float = 800.0
-var _anim_duration: float = 0.5
+var _slide_distance: float = 60.0
+var _anim_duration: float = 0.25
 var _previous_mouse_mode: Input.MouseMode = Input.MOUSE_MODE_VISIBLE
 
 
@@ -71,7 +71,7 @@ func _on_exit_pressed() -> void:
 
 func _on_menu_pressed() -> void:
 	get_tree().paused = false
-	Input.mouse_mode = _previous_mouse_mode
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if main_menu_scene_path != "":
 		get_tree().change_scene_to_file(main_menu_scene_path)
 	else:

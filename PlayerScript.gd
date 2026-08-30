@@ -140,6 +140,7 @@ func _physics_process(delta):
 		ispunchready = false
 		$punchcooldown.start()
 	if Input.is_action_just_pressed("parry") and parrycooldown == false:
+		ScreenShake.shake_impulse(Vector3.LEFT, 1)
 		parrying = true
 		parrycooldown = true
 		parrycooldownnode.start()
@@ -204,6 +205,7 @@ func punch():
 				var PunchVFXInstance = PunchVFX.instantiate()
 				PunchVFXInstance.global_transform = %Neck/PunchVFXLocation.global_transform
 				get_tree().root.add_child(PunchVFXInstance)
+				ScreenShake.shake_simple(0.3, 0.04)
 				#print("dealt" + str(basedamage * damagemult) + "damage")
 	else:
 		#print("nothing hit")

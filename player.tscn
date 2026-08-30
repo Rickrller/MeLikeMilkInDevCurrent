@@ -6462,7 +6462,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.6522035, 0.1406557, 0.545298, 0.5074413)
+bones/0/rotation = Quaternion(-0.65188414, 0.14099872, 0.54520947, 0.5078515)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -6712,7 +6712,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.6522035, 0.1406557, 0.545298, 0.5074413)
+bones/0/rotation = Quaternion(-0.65188414, 0.14099872, 0.54520947, 0.5078515)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -7340,7 +7340,6 @@ offset_bottom = 647.0
 texture = ExtResource("24_dx0e4")
 
 [node name="HealthIndicator" type="Sprite2D" parent="." unique_id=1266689680]
-visible = false
 z_index = -1
 position = Vector2(570, 333)
 scale = Vector2(2, 2.056)
@@ -7348,7 +7347,6 @@ texture = ExtResource("30_tkwlq")
 script = ExtResource("31_hl5qd")
 
 [node name="DamageIndicator" type="Sprite2D" parent="." unique_id=188098801]
-visible = false
 z_index = -1
 position = Vector2(570, 333)
 scale = Vector2(2, 2.056)
@@ -7356,7 +7354,6 @@ texture = ExtResource("30_tkwlq")
 script = ExtResource("32_ek41f")
 
 [node name="ParryRecovery" type="Sprite2D" parent="." unique_id=242878331]
-visible = false
 z_index = -1
 position = Vector2(570, 333)
 scale = Vector2(2, 2.056)
@@ -7364,7 +7361,6 @@ texture = ExtResource("33_khis8")
 script = ExtResource("34_b88wv")
 
 [node name="ParryCast" type="Sprite2D" parent="." unique_id=939656713]
-visible = false
 z_index = -4
 position = Vector2(570, 333)
 scale = Vector2(4, 4.112)
