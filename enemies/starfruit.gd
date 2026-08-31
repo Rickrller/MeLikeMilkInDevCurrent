@@ -50,7 +50,7 @@ func _on_buffarea_body_entered(body: Node3D) -> void:
 func _on_buffarea_body_exited(body: Node3D) -> void:
 	if body.is_in_group("enemy") and not body.is_in_group("fallentree") and body != self:
 		body.speed /= 2
-		body.normal_albedo = normal_albedo
+		#body.normal_albedo = normal_albedo
 		if not body.is_in_group("rigidbody"):
 			body.attackcooldown.wait_time /= 0.75
 
