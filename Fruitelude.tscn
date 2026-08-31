@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://bvks2anokevkr" path="res://FruiteludeLabel.gd" id="14_o1q5p"]
 [ext_resource type="Script" uid="uid://dm3h7jps6j187" path="res://FruiteludeGoodLabel.gd" id="15_3wmfj"]
 [ext_resource type="Script" uid="uid://brojjj6exwawf" path="res://FruiteludeLuckLabel.gd" id="16_b3kxn"]
+[ext_resource type="Script" uid="uid://0cioxoqb4b44" path="res://FallenTree.gd" id="17_885ix"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o1q5p"]
 material = ExtResource("1_pa0ms")
@@ -26952,15 +26953,17 @@ label_settings = SubResource("LabelSettings_3wmfj")
 horizontal_alignment = 1
 script = ExtResource("16_b3kxn")
 
-[node name="FallenTree" type="Node3D" parent="." unique_id=1028188099]
+[node name="FallenTree" type="CharacterBody3D" parent="." unique_id=28403999 groups=["enemy"]]
 transform = Transform3D(16, 0, 0, 0, -0.39454535, -15.995134, 0, 15.995134, -0.39454535, 349.20746, 0.73651505, -27.746677)
+script = ExtResource("17_885ix")
+health = 250.0
 
 [node name="Leaves" type="MeshInstance3D" parent="FallenTree" unique_id=92085885]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2418566, -7.450581e-09)
 mesh = SubResource("SphereMesh_b1nol")
 
 [node name="Leaves2" type="MeshInstance3D" parent="FallenTree" unique_id=1419536591]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.31711388)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.579089, -0.31711385)
 mesh = SubResource("SphereMesh_m40cc")
 
 [node name="Leaves3" type="MeshInstance3D" parent="FallenTree" unique_id=432090055]
@@ -26968,7 +26971,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.5511
 mesh = SubResource("SphereMesh_mnsr4")
 
 [node name="Leaves4" type="MeshInstance3D" parent="FallenTree" unique_id=1007952342]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.3726754, -0.37444496)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2974205, 4.372675, -0.37444493)
 mesh = SubResource("SphereMesh_8cf06")
 
 [node name="Trunk" type="MeshInstance3D" parent="FallenTree" unique_id=150882378]
@@ -26976,11 +26979,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
 mesh = SubResource("CylinderMesh_ecip2")
 
 [node name="TrunkBottom" type="MeshInstance3D" parent="FallenTree" unique_id=1952009322]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07214975, -3.7252903e-09)
 mesh = SubResource("CylinderMesh_lddpg")
 
-[node name="Collider" type="StaticBody3D" parent="FallenTree" unique_id=1891842402]
-
-[node name="Hitbox" type="CollisionShape3D" parent="FallenTree/Collider" unique_id=1020942175]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, -0.0010986887)
+[node name="Hitbox" type="CollisionShape3D" parent="FallenTree" unique_id=1020942175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, -0.0010986961)
 shape = SubResource("BoxShape3D_b3kxn")

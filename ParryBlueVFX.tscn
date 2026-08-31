@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://bste6uo2mompy" path="res://FaintSmoke.png" id="1_d0r0h"]
 [ext_resource type="Script" uid="uid://duabqnwcau7w2" path="res://VFXCleanup.gd" id="2_cdwdx"]
-[ext_resource type="QuadMesh" uid="uid://dstqc8djbwfa8" path="res://BlueSparks.tres" id="2_ha00q"]
 [ext_resource type="Texture2D" uid="uid://c8ly6ku12cisi" path="res://AirSpikes.png" id="2_mkdnd"]
 [ext_resource type="Script" uid="uid://egroln7s8pb3" path="res://VFX.gd" id="3_cdwdx"]
 
@@ -54,6 +53,25 @@ point_count = 2
 [sub_resource type="Gradient" id="Gradient_cdwdx"]
 offsets = PackedFloat32Array(0.009259259, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mkdnd"]
+load_path = "res://.godot/imported/Sparks.png-997edff6ef6163bdc757efd54796730a.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_201nx"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("CompressedTexture2D_mkdnd")
+emission_enabled = true
+emission = Color(0, 1, 1, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_h815f"]
+material = SubResource("StandardMaterial3D_201nx")
 
 [sub_resource type="Gradient" id="Gradient_o0yg1"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -140,7 +158,7 @@ amount = 1
 lifetime = 0.2
 one_shot = true
 explosiveness = 1.0
-mesh = ExtResource("2_ha00q")
+mesh = SubResource("QuadMesh_h815f")
 gravity = Vector3(0, 0, 0)
 angle_max = 360.0
 scale_amount_min = 8.0
