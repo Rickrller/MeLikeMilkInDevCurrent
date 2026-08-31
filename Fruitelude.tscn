@@ -27087,7 +27087,6 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 325.
 [node name="FallenTree" type="CharacterBody3D" parent="Obstacle" unique_id=28403999 groups=["enemy", "fallentree"]]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
 script = ExtResource("17_885ix")
-health = 350.0
 
 [node name="Trunk" type="MeshInstance3D" parent="Obstacle/FallenTree" unique_id=150882378]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
@@ -27177,7 +27176,6 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 268.
 [node name="FallenTree" type="CharacterBody3D" parent="Obstacle2" unique_id=860790257 groups=["enemy", "fallentree"]]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
 script = ExtResource("17_885ix")
-health = 350.0
 
 [node name="Trunk" type="MeshInstance3D" parent="Obstacle2/FallenTree" unique_id=571633465]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
@@ -27269,7 +27267,6 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 210.
 [node name="FallenTree" type="CharacterBody3D" parent="Obstacle3" unique_id=436437902 groups=["enemy", "fallentree"]]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
 script = ExtResource("17_885ix")
-health = 350.0
 
 [node name="Trunk" type="MeshInstance3D" parent="Obstacle3/FallenTree" unique_id=837532757]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
@@ -27360,7 +27357,6 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 151.
 [node name="FallenTree" type="CharacterBody3D" parent="Obstacle4" unique_id=1165440414 groups=["enemy", "fallentree"]]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
 script = ExtResource("17_885ix")
-health = 350.0
 
 [node name="Trunk" type="MeshInstance3D" parent="Obstacle4/FallenTree" unique_id=1746488005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
@@ -27449,7 +27445,6 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 93.0
 [node name="FallenTree" type="CharacterBody3D" parent="Obstacle5" unique_id=927728256 groups=["enemy", "fallentree"]]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
 script = ExtResource("17_885ix")
-health = 350.0
 
 [node name="Trunk" type="MeshInstance3D" parent="Obstacle5/FallenTree" unique_id=1925639017]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
