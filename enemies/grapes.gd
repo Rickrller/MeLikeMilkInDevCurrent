@@ -32,7 +32,7 @@ func shoot():
 	attackcooldown.start()
 	
 func parried(_d : bool, _k : bool, _v : bool):
-
+	eventbus.landedparry.emit()
 	eventbus.parrykill.emit()
 	eventbus.grantitem.emit(fruitgiven)
 	die()

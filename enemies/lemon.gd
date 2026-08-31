@@ -80,7 +80,7 @@ func parried(_d : bool, _k : bool, _v : bool):
 	
 	if not parryable:
 		return
-	
+	eventbus.landedparry.emit()
 	health -= eventbus.parrydamage
 	#if state != enemystate.pouncing and state != enemystate.attacking:
 	#	return

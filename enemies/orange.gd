@@ -112,6 +112,7 @@ func pounce(delta):
 	
 	
 func parried(d : bool, k : bool, v : bool):
+	eventbus.landedparry.emit()
 	if d:
 		health -= eventbus.parrydamage
 	#print("parry initiated")
