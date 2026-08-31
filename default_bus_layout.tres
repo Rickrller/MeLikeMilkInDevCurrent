@@ -1,8 +1,3 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://84bcjsw48v4s"]
-
-[sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_j3pel"]
-resource_name = "SpectrumAnalyzer"
+[gd_resource type="AudioBusLayout" format=3 uid="uid://dtgbsxmvo77cc"]
 
 [resource]
-bus/0/effect/0/effect = SubResource("AudioEffectSpectrumAnalyzer_j3pel")
-bus/0/effect/0/enabled = true

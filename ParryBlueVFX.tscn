@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c8ly6ku12cisi" path="res://AirSpikes.png" id="2_mkdnd"]
 [ext_resource type="Script" uid="uid://egroln7s8pb3" path="res://VFX.gd" id="3_cdwdx"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ha00q"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h815f"]
 transparency = 1
 blend_mode = 1
 vertex_color_use_as_albedo = true
@@ -17,7 +17,7 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_rburc"]
-material = SubResource("StandardMaterial3D_ha00q")
+material = SubResource("StandardMaterial3D_h815f")
 
 [sub_resource type="Curve" id="Curve_ipp32"]
 _data = [Vector2(0, 0), 0.0, 3.4162679, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]

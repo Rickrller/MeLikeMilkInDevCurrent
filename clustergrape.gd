@@ -40,5 +40,5 @@ func explode():
 
 
 func _on_aoe_body_entered(body: Node3D) -> void:
-	if body.is_in_group("enemy"):
+	if body.is_in_group("enemy") and not body.is_in_group("fallentree"):
 		body.health -= 15

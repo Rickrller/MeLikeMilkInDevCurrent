@@ -7,7 +7,7 @@ var bodies_in_area: Array[Node3D] = []
 var tick_timer: float = 0.0
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group("enemy"):
+	if body.is_in_group("enemy") and not body.is_in_group("fallentree"):
 		bodies_in_area.append(body)
 
 func _on_body_exited(body: Node3D) -> void:

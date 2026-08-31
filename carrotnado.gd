@@ -28,7 +28,7 @@ func _physics_process(_delta: float) -> void:
 			body.linear_velocity = 8 * body.global_position.direction_to(global_position)
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group("enemy"):
+	if body.is_in_group("enemy") and not body.is_in_group("fallentree"):
 		if body.is_in_group("rigidbody"):
 			rigidmebers.append(body)
 		else:

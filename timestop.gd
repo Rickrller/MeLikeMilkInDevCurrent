@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group("enemy"):
+	if body.is_in_group("enemy") and not body.is_in_group("fallentree"):
 		affected_enemies.append(body)
 		body.set_physics_process(false)
 		

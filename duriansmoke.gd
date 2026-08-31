@@ -11,7 +11,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	while body.is_in_group(target) and is_instance_valid(body):
 		await get_tree().create_timer(1).timeout
-		if body:
+		if body and not body.is_in_group("fallentree"):
 			body.health -= 3
 		else:
 			break

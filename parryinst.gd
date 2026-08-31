@@ -9,7 +9,7 @@ func _ready() -> void:
 	if "player" in get_parent():
 		player = get_parent().player
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group("enemy") and player.parrying == true:
+	if body.is_in_group("enemy") and not body.is_in_group("fallentree") and player.parrying == true:
 		
 		body.parried(true, true, true)
 		damagemult = player.damagemult

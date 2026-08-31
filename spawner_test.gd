@@ -33,14 +33,13 @@ func _ready() -> void:
 func spawn_enemy(enemy_type, enemy_amount, delay) -> void:
 	var spawnshape = $SpawnAreaShape
 	var spawnshapesize = spawnshape.shape.size
-	var spawnshapepos = spawnshape.position
 	for loops in enemy_amount:
-		var random_x = randf_range(-spawnshapesize.x / 2, spawnshapesize.x / 2) + spawnshapepos.x
-		var random_z = randf_range(-spawnshapesize.z / 2, spawnshapesize.z / 2) + spawnshapepos.z
-		var random_y = randf_range(-spawnshapesize.y / 2, spawnshapesize.y / 2) + spawnshapepos.y
+		var random_x = randf_range(-spawnshapesize.x / 2, spawnshapesize.x / 2)
+		var random_y = randf_range(-spawnshapesize.y / 2, spawnshapesize.y / 2)
+		var random_z = randf_range(-spawnshapesize.z / 2, spawnshapesize.z / 2)
 		var enemy_instance = enemy_type.instantiate()
-		enemy_instance.position = position + Vector3(random_x, random_y, random_z)
 		get_tree().current_scene.add_child(enemy_instance)
+		enemy_instance.global_position = spawnshape.to_global(Vector3(random_x, random_y, random_z))
 		await get_tree().create_timer(delay).timeout
 
 

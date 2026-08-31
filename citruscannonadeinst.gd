@@ -20,7 +20,7 @@ func _physics_process(_delta: float) -> void:
 		if is_colliding():
 			
 			var hit = get_collider()
-			if hit != null and hit.is_in_group("enemy"):
+			if hit != null and hit.is_in_group("enemy") and not hit.is_in_group("fallentree"):
 				hit.health -= 2 * damagemult
 		count -= 1
 	else:

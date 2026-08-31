@@ -1,5 +1,5 @@
 extends CharacterBody3D
-@export var health : float
+@export var health : float = 400
 @onready var player: CharacterBody3D = null
 
 func _ready() -> void:
@@ -9,4 +9,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if health <= 0:
-		queue_free()
+		$Hitbox.disabled = true
+		$Trunk.visible = false
+		$SmokeBig.emitting = true
+		$SmokeBigFast.emitting = true
+		$Pieces.emitting = true

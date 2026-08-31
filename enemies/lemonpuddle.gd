@@ -11,18 +11,18 @@ func _ready() -> void:
 	queue_free()
 func _on_dmgtick() -> void:
 	for target in targets:
-		if target.is_in_group(target_type):
+		if target.is_in_group(target_type) and not target.is_in_group("fallentree"):
 			target.health -= damage
 	tick.start()
 
 
 func _on_body_exited(body: Node3D) -> void:
-	if body.is_in_group(target_type):
+	if body.is_in_group(target_type) and not body.is_in_group("fallentree"):
 		targets.erase(body)
 		body.speed *= 1.5
 	
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group(target_type):
+	if body.is_in_group(target_type) and not body.is_in_group("fallentree"):
 		targets.append(body)
 		body.speed /= 1.5
