@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [audio]
 
-buses/default_bus_layout="uid://1mtcf3cv2jyc"
+buses/default_bus_layout="uid://bmr4ww5ktqxcn"
 
 [autoload]
 
