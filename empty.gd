@@ -1,6 +1,7 @@
 extends State
-
+@onready var handstate = $".."
 
 func Enter():
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""
 	fruitmesh.mesh = null
+	handstate.locked = false

@@ -1,6 +1,6 @@
 extends Node
 class_name State
-
+var used : bool = false
 @onready var fruitmesh = %fruitmodel
 @onready var anims = $"../../Anims/R_AnimationTree"["parameters/playback"]
 @onready var animnode = $"../../Anims/R_AnimationTree"

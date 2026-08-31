@@ -7,7 +7,7 @@ func _ready() -> void:
 	if players.size() > 0:
 		player = players[0]
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if health <= 0:
 		$Hitbox.disabled = true
 		$Trunk.visible = false

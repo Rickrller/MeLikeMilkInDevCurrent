@@ -9,15 +9,18 @@ const orangemesh = preload("res://meshes/orangemesh.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func Enter():
+	used = false
 	print("orange fruit gotten")
 	var inst = orangemesh.instantiate()
 	fruitmesh.mesh = inst.mesh
 func Physics_Update(_delta: float):
-	if Input.is_action_just_pressed("ability"):
+	if Input.is_action_just_pressed("ability") and not used:
 		ability()
+		used = true
 	if Input.is_action_just_pressed("eat"):
 		eat()
 func ability():
+	$"..".locked = true
 	anims.start("orange")
 	#print("abillity orange yaya")
 	var instance = shot.instantiate()
@@ -25,9 +28,11 @@ func ability():
 	instance.dir = neck.global_rotation
 	#get_tree().current_scene.add_child(instance)
 	add_child(instance)
+	await instance.tree_exiting
+	$"..".locked = false
 	eventbus.Transistioned.emit(self, "empty")
 	$"..".currentfruit = ""
-
+	
 func eat():
 	nutrition.hydration += 10
 	nutrition.minerals += 2

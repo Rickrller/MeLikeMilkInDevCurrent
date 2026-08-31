@@ -2,7 +2,7 @@ extends Node
 
 @export var initial_state : State
 @export var current_state : State
-
+@export var locked = false
 var currentfruitmesh : ArrayMesh
 @onready var anims = $"../Anims/R_AnimationTree"
 
@@ -42,7 +42,8 @@ func _physics_process(delta):
 func on_child_transistion(state, new_state_name):
 	if state != current_state:
 		return
-
+	if locked:
+		return
 	var new_state = states.get(new_state_name.to_lower())
 	if !new_state:
 		return

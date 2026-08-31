@@ -7,6 +7,7 @@ extends State
 @onready var nutrition = $"../../nutrition"
 const applemesh = preload("res://meshes/applemesh.tscn")
 func Enter():
+	used = false
 	#print('apple entered')
 	var inst = applemesh.instantiate()
 	fruitmesh.mesh = inst.mesh
@@ -14,11 +15,13 @@ func Enter():
 	
 	
 func Physics_Update(_delta: float):
-	if Input.is_action_just_pressed("ability"):
+	if Input.is_action_just_pressed("ability") and not used:
 		ability()
+		used = true
 	if Input.is_action_just_pressed("eat"):
 		eat()
 func ability():
+	$"..".locked = true
 	#$"../../Neck/arm2/AnimationPlayer".play("crush")
 	anims.start("apple")
 	await animnode.animation_finished
@@ -31,7 +34,7 @@ func ability():
 	instance.global_position.y = player.position.y
 	instance.global_rotation = neck.global_rotation
 	instance.global_position += 5 * camera.direction
-	
+	$"..".locked = false
 	eventbus.Transistioned.emit(self, "empty")
 	$"..".currentfruit = ""
 func eat():

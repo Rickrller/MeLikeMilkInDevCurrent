@@ -18,6 +18,7 @@ func _ready() -> void:
 
 func getplayer():
 	if player:
+		collision.disabled = false
 		visible = true
 		active = true
 		dir = global_position.direction_to(player.global_position)
@@ -30,12 +31,13 @@ func getplayer():
 	#velocity = dir * speed
 	#move_and_slide()
 		#pass
-func parried(d : bool, k : bool, v : bool):
-	
+func parried(_d : bool, _k : bool, _v : bool):
+	eventbus.landedparry.emit()
 	parent.interruption()
 	reset()
 
 func reset():
+	collision.disabled = true
 	visible = false
 	global_position = returnpos
 	active = false

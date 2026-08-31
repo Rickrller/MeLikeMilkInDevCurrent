@@ -22,7 +22,7 @@ const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
 signal defeated
 @onready var model = $model
 func _ready() -> void:
-	
+	model.material_overlay.albedo_color = normal_albedo
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
@@ -57,28 +57,27 @@ func _physics_process(delta: float) -> void:
 	
 	
 	
-func parried(d : bool, k : bool, v : bool):
+func parried(_d : bool, _k : bool, _v : bool):
 	if not state == enemystate.attacking:
 		return
-	if d:
-		health -= eventbus.parrydamage
+	eventbus.landedparry.emit()
+	health -= eventbus.parrydamage
 	#print("parry initiated")
 	if health <= 0:
 		eventbus.parrykill.emit()
 		eventbus.grantitem.emit(givenfruit)
-	if k:
-		velocity.y += 15
-		await get_tree().physics_frame
-		await get_tree().physics_frame
-		state = enemystate.parrying
-	if v:
-		var ParryVFXInstance = ParryVFX.instantiate()
-		ParryVFXInstance.global_transform = self.global_transform
-		get_tree().root.add_child(ParryVFXInstance)
+	
+	velocity.y += 20
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	state = enemystate.blasted
+
+	var ParryVFXInstance = ParryVFX.instantiate()
+	ParryVFXInstance.global_transform = self.global_transform
+	get_tree().root.add_child(ParryVFXInstance)
 
 	#blasting()
-	
-	
+
 
 
 func blasting():
@@ -86,14 +85,15 @@ func blasting():
 
 	state = enemystate.blasted
 	
-	velocity.z = direction.z * -50
-	velocity.x = direction.x * -50
+	velocity.z = direction.z * -20
+	velocity.x = direction.x * -20
 	move_and_slide()
 	if is_on_floor() or is_on_wall():
 		state = enemystate.everythingelse
 
 
 func everythingelse(delta):
+	model.material_overlay.albedo_color = normal_albedo
 	if player:
 		lookatplayer(delta)
 		if (diff.x * diff.x + diff.z * diff.z) < 16:
@@ -133,6 +133,7 @@ func everythingelse(delta):
 
 
 func attacking(delta):
+	model.material_overlay.albedo_color = parrycolor
 	if not (diff.x * diff.x + diff.z * diff.z) < 16:
 		state = enemystate.everythingelse
 	#print("in attacking state")
@@ -163,6 +164,7 @@ func _on_timer_2_timeout() -> void:
 
 
 func _on_windup_timeout() -> void:
+	model.material_overlay.albedo_color = normal_albedo
 	if distancetoplayer < 7:
 		#print("attackple")
 		var instance = punch.instantiate()

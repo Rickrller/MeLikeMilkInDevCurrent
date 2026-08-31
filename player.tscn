@@ -45,8 +45,6 @@
 [ext_resource type="Texture2D" uid="uid://6yqaatssfhve" path="res://CyanGradient.png" id="33_khis8"]
 [ext_resource type="Script" uid="uid://cfupu75s0dq80" path="res://parry_recovery.gd" id="34_b88wv"]
 [ext_resource type="Script" uid="uid://bqkfjyb4uxax3" path="res://HealthLabel.gd" id="34_bfour"]
-[ext_resource type="Texture2D" uid="uid://bsdlb78m1hbm4" path="res://YellowGradient.png" id="35_ek41f"]
-[ext_resource type="Script" uid="uid://c4nwyx45ak8d7" path="res://parry_cast.gd" id="35_hl5qd"]
 [ext_resource type="Script" uid="uid://b5uy1mv6p8g01" path="res://KillCounterBar.gd" id="36_8gr2b"]
 [ext_resource type="StyleBox" uid="uid://dpa3uhnr2r814" path="res://BarBackground.tres" id="36_vl8ci"]
 
@@ -6242,6 +6240,9 @@ graph_offset = Vector2(-114, 208)
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pfmca"]
 animation = &"idle"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xry5e"]
+animation = &"parry"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_76oay"]
 animation = &"punch"
 
@@ -6276,9 +6277,15 @@ xfade_curve = ExtResource("9_ny14h")
 xfade_time = 0.12
 xfade_curve = ExtResource("10_ibah8")
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xg1a7"]
+xfade_time = 0.5
+xfade_curve = ExtResource("10_ibah8")
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ibah8"]
 states/idle/node = SubResource("AnimationNodeAnimation_pfmca")
 states/idle/position = Vector2(376, 154)
+states/parry/node = SubResource("AnimationNodeAnimation_xry5e")
+states/parry/position = Vector2(694, 153)
 states/punch/node = SubResource("AnimationNodeAnimation_76oay")
 states/punch/position = Vector2(401, 37)
 states/punch1/node = SubResource("AnimationNodeAnimation_b4uyv")
@@ -6289,7 +6296,7 @@ states/punch3/node = SubResource("AnimationNodeAnimation_ygbnx")
 states/punch3/position = Vector2(736, 37)
 states/punch4/node = SubResource("AnimationNodeAnimation_v2t6f")
 states/punch4/position = Vector2(847, 37)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_ygbnx"), "punch", "idle", SubResource("AnimationNodeStateMachineTransition_v2t6f"), "punch1", "idle", SubResource("AnimationNodeStateMachineTransition_l3lcn"), "punch2", "idle", SubResource("AnimationNodeStateMachineTransition_xry5e"), "punch3", "idle", SubResource("AnimationNodeStateMachineTransition_h6w8y"), "punch4", "idle", SubResource("AnimationNodeStateMachineTransition_yem3p")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_ygbnx"), "punch", "idle", SubResource("AnimationNodeStateMachineTransition_v2t6f"), "punch1", "idle", SubResource("AnimationNodeStateMachineTransition_l3lcn"), "punch2", "idle", SubResource("AnimationNodeStateMachineTransition_xry5e"), "punch3", "idle", SubResource("AnimationNodeStateMachineTransition_h6w8y"), "punch4", "idle", SubResource("AnimationNodeStateMachineTransition_yem3p"), "parry", "idle", SubResource("AnimationNodeStateMachineTransition_xg1a7")]
 graph_offset = Vector2(-3, -25)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4kemo"]
@@ -6462,7 +6469,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.65188414, 0.14099872, 0.54520947, 0.5078515)
+bones/0/rotation = Quaternion(-0.65085053, 0.14210677, 0.5449215, 0.50917566)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -6712,7 +6719,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.65188414, 0.14099872, 0.54520947, 0.5078515)
+bones/0/rotation = Quaternion(-0.65174353, 0.14114957, 0.5451704, 0.5080318)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -6996,7 +7003,7 @@ mouse_filter = 2
 
 [node name="handstatemachine" type="Node" parent="." unique_id=47888081 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("5_bwjto")
-initial_state = NodePath("empty")
+initial_state = NodePath("strawberry")
 
 [node name="empty" type="Node" parent="handstatemachine" unique_id=213338977]
 script = ExtResource("6_nvl01")
@@ -7359,13 +7366,6 @@ position = Vector2(570, 333)
 scale = Vector2(2, 2.056)
 texture = ExtResource("33_khis8")
 script = ExtResource("34_b88wv")
-
-[node name="ParryCast" type="Sprite2D" parent="." unique_id=939656713]
-z_index = -4
-position = Vector2(570, 333)
-scale = Vector2(4, 4.112)
-texture = ExtResource("35_ek41f")
-script = ExtResource("35_hl5qd")
 
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="animation_finished" from="Anims/R_AnimationTree" to="." method="_on_r_animation_tree_animation_finished"]

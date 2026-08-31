@@ -6,14 +6,16 @@ const grapemesh = preload("res://meshes/grapemesh.tscn")
 @onready var cam = $"../../Neck/CameraBobber/CameraShaker/Camera3D"
 
 func Enter():
+	used = false
 	var inst = grapemesh.instantiate()
 	fruitmesh.mesh = inst.mesh
 
 func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("eat"):
 		eat()
-	if Input.is_action_just_pressed("ability"):
+	if Input.is_action_just_pressed("ability") and not used:
 		ability()
+		used = true
 
 
 func eat():
@@ -26,6 +28,7 @@ func eat():
 	
 	
 func ability():
+	$"..".locked = true
 	anims.start("grapes")
 	await animnode.animation_finished
 	var instance = clustergrape.instantiate()
@@ -35,5 +38,6 @@ func ability():
 	instance.global_position += 2 * cam.direction
 	instance.velocity.x = 10 * cam.direction.x
 	instance.velocity.z = 10 * cam.direction.z
+	$"..".locked = false
 	eventbus.Transistioned.emit(self, "empty")
 	$"..".currentfruit = ""

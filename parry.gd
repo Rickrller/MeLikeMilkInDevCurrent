@@ -2,12 +2,16 @@ extends State
 @onready var instantiatedparry = load("res://parry.tscn")
 @onready var player = $"../.."
 @onready var duration = $duration
-@onready var rightarm = $"../../Neck/CameraBobber/rightarm/metarig/Skeleton3D/Cube_001"
-
+@onready var rightarm = $"../../Anims/R_AnimationTree"["parameters/playback"]
+@onready var leftarm = $"../../Anims/L_Animation_Tree"["parameters/playback"]
 
 func _ready():
 	eventbus.parrykill.connect(grab)
 func Enter():
+	if $"..".currentfruit == "":
+		rightarm.start("parry")
+	else:
+		leftarm.start("parry")
 	duration.wait_time = 0.25
 	clear()
 	duration.start()

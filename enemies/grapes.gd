@@ -31,11 +31,11 @@ func shoot():
 	child = instance
 	attackcooldown.start()
 	
-func parried(damage : bool, knockback : bool, vfx : bool):
-	if damage:
-		eventbus.parrykill.emit()
-		eventbus.grantitem.emit(fruitgiven)
-		die()
+func parried(_d : bool, _k : bool, _v : bool):
+
+	eventbus.parrykill.emit()
+	eventbus.grantitem.emit(fruitgiven)
+	die()
 
 func _physics_process(delta: float) -> void:
 	child.returnpos = global_position

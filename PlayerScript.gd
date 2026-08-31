@@ -149,7 +149,7 @@ func _physics_process(delta):
 		$iframes.timeout.emit()
 		eventbus.Transistioned.emit(handstate.current_state, "parry")
 		#rightarm.play("parry")
-		anims_R.start("parry")
+		#anims_R.start("parry")
 
 func _on_dashcooldown_timeout() -> void:
 	#print(dashcharges)

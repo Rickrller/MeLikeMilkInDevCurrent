@@ -6,6 +6,9 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_mwvcl"]
 radius = 0.97460335
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r05cu"]
+transparency = 1
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tudu"]
 resource_name = "Material.001"
 cull_mode = 2
@@ -65,6 +68,7 @@ one_shot = true
 
 [node name="model" type="MeshInstance3D" parent="." unique_id=1547688809]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1, 0)
+material_overlay = SubResource("StandardMaterial3D_r05cu")
 mesh = SubResource("ArrayMesh_mwvcl")
 
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

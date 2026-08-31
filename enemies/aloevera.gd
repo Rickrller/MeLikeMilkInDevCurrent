@@ -83,11 +83,11 @@ func _physics_process(delta: float) -> void:
 			
 
 	
-func parried(damage : bool, _knockback : bool, _vfx : bool):
-	if damage:
-		eventbus.parrykill.emit()
-		eventbus.grantitem.emit(givenfruit)
-		queue_free()
+func parried(_d : bool, _k : bool, _v : bool):
+	eventbus.landedparry.emit()
+	eventbus.parrykill.emit()
+	eventbus.grantitem.emit(givenfruit)
+	queue_free()
 	
 	
 

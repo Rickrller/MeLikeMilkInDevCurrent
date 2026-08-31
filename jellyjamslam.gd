@@ -7,14 +7,16 @@ const jellyjamslam = preload("res://jellyjamslaminst.tscn")
 const strawberrymesh = preload("res://meshes/strawberrymesh.tscn")
 
 func Enter():
+	used = false
 	var inst = strawberrymesh.instantiate()
 	fruitmesh.mesh = inst.mesh
 
 func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("eat"):
 		eat()
-	if Input.is_action_just_pressed("ability"):
+	if Input.is_action_just_pressed("ability") and not used:
 		ability()
+		used = true
 	if slammin:
 		if player.is_on_floor():
 			anims.start("slam")
@@ -23,8 +25,10 @@ func Physics_Update(_delta: float):
 			var instance = jellyjamslam.instantiate()
 			get_tree().current_scene.add_child(instance)
 			instance.global_position = player.global_position
+			$"..".locked = false
 			eventbus.Transistioned.emit(self, "empty")
 			$"..".currentfruit = ""
+			
 
 func eat():
 	nutrition.hydration += 10
@@ -34,6 +38,7 @@ func eat():
 	$"..".currentfruit = ""
 
 func ability():
+	$"..".locked = true
 	anims.start("strawberry")
 	
 	jumpnode.jumpmult *= 3
