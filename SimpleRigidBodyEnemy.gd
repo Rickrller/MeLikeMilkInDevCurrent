@@ -52,13 +52,14 @@ func _physics_process(_delta: float) -> void:
 		checkforplayer()
 	if health <= 0:
 		queue_free()
-		eventbus.grantitem.emit(givenfruit)
+		
 	
 func parried(_d : bool, _k : bool, _v : bool):
 	
 	health -= eventbus.parrydamage
 	if health <= 0 :
 		eventbus.parrykill.emit()
+		eventbus.grantitem.emit(givenfruit)
 	eventbus.landedparry.emit()
 	
 	

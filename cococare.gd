@@ -20,13 +20,13 @@ func ability():
 	leftarm.material_overlay.albedo_color = MILES_THEBLACKONE
 	handstate.normalalbedo = MILES_THEBLACKONE
 	anims.start("crush")
-	player.basedefense *= 2
+	player.basedefense *= 20
 	print(player.basedefense)
 	print(player.defense)
 	eventbus.Transistioned.emit(self, "empty")
 	handstate.currentfruit = ""
-	await get_tree().create_timer(6).timeout
-	player.basedefense /= 2
+	await get_tree().create_timer(12).timeout
+	player.basedefense /= 20
 	if handstate.normalalbedo == MILES_THEBLACKONE:
 		handstate.normalalbedo = Color(0.0, 0.0, 0.0, 0.0)
 	if rightarm.material_overlay.albedo_color == MILES_THEBLACKONE:
