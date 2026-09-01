@@ -3,6 +3,7 @@ extends Area3D
 @export var members : Array[Node3D] = []
 @onready var ray = $RayCast3D
 
+@onready var VFX = load("res://CarrotnadoVFX.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().physics_frame
@@ -12,7 +13,12 @@ func _ready() -> void:
 		return
 	var pos = ray.get_collision_point()
 	global_position = pos
+	global_rotation = Vector3.ZERO
 	ray.queue_free()
+	var VFXInstance = VFX.instantiate()
+	VFXInstance.global_transform = global_transform
+	get_tree().root.add_child(VFXInstance)
+	ScreenShake.shake_simple(2, 0.04)
 	await get_tree().create_timer(5).timeout
 	queue_free()
 

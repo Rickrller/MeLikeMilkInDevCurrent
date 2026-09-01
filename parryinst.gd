@@ -24,7 +24,7 @@ func _physics_process(_delta: float) -> void:
 	global_position = player.global_position
 
 func hit():
-	player.health += 5
+	player.health += 8
 	if get_parent() != null:
 		get_parent().duration.wait_time += 0.2
 	if player.health > player.maxhealth:

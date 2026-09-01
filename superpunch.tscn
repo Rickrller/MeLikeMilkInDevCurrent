@@ -86,6 +86,7 @@ shape = SubResource("SphereShape3D_jpf8s")
 debug_fill = false
 
 [node name="FX" type="Node3D" parent="." unique_id=2106204411]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 script = ExtResource("2_ms75c")
 
 [node name="Ring" type="CPUParticles3D" parent="FX" unique_id=1574970112]
@@ -136,7 +137,7 @@ color_ramp = SubResource("Gradient_ynwsb")
 [node name="BigBoom" type="CPUParticles3D" parent="FX" unique_id=1212368482]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 emitting = false
-amount = 10
+amount = 25
 lifetime = 0.1
 one_shot = true
 explosiveness = 1.0
@@ -153,10 +154,9 @@ color_ramp = SubResource("Gradient_y2wmn")
 [node name="Spikes" type="CPUParticles3D" parent="FX" unique_id=929911208]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 emitting = false
-amount = 5
-lifetime = 0.2
+amount = 25
+lifetime = 0.6
 one_shot = true
-explosiveness = 0.85
 local_coords = true
 mesh = SubResource("QuadMesh_58bns")
 gravity = Vector3(0, 0, 0)

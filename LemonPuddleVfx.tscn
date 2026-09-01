@@ -1,0 +1,263 @@
+[gd_scene format=3 uid="uid://bb84f3dmqy7el"]
+
+[ext_resource type="Script" uid="uid://cbxgfjik0kji" path="res://LemonVFX.gd" id="1_uxvvf"]
+[ext_resource type="Script" uid="uid://ckuw3vrfxfjd6" path="res://LemonVFXOneTime.gd" id="2_i78wo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nfujh"]
+load_path = "res://.godot/imported/Sparks.png-997edff6ef6163bdc757efd54796730a.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cagxn"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_nfujh")
+emission_enabled = true
+emission = Color(0.9607843, 1, 0, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_slg01"]
+material = SubResource("StandardMaterial3D_cagxn")
+
+[sub_resource type="Curve" id="Curve_bwcfo"]
+_data = [Vector2(0, 0), 0.0, 2.5789452, 0, 0, Vector2(0.13492063, 0.61695904), 3.9473686, 3.9473686, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_1mibb"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_05ubp"]
+load_path = "res://.godot/imported/RingEffect.png-64a2a9af3b1ffcfa7a10e839faf4a7ab.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_typj4"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_05ubp")
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_operator = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_6knpq"]
+material = SubResource("StandardMaterial3D_typj4")
+
+[sub_resource type="Curve" id="Curve_ipp32"]
+_data = [Vector2(0, 0), 0.0, 0.8256181, 0, 0, Vector2(1e-05, 0.56140345), 1.2600001, 1.2600001, 0, 0, Vector2(1, 1), 0.14354074, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_q044w"]
+offsets = PackedFloat32Array(0.0061728396, 0.24382716, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.5019608, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_ivsdq"]
+_data = [Vector2(0, 0), 0.0, 0.8256181, 0, 0, Vector2(1e-05, 0.017543793), 1.2600001, 1.2600001, 0, 0, Vector2(1, 1), 0.14354074, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_e8yub"]
+offsets = PackedFloat32Array(0.0061728396, 0.24382716, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.6509804, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_qjoak"]
+_data = [Vector2(0, 0), 0.0, 0.8256181, 0, 0, Vector2(1e-05, 0), 2.082996, 2.082996, 0, 0, Vector2(1, 1), 0.14354074, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_xarlr"]
+_data = [Vector2(0, 0.24269003), 0.0, 0.96710515, 0, 0, Vector2(1, 1), 0.40846694, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rburc"]
+transparency = 1
+albedo_color = Color(1, 1, 0, 0.90588236)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wl5pb"]
+material = SubResource("StandardMaterial3D_rburc")
+top_radius = 4.0
+bottom_radius = 4.0
+height = 0.2
+
+[node name="LemonPuddle" type="Node3D" unique_id=1547905698]
+
+[node name="Residual" type="Node3D" parent="." unique_id=2094920640]
+
+[node name="Bubbling" type="CPUParticles3D" parent="Residual" unique_id=1093101272]
+amount = 100
+lifetime = 5.0
+local_coords = true
+mesh = SubResource("QuadMesh_slg01")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 4.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 0.0
+direction = Vector3(0, 1, 0)
+spread = 90.0
+gravity = Vector3(0, 0.05, 0)
+initial_velocity_max = 0.1
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.1
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_bwcfo")
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("Gradient_1mibb")
+script = ExtResource("1_uxvvf")
+
+[node name="Bubbling2" type="CPUParticles3D" parent="Residual" unique_id=1442430146]
+amount = 100
+lifetime = 5.0
+local_coords = true
+mesh = SubResource("QuadMesh_slg01")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 4.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 0.0
+direction = Vector3(0, 1, 0)
+spread = 90.0
+gravity = Vector3(0, 0.2, 0)
+initial_velocity_max = 0.1
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.05
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_bwcfo")
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("Gradient_1mibb")
+
+[node name="Ring" type="CPUParticles3D" parent="Residual" unique_id=1130166045]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+amount = 3
+local_coords = true
+mesh = SubResource("QuadMesh_6knpq")
+particle_flag_disable_z = true
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -15.0
+angular_velocity_max = 15.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+orbit_velocity_curve = null
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_ipp32")
+color_ramp = SubResource("Gradient_q044w")
+
+[node name="Ring2" type="CPUParticles3D" parent="Residual" unique_id=911745970]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+amount = 3
+lifetime = 5.0
+local_coords = true
+mesh = SubResource("QuadMesh_6knpq")
+particle_flag_disable_z = true
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -15.0
+angular_velocity_max = 15.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+orbit_velocity_curve = null
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_ivsdq")
+color_ramp = SubResource("Gradient_e8yub")
+
+[node name="Explosion" type="Node3D" parent="." unique_id=1902120838]
+
+[node name="Bubbling" type="CPUParticles3D" parent="Explosion" unique_id=728435056]
+emitting = false
+amount = 25
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_slg01")
+direction = Vector3(0, 1, 0)
+spread = 90.0
+gravity = Vector3(0, -5, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 12.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+damping_min = 8.0
+damping_max = 8.0
+angle_max = 360.0
+scale_amount_min = 0.1
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_bwcfo")
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("Gradient_1mibb")
+script = ExtResource("2_i78wo")
+
+[node name="Ring" type="CPUParticles3D" parent="Explosion" unique_id=1680537031]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+emitting = false
+amount = 5
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_6knpq")
+particle_flag_disable_z = true
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -15.0
+angular_velocity_max = 15.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+orbit_velocity_curve = null
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 12.0
+scale_amount_max = 12.0
+scale_amount_curve = SubResource("Curve_qjoak")
+color_ramp = SubResource("Gradient_q044w")
+script = ExtResource("2_i78wo")
+
+[node name="Ring2" type="CPUParticles3D" parent="Explosion" unique_id=2001903784]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+emitting = false
+amount = 5
+lifetime = 2.0
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_6knpq")
+particle_flag_disable_z = true
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -15.0
+angular_velocity_max = 15.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+orbit_velocity_curve = null
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 0.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_xarlr")
+color_ramp = SubResource("Gradient_q044w")
+script = ExtResource("2_i78wo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1739216157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.106, 0, 0)
+mesh = SubResource("CylinderMesh_wl5pb")

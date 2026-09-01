@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://r8ul2sqf2rbs"]
+
+[ext_resource type="Script" uid="uid://4vftimvbpla8" path="res://CarrotnadoVfx.gd" id="1_frt8p"]
+[ext_resource type="Texture2D" uid="uid://bste6uo2mompy" path="res://FaintSmoke.png" id="1_mogbx"]
+[ext_resource type="Script" uid="uid://52cmn0ef2inh" path="res://CarrotnadoVfxCleanup.gd" id="2_2theu"]
+[ext_resource type="Texture2D" uid="uid://dpiqg8dwprqjd" path="res://RingEffect.png" id="2_vpm8w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vh0rp"]
+load_path = "res://.godot/imported/RingEffect.png-64a2a9af3b1ffcfa7a10e839faf4a7ab.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgv68"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_vh0rp")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_kls4g"]
+material = SubResource("StandardMaterial3D_wgv68")
+
+[sub_resource type="Curve" id="Curve_pb2eo"]
+_data = [Vector2(0, 0), 0.0, 0.8256181, 0, 0, Vector2(1e-05, 0), 1.2600001, 1.2600001, 0, 0, Vector2(1, 1), 0.14354074, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_xarlr"]
+offsets = PackedFloat32Array(0.0061728396, 0.24382716, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.21960784, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_naoiv"]
+load_path = "res://.godot/imported/RingEffect.png-64a2a9af3b1ffcfa7a10e839faf4a7ab.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skyw2"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_naoiv")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_eescv"]
+material = SubResource("StandardMaterial3D_skyw2")
+
+[sub_resource type="Curve" id="Curve_o134l"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nmuqx"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 0, 1)
+albedo_texture = ExtResource("1_mogbx")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_1ok7f"]
+material = SubResource("StandardMaterial3D_nmuqx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnt8o"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_vpm8w")
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_o0yg1"]
+material = SubResource("StandardMaterial3D_rnt8o")
+orientation = 1
+
+[sub_resource type="Curve" id="Curve_jgaar"]
+_data = [Vector2(0, 0), 0.0, 0.8256181, 0, 0, Vector2(1e-05, 1), -0.6098201, -0.6098201, 0, 0, Vector2(1, 0), -0.96439594, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_nfujh"]
+offsets = PackedFloat32Array(0.0061728396, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.48235294)
+
+[node name="Tornado" type="Node3D" unique_id=949680612]
+
+[node name="Ring" type="CPUParticles3D" parent="." unique_id=864536049]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+amount = 10
+speed_scale = 1.5
+local_coords = true
+mesh = SubResource("QuadMesh_kls4g")
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0.01, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = 100.0
+angular_velocity_max = 200.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+orbit_velocity_curve = null
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 15.0
+scale_amount_max = 15.0
+scale_amount_curve = SubResource("Curve_pb2eo")
+color_ramp = SubResource("Gradient_xarlr")
+script = ExtResource("1_frt8p")
+
+[node name="RingUp" type="CPUParticles3D" parent="." unique_id=2058313011]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0)
+amount = 10
+speed_scale = 1.5
+local_coords = true
+mesh = SubResource("QuadMesh_eescv")
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 15)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -200.0
+angular_velocity_max = 200.0
+radial_accel_min = 1.0
+radial_accel_max = 5.0
+angle_min = -360.0
+angle_max = 360.0
+angle_curve = SubResource("Curve_o134l")
+scale_amount_min = 15.0
+scale_amount_max = 15.0
+scale_amount_curve = SubResource("Curve_pb2eo")
+color_ramp = SubResource("Gradient_xarlr")
+script = ExtResource("2_2theu")
+
+[node name="DustUp" type="CPUParticles3D" parent="." unique_id=69101100]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0)
+amount = 5
+speed_scale = 1.5
+local_coords = true
+mesh = SubResource("QuadMesh_1ok7f")
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -200.0
+angular_velocity_max = 200.0
+radial_accel_min = 1.0
+radial_accel_max = 5.0
+angle_min = -360.0
+angle_max = 360.0
+angle_curve = SubResource("Curve_o134l")
+scale_amount_min = 30.0
+scale_amount_max = 45.0
+scale_amount_curve = SubResource("Curve_pb2eo")
+color_ramp = SubResource("Gradient_xarlr")
+script = ExtResource("1_frt8p")
+
+[node name="RingCharge" type="CPUParticles3D" parent="." unique_id=22728526]
+emitting = false
+amount = 15
+lifetime = 0.4
+one_shot = true
+local_coords = true
+mesh = SubResource("QuadMesh_o0yg1")
+particle_flag_align_y = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 0.1
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 30.0
+scale_amount_max = 35.0
+scale_amount_curve = SubResource("Curve_jgaar")
+color_ramp = SubResource("Gradient_nfujh")
+script = ExtResource("1_frt8p")

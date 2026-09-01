@@ -2,7 +2,7 @@ extends Area3D
 @export var target_type : String
 @export var targets : Array[Node3D] = []
 @onready var tick = $dmgtick
-const damage = 1
+const damage = 0.4
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
