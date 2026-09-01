@@ -25,7 +25,7 @@ func eat():
 	nutrition.vitamins += 14
 	nutrition.minerals += 11
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""
 
 func on_pearto_flash():
 	
@@ -46,4 +46,4 @@ func ability():
 	get_tree().current_scene.add_child(instance)
 	instance.global_position = player.global_position
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""

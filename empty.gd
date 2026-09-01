@@ -1,5 +1,5 @@
 extends State
-@onready var handstate = $".."
+
 
 func Enter():
 	handstate.currentfruit = ""

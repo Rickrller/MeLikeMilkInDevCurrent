@@ -23,11 +23,11 @@ func ability():
 	instance.global_position = player.global_position
 	instance.time = 8
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""
 
 func eat():
 	nutrition.hydration += 10
 	nutrition.carbs += 12
 	nutrition.vitamins += 10
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""

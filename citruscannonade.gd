@@ -21,7 +21,7 @@ func Physics_Update(_delta: float):
 		eat()
 func ability():
 	rightarm.material_overlay.albedo_color = Color("ff885e")
-	$"..".locked = true
+	handstate.locked = true
 	anims.start("orange")
 	#print("abillity orange yaya")
 	var instance = shot.instantiate()
@@ -30,10 +30,10 @@ func ability():
 	#get_tree().current_scene.add_child(instance)
 	add_child(instance)
 	await instance.tree_exiting
-	$"..".locked = false
+	handstate.locked = false
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
-	rightarm.material_overlay.albedo_color = $"..".normalalbedo
+	handstate.currentfruit = ""
+	rightarm.material_overlay.albedo_color = handstate.normalalbedo
 func eat():
 	nutrition.hydration += 10
 	nutrition.minerals += 2
@@ -41,4 +41,4 @@ func eat():
 	nutrition.vitamins += 15
 	nutrition.minerals += 5
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""

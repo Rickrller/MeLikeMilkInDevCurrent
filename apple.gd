@@ -25,7 +25,7 @@ func ability():
 
 	rightarm.material_overlay.albedo_color = Color("ff4c5fff")
 	
-	$"..".locked = true
+	handstate.locked = true
 	#$"../../Neck/arm2/AnimationPlayer".play("crush")
 	anims.start("apple")
 	await animnode.animation_finished
@@ -38,14 +38,14 @@ func ability():
 	instance.global_position.y = player.position.y
 	instance.global_rotation = neck.global_rotation
 	instance.global_position += 5 * camera.direction
-	$"..".locked = false
+	handstate.locked = false
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
-	rightarm.material_overlay.albedo_color = $"..".normalalbedo
+	handstate.currentfruit = ""
+	rightarm.material_overlay.albedo_color = handstate.normalalbedo
 func eat():
 	nutrition.hydration += 17
 	nutrition.carbs += 20
 	nutrition.vitamins += 2
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""
 	

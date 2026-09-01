@@ -20,7 +20,7 @@ func eat():
 	nutrition.minerals += 1
 	nutrition.vitamins += 15
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""
 
 func ability():
 	anims.start("carrot")
@@ -30,4 +30,4 @@ func ability():
 	instance.global_position = player.global_position
 	instance.global_rotation = neck.global_rotation
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""

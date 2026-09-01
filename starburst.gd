@@ -2,6 +2,8 @@ extends State
 const starfruitmesh = preload("res://meshes/starfruitmesh.tscn")
 @onready var nutrition = $"../../nutrition"
 @onready var player = $"../.."
+@onready var leftarm = $"../../Neck/CameraBobber/leftarm/metarig/Skeleton3D/Cube_001"
+const starcolor = Color("ffe091")
 func Update(_delta: float):
 	if Input.is_action_just_pressed("eat"):
 		eat()
@@ -19,7 +21,7 @@ func eat():
 	nutrition.protien += 35
 	nutrition.carbs += 35
 	eventbus.Transistioned.emit(self, "empty")  
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""
 
 func ability():
 	anims.start("crush")
@@ -27,8 +29,17 @@ func ability():
 	player.basepunchCD /= 3
 	$"../../movementstatemachine/airborne".longjumpspeed += 12
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""
+	rightarm.material_overlay.albedo_color = starcolor
+	leftarm.material_overlay.albedo_color = starcolor
+	handstate.normalalbedo = starcolor
 	await get_tree().create_timer(5).timeout
+	if handstate.normalalbedo == starcolor:
+		handstate.normalalbedo = Color(0.0, 0.0, 0.0, 0.0)
+	if rightarm.material_overlay.albedo_color == starcolor:
+		rightarm.material_overlay.albedo_color = Color(0.0, 0.0, 0.0, 0.0)
+		leftarm.material_overlay.albedo_color = Color(0.0, 0.0, 0.0, 0.0)
+		
 	player.speed -= 10
 	player.basepunchCD *= 3
 	$"../../movementstatemachine/airborne".longjumpspeed -= 12

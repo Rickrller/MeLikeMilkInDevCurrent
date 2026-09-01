@@ -25,9 +25,9 @@ func Physics_Update(_delta: float):
 			var instance = jellyjamslam.instantiate()
 			get_tree().current_scene.add_child(instance)
 			instance.global_position = player.global_position
-			$"..".locked = false
+			handstate.locked = false
 			eventbus.Transistioned.emit(self, "empty")
-			$"..".currentfruit = ""
+			handstate.currentfruit = ""
 			
 
 func eat():
@@ -35,10 +35,10 @@ func eat():
 	nutrition.carbs += 12
 	nutrition.vitamins += 10
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""
 
 func ability():
-	$"..".locked = true
+	handstate.locked = true
 	anims.start("strawberry")
 	
 	jumpnode.jumpmult *= 3

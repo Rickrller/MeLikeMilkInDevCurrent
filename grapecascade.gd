@@ -24,11 +24,11 @@ func eat():
 	nutrition.minerals += 10
 	nutrition.carbs += 20
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""
 	
 	
 func ability():
-	$"..".locked = true
+	handstate.locked = true
 	anims.start("grapes")
 	#await animnode.animation_finished
 	
@@ -40,6 +40,6 @@ func launch():
 	instance.global_position += 2 * cam.direction
 	instance.velocity.x = 10 * cam.direction.x
 	instance.velocity.z = 10 * cam.direction.z
-	$"..".locked = false
+	handstate.locked = false
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""

@@ -5,7 +5,7 @@ var used : bool = false
 @onready var anims = $"../../Anims/R_AnimationTree"["parameters/playback"]
 @onready var animnode = $"../../Anims/R_AnimationTree"
 @onready var rightarm = $"../../Neck/CameraBobber/rightarm/metarig/Skeleton3D/Cube_001"
-
+@onready var handstate = $".."
 func Enter():
 	pass
 	

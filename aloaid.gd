@@ -17,7 +17,7 @@ func eat():
 	nutrition.vitamins += 27
 	nutrition.minerals += 19
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""
 	$"../..".health += 5
 	
 func ability():

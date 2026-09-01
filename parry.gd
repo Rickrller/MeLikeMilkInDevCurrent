@@ -1,5 +1,4 @@
 extends State
-@onready var handstate = $".."
 @onready var instantiatedparry = load("res://parry.tscn")
 @onready var player = $"../.."
 @onready var duration = $duration
@@ -11,7 +10,7 @@ const parrycolor : Color = Color(0.0, 1.825, 1.825, 0.588)
 func _ready():
 	eventbus.parrykill.connect(grab)
 func Enter():
-	if $"..".currentfruit == "":
+	if handstate.currentfruit == "":
 		rightanim.start("parry")
 	else:
 		leftanim.start("parry")
@@ -27,8 +26,8 @@ func Enter():
 func _on_duration_timeout() -> void:
 	player.parrying = false
 	clear()
-	if $"..".currentfruit != "":
-		eventbus.Transistioned.emit(self, $"..".currentfruit)
+	if handstate.currentfruit != "":
+		eventbus.Transistioned.emit(self, handstate.currentfruit)
 		return
 	else:
 		eventbus.Transistioned.emit(self, "empty")

@@ -21,7 +21,7 @@ func eat():
 	nutrition.vitamins += 7
 	nutrition.minerals += 18
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""
 
 func ability():
 	var instance = soursplash.instantiate()
@@ -30,4 +30,4 @@ func ability():
 	instance.global_position = player.global_position
 	anims.start("lemon")
 	eventbus.Transistioned.emit(self, "empty")
-	$"..".currentfruit = ""
+	handstate.currentfruit = ""
