@@ -253,6 +253,128 @@ _data = {
 &"default": SubResource("Animation_ka4or")
 }
 
+[sub_resource type="Animation" id="Animation_r05cu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("applehand:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("applehand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.178032, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("applehand/metarig/Skeleton3D/Cube_001:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("applehand:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_mwvcl"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("applehand:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.46666667, 0.5, 0.53333336, 0.70000005),
+"transitions": PackedFloat32Array(4, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Quaternion(0.26024145, -0.35065073, -0.61848307, 0.6532971), Quaternion(0.1847687, -0.23413776, -0.68441236, 0.6652967), Quaternion(0.12403988, -0.16378285, -0.70139486, 0.6825207), Quaternion(0.030979704, -0.055625048, -0.714707, 0.6965199), Quaternion(-0.44825256, 0.44055277, -0.5069356, 0.58991456), Quaternion(-0.5847534, 0.603497, -0.34055477, 0.42175496)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("applehand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.46666667, 0.5, 0.53333336, 0.70000005),
+"transitions": PackedFloat32Array(2, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.53919065, 0.07153046, 0.5805807), Vector3(0.70548797, 0.07153046, 0.44234324), Vector3(0.8361845, 0.010885801, 0.21968663), Vector3(1.0322294, -0.08008115, -0.114298165), Vector3(0.6181524, -0.15456986, -1.4608232), Vector3(-0.45094156, -0.15456986, -1.4608232)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("applehand/metarig/Skeleton3D/Cube_001:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 0.70000005),
+"transitions": PackedFloat32Array(1, 2.297397, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.53333336),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_windup_timeout"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("applehand:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7b72d"]
+_data = {
+&"RESET": SubResource("Animation_r05cu"),
+&"attack": SubResource("Animation_mwvcl")
+}
+
 [node name="apple" type="CharacterBody3D" unique_id=739258596 groups=["enemy"]]
 rotation_edit_mode = 1
 script = ExtResource("1_r05cu")
@@ -278,7 +400,9 @@ material_overlay = SubResource("StandardMaterial3D_r05cu")
 mesh = SubResource("ArrayMesh_mwvcl")
 
 [node name="applehand" type="Node3D" parent="." unique_id=1360680516]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.178032, 0, 0)
+transform = Transform3D(0.4000002, 0, 0, 0, 0.40000004, 0, 0, 0, 0.3999998, 2.178032, 0, 0)
+rotation_edit_mode = 1
+visible = false
 
 [node name="metarig" type="Node3D" parent="applehand" unique_id=1742840543]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56685257, 1.9468377, -2.4995673)
@@ -512,6 +636,9 @@ skeleton = NodePath("..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="applehand" unique_id=70362698]
 libraries/ = SubResource("AnimationLibrary_07pkd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=59660282]
+libraries/ = SubResource("AnimationLibrary_7b72d")
 
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="windup" to="." method="_on_windup_timeout"]

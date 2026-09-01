@@ -38,30 +38,29 @@ func _physics_process(_delta: float) -> void:
 		if Engine.get_frames_drawn() % 2 == 0:
 			distancetoplayer = global_position.distance_to(player.global_position)
 		if health <= 0:
-			eventbus.grantitem.emit(givenfruit)
 			queue_free()
 		#if Engine.get_frames_drawn() % 2 == 0:
 		if distancetoplayer <= 7:
 			model.material_overlay.albedo_color = parrycolor
 		else:
 			model.material_overlay.albedo_color = normal_albedo
-func parried(d : bool, k : bool, v : bool):
-	if d:
-		health -= eventbus.parrydamage
+func parried(_d : bool, _k : bool, _v : bool):
+	
+	health -= eventbus.parrydamage
 	if health <= 0:
 		eventbus.parrykill.emit()
 		eventbus.grantitem.emit(givenfruit)
 	var dir = player.camera.direction
-	if v:
-		
-		var ParryVFXInstance = ParryVFX.instantiate()
-		ParryVFXInstance.global_transform = self.global_transform
-		get_tree().root.add_child(ParryVFXInstance)
-	if k:
-		gettingparried = true
-		linear_velocity.y += 3
-		
-		linear_velocity += 60 * dir
+	eventbus.landedparry.emit()
+	
+	var ParryVFXInstance = ParryVFX.instantiate()
+	ParryVFXInstance.global_transform = self.global_transform
+	get_tree().root.add_child(ParryVFXInstance)
 
-		await get_tree().create_timer(1).timeout
-		gettingparried = false
+	gettingparried = true
+	linear_velocity.y += 3
+	
+	linear_velocity += 60 * dir
+
+	await get_tree().create_timer(1).timeout
+	gettingparried = false

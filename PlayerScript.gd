@@ -198,7 +198,7 @@ func punch():
 			anims_L.start("punch3")
 		elif animvariant == 4:
 			anims_L.start("punch4")
-	if handedness == true:
+	elif handedness == true:
 		if animvariant == 0:
 			anims_R.start("punch")
 		elif animvariant == 1:

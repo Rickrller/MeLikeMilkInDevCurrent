@@ -51,8 +51,9 @@ shadow_mesh = SubResource("ArrayMesh_kf0vo")
 
 [node name="grapes" type="CharacterBody3D" unique_id=1874956871 groups=["enemy"]]
 script = ExtResource("1_myx2m")
-health = 25.0
+health = 18.0
 sightrange = 50.0
+distancetoplayer = inf
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=715742823]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18224502, -0.31282306, -0.22260243)

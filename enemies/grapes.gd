@@ -38,6 +38,8 @@ func parried(_d : bool, _k : bool, _v : bool):
 	die()
 
 func _physics_process(delta: float) -> void:
+	if health <= 0:
+		die()
 	child.returnpos = global_position
 	child.returnpos += 4 * -global_transform.basis.z.normalized()
 	if is_on_floor():

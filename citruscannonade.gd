@@ -20,6 +20,7 @@ func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("eat"):
 		eat()
 func ability():
+	rightarm.material_overlay.albedo_color = Color("ff885e")
 	$"..".locked = true
 	anims.start("orange")
 	#print("abillity orange yaya")
@@ -32,7 +33,7 @@ func ability():
 	$"..".locked = false
 	eventbus.Transistioned.emit(self, "empty")
 	$"..".currentfruit = ""
-	
+	rightarm.material_overlay.albedo_color = $"..".normalalbedo
 func eat():
 	nutrition.hydration += 10
 	nutrition.minerals += 2

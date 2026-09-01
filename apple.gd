@@ -5,6 +5,7 @@ extends State
 @onready var rootnodeofscene = get_tree().current_scene
 @onready var neck = $"../../Neck"
 @onready var nutrition = $"../../nutrition"
+
 const applemesh = preload("res://meshes/applemesh.tscn")
 func Enter():
 	used = false
@@ -21,6 +22,9 @@ func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("eat"):
 		eat()
 func ability():
+
+	rightarm.material_overlay.albedo_color = Color("ff4c5fff")
+	
 	$"..".locked = true
 	#$"../../Neck/arm2/AnimationPlayer".play("crush")
 	anims.start("apple")
@@ -37,6 +41,7 @@ func ability():
 	$"..".locked = false
 	eventbus.Transistioned.emit(self, "empty")
 	$"..".currentfruit = ""
+	rightarm.material_overlay.albedo_color = $"..".normalalbedo
 func eat():
 	nutrition.hydration += 17
 	nutrition.carbs += 20

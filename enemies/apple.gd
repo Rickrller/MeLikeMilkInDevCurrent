@@ -21,6 +21,7 @@ const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
 @export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
 signal defeated
 @onready var model = $model
+@onready var anims = $AnimationPlayer
 func _ready() -> void:
 	model.material_overlay.albedo_color = normal_albedo
 	var players = get_tree().get_nodes_in_group("player")
@@ -71,7 +72,9 @@ func parried(_d : bool, _k : bool, _v : bool):
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	state = enemystate.blasted
-
+	
+	model.material_overlay.albedo_color = normal_albedo
+	
 	var ParryVFXInstance = ParryVFX.instantiate()
 	ParryVFXInstance.global_transform = self.global_transform
 	get_tree().root.add_child(ParryVFXInstance)
@@ -93,7 +96,7 @@ func blasting():
 
 
 func everythingelse(delta):
-	model.material_overlay.albedo_color = normal_albedo
+	
 	if player:
 		lookatplayer(delta)
 		if (diff.x * diff.x + diff.z * diff.z) < 16:
@@ -102,9 +105,10 @@ func everythingelse(delta):
 			#direction.y = 0.0
 			
 			if attackready == true:
-				$windup.start()
+				#$windup.start()
+				anims.play("attack")
 				state = enemystate.attacking
-				
+				model.material_overlay.albedo_color = parrycolor
 			move_and_slide()
 			return
 		if distancetoplayer < sightrange:
@@ -133,7 +137,7 @@ func everythingelse(delta):
 
 
 func attacking(delta):
-	model.material_overlay.albedo_color = parrycolor
+	
 	if not (diff.x * diff.x + diff.z * diff.z) < 16:
 		state = enemystate.everythingelse
 	#print("in attacking state")

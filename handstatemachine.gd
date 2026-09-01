@@ -6,10 +6,10 @@ extends Node
 var currentfruitmesh : ArrayMesh
 @onready var anims = $"../Anims/R_AnimationTree"
 
+@onready var leftarm = $"../Neck/CameraBobber/leftarm/metarig/Skeleton3D/Cube_001"
+@onready var rightarm = $"../Neck/CameraBobber/rightarm/metarig/Skeleton3D/Cube_001"
 
-
-
-
+@export var normalalbedo : Color = Color(0.0, 0.0, 0.0, 0.0)
 
 
 

@@ -156,6 +156,7 @@ debug_color = Color(1, 1, 0, 0.41960785)
 [node name="Spawner2" type="Node3D" parent="." unique_id=212992814]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.82509, -30.885183, -20.748177)
 script = ExtResource("19_yv7ed")
+coconutspawns = 1
 grapesspawns = 1
 
 [node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner2" unique_id=706819950]
