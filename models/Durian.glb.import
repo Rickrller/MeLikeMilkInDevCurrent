@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cn8grxqq62mbf"
-path="res://.godot/imported/Durian.glb-1c9e6c76ee69eb0668c69b4da679d6df.scn"
+path="res://.godot/imported/durian.glb-56c19c173dd8e0141cb78d5a1a418baa.scn"
 
 [deps]
 
-source_file="res://models/Durian.glb"
-dest_files=["res://.godot/imported/Durian.glb-1c9e6c76ee69eb0668c69b4da679d6df.scn"]
+source_file="res://models/durian.glb"
+dest_files=["res://.godot/imported/durian.glb-56c19c173dd8e0141cb78d5a1a418baa.scn"]
 
 [params]
 
