@@ -2750,6 +2750,6 @@ shape = SubResource("ConvexPolygonShape3D_rt80h")
 
 [node name="Town" type="AudioStreamPlayer" parent="." unique_id=139921002]
 stream = ExtResource("21_33o58")
-volume_db = -3.0
+volume_db = -6.0
 autoplay = true
 parameters/looping = true

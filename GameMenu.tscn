@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://18gri5q53t0t" path="res://LabelColours.gd" id="20_hnidg"]
 [ext_resource type="Script" uid="uid://dcjowt558lvvp" path="res://QuitButton.gd" id="20_nmt77"]
 [ext_resource type="Script" uid="uid://t0as40rgvqa5" path="res://PlayButton.gd" id="20_nnwpj"]
+[ext_resource type="AudioStream" uid="uid://cc0wq4v2or3ux" path="res://ButtonClick.mp3" id="21_47xby"]
 [ext_resource type="Script" uid="uid://bx5bc84j0s7mp" path="res://TutorialButton.gd" id="21_c5lou"]
 [ext_resource type="Script" uid="uid://dj27a0khis6s3" path="res://AboutButton.gd" id="22_c5lou"]
 [ext_resource type="AudioStream" uid="uid://wnnh44s21oc2" path="res://ShopInGameLooped (1).mp3" id="25_5hpli"]
@@ -465,6 +466,7 @@ font_color = Color(0, 0, 0, 1)
 outline_size = 15
 
 [sub_resource type="LabelSettings" id="LabelSettings_5hpli"]
+line_spacing = 0.8
 font_size = 20
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
@@ -2248,6 +2250,16 @@ theme_override_font_sizes/font_size = 100
 text = "Play"
 script = ExtResource("20_nnwpj")
 
+[node name="ButtonPressed" type="AudioStreamPlayer" parent="Ui/UI/Buttons/Play" unique_id=1286330480]
+stream = ExtResource("21_47xby")
+volume_db = -6.0
+pitch_scale = 1.5
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="Ui/UI/Buttons/Play" unique_id=323334342]
+stream = ExtResource("21_47xby")
+volume_db = -8.0
+pitch_scale = 2.5
+
 [node name="Tutorial" type="Button" parent="Ui/UI/Buttons" unique_id=596259615]
 unique_name_in_owner = true
 z_index = 1
@@ -2264,6 +2276,16 @@ theme_override_fonts/font = ExtResource("19_b6b1f")
 theme_override_font_sizes/font_size = 100
 text = "tutorial"
 script = ExtResource("21_c5lou")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="Ui/UI/Buttons/Tutorial" unique_id=1808195482]
+stream = ExtResource("21_47xby")
+volume_db = -8.0
+pitch_scale = 2.5
+
+[node name="ButtonPressed" type="AudioStreamPlayer" parent="Ui/UI/Buttons/Tutorial" unique_id=1442751959]
+stream = ExtResource("21_47xby")
+volume_db = -6.0
+pitch_scale = 1.5
 
 [node name="About" type="Button" parent="Ui/UI/Buttons" unique_id=933194910]
 unique_name_in_owner = true
@@ -2282,6 +2304,16 @@ theme_override_font_sizes/font_size = 100
 text = "About"
 script = ExtResource("22_c5lou")
 
+[node name="ButtonClick" type="AudioStreamPlayer" parent="Ui/UI/Buttons/About" unique_id=1271044997]
+stream = ExtResource("21_47xby")
+volume_db = -8.0
+pitch_scale = 2.5
+
+[node name="ButtonPressed" type="AudioStreamPlayer" parent="Ui/UI/Buttons/About" unique_id=1021862740]
+stream = ExtResource("21_47xby")
+volume_db = -6.0
+pitch_scale = 1.5
+
 [node name="Quit" type="Button" parent="Ui/UI/Buttons" unique_id=720361403]
 unique_name_in_owner = true
 z_index = 1
@@ -2299,6 +2331,11 @@ theme_override_font_sizes/font_size = 100
 text = "Quit"
 script = ExtResource("20_nmt77")
 
+[node name="ButtonClick" type="AudioStreamPlayer" parent="Ui/UI/Buttons/Quit" unique_id=1681297842]
+stream = ExtResource("21_47xby")
+volume_db = -8.0
+pitch_scale = 2.5
+
 [node name="NameControl" type="Control" parent="Ui/UI" unique_id=278626515]
 anchors_preset = 0
 
@@ -2308,7 +2345,7 @@ offset_left = -564.0
 offset_top = -337.0
 offset_right = 197.0
 offset_bottom = -197.0
-text = "Insert TItle"
+text = "Me hate fruit"
 label_settings = SubResource("LabelSettings_hnidg")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2320,10 +2357,27 @@ unique_name_in_owner = true
 
 [node name="Label" type="Label" parent="Ui/UI/AboutCanvasItem" unique_id=115042821]
 offset_left = 487.0
-offset_top = 288.0
+offset_top = 132.0
 offset_right = 1104.0
-offset_bottom = 650.0
-text = "We're no strangers to love you know the rules and so do I a full commitment's what I'm thinking of you wouldn't get this from any other guy I just wanna tell you how I'm feeling gotta make you understand never gonna give you up never gonna let you down never gonna run around and desert you never gonna make you cry never gonna say goodbye never gonna tell a lie and hurt you."
+offset_bottom = 720.0
+text = "Welcome to the game!
+Heres a list of the controls (For those who like to read)
+WASD - Movement
+Space - Jump/Double jump
+Left click - Punching (Basic form of damage output)
+Right click (While holding a fruit) - Cast the fruit's special ability
+F - Parry (Acts like a counterattack, successful parries reset cd)
+E (While holding a fruit) - Eat the fruit to gain nutrients
+Tab - Pause menu
+Shift - Dashing (Dash then jump to perform long dash)
+
+It is recommended to play Fruitelude last, as it is the hardest level (But PLEASE play it I worked really hard on it)
+
+Music made by me
+OST release...sometime...maybe
+Enjoy playing!
+ - Rick
+"
 label_settings = SubResource("LabelSettings_5hpli")
 autowrap_mode = 3
 
@@ -2337,5 +2391,11 @@ offset_bottom = 708.0
 
 [node name="ShopInGameLooped(1)" type="AudioStreamPlayer" parent="." unique_id=132222082]
 stream = ExtResource("25_5hpli")
-volume_db = -3.0
+volume_db = -6.0
 autoplay = true
+
+[connection signal="mouse_entered" from="Ui/UI/Buttons/Play" to="Ui/UI/Buttons/Play" method="_on_mouse_entered"]
+[connection signal="pressed" from="Ui/UI/Buttons/Play" to="Ui/UI/Buttons/Play" method="_on_pressed"]
+[connection signal="mouse_entered" from="Ui/UI/Buttons/Tutorial" to="Ui/UI/Buttons/Tutorial" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Ui/UI/Buttons/About" to="Ui/UI/Buttons/About" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Ui/UI/Buttons/Quit" to="Ui/UI/Buttons/Quit" method="_on_mouse_entered"]

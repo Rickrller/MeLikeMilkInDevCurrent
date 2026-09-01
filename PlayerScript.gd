@@ -1,6 +1,9 @@
 extends CharacterBody3D
 @export_group("Settings")
 
+@export var pitch_min: float = 0.8
+@export var pitch_max: float = 1.2
+
 # Movement Variables
 @export var speed = 13.0
 @export var acceleration = 6.0
@@ -43,6 +46,8 @@ extends CharacterBody3D
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") + 25
 var jump_velocity = 10
 @export var max_jumps = 1
+@export var coyote_time = 0.3
+var coyote_timer = 0.0
 var jump_count = 0
 var health = 100
 var maxhealth = 100
@@ -71,13 +76,19 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta):
 	# Jumping
-
-	if is_on_floor() and Input.is_action_pressed("ui_accept"):
+	if is_on_floor():
+		coyote_timer = coyote_time
+	else:
+		coyote_timer -= delta
+	if coyote_timer > 0 and Input.is_action_just_pressed("ui_accept"):
+		velocity.y = jump_velocity + 8
 		eventbus.switch_activity.emit("jump", "active")
-		jump_count += 1
+		$Jump.playing = true
+		coyote_timer = 0
 		ScreenShake.shake_impulse(Vector3.DOWN, 0.4)
 	elif jump_count < max_jumps and Input.is_action_just_pressed("ui_accept"):
 		velocity.y = jump_velocity + 8
+		$DoubleJump.playing = true
 		jump_count += 1
 		ScreenShake.shake_impulse(Vector3.DOWN, 0.8)
 	if not is_on_floor():
@@ -88,6 +99,7 @@ func _physics_process(delta):
 		jump_count = 0 
 	
 	if Input.is_action_just_pressed("shift") and dashcharges >= 1:
+		$Dash.playing = true
 		eventbus.switch_activity.emit("dashing", "active")
 		if dashcharges == 3:
 			$dashcooldown.start()
@@ -114,9 +126,11 @@ func _physics_process(delta):
 	move_and_slide()
 	if is_on_floor() and not _was_on_floor:
 		ScreenShake.shake_impulse(Vector3.UP, 1)
+		$JumpLand.playing = true
 	_was_on_floor = is_on_floor()
 	if Input.is_action_pressed("punch") and ispunchready:
-		
+		$PunchSwing.pitch_scale = randf_range(pitch_min, pitch_max)
+		$PunchSwing.playing = true
 		if handstate.current_state.name == "empty":
 			punchcooldownnode.wait_time = basepunchCD / stamina
 		else:
@@ -140,6 +154,7 @@ func _physics_process(delta):
 		ispunchready = false
 		$punchcooldown.start()
 	if Input.is_action_just_pressed("parry") and parrycooldown == false:
+		$ParryInitiate.playing = true
 		ScreenShake.shake_impulse(Vector3.LEFT, 1)
 		parrying = true
 		parrycooldown = true
@@ -236,4 +251,3 @@ func _on_r_animation_tree_animation_finished(anim_name: StringName) -> void:
 
 func _on_l_animation_tree_animation_finished(_anim_name: StringName) -> void:
 	anims_L.travel("idle")
-	

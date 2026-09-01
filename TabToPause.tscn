@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dvj46lwegqasn"]
 
 [ext_resource type="Script" uid="uid://bmq2lbtfpy1f5" path="res://TabToPause.gd" id="1_fa2fe"]
+[ext_resource type="AudioStream" uid="uid://wnnh44s21oc2" path="res://ShopInGameLooped (1).mp3" id="2_eqq3c"]
 [ext_resource type="FontFile" uid="uid://d20rfwk5g6tyt" path="res://Freedom-10eM.ttf" id="2_qcgwy"]
+[ext_resource type="AudioStream" uid="uid://cc0wq4v2or3ux" path="res://ButtonClick.mp3" id="3_640lc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcgwy"]
 bg_color = Color(0.14406255, 0.14406255, 0.14406249, 1)
@@ -12,6 +14,11 @@ corner_radius_bottom_left = 15
 
 [node name="TabToPause" type="CanvasLayer" unique_id=1612920135]
 script = ExtResource("1_fa2fe")
+
+[node name="PauseTheme" type="AudioStreamPlayer" parent="." unique_id=442352965]
+stream = ExtResource("2_eqq3c")
+autoplay = true
+parameters/looping = true
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=622066973]
 anchors_preset = 15
@@ -127,3 +134,17 @@ offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="ButtonPressed" type="AudioStreamPlayer" parent="." unique_id=711627723]
+stream = ExtResource("3_640lc")
+volume_db = -6.0
+pitch_scale = 1.5
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=795633572]
+stream = ExtResource("3_640lc")
+volume_db = -8.0
+pitch_scale = 2.5
+
+[connection signal="mouse_entered" from="CenterContainer/Control/Resume" to="." method="_on_resume_mouse_entered"]
+[connection signal="mouse_entered" from="CenterContainer/Control/Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="mouse_entered" from="CenterContainer/Control/Menu" to="." method="_on_menu_mouse_entered"]

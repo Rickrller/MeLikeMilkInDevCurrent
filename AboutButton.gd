@@ -1,7 +1,7 @@
 extends Button
 
 @onready var target: CanvasLayer = %AboutCanvasItem  # Drag your CanvasLayer here
-@export var slide_distance: float = 400.0  # how far below "shown" counts as hidden
+@export var slide_distance: float = 600.0
 @export var slide_duration: float = 0.4
 @export var ease_type: Tween.EaseType = Tween.EASE_OUT
 @export var trans_type: Tween.TransitionType = Tween.TRANS_CUBIC
@@ -20,6 +20,7 @@ func _ready() -> void:
 	target.offset.y = hidden_y
 
 func _on_pressed() -> void:
+	$ButtonPressed.playing = true
 	if tween:
 		tween.kill()
 
@@ -31,3 +32,6 @@ func _on_pressed() -> void:
 	tween.tween_property(target, "offset:y", target_y, slide_duration)
 
 	is_open = not is_open
+
+func _on_mouse_entered() -> void:
+	$ButtonClick.playing = true

@@ -628,9 +628,8 @@ shape = SubResource("BoxShape3D_fbnd0")
 
 [node name="DeliveryTime" type="AudioStreamPlayer" parent="." unique_id=1834807391]
 stream = ExtResource("20_fbnd0")
-volume_db = -3.0
+volume_db = -6.0
 autoplay = true
-stream_paused = true
 
 [connection signal="body_entered" from="Spawner/SpawnArea" to="Spawner" method="_on_spawn_area_body_entered"]
 [connection signal="body_entered" from="ExitTutorial" to="ExitTutorial" method="_on_body_entered"]

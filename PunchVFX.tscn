@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bste6uo2mompy" path="res://FaintSmoke.png" id="1_j34kx"]
 [ext_resource type="Script" uid="uid://duabqnwcau7w2" path="res://VFXCleanup.gd" id="2_07l2y"]
 [ext_resource type="QuadMesh" uid="uid://dstqc8djbwfa8" path="res://BlueSparks.tres" id="3_quyip"]
+[ext_resource type="AudioStream" uid="uid://dqrmpuxkqbktb" path="res://Punch2.mp3" id="4_quyip"]
+[ext_resource type="Script" uid="uid://b1c3ep5gh1hee" path="res://PunchSoundEffect.gd" id="5_lgobb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ha00q"]
 transparency = 1
@@ -104,3 +106,8 @@ scale_amount_max = 4.0
 scale_amount_curve = SubResource("Curve_1mcsc")
 color_ramp = SubResource("Gradient_o0yg1")
 script = ExtResource("2_07l2y")
+
+[node name="Punch2" type="AudioStreamPlayer" parent="." unique_id=1047409900]
+stream = ExtResource("4_quyip")
+volume_db = -6.0
+script = ExtResource("5_lgobb")

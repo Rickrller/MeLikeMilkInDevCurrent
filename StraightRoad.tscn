@@ -226,7 +226,7 @@ script = ExtResource("10_h00kl")
 
 [node name="DeliveryTime" type="AudioStreamPlayer" parent="." unique_id=258617009]
 stream = ExtResource("11_n8wi7")
-volume_db = -3.0
+volume_db = -6.0
 autoplay = true
 parameters/looping = true
 

@@ -7700,6 +7700,7 @@ debug_color = Color(1, 1, 0, 0.41960785)
 
 [node name="MilkRush" type="AudioStreamPlayer" parent="." unique_id=616442000]
 stream = ExtResource("24_kxs3x")
+volume_db = -3.0
 autoplay = true
 parameters/looping = true
 
