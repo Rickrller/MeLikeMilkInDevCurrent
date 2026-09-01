@@ -2,6 +2,7 @@ extends Area3D
 var affected_enemies : Array[Node3D] = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Timestop.playing = true
 	Engine.time_scale = 0.7
 	await get_tree().create_timer(8).timeout
 	monitoring = false

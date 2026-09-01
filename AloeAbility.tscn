@@ -1,12 +1,15 @@
-[gd_scene format=3 uid="uid://dqlfpr406nyto"]
+[gd_scene format=3 uid="uid://c4mpqbmha1exq"]
 
-[ext_resource type="Texture2D" uid="uid://dq2uxomlxcik6" path="res://FaintAirBurst.png" id="1_35osr"]
-[ext_resource type="Texture2D" uid="uid://baltbej3hm6ej" path="res://FaintSmoke.png" id="2_7xr3o"]
+[ext_resource type="Texture2D" uid="uid://cc3rdy4unh0ew" path="res://FaintAirBurst.png" id="1_35osr"]
+[ext_resource type="Script" uid="uid://blqg6e4by8wwy" path="res://AloeVeraVFXCleanup.gd" id="1_xrnfp"]
+[ext_resource type="Texture2D" uid="uid://bste6uo2mompy" path="res://FaintSmoke.png" id="2_7xr3o"]
+[ext_resource type="Script" uid="uid://21ftiuygt8ej" path="res://AloveVeraVFX.gd" id="3_375fn"]
+[ext_resource type="Script" uid="uid://bmdq7ruxtcnt2" path="res://AloeVeraVFX.gd" id="5_p36ly"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ebd1l"]
 load_path = "res://.godot/imported/AirSpikes.png-78f7e67af9670a4dd6671c08bb3d5fe4.s3tc.ctex"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrkct"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oulu1"]
 transparency = 1
 blend_mode = 1
 vertex_color_use_as_albedo = true
@@ -18,7 +21,7 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_vuhl4"]
-material = SubResource("StandardMaterial3D_xrkct")
+material = SubResource("StandardMaterial3D_oulu1")
 
 [sub_resource type="Curve" id="Curve_ipp32"]
 _data = [Vector2(0, 0), 0.0, 0.8256181, 0, 0, Vector2(1e-05, 0.56140345), 1.2600001, 1.2600001, 0, 0, Vector2(1, 1), 0.14354074, 0.0, 0, 0]
@@ -28,7 +31,7 @@ point_count = 3
 offsets = PackedFloat32Array(0, 0.3425926, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.34117648, 1, 1, 1, 0)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mcsc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bgck4"]
 transparency = 1
 blend_mode = 1
 vertex_color_use_as_albedo = true
@@ -40,13 +43,13 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_gd4sm"]
-material = SubResource("StandardMaterial3D_1mcsc")
+material = SubResource("StandardMaterial3D_bgck4")
 
 [sub_resource type="Gradient" id="Gradient_xarlr"]
 offsets = PackedFloat32Array(0.0061728396, 0.24382716, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.21960784, 1, 1, 1, 0)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eescv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tjluq"]
 transparency = 1
 blend_mode = 1
 vertex_color_use_as_albedo = true
@@ -58,7 +61,7 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_rburc"]
-material = SubResource("StandardMaterial3D_eescv")
+material = SubResource("StandardMaterial3D_tjluq")
 
 [sub_resource type="Gradient" id="Gradient_wl5pb"]
 offsets = PackedFloat32Array(0.021604938, 0.17283951, 1)
@@ -79,6 +82,7 @@ scale_amount_max = 10.0
 scale_amount_curve = SubResource("Curve_ipp32")
 color = Color(0, 1, 0, 1)
 color_ramp = SubResource("Gradient_o0yg1")
+script = ExtResource("1_xrnfp")
 
 [node name="Burst" type="CPUParticles3D" parent="." unique_id=404859615]
 emitting = false
@@ -93,6 +97,7 @@ scale_amount_min = 10.0
 scale_amount_max = 10.0
 scale_amount_curve = SubResource("Curve_ipp32")
 color_ramp = SubResource("Gradient_xarlr")
+script = ExtResource("3_375fn")
 
 [node name="Smoke" type="CPUParticles3D" parent="." unique_id=1590443958]
 emitting = false
@@ -108,6 +113,7 @@ scale_amount_max = 16.0
 scale_amount_curve = SubResource("Curve_ipp32")
 color = Color(0, 1, 0, 1)
 color_ramp = SubResource("Gradient_xarlr")
+script = ExtResource("5_p36ly")
 
 [node name="WhiteCenter" type="CPUParticles3D" parent="." unique_id=1110301049]
 emitting = false
@@ -121,3 +127,4 @@ scale_amount_min = 8.0
 scale_amount_max = 8.0
 scale_amount_curve = SubResource("Curve_ipp32")
 color_ramp = SubResource("Gradient_wl5pb")
+script = ExtResource("5_p36ly")

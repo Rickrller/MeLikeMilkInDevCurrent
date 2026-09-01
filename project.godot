@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MeLikeMilk"
-run/main_scene="uid://c8ftckfihbjua"
+run/main_scene="uid://u1f33o8ld6gg"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

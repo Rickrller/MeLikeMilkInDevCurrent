@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cbxgfjik0kji" path="res://LemonVFX.gd" id="1_uxvvf"]
 [ext_resource type="Script" uid="uid://ckuw3vrfxfjd6" path="res://LemonVFXOneTime.gd" id="2_i78wo"]
+[ext_resource type="Script" uid="uid://g5hipyiw0n06" path="res://LemonVFXCleanup.gd" id="2_pqud8"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nfujh"]
 load_path = "res://.godot/imported/Sparks.png-997edff6ef6163bdc757efd54796730a.s3tc.ctex"
@@ -85,6 +86,7 @@ height = 0.2
 [node name="LemonPuddle" type="Node3D" unique_id=1547905698]
 
 [node name="Residual" type="Node3D" parent="." unique_id=2094920640]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.80489796, 0)
 
 [node name="Bubbling" type="CPUParticles3D" parent="Residual" unique_id=1093101272]
 amount = 100
@@ -134,6 +136,7 @@ scale_amount_max = 0.2
 scale_amount_curve = SubResource("Curve_bwcfo")
 color = Color(0, 0, 0, 1)
 color_ramp = SubResource("Gradient_1mibb")
+script = ExtResource("1_uxvvf")
 
 [node name="Ring" type="CPUParticles3D" parent="Residual" unique_id=1130166045]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
@@ -155,6 +158,7 @@ scale_amount_min = 10.0
 scale_amount_max = 10.0
 scale_amount_curve = SubResource("Curve_ipp32")
 color_ramp = SubResource("Gradient_q044w")
+script = ExtResource("1_uxvvf")
 
 [node name="Ring2" type="CPUParticles3D" parent="Residual" unique_id=911745970]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
@@ -177,8 +181,10 @@ scale_amount_min = 10.0
 scale_amount_max = 10.0
 scale_amount_curve = SubResource("Curve_ivsdq")
 color_ramp = SubResource("Gradient_e8yub")
+script = ExtResource("2_pqud8")
 
 [node name="Explosion" type="Node3D" parent="." unique_id=1902120838]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.80489796, 0)
 
 [node name="Bubbling" type="CPUParticles3D" parent="Explosion" unique_id=728435056]
 emitting = false
@@ -259,5 +265,6 @@ color_ramp = SubResource("Gradient_q044w")
 script = ExtResource("2_i78wo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1739216157]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.106, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.106, -0.80489796, 0)
+visible = false
 mesh = SubResource("CylinderMesh_wl5pb")

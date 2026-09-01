@@ -3,10 +3,15 @@ extends Area3D
 @export var targets : Array[Node3D] = []
 @onready var tick = $dmgtick
 const damage = 0.4
+@onready var VFX = load("res://LemonPuddleVfx.tscn")
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
+	global_position = get_tree().get_first_node_in_group("player").global_position
 	tick.start()
+	var VFXInstance = VFX.instantiate()
+	VFXInstance.global_transform = global_transform
+	get_tree().root.add_child(VFXInstance)
 	await get_tree().create_timer(5).timeout
 	queue_free()
 func _on_dmgtick() -> void:
