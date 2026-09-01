@@ -7,7 +7,7 @@ const durianmesh = preload("res://meshes/durianmesh.tscn")
 func Enter():
 	var inst = durianmesh.instantiate()
 	fruitmesh.mesh = inst.mesh
-
+	inst.free()
 
 func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("ability"):

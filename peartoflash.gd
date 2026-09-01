@@ -8,7 +8,7 @@ var flashready = true
 func Enter():
 	var inst = peartomesh.instantiate()
 	fruitmesh.mesh = inst.mesh
-
+	inst.free()
 func _ready():
 	eventbus.connect("flashbang", on_pearto_flash)
 

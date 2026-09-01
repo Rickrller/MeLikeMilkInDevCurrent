@@ -12,7 +12,7 @@ func Enter():
 	#print('apple entered')
 	var inst = applemesh.instantiate()
 	fruitmesh.mesh = inst.mesh
-	print(fruitmesh)
+	inst.free()
 	
 	
 func Physics_Update(_delta: float):

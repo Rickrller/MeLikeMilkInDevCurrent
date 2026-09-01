@@ -13,7 +13,7 @@ func Update(_delta: float):
 func Enter():
 	var inst = starfruitmesh.instantiate()
 	fruitmesh.mesh = inst.mesh
-
+	inst.free()
 func eat():
 	nutrition.hydration += 35
 	nutrition.vitamins += 35

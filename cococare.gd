@@ -8,7 +8,7 @@ func Enter():
 	print("coconut gotten")
 	var inst = coconutmesh.instantiate()
 	fruitmesh.mesh = inst.mesh
-
+	inst.free()
 
 func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("ability"):
