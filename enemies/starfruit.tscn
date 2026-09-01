@@ -8,42 +8,42 @@ size = Vector3(1.9424438, 0.44863892, 1.801117)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uk2yf"]
 transparency = 1
-albedo_color = Color(1, 1, 0, 0.19607843)
+albedo_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0m0l8"]
-resource_name = "Material.001"
+resource_name = "Material.007"
 cull_mode = 2
 albedo_texture = ExtResource("2_uk2yf")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_l8jlq"]
 _surfaces = [{
-"aabb": AABB(-0.95105654, 0.8, -1, 1.9021131, 0.40000004, 1.809017),
+"aabb": AABB(-0.95105666, -0.809017, -0.20000005, 1.9021133, 1.809017, 0.40000004),
 "format": 34896613377,
 "index_count": 60,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAQADAAQABQAAAAIAAAAFAAMABgAFAAIABgADAAUABwACAAQABAADAAcACAAGAAIABgAIAAMACQAIAAIACQADAAgABwAKAAIACgAHAAMACwAJAAIACgALAAIACQALAAMACwAKAAMA"),
-"name": "Material.001",
+"name": "Material.007",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 12,
-"vertex_data": PackedByteArray("/aj/fy9SAAD/f/9/AAAAAP9/AACCjQAA/3///4KNAAABV/9/L1IAAP///3/IYQAAU8L/fyukAAAAAP9/yGEAABrP/3///wAA/3//f9fWAACrPf9/K6QAAOQw/3///wAA")
+"vertex_data": PackedByteArray("AVfPrf9/AAD/f////38AAP9/fHL//wAA/398cgAAAAD9qM+t/38AAAAANp7/fwAAqz3TW/9/AAD//zae/38AAOQwAAD/fwAA/38nKf9/AABTwtNb/38AABrPAAD/fwAA")
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_rhue5"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_1m3ly"]
 resource_name = "starfruit_Plane"
 _surfaces = [{
-"aabb": AABB(-0.95105654, 0.8, -1, 1.9021131, 0.40000004, 1.809017),
+"aabb": AABB(-0.95105666, -0.809017, -0.20000005, 1.9021133, 1.809017, 0.40000004),
 "attribute_data": PackedByteArray("Cqkzzv+/Qcvgo7LdcZgSvgqpM87go7Ldi5Rr1HGYEr7go7Ld/3+q3ouUa9Tgo7Ldi5SI6f9/qt7go7LdcZj//4uUiOngo7LdCqld8HGY///go7Ld/7//8wqpXfDgo7Ld/7//8+Cjst21tXnftbV53+Cjst3/v0HL/79m3+DjX+CL1Kbpi9Sm6eDjX+Bx2P//Cund73HY///g41/g///P8grp3e/g41/gtfWY3v//z/Lg41/gtfWY3uDjX+D//xHKCum0zf//Ecrg41/gi9SJ1ODjX+D/v2bfi9SJ1HHYEr7g41/gCum0zeDjX+Bx2BK+"),
 "format": 34896613399,
 "index_count": 60,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgATABQAFQAWABcAGAAZABoAGwAcAB0AHgAfACAAIQAiACMAJAAlACYAJwAoACkAKgArACwALQAuAC8AMAAxADIAMwA0ADUANgA3ADgAOQA6ADsA"),
 "material": SubResource("StandardMaterial3D_0m0l8"),
-"name": "Material.001",
+"name": "Material.007",
 "primitive": 3,
 "uv_scale": Vector4(2, 2, 0, 0),
 "vertex_count": 60,
-"vertex_data": PackedByteArray("/aj/fy9S+N7/f/9/AAD43v9/AACCjfje////f8hh/ub9qP9/L1L+5v9/AACCjf7mU8L/fyuketz///9/yGF63P9/AACCjXrcGs//f///WN1Twv9/K6RY3f9/AACCjVjd/3//f9fWgeUaz/9///+B5f9/AACCjYHl5DD/f///qN3/f/9/19ao3f9/AACCjajdqz3/fyukaPDkMP9///9o8P9/AACCjWjwAAD/f8hhXumrPf9/K6Re6f9/AACCjV7pAAD/f8hhder/fwAAgo116gFX/38vUnXqAVf/fy9SevD/fwAAgo168P9//38AAHrw/3//fwAAI9H/f///go0j0QFX/38vUiPRAVf/fy9Sb9z/f///go1v3AAA/3/IYW/cqz3/fyukj8sAAP9/yGGPy/9///+CjY/L5DD/f///4s2rPf9/K6Tizf9///+CjeLN/3//f9fWstPkMP9///+y0/9///+CjbLT/3//f9fWrsz/f///go2uzBrP/3///67MU8L/fyukBeEaz/9///8F4f9///+CjQXh/aj/fy9Sw+L/f///go3D4v9//38AAMPi/aj/fy9S1t////9/yGHW3/9///+CjdbfU8L/fyukb9f/f///go1v1////3/IYW/XFWzSPxVs0j8VbNI/kV+FRZFfhUWRX4VFF3JSSxdyUksXclJLZXDCQGVwwkBlcMJA8GXYWPBl2FjwZdhYhG8fUIRvH1CEbx9QE10bVRNdG1UTXRtVyGJ/Wchif1nIYn9ZGl3xSBpd8UgaXfFIDFwnUgxcJ1IMXCdSYKpEt2CqRLdgqkS317F9sNexfbDXsX2wv51rsL+da7C/nWuwwaXEt8GlxLfBpcS3haaboIWmm6CFppugcp6sq3KerKtynqyreLD0oHiw9KB4sPSgrrHRo66x0aOusdGjmLIlrZiyJa2YsiWt9qmvnvapr572qa+e")
+"vertex_data": PackedByteArray("AVfPrf9/Lqn/f////38uqf9/fHL//y6pAAA2nv9/W64BV8+t/39brv9/fHL//1uuqz3TW/9/b6YAADae/39vpv9/fHL//2+m5DAAAP9/EqerPdNb/38Sp/9/fHL//xKn/38nKf9/5KnkMAAA/3/kqf9/fHL//+SpGs8AAP9/gKf/fycp/3+Ap/9/fHL//4CnU8LTW/9/zqoazwAA/3/Oqv9/fHL//86q//82nv9/G6pTwtNb/38bqv9/fHL//xuq//82nv9/bq7/f3xy//9urv2oz63/f26u/ajPrf9/tav/f3xy//+1q/9/////f7Wr/3////9/CPD/f3xyAAAI8P2oz63/fwjw/ajPrf9/7vL/f3xyAADu8v//Np7/f+7yU8LTW/9/I////zae/38j//9/fHIAACP/Gs8AAP9/sPJTwtNb/3+w8v9/fHIAALDy/38nKf9/KvAazwAA/38q8P9/fHIAACrw/38nKf9/uPn/f3xyAAC4+eQwAAD/f7j5qz3TW/9/PvbkMAAA/38+9v9/fHIAAD72AVfPrf9/Kfv/f3xyAAAp+/9/////fyn7AVfPrf9/2PYAADae/3/Y9v9/fHIAANj2qz3TW/9/cO//f3xyAABw7wAANp7/f3DvJOvk4iTr5OIk6+Ti0vO9H9LzvR/S870fjCTd8owk3fKMJN3y7uCE6+7ghOvu4ITrowB12KMAddijAHXY1Rw96dUcPenVHD3p8iEaDPIhGgzyIRoMeAvCIngLwiJ4C8IiqOoTGajqExmo6hMZSialAEompQBKJqUAh7tLQIe7S0CHu0tAvsI/OL7CPzi+wj84RzSRxEc0kcRHNJHEmLrHRJi6x0SYusdEnTvbwJ0728CdO9vAuDTyw7g08sO4NPLDUEbZuFBG2bhQRtm4lEftt5RH7beUR+23UcV5N1HFeTdRxXk3ND+svjQ/rL40P6y+")
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_l8jlq")
@@ -58,37 +58,37 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape3D/model:position")
+tracks/0/path = NodePath("CollisionShape3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.01520288, -0.24291265, 0.9890816)]
+"values": [Vector3(0, 0.085, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_rhue5"]
+[sub_resource type="Animation" id="Animation_0ftln"]
 resource_name = "float"
 length = 6.000004
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape3D/model:position")
+tracks/0/path = NodePath("CollisionShape3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3, 6.0000005),
+"times": PackedFloat32Array(0, 3.0000002, 6.0000005),
 "transitions": PackedFloat32Array(-2, -2, 1),
 "update": 0,
-"values": [Vector3(0, 0, 1), Vector3(-0.01520288, -0.24291265, 0.9890816), Vector3(0, 0, 1)]
+"values": [Vector3(0, 0.2, 0), Vector3(0, 0, 0), Vector3(0, 0.2, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0silq"]
 _data = {
 &"RESET": SubResource("Animation_uk2yf"),
-&"float": SubResource("Animation_rhue5")
+&"float": SubResource("Animation_0ftln")
 }
 
 [node name="starfruit" type="CharacterBody3D" unique_id=503213655 groups=["enemy"]]
@@ -97,14 +97,13 @@ health = 15.0
 givenfruit = "starfruit"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1856156969]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.0041736364, 0.08511734, -0.015141003)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.085, 0)
 shape = SubResource("BoxShape3D_uk2yf")
 
-[node name="model" type="MeshInstance3D" parent="CollisionShape3D" unique_id=461220218]
-transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 8.742278e-08, -1, 8.742278e-08, -3.821371e-15, 8.742278e-08, 1, -0.01520288, -0.24291265, 0.9890816)
-sorting_offset = -1.0
+[node name="model" type="MeshInstance3D" parent="CollisionShape3D" unique_id=2118749084]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.0041736364, 0.015141007, 0.08511734)
 material_overlay = SubResource("StandardMaterial3D_uk2yf")
-mesh = SubResource("ArrayMesh_rhue5")
+mesh = SubResource("ArrayMesh_1m3ly")
 
 [node name="buffarea" type="Area3D" parent="." unique_id=451433940]
 

@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://bodhfhh6vqhcu" path="res://empty.gd" id="6_nvl01"]
 [ext_resource type="Script" uid="uid://c8i40qpq777ri" path="res://anims.gd" id="6_pgbbb"]
 [ext_resource type="Script" uid="uid://dyvsb2magship" path="res://fruitmodel.gd" id="6_vl8ci"]
-[ext_resource type="PackedScene" uid="uid://qlcqc8icrlyt" path="res://meshes/applemesh.tscn" id="7_ieltc"]
+[ext_resource type="PackedScene" uid="uid://bd0jr4d4i71f7" path="res://meshes/lemonmesh.tscn" id="7_ieltc"]
 [ext_resource type="Curve" uid="uid://boc561mdfdaa6" path="res://arms/slightly_back.tres" id="7_pgbbb"]
 [ext_resource type="Script" uid="uid://bxr6ugpifg17t" path="res://dashing.gd" id="7_u1c27"]
 [ext_resource type="Script" uid="uid://dklaourcj5ndh" path="res://walking.gd" id="8_op7ga"]
@@ -414,6 +414,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Quaternion(0, 1, 0, -4.3711385e-08)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%fruitmodel:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%fruitmodel:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.19000007, 0.18999997, 0.19000001)]
 }
 
 [sub_resource type="Animation" id="Animation_qftbh"]
@@ -2150,6 +2174,42 @@ tracks/29/path = NodePath("metarig/Skeleton3D:f_pinky.03.L")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, 0.4009947, 0.0905372, -0.044998426, 0.9104842)
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("%fruitmodel:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.36965176, 0.085, -1.0184481), Vector3(-0.031555265, -0.033963956, -0.9099005), Vector3(-0.06912598, -0.79952484, -0.9149472)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("%fruitmodel:quaternion")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Quaternion(0, 1, 0, -7.54979e-08), Quaternion(-0.4948159, 0.86564314, -0.03785686, 0.0662276), Quaternion(0.80225825, -0.17210013, -0.31134558, -0.47940293)]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("%fruitmodel:transparency")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [0.0, 0.9]
+}
 
 [sub_resource type="Animation" id="Animation_76f16"]
 resource_name = "orange"
@@ -2363,6 +2423,42 @@ tracks/29/path = NodePath("metarig/Skeleton3D:f_pinky.03.L")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, 0.4009947, 0.0905372, -0.044998426, 0.9104842)
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("%fruitmodel:quaternion")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Quaternion(0, 1, 0, -4.3711385e-08), Quaternion(-0.31338763, 0.9496253, -1.3698604e-08, -4.1509445e-08), Quaternion(-0.53399026, 0.83536303, -0.07535571, 0.10651065), Quaternion(-0.61673814, 0.3476349, -0.1696982, 0.6855557)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("%fruitmodel:position")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.36965176, 0.085, -1.0184481), Vector3(0.11872715, 0.10428219, -0.87673235), Vector3(-0.20428081, -0.2215206, -0.7303632), Vector3(-0.13474241, -0.48811948, -1.0959396)]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("%fruitmodel:transparency")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0, 0.10000001),
+"transitions": PackedFloat32Array(0.46651664, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
 
 [sub_resource type="Animation" id="Animation_umiac"]
 resource_name = "parry"
@@ -4074,6 +4170,42 @@ tracks/29/path = NodePath("metarig/Skeleton3D:f_pinky.03.L")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, 0.4009947, 0.0905372, -0.044998426, 0.9104842, 0.033333335, 1, 0.39864522, 0.08923179, -0.045890097, 0.9115996, 0.06666667, 1, 0.39210162, 0.08560203, -0.048364323, 0.9146527, 0.1, 1, 0.38210118, 0.08007293, -0.05211857, 0.9191685, 0.13333334, 1, 0.3693805, 0.07307079, -0.05684792, 0.9246551, 0.16666667, 1, 0.35469708, 0.06503022, -0.062244307, 0.93063784, 0.2, 1, 0.338841, 0.05639713, -0.06799785, 0.93668705, 0.23333333, 1, 0.3226387, 0.047627125, -0.07380002, 0.94243807, 0.26666668, 1, 0.30694652, 0.039181825, -0.07934706, 0.94760364, 0.3, 1, 0.2926405, 0.031523343, -0.08434332, 0.9519738, 0.33333334, 1, 0.2806048, 0.025109774, -0.08850272, 0.9554045, 0.36666667, 1, 0.27172175, 0.020393297, -0.09154711, 0.9577946, 0.4, 1, 0.26686615, 0.017821148, -0.09320222, 0.9590507, 0.41666666, 1, 0.26621893, 0.017478628, -0.09342232, 0.95921546)
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("%fruitmodel:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.36965176, 0.085, -1.0184481), Vector3(0.11511475, 0.15866306, -0.9700144), Vector3(-0.4021575, 0.25157633, -0.5834375), Vector3(-0.6283896, -0.0077372342, -0.298746), Vector3(-0.33367985, -0.39488715, -0.55903196), Vector3(0.22763363, -0.43839732, -0.712146), Vector3(0.45105213, -0.22867599, -0.712146), Vector3(0.45105213, -0.22867599, -0.712146)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("%fruitmodel:quaternion")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Quaternion(0, 1, 0, -4.3711385e-08), Quaternion(-0.10051794, 0.9949353, -7.588896e-09, -7.5115494e-08), Quaternion(-0.37692127, 0.91954386, -0.087982185, -0.06803348), Quaternion(-0.5599137, 0.8275592, 0.040502027, 0.0014290554), Quaternion(-0.6921554, 0.7206097, 0.04015766, -0.005460772), Quaternion(-0.6921554, 0.7206097, 0.040157683, -0.0054607904), Quaternion(0.74406874, -0.6668728, -0.03963734, 0.008446353), Quaternion(0.74406874, -0.6668728, -0.03963734, 0.008446353)]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("%fruitmodel:scale")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.23333333),
+"transitions": PackedFloat32Array(2.3784142, 1, 1),
+"update": 0,
+"values": [Vector3(0.19000007, 0.18999997, 0.19000001), Vector3(0.15, 0.07, 0.19), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xjgc0"]
 _data = {
@@ -6509,11 +6641,12 @@ debug_shape_thickness = 4
 
 [node name="fruitmodel" type="MeshInstance3D" parent="Neck/CameraBobber" unique_id=608089341]
 unique_name_in_owner = true
-transform = Transform3D(-0.19000003, 0, -1.6610327e-08, 0, 0.18999991, 0, 1.661033e-08, 0, -0.19000001, 0.36965176, 0.085, -1.0184481)
+transform = Transform3D(-0.19000007, 0, -2.8689204e-08, 0, 0.18999997, 0, 2.8689213e-08, 0, -0.19000001, 0.36965176, 0.085, -1.0184481)
 rotation_edit_mode = 1
 script = ExtResource("6_vl8ci")
 
-[node name="applemesh" parent="Neck/CameraBobber/fruitmodel" unique_id=2073245435 instance=ExtResource("7_ieltc")]
+[node name="lemonmesh" parent="Neck/CameraBobber/fruitmodel" unique_id=1049964915 instance=ExtResource("7_ieltc")]
+visible = false
 
 [node name="rightarm" type="Node3D" parent="Neck/CameraBobber" unique_id=1013801899]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.4878314, -0.5920622, 0)
@@ -6534,20 +6667,20 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(0.99847096, -0.055269018, 0.0010063627, 0.055248223, 0.9983638, 0.014743418, -0.0018195704, -0.014665277, 0.99989074, 1.5646219e-07, 7.1393466, -7.450581e-09)
 bones/1/enabled = true
 bones/1/position = Vector3(1.5646219e-07, 7.1393466, -7.450581e-09)
-bones/1/rotation = Quaternion(0.36891848, -0.9180547, -0.06108891, 0.13169293)
+bones/1/rotation = Quaternion(0.38044617, -0.00069361134, -0.037295774, 0.9240505)
 bones/1/scale = Vector3(0.99999994, 1, 0.99999994)
 bones/2/name = "hand.L"
 bones/2/parent = 1
 bones/2/rest = Transform3D(0.8887344, -0.44919834, -0.09149836, 0.44376108, 0.8930747, -0.074119925, 0.115009405, 0.025269523, 0.99304295, 2.081506e-07, 4.9391966, -6.7055225e-08)
 bones/2/enabled = true
 bones/2/position = Vector3(2.081506e-07, 4.9391966, -6.7055225e-08)
-bones/2/rotation = Quaternion(0.030012952, -0.036618028, -0.16652894, 0.9848993)
+bones/2/rotation = Quaternion(0.02403662, -0.040790908, -0.0133787785, 0.99878895)
 bones/2/scale = Vector3(0.99999994, 1, 1)
 bones/3/name = "palm.01.L"
 bones/3/parent = 2
 bones/3/rest = Transform3D(5.8591362e-05, 0.4191913, 0.90789795, 0.10514579, 0.9028627, -0.41687325, -0.99445677, 0.09548608, -0.044023305, 0.49781823, 0.949962, 0.55178714)
 bones/3/enabled = true
-bones/3/position = Vector3(0.4978187, 0.94996226, 0.5517876)
+bones/3/position = Vector3(0.49781844, 0.9499621, 0.5517872)
 bones/3/rotation = Quaternion(0.18789572, 0.6976438, -0.11516879, 0.681707)
 bones/3/scale = Vector3(0.99999994, 1, 1)
 bones/4/name = "f_index.01.L"
@@ -6596,8 +6729,8 @@ bones/10/name = "palm.02.L"
 bones/10/parent = 2
 bones/10/rest = Transform3D(-0.069844596, 0.41402033, 0.90758413, 0.028786924, 0.9102635, -0.41302735, -0.9971423, -0.002721173, -0.07549538, 0.40068316, 1.0353308, 0.15357158)
 bones/10/enabled = true
-bones/10/position = Vector3(0.4006832, 1.0353315, 0.15357144)
-bones/10/rotation = Quaternion(0.1544241, 0.7168688, -0.14498767, 0.6642521)
+bones/10/position = Vector3(0.40068272, 1.035331, 0.1535715)
+bones/10/rotation = Quaternion(0.15442413, 0.7168688, -0.14498767, 0.6642521)
 bones/10/scale = Vector3(0.9999999, 0.9999999, 1)
 bones/11/name = "f_middle.01.L"
 bones/11/parent = 10
@@ -6624,8 +6757,8 @@ bones/14/name = "palm.03.L"
 bones/14/parent = 2
 bones/14/rest = Transform3D(-0.15041266, 0.40952054, 0.89981616, -0.05159194, 0.9056795, -0.42081282, -0.9872762, -0.109718874, -0.115097664, 0.3212613, 0.98716986, -0.214656)
 bones/14/enabled = true
-bones/14/position = Vector3(0.32126158, 0.9871699, -0.21465638)
-bones/14/rotation = Quaternion(0.12145555, 0.73674786, -0.18002479, 0.6403455)
+bones/14/position = Vector3(0.32126087, 0.9871699, -0.21465594)
+bones/14/rotation = Quaternion(0.121455535, 0.7367478, -0.18002482, 0.64034545)
 bones/14/scale = Vector3(1, 1.0000004, 1)
 bones/15/name = "f_ring.01.L"
 bones/15/parent = 14
@@ -6652,8 +6785,8 @@ bones/18/name = "palm.04.L"
 bones/18/parent = 2
 bones/18/rest = Transform3D(-0.26099107, 0.36658216, 0.8930292, -0.07224982, 0.91507953, -0.39674887, -0.96263367, -0.16806912, -0.21234207, 0.23427232, 0.8778789, -0.67103046)
 bones/18/enabled = true
-bones/18/position = Vector3(0.2342726, 0.8778793, -0.6710299)
-bones/18/rotation = Quaternion(0.09522547, 0.7727245, -0.18273586, 0.60036373)
+bones/18/position = Vector3(0.23427218, 0.8778787, -0.6710302)
+bones/18/rotation = Quaternion(0.095225506, 0.77272457, -0.18273588, 0.6003638)
 bones/18/scale = Vector3(0.99999994, 1.0000001, 1)
 bones/19/name = "f_pinky.01.L"
 bones/19/parent = 18
@@ -6667,17 +6800,18 @@ bones/20/parent = 19
 bones/20/rest = Transform3D(0.993014, -0.018467672, -0.11654366, 0.016305597, 0.9996773, -0.019477952, 0.116865754, 0.017441558, 0.9929947, -5.122274e-08, 0.78129965, 1.4156103e-07)
 bones/20/enabled = true
 bones/20/position = Vector3(-5.122274e-08, 0.78129965, 1.4156103e-07)
-bones/20/rotation = Quaternion(0.3961979, 0.0025834795, -0.092839144, 0.91345584)
+bones/20/rotation = Quaternion(0.39619797, 0.002583499, -0.09283914, 0.91345584)
 bones/20/scale = Vector3(1.0000001, 1, 1.0000001)
 bones/21/name = "f_pinky.03.L"
 bones/21/parent = 20
 bones/21/rest = Transform3D(0.9795563, -0.0012537475, 0.20116612, -0.009330866, 0.9986213, 0.051659428, -0.20095354, -0.05248038, 0.97819394, 8.940697e-08, 0.58930653, 2.9802322e-07)
 bones/21/enabled = true
 bones/21/position = Vector3(8.940697e-08, 0.58930653, 2.9802322e-07)
-bones/21/rotation = Quaternion(0.4009947, 0.09053717, -0.044998426, 0.9104842)
+bones/21/rotation = Quaternion(0.4009947, 0.0905372, -0.044998426, 0.9104842)
 bones/21/scale = Vector3(1, 1.0000001, 0.99999994)
 
 [node name="Cube_001" type="MeshInstance3D" parent="Neck/CameraBobber/rightarm/metarig/Skeleton3D" unique_id=1777422553]
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_gj75k")
 skin = SubResource("Skin_7ee20")
 skeleton = NodePath("..")
@@ -6777,7 +6911,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.65070164, 0.14226611, 0.54488, 0.5093659)
+bones/0/rotation = Quaternion(-0.6518704, 0.14101353, 0.54520565, 0.5078691)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -6928,6 +7062,7 @@ bones/21/rotation = Quaternion(0.2662189, 0.017478615, -0.09342232, 0.9592154)
 bones/21/scale = Vector3(1, 1.0000001, 0.99999994)
 
 [node name="Cube_001" type="MeshInstance3D" parent="Neck/CameraBobber/leftarm/metarig/Skeleton3D" unique_id=589512938]
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_ab05s")
 skin = SubResource("Skin_q8pjs")
 skeleton = NodePath("..")
