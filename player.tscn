@@ -7011,7 +7011,6 @@ libraries/ = SubResource("AnimationLibrary_xjgc0")
 
 [node name="leftarm" type="Node3D" parent="Neck/CameraBobber" unique_id=900577432]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.40833935, -0.5920622, 0)
-visible = false
 
 [node name="metarig" type="Node3D" parent="Neck/CameraBobber/leftarm" unique_id=2018492594]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56685257, 1.9468377, -2.4995673)
