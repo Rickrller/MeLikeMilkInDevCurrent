@@ -7641,6 +7641,7 @@ wait_time = 2.5
 
 [node name="DeliveryTime" type="AudioStreamPlayer" parent="." unique_id=405496095]
 stream = ExtResource("23_7lmhl")
+pitch_scale = 0.98
 parameters/looping = true
 
 [node name="peartoflash" type="TextureRect" parent="." unique_id=973778616]
