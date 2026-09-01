@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://cugl6nxdh3eke" path="res://levels/Level2.tres" id="4_ohj36"]
 [ext_resource type="Resource" uid="uid://bvutjsofo2all" path="res://levels/Level3.tres" id="5_gnc5d"]
 [ext_resource type="Resource" uid="uid://bqh0av67p3mqw" path="res://levels/Level4.tres" id="6_ohj36"]
+[ext_resource type="Resource" uid="uid://ryf3fyhu4jwo" path="res://levels/Level5.tres" id="7_en8wr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khnqj"]
 bg_color = Color(0.17283267, 0.17283267, 0.17283261, 1)
@@ -39,7 +40,7 @@ grow_vertical = 2
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("1_o86p3")
-levels = Array[ExtResource("2_xx8bb")]([ExtResource("3_lugvg"), ExtResource("4_ohj36"), ExtResource("5_gnc5d"), ExtResource("6_ohj36")])
+levels = Array[ExtResource("2_xx8bb")]([ExtResource("3_lugvg"), ExtResource("4_ohj36"), ExtResource("5_gnc5d"), ExtResource("6_ohj36"), ExtResource("7_en8wr")])
 
 [node name="Levels" type="Control" parent="CenterContainer/LevelSpinny" unique_id=1281063320]
 unique_name_in_owner = true

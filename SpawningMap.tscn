@@ -1,0 +1,400 @@
+[gd_scene format=3 uid="uid://u1f33o8ld6gg"]
+
+[ext_resource type="Shader" uid="uid://vcnano0bkesh" path="res://Sky.gdshader" id="1_mb4nt"]
+[ext_resource type="PackedScene" uid="uid://cxkemj5q5ftp1" path="res://player.tscn" id="1_wb3ya"]
+[ext_resource type="Texture2D" uid="uid://blwx5y33w6d0l" path="res://Clouds.png" id="2_4qh6p"]
+[ext_resource type="Material" uid="uid://cmptt1iar8hnh" path="res://GreenGreenGrass.tres" id="3_wb3ya"]
+[ext_resource type="PackedScene" uid="uid://dvj46lwegqasn" path="res://TabToPause.tscn" id="5_uv8hj"]
+[ext_resource type="Script" uid="uid://ioq6p8mmnuym" path="res://TestmapSpawner.gd" id="6_kfnkb"]
+[ext_resource type="Script" uid="uid://c3u236kh13ary" path="res://3DLabel.gd" id="7_m6oa6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uv8hj"]
+shader = ExtResource("1_mb4nt")
+shader_parameter/cloud_noise_texture = ExtResource("2_4qh6p")
+shader_parameter/sky_exposure = 1.0
+shader_parameter/sky_tint = Color(0.75686276, 1, 1, 1)
+shader_parameter/cloud_scale = 0.2
+shader_parameter/cloud_density = 0.0
+shader_parameter/cloud_softness = 1.0
+shader_parameter/detail_strength = 1.038000049305
+shader_parameter/cloud_contrast = 1.1670000316825
+shader_parameter/cloud_bright_color = Color(1, 1, 1, 1)
+shader_parameter/cloud_mid_color = Color(0.82, 0.84, 0.88, 1)
+shader_parameter/cloud_dark_color = Color(0.5, 0.54, 0.62, 1)
+shader_parameter/cloud_brightness = 1.15
+shader_parameter/atmosphere_blend = 0.22
+shader_parameter/atmosphere_horizon_strength = 1.0
+shader_parameter/atmosphere_zenith_strength = 2.0
+shader_parameter/cloud_direction = Vector2(0, -0.5)
+shader_parameter/cloud_speed = 0.01
+shader_parameter/cloud_evolution_speed = 0.01
+shader_parameter/edge_warp_strength = 0.08
+shader_parameter/edge_warp_scale = 3.0
+shader_parameter/horizon_fade = 0.18
+shader_parameter/zenith_density = 1.0
+shader_parameter/horizon_blend = 0.35
+shader_parameter/sun_direction = Vector3(0.4, 0.5, 0.2)
+shader_parameter/sun_color = Color(1, 0.96, 0.88, 1)
+shader_parameter/sun_size = 0.004
+shader_parameter/sun_intensity = 14.0
+shader_parameter/random_light_strength = 0.4
+shader_parameter/random_light_scale = 0.7
+
+[sub_resource type="Sky" id="Sky_76vxh"]
+sky_material = SubResource("ShaderMaterial_uv8hj")
+
+[sub_resource type="Environment" id="Environment_kfnkb"]
+background_mode = 2
+background_energy_multiplier = 0.6
+sky = SubResource("Sky_76vxh")
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 3
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.76247585, 0.78586566, 0.82225716, 1)
+fog_sun_scatter = 0.05
+fog_density = 1.0
+fog_aerial_perspective = 1.0
+fog_depth_begin = 0.0
+fog_depth_end = 244.4
+volumetric_fog_density = 0.001
+volumetric_fog_emission = Color(1, 1, 1, 1)
+volumetric_fog_detail_spread = 6.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m6oa6"]
+material = ExtResource("3_wb3ya")
+size = Vector2(500, 500)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8s5ug"]
+points = PackedVector3Array(253.96825, 3.9682539, 253.96825, -253.96825, -3.9682539, -253.96825, -253.96825, 3.9682539, -253.96825, 253.96825, -3.9682539, -253.96825, -253.96825, -3.9682539, 253.96825, -253.96825, 3.9682539, 253.96825, 253.96825, 3.9682539, -253.96825, 253.96825, -3.9682539, 253.96825)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8s5ug"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cdvji"]
+size = Vector3(3, 1, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3gdhn"]
+shading_mode = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ndvko"]
+material = SubResource("StandardMaterial3D_3gdhn")
+size = Vector3(3, 1, 3)
+
+[node name="SpawningMap" type="Node3D" unique_id=1708387267]
+
+[node name="Player" parent="." unique_id=2021393363 instance=ExtResource("1_wb3ya")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0451021, 0)
+
+[node name="Lighting" type="Node3D" parent="." unique_id=403240411]
+
+[node name="Environment" type="WorldEnvironment" parent="Lighting" unique_id=100564366]
+environment = SubResource("Environment_kfnkb")
+
+[node name="Sun" type="DirectionalLight3D" parent="Lighting" unique_id=868179449]
+transform = Transform3D(-1, 6.1817246e-08, -6.1817246e-08, 0, 0.7071068, 0.7071068, 8.742278e-08, 0.7071068, -0.7071068, 0, 0, 0)
+light_color = Color(0.9990608, 0.9999998, 0.95401555, 1)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+light_bake_mode = 0
+shadow_enabled = true
+shadow_normal_bias = 0.0
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=2003375245]
+transform = Transform3D(2.5097501, 0, 0, 0, 1.1987761, 0, 0, 0, 1.198776, -13.405105, 1.3284304, -28.45765)
+mesh = SubResource("PlaneMesh_m6oa6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1667597454]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1385460009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.8803277, 0)
+shape = SubResource("ConvexPolygonShape3D_8s5ug")
+
+[node name="TabToPause" parent="." unique_id=1612920135 instance=ExtResource("5_uv8hj")]
+
+[node name="Spawner" type="Node3D" parent="." unique_id=430425287]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.041, -8.731)
+script = ExtResource("6_kfnkb")
+applespawns = 1
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner" unique_id=126640787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, 0)
+shape = SubResource("BoxShape3D_8s5ug")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="Spawner" unique_id=1969280711]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Spawner/SpawnArea" unique_id=49056172]
+shape = SubResource("BoxShape3D_cdvji")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Indicator" type="MeshInstance3D" parent="Spawner/SpawnArea" unique_id=374792721]
+mesh = SubResource("BoxMesh_ndvko")
+
+[node name="Label3D" type="Label3D" parent="Spawner/SpawnArea/Indicator" unique_id=2011944961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2601523, 0)
+text = "Apple"
+font_size = 128
+script = ExtResource("7_m6oa6")
+
+[node name="Spawner6" type="Node3D" parent="." unique_id=35565209]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 1.041, -8.731)
+script = ExtResource("6_kfnkb")
+peartospawns = 1
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner6" unique_id=173706868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, 0)
+shape = SubResource("BoxShape3D_8s5ug")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="Spawner6" unique_id=2014088090]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Spawner6/SpawnArea" unique_id=571899499]
+shape = SubResource("BoxShape3D_cdvji")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Indicator" type="MeshInstance3D" parent="Spawner6/SpawnArea" unique_id=1363141092]
+mesh = SubResource("BoxMesh_ndvko")
+
+[node name="Label3D" type="Label3D" parent="Spawner6/SpawnArea/Indicator" unique_id=2064923491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2601523, 0)
+text = "Pearto"
+font_size = 128
+script = ExtResource("7_m6oa6")
+
+[node name="Spawner7" type="Node3D" parent="." unique_id=1074747451]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16, 1.041, -8.731)
+script = ExtResource("6_kfnkb")
+orangespawns = 1
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner7" unique_id=1444693635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, 0)
+shape = SubResource("BoxShape3D_8s5ug")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="Spawner7" unique_id=1424204558]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Spawner7/SpawnArea" unique_id=1837144730]
+shape = SubResource("BoxShape3D_cdvji")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Indicator" type="MeshInstance3D" parent="Spawner7/SpawnArea" unique_id=1427264385]
+mesh = SubResource("BoxMesh_ndvko")
+
+[node name="Label3D" type="Label3D" parent="Spawner7/SpawnArea/Indicator" unique_id=1239587544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2601523, 0)
+text = "Orange"
+font_size = 128
+script = ExtResource("7_m6oa6")
+
+[node name="Spawner8" type="Node3D" parent="." unique_id=991628372]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 24, 1.041, -8.731)
+script = ExtResource("6_kfnkb")
+lemonspawns = 1
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner8" unique_id=8204443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, 0)
+shape = SubResource("BoxShape3D_8s5ug")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="Spawner8" unique_id=1007815671]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Spawner8/SpawnArea" unique_id=1548305689]
+shape = SubResource("BoxShape3D_cdvji")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Indicator" type="MeshInstance3D" parent="Spawner8/SpawnArea" unique_id=748577532]
+mesh = SubResource("BoxMesh_ndvko")
+
+[node name="Label3D" type="Label3D" parent="Spawner8/SpawnArea/Indicator" unique_id=500762224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2601523, 0)
+text = "Lemon"
+font_size = 128
+script = ExtResource("7_m6oa6")
+
+[node name="Spawner9" type="Node3D" parent="." unique_id=871186948]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32, 1.041, -8.731)
+script = ExtResource("6_kfnkb")
+grapesspawns = 1
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner9" unique_id=1151761111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, 0)
+shape = SubResource("BoxShape3D_8s5ug")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="Spawner9" unique_id=2100592197]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Spawner9/SpawnArea" unique_id=1657872494]
+shape = SubResource("BoxShape3D_cdvji")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Indicator" type="MeshInstance3D" parent="Spawner9/SpawnArea" unique_id=898283002]
+mesh = SubResource("BoxMesh_ndvko")
+
+[node name="Label3D" type="Label3D" parent="Spawner9/SpawnArea/Indicator" unique_id=376512878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2601523, 0)
+text = "Grapes"
+font_size = 128
+script = ExtResource("7_m6oa6")
+
+[node name="Spawner10" type="Node3D" parent="." unique_id=1490313470]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 40, 1.041, -8.731)
+script = ExtResource("6_kfnkb")
+durianspawns = 1
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner10" unique_id=2100455639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, 0)
+shape = SubResource("BoxShape3D_8s5ug")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="Spawner10" unique_id=1750408068]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Spawner10/SpawnArea" unique_id=2086756965]
+shape = SubResource("BoxShape3D_cdvji")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Indicator" type="MeshInstance3D" parent="Spawner10/SpawnArea" unique_id=2000457728]
+mesh = SubResource("BoxMesh_ndvko")
+
+[node name="Label3D" type="Label3D" parent="Spawner10/SpawnArea/Indicator" unique_id=748248730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2601523, 0)
+text = "Durian"
+font_size = 128
+script = ExtResource("7_m6oa6")
+
+[node name="Spawner11" type="Node3D" parent="." unique_id=832750356]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -40, 1.041, -8.731)
+script = ExtResource("6_kfnkb")
+carrotspawns = 1
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner11" unique_id=625234814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, 0)
+shape = SubResource("BoxShape3D_8s5ug")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="Spawner11" unique_id=626949393]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Spawner11/SpawnArea" unique_id=456066300]
+shape = SubResource("BoxShape3D_cdvji")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Indicator" type="MeshInstance3D" parent="Spawner11/SpawnArea" unique_id=2086175206]
+mesh = SubResource("BoxMesh_ndvko")
+
+[node name="Label3D" type="Label3D" parent="Spawner11/SpawnArea/Indicator" unique_id=1675289086]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2601523, 0)
+text = "Carrot"
+font_size = 128
+script = ExtResource("7_m6oa6")
+
+[node name="Spawner2" type="Node3D" parent="." unique_id=1152603790]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8, 1.041, -8.731)
+script = ExtResource("6_kfnkb")
+aloespawns = 1
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner2" unique_id=1337718674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, 0)
+shape = SubResource("BoxShape3D_8s5ug")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="Spawner2" unique_id=1178435729]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Spawner2/SpawnArea" unique_id=124239566]
+shape = SubResource("BoxShape3D_cdvji")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Indicator" type="MeshInstance3D" parent="Spawner2/SpawnArea" unique_id=1189495093]
+mesh = SubResource("BoxMesh_ndvko")
+
+[node name="Label3D" type="Label3D" parent="Spawner2/SpawnArea/Indicator" unique_id=408644018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2601523, 0)
+text = "Aloe Vera"
+font_size = 128
+script = ExtResource("7_m6oa6")
+
+[node name="Spawner3" type="Node3D" parent="." unique_id=342312913]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16, 1.041, -8.731)
+script = ExtResource("6_kfnkb")
+coconutspawns = 1
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner3" unique_id=1790078042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, 0)
+shape = SubResource("BoxShape3D_8s5ug")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="Spawner3" unique_id=1044984444]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Spawner3/SpawnArea" unique_id=1692273456]
+shape = SubResource("BoxShape3D_cdvji")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Indicator" type="MeshInstance3D" parent="Spawner3/SpawnArea" unique_id=2125728201]
+mesh = SubResource("BoxMesh_ndvko")
+
+[node name="Label3D" type="Label3D" parent="Spawner3/SpawnArea/Indicator" unique_id=327167186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2601523, 0)
+text = "Coconut"
+font_size = 128
+script = ExtResource("7_m6oa6")
+
+[node name="Spawner4" type="Node3D" parent="." unique_id=2085275587]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -24, 1.041, -8.731)
+script = ExtResource("6_kfnkb")
+strawberryspawns = 1
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner4" unique_id=571348103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, 0)
+shape = SubResource("BoxShape3D_8s5ug")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="Spawner4" unique_id=1425530042]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Spawner4/SpawnArea" unique_id=386564756]
+shape = SubResource("BoxShape3D_cdvji")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Indicator" type="MeshInstance3D" parent="Spawner4/SpawnArea" unique_id=2081248219]
+mesh = SubResource("BoxMesh_ndvko")
+
+[node name="Label3D" type="Label3D" parent="Spawner4/SpawnArea/Indicator" unique_id=349707230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2601523, 0)
+text = "Strawberry"
+font_size = 128
+script = ExtResource("7_m6oa6")
+
+[node name="Spawner5" type="Node3D" parent="." unique_id=36135591]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -32, 1.041, -8.731)
+script = ExtResource("6_kfnkb")
+starfruitspawns = 1
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner5" unique_id=7477410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, 0)
+shape = SubResource("BoxShape3D_8s5ug")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="Spawner5" unique_id=576830552]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Spawner5/SpawnArea" unique_id=1969972789]
+shape = SubResource("BoxShape3D_cdvji")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Indicator" type="MeshInstance3D" parent="Spawner5/SpawnArea" unique_id=1371642261]
+mesh = SubResource("BoxMesh_ndvko")
+
+[node name="Label3D" type="Label3D" parent="Spawner5/SpawnArea/Indicator" unique_id=1769552413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2601523, 0)
+text = "Starfruit"
+font_size = 128
+script = ExtResource("7_m6oa6")
+
+[connection signal="body_entered" from="Spawner/SpawnArea" to="Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="Spawner6/SpawnArea" to="Spawner6" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="Spawner7/SpawnArea" to="Spawner7" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="Spawner8/SpawnArea" to="Spawner8" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="Spawner9/SpawnArea" to="Spawner9" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="Spawner10/SpawnArea" to="Spawner10" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="Spawner11/SpawnArea" to="Spawner11" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="Spawner2/SpawnArea" to="Spawner2" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="Spawner3/SpawnArea" to="Spawner3" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="Spawner4/SpawnArea" to="Spawner4" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="Spawner5/SpawnArea" to="Spawner5" method="_on_spawn_area_body_entered"]
