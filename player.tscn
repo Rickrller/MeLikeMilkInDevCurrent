@@ -13,6 +13,7 @@
 [ext_resource type="Curve" uid="uid://usxoi7pn8vpt" path="res://arms/new_curve.tres" id="6_b88wv"]
 [ext_resource type="Script" uid="uid://bodhfhh6vqhcu" path="res://empty.gd" id="6_nvl01"]
 [ext_resource type="Script" uid="uid://c8i40qpq777ri" path="res://anims.gd" id="6_pgbbb"]
+[ext_resource type="Script" uid="uid://dyvsb2magship" path="res://fruitmodel.gd" id="6_vl8ci"]
 [ext_resource type="Curve" uid="uid://boc561mdfdaa6" path="res://arms/slightly_back.tres" id="7_pgbbb"]
 [ext_resource type="Script" uid="uid://bxr6ugpifg17t" path="res://dashing.gd" id="7_u1c27"]
 [ext_resource type="Script" uid="uid://dklaourcj5ndh" path="res://walking.gd" id="8_op7ga"]
@@ -6455,7 +6456,8 @@ debug_shape_thickness = 4
 
 [node name="fruitmodel" type="MeshInstance3D" parent="Neck/CameraBobber" unique_id=608089341]
 unique_name_in_owner = true
-transform = Transform3D(-0.19000003, 0, -1.661033e-08, 0, 0.19000003, 0, 1.661033e-08, 0, -0.19000003, 0.35721657, 0, -1.0310476)
+transform = Transform3D(-0.19000003, 0, -1.661033e-08, 0, 0.19000003, 0, 1.661033e-08, 0, -0.19000003, 0.395, 0.085, -1.03)
+script = ExtResource("6_vl8ci")
 
 [node name="rightarm" type="Node3D" parent="Neck/CameraBobber" unique_id=1013801899]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.4878314, -0.5920622, 0)
@@ -6469,7 +6471,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.6522141, 0.14064428, 0.5453009, 0.50742775)
+bones/0/rotation = Quaternion(-0.65208775, 0.14078017, 0.5452659, 0.5075902)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -6719,7 +6721,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.6510619, 0.14188032, 0.54498065, 0.5089053)
+bones/0/rotation = Quaternion(-0.65208775, 0.14078017, 0.5452659, 0.5075902)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -7003,7 +7005,7 @@ mouse_filter = 2
 
 [node name="handstatemachine" type="Node" parent="." unique_id=47888081 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("5_bwjto")
-initial_state = NodePath("strawberry")
+initial_state = NodePath("empty")
 
 [node name="empty" type="Node" parent="handstatemachine" unique_id=213338977]
 script = ExtResource("6_nvl01")
