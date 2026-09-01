@@ -18231,22 +18231,25 @@ player = NodePath("../../Player")
 tracked_node = NodePath("../../PlayerChase")
 white_color = Color(1, 0.48235294, 0, 1)
 
-[node name="Obstacle" type="Node3D" parent="." unique_id=1870987287]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 325.33115, 0.73651505, 0.5500784)
+[node name="ObstacleSet1" type="Node3D" parent="." unique_id=1324958310]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 420.10403, -2.2258632, 0)
 
-[node name="FallenTree" type="CharacterBody3D" parent="Obstacle" unique_id=28403999 groups=["enemy", "fallentree"]]
+[node name="Obstacle" type="Node3D" parent="ObstacleSet1" unique_id=1870987287]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.5500743, 2.9623783, -94.77289)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet1/Obstacle" unique_id=28403999 groups=["enemy", "fallentree"]]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
 script = ExtResource("17_885ix")
 
-[node name="Trunk" type="MeshInstance3D" parent="Obstacle/FallenTree" unique_id=150882378]
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet1/Obstacle/FallenTree" unique_id=150882378]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
 mesh = SubResource("CylinderMesh_ecip2")
 
-[node name="Hitbox" type="CollisionShape3D" parent="Obstacle/FallenTree" unique_id=1020942175]
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet1/Obstacle/FallenTree" unique_id=1020942175]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, -0.0010986961)
 shape = SubResource("BoxShape3D_b3kxn")
 
-[node name="SmokeBig" type="CPUParticles3D" parent="Obstacle/FallenTree" unique_id=1340142633]
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet1/Obstacle/FallenTree" unique_id=1340142633]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
 emitting = false
 amount = 50
@@ -18263,7 +18266,7 @@ scale_amount_max = 20.0
 scale_amount_curve = SubResource("Curve_as1yy")
 color_ramp = SubResource("Gradient_t4tyx")
 
-[node name="SmokeBigFast" type="CPUParticles3D" parent="Obstacle/FallenTree" unique_id=653531122]
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet1/Obstacle/FallenTree" unique_id=653531122]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
 emitting = false
 amount = 50
@@ -18279,7 +18282,7 @@ scale_amount_max = 20.0
 scale_amount_curve = SubResource("Curve_o0irm")
 color_ramp = SubResource("Gradient_t4tyx")
 
-[node name="Pieces" type="CPUParticles3D" parent="Obstacle/FallenTree" unique_id=1514369786]
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet1/Obstacle/FallenTree" unique_id=1514369786]
 transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
 emitting = false
 amount = 35
@@ -18301,39 +18304,39 @@ scale_amount_min = 0.5
 scale_amount_curve = SubResource("Curve_c0p3d")
 color_ramp = SubResource("Gradient_b1nol")
 
-[node name="Spawner" type="Node3D" parent="Obstacle" unique_id=947046747]
+[node name="Spawner" type="Node3D" parent="ObstacleSet1/Obstacle" unique_id=947046747]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
 script = ExtResource("21_ecip2")
 applespawns = 4
 
-[node name="SpawnAreaShape" type="CollisionShape3D" parent="Obstacle/Spawner" unique_id=1135977779]
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet1/Obstacle/Spawner" unique_id=1135977779]
 transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
 shape = SubResource("BoxShape3D_lddpg")
 debug_color = Color(0.9882353, 0, 0, 1)
 
-[node name="SpawnArea" type="Area3D" parent="Obstacle/Spawner" unique_id=506951288]
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet1/Obstacle/Spawner" unique_id=506951288]
 
-[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Obstacle/Spawner/SpawnArea" unique_id=673056116]
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet1/Obstacle/Spawner/SpawnArea" unique_id=673056116]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
 shape = SubResource("BoxShape3D_8xvec")
 debug_color = Color(1, 1, 0, 0.41960785)
 
-[node name="Obstacle2" type="Node3D" parent="." unique_id=1597710449]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 268.40634, 0.73651505, 0.5500784)
+[node name="Obstacle2" type="Node3D" parent="ObstacleSet1" unique_id=1597710449]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.5500718, 2.9623783, -151.6977)
 
-[node name="FallenTree" type="CharacterBody3D" parent="Obstacle2" unique_id=860790257 groups=["enemy", "fallentree"]]
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet1/Obstacle2" unique_id=860790257 groups=["enemy", "fallentree"]]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
 script = ExtResource("17_885ix")
 
-[node name="Trunk" type="MeshInstance3D" parent="Obstacle2/FallenTree" unique_id=571633465]
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet1/Obstacle2/FallenTree" unique_id=571633465]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
 mesh = SubResource("CylinderMesh_ecip2")
 
-[node name="Hitbox" type="CollisionShape3D" parent="Obstacle2/FallenTree" unique_id=803001191]
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet1/Obstacle2/FallenTree" unique_id=803001191]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, -0.0010986961)
 shape = SubResource("BoxShape3D_b3kxn")
 
-[node name="SmokeBig" type="CPUParticles3D" parent="Obstacle2/FallenTree" unique_id=2057158777]
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet1/Obstacle2/FallenTree" unique_id=2057158777]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
 emitting = false
 amount = 50
@@ -18350,7 +18353,7 @@ scale_amount_max = 20.0
 scale_amount_curve = SubResource("Curve_as1yy")
 color_ramp = SubResource("Gradient_t4tyx")
 
-[node name="SmokeBigFast" type="CPUParticles3D" parent="Obstacle2/FallenTree" unique_id=763389635]
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet1/Obstacle2/FallenTree" unique_id=763389635]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
 emitting = false
 amount = 50
@@ -18366,7 +18369,7 @@ scale_amount_max = 20.0
 scale_amount_curve = SubResource("Curve_o0irm")
 color_ramp = SubResource("Gradient_t4tyx")
 
-[node name="Pieces" type="CPUParticles3D" parent="Obstacle2/FallenTree" unique_id=1822469641]
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet1/Obstacle2/FallenTree" unique_id=1822469641]
 transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
 emitting = false
 amount = 35
@@ -18388,39 +18391,39 @@ scale_amount_min = 0.5
 scale_amount_curve = SubResource("Curve_c0p3d")
 color_ramp = SubResource("Gradient_b1nol")
 
-[node name="Spawner" type="Node3D" parent="Obstacle2" unique_id=818004713]
+[node name="Spawner" type="Node3D" parent="ObstacleSet1/Obstacle2" unique_id=818004713]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
 script = ExtResource("21_ecip2")
 coconutspawns = 4
 
-[node name="SpawnAreaShape" type="CollisionShape3D" parent="Obstacle2/Spawner" unique_id=113933681]
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet1/Obstacle2/Spawner" unique_id=113933681]
 transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
 shape = SubResource("BoxShape3D_lddpg")
 debug_color = Color(0.9882353, 0, 0, 1)
 
-[node name="SpawnArea" type="Area3D" parent="Obstacle2/Spawner" unique_id=700423482]
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet1/Obstacle2/Spawner" unique_id=700423482]
 
-[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Obstacle2/Spawner/SpawnArea" unique_id=2029363969]
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet1/Obstacle2/Spawner/SpawnArea" unique_id=2029363969]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
 shape = SubResource("BoxShape3D_8xvec")
 debug_color = Color(1, 1, 0, 0.41960785)
 
-[node name="Obstacle3" type="Node3D" parent="." unique_id=1464705567]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 210.49641, 0.73651505, 0.5500784)
+[node name="Obstacle3" type="Node3D" parent="ObstacleSet1" unique_id=1464705567]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.5500692, 2.9623783, -209.60762)
 
-[node name="FallenTree" type="CharacterBody3D" parent="Obstacle3" unique_id=436437902 groups=["enemy", "fallentree"]]
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet1/Obstacle3" unique_id=436437902 groups=["enemy", "fallentree"]]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
 script = ExtResource("17_885ix")
 
-[node name="Trunk" type="MeshInstance3D" parent="Obstacle3/FallenTree" unique_id=837532757]
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet1/Obstacle3/FallenTree" unique_id=837532757]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
 mesh = SubResource("CylinderMesh_ecip2")
 
-[node name="Hitbox" type="CollisionShape3D" parent="Obstacle3/FallenTree" unique_id=1009337280]
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet1/Obstacle3/FallenTree" unique_id=1009337280]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, -0.0010986961)
 shape = SubResource("BoxShape3D_b3kxn")
 
-[node name="SmokeBig" type="CPUParticles3D" parent="Obstacle3/FallenTree" unique_id=1045280239]
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet1/Obstacle3/FallenTree" unique_id=1045280239]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
 emitting = false
 amount = 50
@@ -18437,7 +18440,7 @@ scale_amount_max = 20.0
 scale_amount_curve = SubResource("Curve_as1yy")
 color_ramp = SubResource("Gradient_t4tyx")
 
-[node name="SmokeBigFast" type="CPUParticles3D" parent="Obstacle3/FallenTree" unique_id=266292975]
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet1/Obstacle3/FallenTree" unique_id=266292975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
 emitting = false
 amount = 50
@@ -18453,7 +18456,7 @@ scale_amount_max = 20.0
 scale_amount_curve = SubResource("Curve_o0irm")
 color_ramp = SubResource("Gradient_t4tyx")
 
-[node name="Pieces" type="CPUParticles3D" parent="Obstacle3/FallenTree" unique_id=1858009839]
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet1/Obstacle3/FallenTree" unique_id=1858009839]
 transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
 emitting = false
 amount = 35
@@ -18475,39 +18478,39 @@ scale_amount_min = 0.5
 scale_amount_curve = SubResource("Curve_c0p3d")
 color_ramp = SubResource("Gradient_b1nol")
 
-[node name="Spawner" type="Node3D" parent="Obstacle3" unique_id=756079936]
+[node name="Spawner" type="Node3D" parent="ObstacleSet1/Obstacle3" unique_id=756079936]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
 script = ExtResource("21_ecip2")
 aloespawns = 4
 
-[node name="SpawnAreaShape" type="CollisionShape3D" parent="Obstacle3/Spawner" unique_id=1715912203]
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet1/Obstacle3/Spawner" unique_id=1715912203]
 transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
 shape = SubResource("BoxShape3D_lddpg")
 debug_color = Color(0.9882353, 0, 0, 1)
 
-[node name="SpawnArea" type="Area3D" parent="Obstacle3/Spawner" unique_id=1740385285]
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet1/Obstacle3/Spawner" unique_id=1740385285]
 
-[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Obstacle3/Spawner/SpawnArea" unique_id=98903926]
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet1/Obstacle3/Spawner/SpawnArea" unique_id=98903926]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
 shape = SubResource("BoxShape3D_8xvec")
 debug_color = Color(1, 1, 0, 0.41960785)
 
-[node name="Obstacle4" type="Node3D" parent="." unique_id=780384660]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 151.67743, 0.73651505, 0.5500784)
+[node name="Obstacle4" type="Node3D" parent="ObstacleSet1" unique_id=780384660]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.55006665, 2.9623783, -268.4266)
 
-[node name="FallenTree" type="CharacterBody3D" parent="Obstacle4" unique_id=1165440414 groups=["enemy", "fallentree"]]
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet1/Obstacle4" unique_id=1165440414 groups=["enemy", "fallentree"]]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
 script = ExtResource("17_885ix")
 
-[node name="Trunk" type="MeshInstance3D" parent="Obstacle4/FallenTree" unique_id=1746488005]
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet1/Obstacle4/FallenTree" unique_id=1746488005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
 mesh = SubResource("CylinderMesh_ecip2")
 
-[node name="Hitbox" type="CollisionShape3D" parent="Obstacle4/FallenTree" unique_id=1648753996]
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet1/Obstacle4/FallenTree" unique_id=1648753996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, -0.0010986961)
 shape = SubResource("BoxShape3D_b3kxn")
 
-[node name="SmokeBig" type="CPUParticles3D" parent="Obstacle4/FallenTree" unique_id=2103001777]
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet1/Obstacle4/FallenTree" unique_id=2103001777]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
 emitting = false
 amount = 50
@@ -18524,7 +18527,7 @@ scale_amount_max = 20.0
 scale_amount_curve = SubResource("Curve_as1yy")
 color_ramp = SubResource("Gradient_t4tyx")
 
-[node name="SmokeBigFast" type="CPUParticles3D" parent="Obstacle4/FallenTree" unique_id=164725148]
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet1/Obstacle4/FallenTree" unique_id=164725148]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
 emitting = false
 amount = 50
@@ -18540,7 +18543,7 @@ scale_amount_max = 20.0
 scale_amount_curve = SubResource("Curve_o0irm")
 color_ramp = SubResource("Gradient_t4tyx")
 
-[node name="Pieces" type="CPUParticles3D" parent="Obstacle4/FallenTree" unique_id=652193938]
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet1/Obstacle4/FallenTree" unique_id=652193938]
 transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
 emitting = false
 amount = 35
@@ -18562,39 +18565,39 @@ scale_amount_min = 0.5
 scale_amount_curve = SubResource("Curve_c0p3d")
 color_ramp = SubResource("Gradient_b1nol")
 
-[node name="Spawner" type="Node3D" parent="Obstacle4" unique_id=1348155559]
+[node name="Spawner" type="Node3D" parent="ObstacleSet1/Obstacle4" unique_id=1348155559]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
 script = ExtResource("21_ecip2")
 strawberryspawns = 4
 
-[node name="SpawnAreaShape" type="CollisionShape3D" parent="Obstacle4/Spawner" unique_id=619113587]
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet1/Obstacle4/Spawner" unique_id=619113587]
 transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
 shape = SubResource("BoxShape3D_lddpg")
 debug_color = Color(0.9882353, 0, 0, 1)
 
-[node name="SpawnArea" type="Area3D" parent="Obstacle4/Spawner" unique_id=819285961]
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet1/Obstacle4/Spawner" unique_id=819285961]
 
-[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Obstacle4/Spawner/SpawnArea" unique_id=510198276]
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet1/Obstacle4/Spawner/SpawnArea" unique_id=510198276]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
 shape = SubResource("BoxShape3D_8xvec")
 debug_color = Color(1, 1, 0, 0.41960785)
 
-[node name="Obstacle5" type="Node3D" parent="." unique_id=1954898794]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 93.00922, 0.73651505, 0.5500784)
+[node name="Obstacle5" type="Node3D" parent="ObstacleSet1" unique_id=1954898794]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.5500641, 2.9623783, -327.09482)
 
-[node name="FallenTree" type="CharacterBody3D" parent="Obstacle5" unique_id=927728256 groups=["enemy", "fallentree"]]
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet1/Obstacle5" unique_id=927728256 groups=["enemy", "fallentree"]]
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
 script = ExtResource("17_885ix")
 
-[node name="Trunk" type="MeshInstance3D" parent="Obstacle5/FallenTree" unique_id=1925639017]
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet1/Obstacle5/FallenTree" unique_id=1925639017]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
 mesh = SubResource("CylinderMesh_ecip2")
 
-[node name="Hitbox" type="CollisionShape3D" parent="Obstacle5/FallenTree" unique_id=1183623958]
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet1/Obstacle5/FallenTree" unique_id=1183623958]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, 0.064804055)
 shape = SubResource("BoxShape3D_b3kxn")
 
-[node name="SmokeBig" type="CPUParticles3D" parent="Obstacle5/FallenTree" unique_id=435773106]
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet1/Obstacle5/FallenTree" unique_id=435773106]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
 emitting = false
 amount = 50
@@ -18611,7 +18614,7 @@ scale_amount_max = 20.0
 scale_amount_curve = SubResource("Curve_as1yy")
 color_ramp = SubResource("Gradient_t4tyx")
 
-[node name="SmokeBigFast" type="CPUParticles3D" parent="Obstacle5/FallenTree" unique_id=1598763137]
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet1/Obstacle5/FallenTree" unique_id=1598763137]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
 emitting = false
 amount = 50
@@ -18627,7 +18630,7 @@ scale_amount_max = 20.0
 scale_amount_curve = SubResource("Curve_o0irm")
 color_ramp = SubResource("Gradient_t4tyx")
 
-[node name="Pieces" type="CPUParticles3D" parent="Obstacle5/FallenTree" unique_id=1814587973]
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet1/Obstacle5/FallenTree" unique_id=1814587973]
 transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
 emitting = false
 amount = 35
@@ -18649,19 +18652,1620 @@ scale_amount_min = 0.5
 scale_amount_curve = SubResource("Curve_c0p3d")
 color_ramp = SubResource("Gradient_b1nol")
 
-[node name="Spawner" type="Node3D" parent="Obstacle5" unique_id=644580797]
+[node name="Spawner" type="Node3D" parent="ObstacleSet1/Obstacle5" unique_id=644580797]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
 script = ExtResource("21_ecip2")
 orangespawns = 4
 
-[node name="SpawnAreaShape" type="CollisionShape3D" parent="Obstacle5/Spawner" unique_id=1776105503]
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet1/Obstacle5/Spawner" unique_id=1776105503]
 transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
 shape = SubResource("BoxShape3D_lddpg")
 debug_color = Color(0.9882353, 0, 0, 1)
 
-[node name="SpawnArea" type="Area3D" parent="Obstacle5/Spawner" unique_id=957809163]
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet1/Obstacle5/Spawner" unique_id=957809163]
 
-[node name="SpawnAreaDetector" type="CollisionShape3D" parent="Obstacle5/Spawner/SpawnArea" unique_id=1681004045]
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet1/Obstacle5/Spawner/SpawnArea" unique_id=1681004045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle6" type="Node3D" parent="ObstacleSet1" unique_id=916996853]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.5500616, 2.9623783, -384.51862)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet1/Obstacle6" unique_id=1471966967 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet1/Obstacle6/FallenTree" unique_id=1043041248]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet1/Obstacle6/FallenTree" unique_id=1545251540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, 0.064804055)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet1/Obstacle6/FallenTree" unique_id=1127720616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet1/Obstacle6/FallenTree" unique_id=471316688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet1/Obstacle6/FallenTree" unique_id=1753444769]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet1/Obstacle6" unique_id=1092206581]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+lemonspawns = 4
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet1/Obstacle6/Spawner" unique_id=1029702689]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet1/Obstacle6/Spawner" unique_id=1700747067]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet1/Obstacle6/Spawner/SpawnArea" unique_id=553970055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle7" type="Node3D" parent="ObstacleSet1" unique_id=2008064458]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.550059, 2.9623783, -443.42865)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet1/Obstacle7" unique_id=1389663354 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet1/Obstacle7/FallenTree" unique_id=179016962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet1/Obstacle7/FallenTree" unique_id=536129667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, 0.064804055)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet1/Obstacle7/FallenTree" unique_id=491541875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet1/Obstacle7/FallenTree" unique_id=1499786614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet1/Obstacle7/FallenTree" unique_id=1946482928]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet1/Obstacle7" unique_id=548672458]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+grapesspawns = 4
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet1/Obstacle7/Spawner" unique_id=49720120]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet1/Obstacle7/Spawner" unique_id=1713027798]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet1/Obstacle7/Spawner/SpawnArea" unique_id=550381156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle8" type="Node3D" parent="ObstacleSet1" unique_id=2060225827]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.5500565, 2.9623783, -500.98386)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet1/Obstacle8" unique_id=1955520265 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet1/Obstacle8/FallenTree" unique_id=480185613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet1/Obstacle8/FallenTree" unique_id=278848703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, 0.064804055)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet1/Obstacle8/FallenTree" unique_id=52732218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet1/Obstacle8/FallenTree" unique_id=1291232001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet1/Obstacle8/FallenTree" unique_id=1201257384]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet1/Obstacle8" unique_id=1053515002]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+durianspawns = 4
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet1/Obstacle8/Spawner" unique_id=1589679621]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet1/Obstacle8/Spawner" unique_id=2034772493]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet1/Obstacle8/Spawner/SpawnArea" unique_id=1306201430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle9" type="Node3D" parent="ObstacleSet1" unique_id=315634532]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.55005395, 2.9623783, -559.12866)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet1/Obstacle9" unique_id=1894050148 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet1/Obstacle9/FallenTree" unique_id=1685683113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet1/Obstacle9/FallenTree" unique_id=601741867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, 0.064804055)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet1/Obstacle9/FallenTree" unique_id=778223892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet1/Obstacle9/FallenTree" unique_id=913060661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet1/Obstacle9/FallenTree" unique_id=1491393062]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet1/Obstacle9" unique_id=175520036]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+carrotspawns = 4
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet1/Obstacle9/Spawner" unique_id=1016790929]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet1/Obstacle9/Spawner" unique_id=27866654]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet1/Obstacle9/Spawner/SpawnArea" unique_id=352495731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="ObstacleSet2" type="Node3D" parent="." unique_id=1631634995]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -102.2002, -2.2258632, 0)
+
+[node name="Obstacle" type="Node3D" parent="ObstacleSet2" unique_id=2021276085]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.5500743, 2.9623783, -94.77289)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet2/Obstacle" unique_id=188642659 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet2/Obstacle/FallenTree" unique_id=626822077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet2/Obstacle/FallenTree" unique_id=1974566247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, -0.0010986961)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet2/Obstacle/FallenTree" unique_id=852877787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet2/Obstacle/FallenTree" unique_id=697056719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet2/Obstacle/FallenTree" unique_id=1772948530]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet2/Obstacle" unique_id=1692318872]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+applespawns = 4
+aloespawns = 2
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet2/Obstacle/Spawner" unique_id=1025767101]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet2/Obstacle/Spawner" unique_id=1903548364]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet2/Obstacle/Spawner/SpawnArea" unique_id=548708832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle2" type="Node3D" parent="ObstacleSet2" unique_id=1615098348]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.5500718, 2.9623783, -151.6977)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet2/Obstacle2" unique_id=112470062 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet2/Obstacle2/FallenTree" unique_id=1976020141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet2/Obstacle2/FallenTree" unique_id=831976364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, -0.0010986961)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet2/Obstacle2/FallenTree" unique_id=706784867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet2/Obstacle2/FallenTree" unique_id=732176376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet2/Obstacle2/FallenTree" unique_id=697323849]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet2/Obstacle2" unique_id=1107622968]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+aloespawns = 2
+coconutspawns = 4
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet2/Obstacle2/Spawner" unique_id=383841663]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet2/Obstacle2/Spawner" unique_id=1961302432]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet2/Obstacle2/Spawner/SpawnArea" unique_id=1421781302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle3" type="Node3D" parent="ObstacleSet2" unique_id=895856863]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.5500692, 2.9623783, -209.60762)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet2/Obstacle3" unique_id=1435046292 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet2/Obstacle3/FallenTree" unique_id=1089775332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet2/Obstacle3/FallenTree" unique_id=1384934142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, -0.0010986961)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet2/Obstacle3/FallenTree" unique_id=2120641322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet2/Obstacle3/FallenTree" unique_id=860736538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet2/Obstacle3/FallenTree" unique_id=1274894255]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet2/Obstacle3" unique_id=589473729]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+aloespawns = 4
+coconutspawns = 2
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet2/Obstacle3/Spawner" unique_id=275581666]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet2/Obstacle3/Spawner" unique_id=1306232733]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet2/Obstacle3/Spawner/SpawnArea" unique_id=246165598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle4" type="Node3D" parent="ObstacleSet2" unique_id=1172742374]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.55006665, 2.9623783, -268.4266)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet2/Obstacle4" unique_id=1872211679 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet2/Obstacle4/FallenTree" unique_id=169497027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet2/Obstacle4/FallenTree" unique_id=175966709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, -0.0010986961)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet2/Obstacle4/FallenTree" unique_id=1398325053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet2/Obstacle4/FallenTree" unique_id=1185846504]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet2/Obstacle4/FallenTree" unique_id=85384372]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet2/Obstacle4" unique_id=95055197]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+coconutspawns = 2
+strawberryspawns = 4
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet2/Obstacle4/Spawner" unique_id=1138418788]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet2/Obstacle4/Spawner" unique_id=1396985041]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet2/Obstacle4/Spawner/SpawnArea" unique_id=2047870793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle5" type="Node3D" parent="ObstacleSet2" unique_id=1885012349]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.5500641, 2.9623783, -327.09482)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet2/Obstacle5" unique_id=1508730003 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet2/Obstacle5/FallenTree" unique_id=728636911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet2/Obstacle5/FallenTree" unique_id=452937070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, 0.064804055)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet2/Obstacle5/FallenTree" unique_id=1346574512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet2/Obstacle5/FallenTree" unique_id=2082834643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet2/Obstacle5/FallenTree" unique_id=470355627]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet2/Obstacle5" unique_id=2102931662]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+applespawns = 2
+coconutspawns = 2
+orangespawns = 4
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet2/Obstacle5/Spawner" unique_id=1472886113]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet2/Obstacle5/Spawner" unique_id=1201935440]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet2/Obstacle5/Spawner/SpawnArea" unique_id=1091054338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle6" type="Node3D" parent="ObstacleSet2" unique_id=425462809]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.5500616, 2.9623783, -384.51862)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet2/Obstacle6" unique_id=804746834 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet2/Obstacle6/FallenTree" unique_id=721626875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet2/Obstacle6/FallenTree" unique_id=1355915303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, 0.064804055)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet2/Obstacle6/FallenTree" unique_id=1006456417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet2/Obstacle6/FallenTree" unique_id=527423170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet2/Obstacle6/FallenTree" unique_id=1384227783]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet2/Obstacle6" unique_id=2014012500]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+applespawns = 2
+coconutspawns = 2
+lemonspawns = 4
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet2/Obstacle6/Spawner" unique_id=1878556773]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet2/Obstacle6/Spawner" unique_id=1824880389]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet2/Obstacle6/Spawner/SpawnArea" unique_id=1409448268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle7" type="Node3D" parent="ObstacleSet2" unique_id=976893191]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.550059, 2.9623783, -443.42865)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet2/Obstacle7" unique_id=262614427 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet2/Obstacle7/FallenTree" unique_id=334009251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet2/Obstacle7/FallenTree" unique_id=653711040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, 0.064804055)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet2/Obstacle7/FallenTree" unique_id=1548894359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet2/Obstacle7/FallenTree" unique_id=1142937373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet2/Obstacle7/FallenTree" unique_id=1460853263]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet2/Obstacle7" unique_id=1383294465]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+lemonspawns = 2
+grapesspawns = 4
+durianspawns = 2
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet2/Obstacle7/Spawner" unique_id=1790606953]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet2/Obstacle7/Spawner" unique_id=2105576310]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet2/Obstacle7/Spawner/SpawnArea" unique_id=2026850309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle8" type="Node3D" parent="ObstacleSet2" unique_id=38738613]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.5500565, 2.9623783, -500.98386)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet2/Obstacle8" unique_id=1704715682 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet2/Obstacle8/FallenTree" unique_id=648573864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet2/Obstacle8/FallenTree" unique_id=344474247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, 0.064804055)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet2/Obstacle8/FallenTree" unique_id=1899851733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet2/Obstacle8/FallenTree" unique_id=884704338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet2/Obstacle8/FallenTree" unique_id=63491006]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet2/Obstacle8" unique_id=794000294]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+orangespawns = 2
+grapesspawns = 2
+durianspawns = 4
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet2/Obstacle8/Spawner" unique_id=1856405159]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet2/Obstacle8/Spawner" unique_id=928371424]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet2/Obstacle8/Spawner/SpawnArea" unique_id=1010423247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle9" type="Node3D" parent="ObstacleSet2" unique_id=1119836731]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.55005395, 2.9623783, -559.12866)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet2/Obstacle9" unique_id=1197077561 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet2/Obstacle9/FallenTree" unique_id=2005574440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet2/Obstacle9/FallenTree" unique_id=1252227661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, 0.064804055)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet2/Obstacle9/FallenTree" unique_id=547203364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet2/Obstacle9/FallenTree" unique_id=1800332489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet2/Obstacle9/FallenTree" unique_id=1574457358]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet2/Obstacle9" unique_id=449599213]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+coconutspawns = 4
+carrotspawns = 4
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet2/Obstacle9/Spawner" unique_id=1156565482]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet2/Obstacle9/Spawner" unique_id=77079843]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet2/Obstacle9/Spawner/SpawnArea" unique_id=1908181117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle10" type="Node3D" parent="ObstacleSet2" unique_id=556569122]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.55005133, 2.9623783, -618.9647)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet2/Obstacle10" unique_id=1278880204 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet2/Obstacle10/FallenTree" unique_id=15525258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet2/Obstacle10/FallenTree" unique_id=381312526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, 0.064804055)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet2/Obstacle10/FallenTree" unique_id=1181485527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet2/Obstacle10/FallenTree" unique_id=1838406759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet2/Obstacle10/FallenTree" unique_id=40522954]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet2/Obstacle10" unique_id=440458347]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+applespawns = 2
+coconutspawns = 2
+strawberryspawns = 2
+lemonspawns = 4
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet2/Obstacle10/Spawner" unique_id=2038012524]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet2/Obstacle10/Spawner" unique_id=777986889]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet2/Obstacle10/Spawner/SpawnArea" unique_id=26772985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle11" type="Node3D" parent="ObstacleSet2" unique_id=2050358806]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.55004877, 2.9623783, -677.87476)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet2/Obstacle11" unique_id=1707261736 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet2/Obstacle11/FallenTree" unique_id=2027819751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet2/Obstacle11/FallenTree" unique_id=215674033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, 0.064804055)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet2/Obstacle11/FallenTree" unique_id=1290245260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet2/Obstacle11/FallenTree" unique_id=1827500681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet2/Obstacle11/FallenTree" unique_id=1777957534]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet2/Obstacle11" unique_id=1980605296]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+coconutspawns = 2
+lemonspawns = 2
+grapesspawns = 4
+durianspawns = 2
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet2/Obstacle11/Spawner" unique_id=1045738387]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet2/Obstacle11/Spawner" unique_id=1518217289]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet2/Obstacle11/Spawner/SpawnArea" unique_id=2117219086]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle12" type="Node3D" parent="ObstacleSet2" unique_id=1179179148]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.55004627, 2.9623783, -735.43)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet2/Obstacle12" unique_id=706757098 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet2/Obstacle12/FallenTree" unique_id=2016813618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet2/Obstacle12/FallenTree" unique_id=2066408889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, 0.064804055)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet2/Obstacle12/FallenTree" unique_id=1490610989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet2/Obstacle12/FallenTree" unique_id=278516085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet2/Obstacle12/FallenTree" unique_id=1937035127]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet2/Obstacle12" unique_id=1969321167]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+aloespawns = 2
+orangespawns = 2
+grapesspawns = 2
+durianspawns = 4
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet2/Obstacle12/Spawner" unique_id=1544338647]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet2/Obstacle12/Spawner" unique_id=718242684]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet2/Obstacle12/Spawner/SpawnArea" unique_id=2089994596]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle13" type="Node3D" parent="ObstacleSet2" unique_id=889309819]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.5500437, 2.9623783, -793.57477)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet2/Obstacle13" unique_id=1423980545 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet2/Obstacle13/FallenTree" unique_id=528861124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet2/Obstacle13/FallenTree" unique_id=237027335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, 0.064804055)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet2/Obstacle13/FallenTree" unique_id=328877223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet2/Obstacle13/FallenTree" unique_id=1143154762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet2/Obstacle13/FallenTree" unique_id=559591839]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet2/Obstacle13" unique_id=1046423078]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+applespawns = 2
+coconutspawns = 4
+carrotspawns = 4
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet2/Obstacle13/Spawner" unique_id=212261150]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet2/Obstacle13/Spawner" unique_id=1975099808]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet2/Obstacle13/Spawner/SpawnArea" unique_id=868176978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
+shape = SubResource("BoxShape3D_8xvec")
+debug_color = Color(1, 1, 0, 0.41960785)
+
+[node name="Obstacle14" type="Node3D" parent="ObstacleSet2" unique_id=1291973945]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -0.5500412, 2.9623783, -851.3219)
+
+[node name="FallenTree" type="CharacterBody3D" parent="ObstacleSet2/Obstacle14" unique_id=707938071 groups=["enemy", "fallentree"]]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, -29.031887, 0.71611744)
+script = ExtResource("17_885ix")
+
+[node name="Trunk" type="MeshInstance3D" parent="ObstacleSet2/Obstacle14/FallenTree" unique_id=45540719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8397627, 0)
+mesh = SubResource("CylinderMesh_ecip2")
+
+[node name="Hitbox" type="CollisionShape3D" parent="ObstacleSet2/Obstacle14/FallenTree" unique_id=968417802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014579773, 2.989609, 0.064804055)
+shape = SubResource("BoxShape3D_b3kxn")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="ObstacleSet2/Obstacle14/FallenTree" unique_id=893611455]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("QuadMesh_6pa2m")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_as1yy")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="SmokeBigFast" type="CPUParticles3D" parent="ObstacleSet2/Obstacle14/FallenTree" unique_id=222397510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7216854, -0.10467868)
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_as1yy")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 1, 0.2)
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_o0irm")
+color_ramp = SubResource("Gradient_t4tyx")
+
+[node name="Pieces" type="CPUParticles3D" parent="ObstacleSet2/Obstacle14/FallenTree" unique_id=2043327432]
+transform = Transform3D(1, 0, 0, 0, -0.06770192, 0.99770546, 0, -0.99770546, -0.06770192, 0, 1.7223413, -0.042484287)
+emitting = false
+amount = 35
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_t4tyx")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -4, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_c0p3d")
+color_ramp = SubResource("Gradient_b1nol")
+
+[node name="Spawner" type="Node3D" parent="ObstacleSet2/Obstacle14" unique_id=59130079]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.7466125, 0, 0)
+script = ExtResource("21_ecip2")
+applespawns = 2
+aloespawns = 2
+coconutspawns = 2
+strawberryspawns = 2
+orangespawns = 2
+lemonspawns = 2
+grapesspawns = 2
+durianspawns = 2
+carrotspawns = 2
+
+[node name="SpawnAreaShape" type="CollisionShape3D" parent="ObstacleSet2/Obstacle14/Spawner" unique_id=47762675]
+transform = Transform3D(1, 0, 0, 0, 1.0000154, 1.3783574e-07, 0, -1.3783574e-07, 1.0000154, -29.740753, 1.1672873, 1.4300609)
+shape = SubResource("BoxShape3D_lddpg")
+debug_color = Color(0.9882353, 0, 0, 1)
+
+[node name="SpawnArea" type="Area3D" parent="ObstacleSet2/Obstacle14/Spawner" unique_id=983355814]
+
+[node name="SpawnAreaDetector" type="CollisionShape3D" parent="ObstacleSet2/Obstacle14/Spawner/SpawnArea" unique_id=1410451567]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.18991, -2.0585022, -0.45878607)
 shape = SubResource("BoxShape3D_8xvec")
 debug_color = Color(1, 1, 0, 0.41960785)
@@ -18827,8 +20431,26 @@ unique_name_in_owner = true
 stream = ExtResource("29_8xvec")
 max_polyphony = 5
 
-[connection signal="body_entered" from="Obstacle/Spawner/SpawnArea" to="Obstacle/Spawner" method="_on_spawn_area_body_entered"]
-[connection signal="body_entered" from="Obstacle2/Spawner/SpawnArea" to="Obstacle2/Spawner" method="_on_spawn_area_body_entered"]
-[connection signal="body_entered" from="Obstacle3/Spawner/SpawnArea" to="Obstacle3/Spawner" method="_on_spawn_area_body_entered"]
-[connection signal="body_entered" from="Obstacle4/Spawner/SpawnArea" to="Obstacle4/Spawner" method="_on_spawn_area_body_entered"]
-[connection signal="body_entered" from="Obstacle5/Spawner/SpawnArea" to="Obstacle5/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet1/Obstacle/Spawner/SpawnArea" to="ObstacleSet1/Obstacle/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet1/Obstacle2/Spawner/SpawnArea" to="ObstacleSet1/Obstacle2/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet1/Obstacle3/Spawner/SpawnArea" to="ObstacleSet1/Obstacle3/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet1/Obstacle4/Spawner/SpawnArea" to="ObstacleSet1/Obstacle4/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet1/Obstacle5/Spawner/SpawnArea" to="ObstacleSet1/Obstacle5/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet1/Obstacle6/Spawner/SpawnArea" to="ObstacleSet1/Obstacle6/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet1/Obstacle7/Spawner/SpawnArea" to="ObstacleSet1/Obstacle7/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet1/Obstacle8/Spawner/SpawnArea" to="ObstacleSet1/Obstacle8/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet1/Obstacle9/Spawner/SpawnArea" to="ObstacleSet1/Obstacle9/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet2/Obstacle/Spawner/SpawnArea" to="ObstacleSet2/Obstacle/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet2/Obstacle2/Spawner/SpawnArea" to="ObstacleSet2/Obstacle2/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet2/Obstacle3/Spawner/SpawnArea" to="ObstacleSet2/Obstacle3/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet2/Obstacle4/Spawner/SpawnArea" to="ObstacleSet2/Obstacle4/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet2/Obstacle5/Spawner/SpawnArea" to="ObstacleSet2/Obstacle5/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet2/Obstacle6/Spawner/SpawnArea" to="ObstacleSet2/Obstacle6/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet2/Obstacle7/Spawner/SpawnArea" to="ObstacleSet2/Obstacle7/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet2/Obstacle8/Spawner/SpawnArea" to="ObstacleSet2/Obstacle8/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet2/Obstacle9/Spawner/SpawnArea" to="ObstacleSet2/Obstacle9/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet2/Obstacle10/Spawner/SpawnArea" to="ObstacleSet2/Obstacle10/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet2/Obstacle11/Spawner/SpawnArea" to="ObstacleSet2/Obstacle11/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet2/Obstacle12/Spawner/SpawnArea" to="ObstacleSet2/Obstacle12/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet2/Obstacle13/Spawner/SpawnArea" to="ObstacleSet2/Obstacle13/Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="ObstacleSet2/Obstacle14/Spawner/SpawnArea" to="ObstacleSet2/Obstacle14/Spawner" method="_on_spawn_area_body_entered"]
