@@ -64,6 +64,7 @@ mesh = SubResource("ArrayMesh_sum84")
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8280959)
 visible = false
+gravity_scale = 1.4
 script = ExtResource("3_sum84")
 
 [node name="model" type="MeshInstance3D" parent="grape" unique_id=1598344025]
@@ -88,6 +89,7 @@ disabled = true
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.82355213)
 visible = false
+gravity_scale = 1.4
 script = ExtResource("3_sum84")
 
 [node name="model" type="MeshInstance3D" parent="grape2" unique_id=84094979]
@@ -112,6 +114,7 @@ disabled = true
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8079233, 0, -0.01628846)
 visible = false
+gravity_scale = 1.4
 script = ExtResource("3_sum84")
 
 [node name="model" type="MeshInstance3D" parent="grape3" unique_id=1569480948]
@@ -136,6 +139,7 @@ disabled = true
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8536134, 0, -0.01628846)
 visible = false
+gravity_scale = 1.4
 script = ExtResource("3_sum84")
 
 [node name="model" type="MeshInstance3D" parent="grape4" unique_id=1330682106]

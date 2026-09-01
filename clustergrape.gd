@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 var check : bool = true
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") + 25
 @onready var childrenpos : Array = [$grape.global_position, $grape2.global_position, $grape3.global_position, $grape4.global_position]
 @onready var collisionshapes : Array = [$grape/CollisionShape3D, $grape2/CollisionShape3D, $grape3/CollisionShape3D, $grape4/CollisionShape3D, $grape2/AOE/CollisionShape3D, $grape3/AOE/CollisionShape3D, $grape4/AOE/CollisionShape3D]
 @onready var children : Array = [$grape, $grape2, $grape3, $grape4]

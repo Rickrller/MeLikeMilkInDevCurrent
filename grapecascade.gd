@@ -30,7 +30,9 @@ func eat():
 func ability():
 	$"..".locked = true
 	anims.start("grapes")
-	await animnode.animation_finished
+	#await animnode.animation_finished
+	
+func launch():
 	var instance = clustergrape.instantiate()
 
 	get_tree().current_scene.add_child(instance)
