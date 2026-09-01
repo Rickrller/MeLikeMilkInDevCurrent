@@ -24,5 +24,6 @@ func _on_body_entered(body: Node3D) -> void:
 			body.linear_velocity.z -= 50 * body.direction.z
 			body.linear_velocity.x -= 50 * body.direction.x
 		else:
-			body.velocity.y += 15
-			body.state = body.enemystate.blasted
+			if "state" in body:
+				body.velocity.y += 15
+				body.state = body.enemystate.blasted

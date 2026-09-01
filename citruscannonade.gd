@@ -13,6 +13,7 @@ func Enter():
 	print("orange fruit gotten")
 	var inst = orangemesh.instantiate()
 	fruitmesh.mesh = inst.mesh
+	inst.free()
 func Physics_Update(_delta: float):
 	if Input.is_action_just_pressed("ability") and not used:
 		ability()
