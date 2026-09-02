@@ -15,15 +15,17 @@ func Enter():
 	fruitmesh.mesh = inst.mesh
 	inst.free()
 func eat():
+	anims.start("idle")
 	nutrition.hydration += 35
 	nutrition.vitamins += 35
 	nutrition.minerals += 35
-	nutrition.protien += 35
-	nutrition.carbs += 35
+	nutrition.protien += 60
+	nutrition.carbs += 40
 	eventbus.Transistioned.emit(self, "empty")  
 	handstate.currentfruit = ""
 
 func ability():
+	
 	anims.start("crush")
 	player.speed += 10
 	player.basepunchCD /= 3
@@ -36,7 +38,7 @@ func ability():
 	await get_tree().create_timer(5).timeout
 	if handstate.normalalbedo == starcolor:
 		handstate.normalalbedo = Color(0.0, 0.0, 0.0, 0.0)
-	if rightarm.material_overlay.albedo_color == starcolor:
+	if rightarm.material_overlay.albedo_color == starcolor or leftarm.material_overlay.albedo_color == starcolor:
 		rightarm.material_overlay.albedo_color = Color(0.0, 0.0, 0.0, 0.0)
 		leftarm.material_overlay.albedo_color = Color(0.0, 0.0, 0.0, 0.0)
 		

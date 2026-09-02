@@ -7,7 +7,9 @@ var count
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var VFXInstance = VFX.instantiate()
-	get_tree().get_first_node_in_group("OrangeBeamPoint").add_child(VFXInstance)
+	var orangebeampoint = get_tree().get_first_node_in_group("OrangeBeamPoint")
+	if is_instance_valid(orangebeampoint) and not VFXInstance == null:
+		orangebeampoint.add_child(VFXInstance)
 	count = 60
 	if not damagemult:
 		damagemult = 1
@@ -23,7 +25,7 @@ func _physics_process(_delta: float) -> void:
 			
 			var hit = get_collider()
 			if hit != null and hit.is_in_group("enemy") and not hit.is_in_group("fallentree"):
-				hit.health -= 2 * damagemult
+				hit.health -= 4 * damagemult
 		count -= 1
 	else:
 		queue_free()

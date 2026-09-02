@@ -17,13 +17,15 @@ func Physics_Update(_delta: float):
 		ability()
 
 func eat():
-	nutrition.protien += 17
-	nutrition.minerals += 1
-	nutrition.vitamins += 15
+	nutrition.protien += 34
+	nutrition.minerals += 12
+	nutrition.vitamins += 18
+	nutrition.protien += 20
 	eventbus.Transistioned.emit(self, "empty")
 	handstate.currentfruit = ""
 
 func ability():
+	anims.start("idle")
 	anims.start("carrot")
 	var instance = tornado.instantiate()
 

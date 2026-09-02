@@ -15,6 +15,8 @@ func Physics_Update(_delta: float):
 
 
 func eat():
+	anims.start("idle")
+	nutrition.carbs += 40
 	nutrition.hydration += 50
 	nutrition.vitamins += 27
 	nutrition.minerals += 19

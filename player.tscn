@@ -6769,7 +6769,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.6509435, 0.14200708, 0.54494756, 0.50905675)
+bones/0/rotation = Quaternion(-0.652155, 0.14070784, 0.54528457, 0.5075037)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -7021,7 +7021,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.65179163, 0.14109796, 0.54518384, 0.5079702)
+bones/0/rotation = Quaternion(-0.652155, 0.14070784, 0.54528457, 0.5075037)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -7493,7 +7493,7 @@ value = 100.0
 show_percentage = false
 
 [node name="carbs" type="ProgressBar" parent="Panel/Control" unique_id=310810180]
-modulate = Color(18.892002, 18.892002, 18.892002, 1)
+modulate = Color(18.892157, 1.7074853, 18.892157, 1)
 layout_mode = 0
 offset_left = 986.0
 offset_top = 614.0
@@ -7637,7 +7637,7 @@ script = ExtResource("17_q13i1")
 script = ExtResource("17_op7ga")
 
 [node name="tick" type="Timer" parent="nutrition" unique_id=1476185504]
-wait_time = 2.5
+wait_time = 3.0
 
 [node name="DeliveryTime" type="AudioStreamPlayer" parent="." unique_id=405496095]
 stream = ExtResource("23_7lmhl")

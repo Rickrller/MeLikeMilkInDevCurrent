@@ -23,10 +23,10 @@ func _physics_process(_delta: float) -> void:
 	global_position = player.global_position
 
 func hit():
-	$ParryExplosion.playing = true
-	$ParryTwang.playing = true
-	$ParryExplosion.reparent(get_tree().current_scene)
-	$ParryTwang.reparent(get_tree().current_scene)
+	#$ParryExplosion.playing = true
+	#$ParryTwang.playing = true
+	#$ParryExplosion.reparent(get_tree().current_scene)
+	#$ParryTwang.reparent(get_tree().current_scene)
 	player.health += 8
 	if get_parent() != null:
 		get_parent().duration.wait_time += 0.2

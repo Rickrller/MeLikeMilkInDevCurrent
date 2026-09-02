@@ -18,10 +18,10 @@ func applyweakness(tier):
 		player.damagemult = 0.85
 	elif weakness == 2:
 		print("Weakness 2")
-		player.damagemult = 0.7
+		player.damagemult = 0.6
 	elif weakness == 1:
 		print("Weakness 1")
-		player.damagemult = 0.5
+		player.damagemult = 0.4
 	else:
 		return
 

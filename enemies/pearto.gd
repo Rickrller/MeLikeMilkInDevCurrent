@@ -60,6 +60,7 @@ func parried(d : bool, k : bool, v : bool):
 	
 	if not parryable:
 		return
+	
 	eventbus.landedparry.emit()
 	if d:
 		health -= eventbus.parrydamage
@@ -140,7 +141,7 @@ func windup(delta):
 		return
 	if attackready:
 		attackready = false
-		attack()
+		$AnimationPlayer.play("attack")
 		$Timer2.start()
 	
 	
@@ -151,11 +152,11 @@ func windup(delta):
 	move_and_slide()
 
 func attack():
+	$Teto.playing = true
 	
-	$AnimationPlayer.play("attack")
-	await get_tree().create_timer(0.1).timeout
-	parryable = true
-	await get_tree().create_timer(0.3).timeout
+	#await get_tree().create_timer(0.1).timeout
+	#parryable = true
+	#await get_tree().create_timer(0.3).timeout
 	parryable = false
 	if distancetoplayer > 7:
 		state = enemystate.everythingelse
@@ -195,3 +196,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		body.velocity.y += 20
 		body.health -= 10 * body.defense
 		
+
+func set_parryable(value : bool):
+	parryable = value

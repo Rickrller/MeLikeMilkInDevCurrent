@@ -13,9 +13,6 @@ var currentfruitmesh : ArrayMesh
 
 
 
-
-
-
 var states : Dictionary = {}
 var currentfruit = ""
 func _ready():

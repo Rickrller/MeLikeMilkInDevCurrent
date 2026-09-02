@@ -26,8 +26,10 @@ func ability():
 	handstate.currentfruit = ""
 
 func eat():
+	anims.start("idle")
 	nutrition.hydration += 10
-	nutrition.carbs += 12
+	nutrition.carbs += 60
 	nutrition.vitamins += 10
+	nutrition.protien += 30
 	eventbus.Transistioned.emit(self, "empty")
 	handstate.currentfruit = ""

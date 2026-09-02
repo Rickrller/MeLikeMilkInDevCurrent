@@ -1,13 +1,14 @@
 [gd_scene format=4 uid="uid://bv3ddxucnf4rq"]
 
 [ext_resource type="Script" uid="uid://4xhepwaq86rq" path="res://enemies/strawberry.gd" id="1_7v7hx"]
-[ext_resource type="Texture2D" uid="uid://cpxrbbrb32wn6" path="res://models/strawberry_strawberryv2.png" id="3_xh2pe"]
+[ext_resource type="Texture2D" uid="uid://7yfhmdvtg6pd" path="res://models/strawberry_strawberryv2.png" id="3_xh2pe"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e8kwr"]
 radius = 0.8843032
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7v7hx"]
 transparency = 1
+albedo_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvm1h"]
 resource_name = "Material.001"
@@ -79,6 +80,26 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.36602202, 1.8660661, 0.40612632, 0.59460354, 1),
 "update": 0,
 "values": [Quaternion(0.70710677, -3.090862e-08, 0.70710677, -3.090862e-08), Quaternion(0.7047918, -0.057170533, 0.70479184, -0.057170533), Quaternion(0.7013549, 0.090007365, 0.70135486, 0.09000738), Quaternion(0.66668403, 0.2356531, 0.66668403, 0.23565315), Quaternion(0.70710677, -3.090862e-08, 0.70710677, -3.090862e-08)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.36666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [true],
+"method": &"set_parryable"
+}, {
+"args": [],
+"method": &"attack"
+}, {
+"args": [false],
+"method": &"set_parryable"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xh2pe"]

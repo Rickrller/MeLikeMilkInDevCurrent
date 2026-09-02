@@ -1,6 +1,6 @@
 extends Node
 
-var parrydamage = 25
+var parrydamage = 35
 
 #class_name multistate
 @warning_ignore("unused_signal")

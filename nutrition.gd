@@ -1,9 +1,9 @@
 extends Node
-@export var protien : float = 100 #attack
-@export var minerals : float = 100 #defense
-@export var vitamins : float = 100 #stamina
-@export var carbs : float = 100 #movement speed
-@export var hydration : float = 100 #regen
+@export var protien : float = 110 #attack
+@export var minerals : float = 110 #defense
+@export var vitamins : float = 110 #stamina
+@export var carbs : float = 110 #movement speed
+@export var hydration : float = 110 #regen
 var max_value = 125.0
 @onready var player = $".."
 @onready var effects = $"../effects"

@@ -9,6 +9,11 @@ func _ready() -> void:
 	linear_velocity.y += 10
 	linear_velocity.x = -dir.x * 3.5
 	linear_velocity.z = -dir.z * 3.5
+	await get_tree().create_timer(2).timeout
+	var gamecrash = load("res://clustergrape.tscn")
+	var inst = gamecrash.instantiate()
+	get_tree().current_scene.add_child(inst)
+	inst.global_position = global_position
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	await get_tree().create_timer(1.5).timeout
@@ -18,6 +23,7 @@ func _process(_delta: float) -> void:
 	AOE.monitoring = true
 	await get_tree().physics_frame
 	await get_tree().physics_frame
+	
 	queue_free()
 
 

@@ -52,6 +52,7 @@ shadow_mesh = SubResource("ArrayMesh_uxg2b")
 gravity_scale = 0.0
 script = ExtResource("1_2t4jl")
 damage = 15
+health = 40
 givenfruit = "carrot"
 
 [node name="EnemyHitbox" type="CollisionShape3D" parent="." unique_id=287524774]

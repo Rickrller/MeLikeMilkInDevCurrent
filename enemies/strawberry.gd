@@ -185,7 +185,7 @@ func windup(delta):
 		return
 	if attackready:
 		attackready = false
-		attack()
+		$AnimationPlayer.play("attack")
 		$Timer2.start()
 	
 	
@@ -197,11 +197,11 @@ func windup(delta):
 
 func attack():
 	
-	$AnimationPlayer.play("attack")
-	await get_tree().create_timer(0.1).timeout
-	parryable = true
-	await get_tree().create_timer(0.3).timeout
-	parryable = false
+	
+	#await get_tree().create_timer(0.1).timeout
+	#parryable = true
+	#await get_tree().create_timer(0.3).timeout
+	#parryable = false
 	if distancetoplayer > 7:
 		state = enemystate.everythingelse
 		$AnimationPlayer.stop()
@@ -247,3 +247,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		body.velocity.y += 20
 		body.health -= 5 * body.defense
+
+
+func set_parryable(value : bool):
+	parryable = value

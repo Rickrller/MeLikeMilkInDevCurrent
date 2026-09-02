@@ -31,9 +31,11 @@ func Physics_Update(_delta: float):
 			
 
 func eat():
-	nutrition.hydration += 10
-	nutrition.carbs += 12
-	nutrition.vitamins += 10
+	anims.start("idle")
+	nutrition.hydration += 24
+	nutrition.carbs += 70
+	nutrition.vitamins += 45
+	nutrition.protien += 12
 	eventbus.Transistioned.emit(self, "empty")
 	handstate.currentfruit = ""
 

@@ -36,10 +36,11 @@ func ability():
 	handstate.currentfruit = ""
 	rightarm.material_overlay.albedo_color = handstate.normalalbedo
 func eat():
+	anims.start("idle")
 	nutrition.hydration += 10
-	nutrition.minerals += 2
-	nutrition.carbs += 5
-	nutrition.vitamins += 15
-	nutrition.minerals += 5
+	nutrition.minerals += 30
+	nutrition.carbs += 12
+	nutrition.vitamins += 40
+	nutrition.minerals += 12
 	eventbus.Transistioned.emit(self, "empty")
 	handstate.currentfruit = ""

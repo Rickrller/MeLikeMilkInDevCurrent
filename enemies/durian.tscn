@@ -74,6 +74,17 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_xh2pe"]
 resource_name = "attack"
@@ -102,6 +113,26 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0.2), Vector3(0, 0, -0.19567762), Vector3(0, -0.17251675, -0.64285034), Vector3(0, 0, 0)]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [true],
+"method": &"set_parryable"
+}, {
+"args": [],
+"method": &"attack"
+}, {
+"args": [false],
+"method": &"set_parryable"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ohh1l"]
 _data = {
@@ -112,7 +143,7 @@ _data = {
 [node name="Durian" type="CharacterBody3D" unique_id=751157666 groups=["enemy", "hasattack"]]
 script = ExtResource("1_ohh1l")
 damage = 7.0
-health = 28.0
+health = 40.0
 speed = 14.0
 pouncerange = 20.0
 pounceforce = 20.0
@@ -135,7 +166,7 @@ wait_time = 12.0
 one_shot = true
 
 [node name="model" type="MeshInstance3D" parent="." unique_id=1637496067]
-transform = Transform3D(-0.0028613834, 0, 0.9999972, 0, 1, 0, -0.99999696, 0, -0.002861384, 0, 0, 0)
+transform = Transform3D(-0.0028613836, 0, 0.9999973, 0, 1, 0, -0.9999971, 0, -0.0028613843, 0, 0, 0)
 rotation_edit_mode = 1
 material_overlay = SubResource("StandardMaterial3D_ohh1l")
 mesh = SubResource("ArrayMesh_8jp7a")

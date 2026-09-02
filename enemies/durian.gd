@@ -178,7 +178,7 @@ func windup(delta):
 		return
 	if attackready:
 		attackready = false
-		attack()
+		$AnimationPlayer.play("attack")
 		$Timer2.start()
 	
 	
@@ -190,11 +190,11 @@ func windup(delta):
 
 func attack():
 	
-	$AnimationPlayer.play("attack")
-	await get_tree().create_timer(0.1).timeout
-	parryable = true
-	await get_tree().create_timer(0.3).timeout
-	parryable = false
+	
+	#await get_tree().create_timer(0.1).timeout
+	#parryable = true
+	#await get_tree().create_timer(0.3).timeout
+
 	if distancetoplayer > 7:
 		state = enemystate.everythingelse
 		$AnimationPlayer.stop()
@@ -244,3 +244,6 @@ func fart():
 func _on_smokecooldown_timeout() -> void:
 	fart()
 	$smokecooldown.start()
+
+func set_parryable(value : bool):
+	parryable = value

@@ -102,6 +102,26 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0.12622833), Vector3(0, 0, -0.18327081), Vector3(0, 0, -0.41539517), Vector3(0, 0, 0)]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [true],
+"method": &"set_parryable"
+}, {
+"args": [],
+"method": &"attack"
+}, {
+"args": [false],
+"method": &"set_parryable"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h03xd"]
 _data = {

@@ -61,7 +61,7 @@ func parried(_d : bool, _k : bool, _v : bool):
 		eventbus.parrykill.emit()
 		eventbus.grantitem.emit(givenfruit)
 	eventbus.landedparry.emit()
-	
+
 	
 	
 #	look_at(player.global_position)
@@ -84,7 +84,7 @@ func checkforplayer():
 		state = Estate.idle
 		linear_damp = 1
 		angular_damp = 1
-		if distancetoplayer <= 7:
+		if distancetoplayer <= 6:
 			model.material_overlay.albedo_color = parrycolor
 		else:
 			model.material_overlay.albedo_color = normal_albedo
