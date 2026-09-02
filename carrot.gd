@@ -13,7 +13,7 @@ const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
 @export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
 @onready var model = $model
 @export var distancetoplayer : float
-
+@onready var DeathVFX = load("res://fruit_death.tscn")
 func _ready() -> void:
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
@@ -38,6 +38,10 @@ func _physics_process(_delta: float) -> void:
 		if Engine.get_frames_drawn() % 2 == 0:
 			distancetoplayer = global_position.distance_to(player.global_position)
 		if health <= 0:
+			var DeathVFXInst = DeathVFX.instantiate()
+			DeathVFXInst.global_transform = global_transform
+			get_tree().root.add_child(DeathVFXInst)
+			KillCounter.register_kill()
 			queue_free()
 		#if Engine.get_frames_drawn() % 2 == 0:
 		if distancetoplayer <= 7:

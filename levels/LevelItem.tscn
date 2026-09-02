@@ -54,9 +54,10 @@ script = ExtResource("3_fntrm")
 [node name="Icon" type="TextureRect" parent="." unique_id=1584848254]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 23.999998
+offset_left = 25.0
 offset_top = 23.0
-offset_right = 1524.0
+offset_right = 1525.0
 offset_bottom = 1523.0
 scale = Vector2(0.1, 0.1)
-expand_mode = 3
+expand_mode = 1
+stretch_mode = 5

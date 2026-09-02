@@ -17,6 +17,7 @@ func Physics_Update(_delta: float):
 		ability()
 
 func eat():
+	$"../FruitEat".playing = true
 	nutrition.protien += 34
 	nutrition.minerals += 12
 	nutrition.vitamins += 18

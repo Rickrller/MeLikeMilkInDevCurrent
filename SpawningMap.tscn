@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://blwx5y33w6d0l" path="res://Clouds.png" id="2_4qh6p"]
 [ext_resource type="Material" uid="uid://cmptt1iar8hnh" path="res://GreenGreenGrass.tres" id="3_wb3ya"]
 [ext_resource type="PackedScene" uid="uid://dvj46lwegqasn" path="res://TabToPause.tscn" id="5_uv8hj"]
-[ext_resource type="Script" path="res://TestmapSpawner.gd" id="6_kfnkb"]
-[ext_resource type="Script" path="res://3DLabel.gd" id="7_m6oa6"]
+[ext_resource type="Script" uid="uid://ioq6p8mmnuym" path="res://TestmapSpawner.gd" id="6_kfnkb"]
+[ext_resource type="Script" uid="uid://c3u236kh13ary" path="res://3DLabel.gd" id="7_m6oa6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uv8hj"]
 shader = ExtResource("1_mb4nt")

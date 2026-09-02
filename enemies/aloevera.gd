@@ -17,6 +17,7 @@ enum enemystate {everythingelse, attacking}
 const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
 @export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
 @onready var model = $model
+@onready var DeathVFX = load("res://fruit_death.tscn")
 func _ready() -> void:
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
@@ -28,6 +29,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if health <= 0:
 		KillCounter.register_kill()
+		var DeathVFXInst = DeathVFX.instantiate()
+		DeathVFXInst.global_transform = global_transform
+		get_tree().root.add_child(DeathVFXInst)
 		parried(true, false, false)
 	if Engine.get_frames_drawn() % 5 == 0: #optimization shii
 		distancetoplayer = global_position.distance_to(player.global_position)
@@ -84,6 +88,10 @@ func _physics_process(delta: float) -> void:
 
 	
 func parried(_d : bool, _k : bool, _v : bool):
+	KillCounter.register_kill()
+	var DeathVFXInst = DeathVFX.instantiate()
+	DeathVFXInst.global_transform = global_transform
+	get_tree().root.add_child(DeathVFXInst)
 	eventbus.landedparry.emit()
 	eventbus.parrykill.emit()
 	eventbus.grantitem.emit(givenfruit)

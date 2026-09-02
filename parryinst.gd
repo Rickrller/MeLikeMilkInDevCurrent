@@ -3,6 +3,7 @@ extends Area3D
 @export var player : Node3D
 var damagemult = 1.0
 var pos
+@onready var Parrysound = load("res://parrysound.tscn")
 
 
 func _ready() -> void:
@@ -22,11 +23,9 @@ func _on_body_entered(body: Node3D) -> void:
 func _physics_process(_delta: float) -> void:
 	global_position = player.global_position
 
-func hit():
-	#$ParryExplosion.playing = true
-	#$ParryTwang.playing = true
-	#$ParryExplosion.reparent(get_tree().current_scene)
-	#$ParryTwang.reparent(get_tree().current_scene)
+func hit(): 
+	var ParrysoundInstance = Parrysound.instantiate()
+	get_tree().root.add_child(ParrysoundInstance)
 	player.health += 8
 	if get_parent() != null:
 		get_parent().duration.wait_time += 0.2

@@ -1,5 +1,5 @@
 extends CharacterBody3D
-@export var health : float = 150
+@export var health : float = 200
 @onready var player: CharacterBody3D = null
 var has_exploded: bool = false
 

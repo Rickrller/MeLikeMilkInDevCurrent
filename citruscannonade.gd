@@ -36,6 +36,7 @@ func ability():
 	handstate.currentfruit = ""
 	rightarm.material_overlay.albedo_color = handstate.normalalbedo
 func eat():
+	$"../FruitEat".playing = true
 	anims.start("idle")
 	nutrition.hydration += 10
 	nutrition.minerals += 30

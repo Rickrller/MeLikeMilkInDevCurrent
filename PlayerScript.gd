@@ -117,7 +117,8 @@ func _physics_process(delta):
 		eventbus.switch_activity.emit("idle", "active")
 	
 	if health <= 0:
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://GameMenu.tscn")
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		$Panel/Health.text = "Health: " + str(health)
 		$Panel/parryavailable.text = "Parry Ready: " + str(!parrycooldown)

@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://cknxkcdlf0md1"]
 
 [ext_resource type="Script" uid="uid://in70xok2q5v1" path="res://parryinst.gd" id="1_ymktk"]
-[ext_resource type="AudioStream" uid="uid://h5qaq3sqwsx1" path="res://ParryExplosion.mp3" id="2_qv6yf"]
-[ext_resource type="AudioStream" uid="uid://m6lpkstg6dj0" path="res://ParryTwang.mp3" id="3_pl2ni"]
-[ext_resource type="Script" uid="uid://tiwfca7aw41l" path="res://SoundCleanup.gd" id="3_we8jr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xspql"]
 radius = 1.5
@@ -12,17 +9,8 @@ height = 3.0
 [node name="parry" type="Area3D" unique_id=405881900]
 script = ExtResource("1_ymktk")
 
-[node name="ParryExplosion" type="AudioStreamPlayer" parent="." unique_id=349007095]
-stream = ExtResource("2_qv6yf")
-volume_db = -10.0
-script = ExtResource("3_we8jr")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1099496042]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_xspql")
-
-[node name="ParryTwang" type="AudioStreamPlayer" parent="." unique_id=1097243497]
-stream = ExtResource("3_pl2ni")
-volume_db = -8.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

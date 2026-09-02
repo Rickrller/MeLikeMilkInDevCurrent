@@ -22,6 +22,7 @@ const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
 signal defeated
 @onready var model = $model
 @onready var anims = $AnimationPlayer
+@onready var DeathVFX = load("res://fruit_death.tscn")
 func _ready() -> void:
 	model.material_overlay.albedo_color = normal_albedo
 	var players = get_tree().get_nodes_in_group("player")
@@ -50,6 +51,9 @@ func _physics_process(delta: float) -> void:
 		#eventbus.grantitem.emit(givenfruit)
 		defeated.emit()
 		KillCounter.register_kill()
+		var DeathVFXInst = DeathVFX.instantiate()
+		DeathVFXInst.global_transform = global_transform
+		get_tree().root.add_child(DeathVFXInst)
 		queue_free()
 	if not is_on_floor():
 		velocity.y -= fallspeed * delta

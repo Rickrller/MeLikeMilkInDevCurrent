@@ -15,6 +15,7 @@ func Enter():
 	fruitmesh.mesh = inst.mesh
 	inst.free()
 func eat():
+	$"../FruitEat".playing = true
 	anims.start("idle")
 	nutrition.hydration += 35
 	nutrition.vitamins += 35

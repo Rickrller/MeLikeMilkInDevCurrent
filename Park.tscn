@@ -21,9 +21,12 @@
 [ext_resource type="Script" uid="uid://qjqx8hdoa401" path="res://ExitTutorial.gd" id="19_347nj"]
 [ext_resource type="PackedScene" uid="uid://c6s1xq4cb4280" path="res://milkcarton.glb" id="20_00nt1"]
 [ext_resource type="PackedScene" uid="uid://dvj46lwegqasn" path="res://TabToPause.tscn" id="21_00nt1"]
+[ext_resource type="Script" uid="uid://3jm6dskqiqkv" path="res://milkcarton.gd" id="21_g5n6q"]
 [ext_resource type="Script" uid="uid://p4ff77m780ep" path="res://EndGateCollider.gd" id="22_xmiex"]
 [ext_resource type="Script" uid="uid://ccay4d4u8ljka" path="res://spawner_test.gd" id="23_kxs3x"]
 [ext_resource type="AudioStream" uid="uid://dlurhsrpqylkp" path="res://Milk_Rush.mp3" id="24_kxs3x"]
+[ext_resource type="Script" uid="uid://bf6x0ouhao4q1" path="res://MoreKillsNeeded.gd" id="25_pfjva"]
+[ext_resource type="FontFile" uid="uid://d20rfwk5g6tyt" path="res://Freedom-10eM.ttf" id="26_g5n6q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uqbd5"]
 albedo_color = Color(0.6647001, 0.37613204, 0.3757312, 1)
@@ -1563,6 +1566,14 @@ size = Vector3(59.301407, 1.0224531, 65.99353)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g5n6q"]
 size = Vector3(71.01953, 50, 78.54086)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jdvek"]
+size = Vector3(6.5401, 48.402344, 128.65433)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bf28v"]
+font = ExtResource("26_g5n6q")
+font_size = 40
+font_color = Color(1, 0, 0, 1)
 
 [node name="Node3D" type="Node3D" unique_id=418822707]
 
@@ -7670,6 +7681,7 @@ shape = SubResource("BoxShape3D_y25ee")
 
 [node name="milkcarton" parent="End" unique_id=1628146384 instance=ExtResource("20_00nt1")]
 transform = Transform3D(7.1549286e-09, 0, -0.6, 0, 0.6, 0, 0.6, 0, 7.1549286e-09, 0, 0, 0)
+script = ExtResource("21_g5n6q")
 
 [node name="TabToPause" parent="." unique_id=1612920135 instance=ExtResource("21_00nt1")]
 
@@ -7684,7 +7696,16 @@ script = ExtResource("22_xmiex")
 [node name="Spawner" type="Node3D" parent="." unique_id=857649634]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.26762, 5.988717, 0.4118271)
 script = ExtResource("23_kxs3x")
-applespawns = 20
+applespawns = 4
+aloespawns = 3
+coconutspawns = 4
+strawberryspawns = 2
+starfruitspawns = 2
+orangespawns = 4
+lemonspawns = 4
+grapesspawns = 6
+durianspawns = 3
+carrotspawns = 4
 
 [node name="SpawnAreaShape" type="CollisionShape3D" parent="Spawner" unique_id=714057899]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.040062, -2.3313618, -2.046692)
@@ -7704,5 +7725,26 @@ volume_db = -3.0
 autoplay = true
 parameters/looping = true
 
+[node name="MoreKillsNeeded" type="Area3D" parent="." unique_id=1542697053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.59974, 0, 0)
+script = ExtResource("25_pfjva")
+
+[node name="EndGateCollider" type="CollisionShape3D" parent="MoreKillsNeeded" unique_id=1386614580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.755882, 14.20026, 7.6135483)
+shape = SubResource("BoxShape3D_jdvek")
+script = ExtResource("22_xmiex")
+
+[node name="MoreKillsNeededLabel" type="Label" parent="MoreKillsNeeded" unique_id=472848793]
+visible = false
+z_index = 15
+offset_top = 434.0
+offset_right = 1152.0
+offset_bottom = 645.0
+text = "-More kills required to finish level-"
+label_settings = SubResource("LabelSettings_bf28v")
+horizontal_alignment = 1
+
 [connection signal="body_entered" from="End" to="End" method="_on_body_entered"]
 [connection signal="body_entered" from="Spawner/SpawnArea" to="Spawner" method="_on_spawn_area_body_entered"]
+[connection signal="body_entered" from="MoreKillsNeeded" to="MoreKillsNeeded" method="_on_body_entered"]
+[connection signal="body_exited" from="MoreKillsNeeded" to="MoreKillsNeeded" method="_on_body_exited"]

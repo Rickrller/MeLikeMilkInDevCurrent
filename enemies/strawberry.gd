@@ -23,7 +23,7 @@ enum enemystate {pouncestart, pouncing, parrying, everythingelse, blasted, attac
 @onready var model = $model
 const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
 @export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
-
+@onready var DeathVFX = load("res://fruit_death.tscn")
 
 func _ready() -> void:
 	
@@ -46,6 +46,9 @@ func _physics_process(delta: float) -> void:
 		diff = global_position - player.global_position
 	
 	if health <= 0:
+		var DeathVFXInst = DeathVFX.instantiate()
+		DeathVFXInst.global_transform = global_transform
+		get_tree().root.add_child(DeathVFXInst)
 		KillCounter.register_kill()
 		#eventbus.grantitem.emit(givenfruit)
 		queue_free()

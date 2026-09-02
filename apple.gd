@@ -5,7 +5,6 @@ extends State
 @onready var rootnodeofscene = get_tree().current_scene
 @onready var neck = $"../../Neck"
 @onready var nutrition = $"../../nutrition"
-
 const applemesh = preload("res://meshes/applemesh.tscn")
 func Enter():
 	used = false
@@ -43,6 +42,7 @@ func ability():
 	handstate.currentfruit = ""
 	rightarm.material_overlay.albedo_color = handstate.normalalbedo
 func eat():
+	$"../FruitEat".playing = true
 	anims.start("idle")
 	nutrition.hydration += 30
 	nutrition.carbs += 20

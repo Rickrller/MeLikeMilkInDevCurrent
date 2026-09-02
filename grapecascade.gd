@@ -19,6 +19,7 @@ func Physics_Update(_delta: float):
 
 
 func eat():
+	$"../FruitEat".playing = true
 	anims.start("idle")
 	nutrition.hydration += 50
 	nutrition.vitamins += 10

@@ -2363,12 +2363,12 @@ offset_bottom = 720.0
 text = "Welcome to the game!
 Heres a list of the controls (For those who like to read)
 P - Lock/unlock mouse (Important!)
+Tab - Pause menu (Important!)
 Space - Jump/Double jump
 Left click - Punching (Basic form of damage output)
-Right click (While holding a fruit) - Cast the fruit's special ability
+Right click/Q (While holding a fruit) - Cast the fruit's ability
 F - Parry (Acts like a counterattack, successful parries reset cd)
 E (While holding a fruit) - Eat the fruit to gain nutrients
-Tab - Pause menu
 Shift - Dashing (Dash then jump to perform long dash)
 
 It is recommended to play Fruitelude last, as it is the hardest level (But PLEASE play it I worked really hard on it)

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dvlxwu7jca6vy"]
+
+[ext_resource type="AudioStream" uid="uid://h5qaq3sqwsx1" path="res://ParryExplosion.mp3" id="1_1dngn"]
+[ext_resource type="Script" uid="uid://tiwfca7aw41l" path="res://SoundCleanup.gd" id="2_varka"]
+[ext_resource type="AudioStream" uid="uid://m6lpkstg6dj0" path="res://ParryTwang.mp3" id="3_kon7i"]
+[ext_resource type="Script" uid="uid://c4vf7in0dklrf" path="res://Sound.gd" id="4_varka"]
+
+[node name="Parrysound" type="Node3D" unique_id=1766942700]
+
+[node name="ParryExplosion" type="AudioStreamPlayer" parent="." unique_id=1271799635]
+stream = ExtResource("1_1dngn")
+volume_db = -25.0
+script = ExtResource("2_varka")
+
+[node name="ParryTwang" type="AudioStreamPlayer" parent="." unique_id=1881245002]
+stream = ExtResource("3_kon7i")
+volume_db = -16.0
+script = ExtResource("4_varka")

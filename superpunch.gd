@@ -26,4 +26,4 @@ func _on_body_entered(body: Node3D) -> void:
 		else:
 			if "state" in body:
 				body.velocity.y += 15
-				body.state = body.enemystate.blasted
+				#body.state = body.enemystate.blasted

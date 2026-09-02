@@ -26,6 +26,7 @@ func ability():
 	handstate.currentfruit = ""
 
 func eat():
+	$"../FruitEat".playing = true
 	anims.start("idle")
 	nutrition.hydration += 10
 	nutrition.carbs += 60

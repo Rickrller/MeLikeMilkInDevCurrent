@@ -73,8 +73,8 @@ func _update_display(instant: bool) -> void:
 	for i in item_nodes.size():
 		var item = item_nodes[i]
 		var offset = _wrapped_offset(i, current_index, levels.size())
-
 		item.set_selected(offset == 0)
+		item.set_highlighted(offset == 0 and i == 4)
 
 		var target_pos: Vector2 = Vector2(center_x + offset * slot_spacing, center_y) - item.size / 2.0
 		var target_scale := Vector2.ONE * side_scale

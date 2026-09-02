@@ -33,6 +33,7 @@ func ability():
 		rightarm.material_overlay.albedo_color = Color(0.0, 0.0, 0.0, 0.0)
 		leftarm.material_overlay.albedo_color = Color(0.0, 0.0, 0.0, 0.0)
 func eat():
+	$"../FruitEat".playing = true
 	anims.start("idle")
 	nutrition.hydration += 40
 	nutrition.protien += 26

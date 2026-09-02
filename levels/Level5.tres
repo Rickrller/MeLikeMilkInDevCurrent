@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://ryf3fyhu4jwo"]
 
-[ext_resource type="Texture2D" uid="uid://dwygwmmtj5c6h" path="res://BlueGlass.png" id="1_tagxp"]
+[ext_resource type="Texture2D" uid="uid://ngdp0ag8tb0c" path="res://FruiteludeIcon.png" id="1_tagxp"]
 [ext_resource type="PackedScene" uid="uid://ced8ww06tob87" path="res://Fruitelude.tscn" id="2_ibaox"]
 [ext_resource type="Script" uid="uid://x3j10428w6tw" path="res://LevelData.gd" id="3_2fv5t"]
 

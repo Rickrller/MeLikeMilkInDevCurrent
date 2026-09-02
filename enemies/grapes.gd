@@ -17,6 +17,7 @@ const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
 @export var normal_albedo : Color = Color(0.0, 0.0, 0.0, 0.0)
 @onready var albedo = $model.material_overlay.albedo_color 
 @onready var model = $model
+@onready var DeathVFX = load("res://fruit_death.tscn")
 func _ready():
 
 #	await get_tree().create_timer(1).timeout
@@ -40,6 +41,9 @@ func parried(_d : bool, _k : bool, _v : bool):
 func _physics_process(delta: float) -> void:
 	if health <= 0:
 		die()
+		var DeathVFXInst = DeathVFX.instantiate()
+		DeathVFXInst.global_transform = global_transform
+		get_tree().root.add_child(DeathVFXInst)
 	child.returnpos = global_position
 	child.returnpos += 4 * -global_transform.basis.z.normalized()
 	if is_on_floor():
@@ -91,6 +95,7 @@ func lookatplayer(delta):
 	global_transform.basis = Basis(changed_quaternion)
 
 func die():
+	KillCounter.register_kill()
 	queue_free()
 	child.queue_free()
 

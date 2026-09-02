@@ -38,6 +38,7 @@
 [ext_resource type="AudioStream" uid="uid://c3n5opgcgd1md" path="res://Delivery_Time.mp3" id="23_7lmhl"]
 [ext_resource type="Texture2D" uid="uid://dqdiecp557i5v" path="res://enemies/Kasane_Pearto_Original.webp" id="24_dx0e4"]
 [ext_resource type="Script" uid="uid://d1gve3scvi2eh" path="res://jump.gd" id="26_khis8"]
+[ext_resource type="AudioStream" uid="uid://mnep34rnm64x" path="res://FruitEat.mp3" id="29_b4uyv"]
 [ext_resource type="Texture2D" uid="uid://cno613y7cf45x" path="res://RedGradient.png" id="30_tkwlq"]
 [ext_resource type="Script" uid="uid://dqdw2l18ytl8x" path="res://health_indicator.gd" id="31_hl5qd"]
 [ext_resource type="Script" uid="uid://bssbuwif5umc8" path="res://damage_indicator.gd" id="32_ek41f"]
@@ -6769,7 +6770,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.6509698, 0.14197889, 0.54495496, 0.5090231)
+bones/0/rotation = Quaternion(-0.65185505, 0.14102988, 0.5452014, 0.50788873)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -7021,7 +7022,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.08221996, 0.0010172097, 0.9966136, -0.9961896, -0.029103242, 0.08221468, 0.029088318, -0.9995759, -0.0013795338, -0.4059158, 1.7891557, 3.6674185)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.4059158, 1.7891557, 3.6674185)
-bones/0/rotation = Quaternion(-0.6509698, 0.14197889, 0.54495496, 0.5090231)
+bones/0/rotation = Quaternion(-0.65185505, 0.14102988, 0.5452014, 0.50788873)
 bones/0/scale = Vector3(1, 1, 0.9999999)
 bones/1/name = "forearm.L"
 bones/1/parent = 0
@@ -7261,6 +7262,10 @@ skeleton = NodePath("..")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Neck/CameraBobber/leftarm" unique_id=492550704]
 libraries/ = SubResource("AnimationLibrary_s3r71")
 
+[node name="OrangeBeamVFXPoint" type="Marker3D" parent="Neck" unique_id=941965289 groups=["OrangeBeamPoint"]]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32940954, 0.68764997, -1.4528443)
+
 [node name="Anims" type="Node" parent="." unique_id=1104727514]
 script = ExtResource("6_pgbbb")
 
@@ -7351,6 +7356,12 @@ script = ExtResource("16_jm5j8")
 
 [node name="grapes" type="Node" parent="handstatemachine" unique_id=1468718033]
 script = ExtResource("20_iruf7")
+
+[node name="FruitEat" type="AudioStreamPlayer" parent="handstatemachine" unique_id=1615408259]
+stream = ExtResource("29_b4uyv")
+volume_db = -3.0
+pitch_scale = 1.2
+max_polyphony = 10
 
 [node name="movementstatemachine" type="Node" parent="." unique_id=895398097]
 script = ExtResource("6_606se")
@@ -7705,10 +7716,6 @@ max_polyphony = 10
 [node name="ParryInitiate" type="AudioStreamPlayer" parent="." unique_id=652760447]
 stream = ExtResource("56_b4uyv")
 volume_db = -10.0
-
-[node name="OrangeBeamVFXPoint" type="Marker3D" parent="." unique_id=941965289 groups=["OrangeBeamPoint"]]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32940954, 0.68764997, -1.4528443)
 
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="animation_finished" from="Anims/R_AnimationTree" to="." method="_on_r_animation_tree_animation_finished"]

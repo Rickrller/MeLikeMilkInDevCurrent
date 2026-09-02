@@ -19,5 +19,6 @@ volume_db = 3.0
 
 [node name="Job" type="AudioStreamPlayer" parent="." unique_id=572196038]
 stream = ExtResource("3_10fn1")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://desvmc6jc27py"]
+
+[ext_resource type="Texture2D" uid="uid://bste6uo2mompy" path="res://FaintSmoke.png" id="1_hloi1"]
+[ext_resource type="Script" uid="uid://cnyol8hc8cniu" path="res://VfxCleanup2.gd" id="2_hloi1"]
+[ext_resource type="Script" uid="uid://egroln7s8pb3" path="res://VFX.gd" id="3_0isx8"]
+[ext_resource type="AudioStream" uid="uid://b0tey68n4erkm" path="res://Splatter.mp3" id="4_0isx8"]
+[ext_resource type="Script" uid="uid://bki4nlidb847e" path="res://Soundplay.gd" id="5_bjtbw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h815f"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_hloi1")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_bjtbw"]
+material = SubResource("StandardMaterial3D_h815f")
+
+[sub_resource type="Curve" id="Curve_642fo"]
+_data = [Vector2(0, 0), 0.0, 3.4162679, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_2ds4l"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_j0hc3"]
+colors = PackedColorArray(1, 1, 1, 0.41960785, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xwxvp"]
+load_path = "res://.godot/imported/Sparks.png-997edff6ef6163bdc757efd54796730a.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xtr5a"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("CompressedTexture2D_xwxvp")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_55vss"]
+material = SubResource("StandardMaterial3D_xtr5a")
+
+[sub_resource type="Curve" id="Curve_8rqo0"]
+_data = [Vector2(0, 0), 0.0, 1.1929823, 0, 0, Vector2(1, 1), 1.0327872, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_6fddi"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="FruitDeath" type="Node3D" unique_id=244512882]
+
+[node name="Scale" type="Node3D" parent="." unique_id=960218467]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="Smoke" type="CPUParticles3D" parent="Scale" unique_id=2139650707]
+emitting = false
+amount = 3
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_bjtbw")
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -15.0
+angular_velocity_max = 15.0
+angle_max = 360.0
+scale_amount_min = 4.0
+scale_amount_max = 6.0
+scale_amount_curve = SubResource("Curve_642fo")
+color_ramp = SubResource("Gradient_2ds4l")
+script = ExtResource("2_hloi1")
+
+[node name="SmokeBig" type="CPUParticles3D" parent="Scale" unique_id=1922166404]
+emitting = false
+amount = 3
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_bjtbw")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_642fo")
+color_ramp = SubResource("Gradient_j0hc3")
+script = ExtResource("3_0isx8")
+
+[node name="BigBoom" type="CPUParticles3D" parent="Scale" unique_id=1402223471]
+emitting = false
+amount = 1
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_55vss")
+gravity = Vector3(0, 0, 0)
+angle_max = 360.0
+scale_amount_min = 8.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_8rqo0")
+color_ramp = SubResource("Gradient_6fddi")
+script = ExtResource("3_0isx8")
+
+[node name="Splatter" type="AudioStreamPlayer" parent="Scale" unique_id=1008805703]
+stream = ExtResource("4_0isx8")
+volume_db = -10.0
+max_polyphony = 10
+script = ExtResource("5_bjtbw")

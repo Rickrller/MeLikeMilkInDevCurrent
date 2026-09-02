@@ -19,6 +19,7 @@ const parrycolor = Color(3.294, 3.294, 3.294, 0.039)
 @onready var model = $model
 @onready var anims = $AnimationPlayer
 @export var parryable : bool = false
+@onready var DeathVFX = load("res://fruit_death.tscn")
 func _ready() -> void:
 	
 	var players = get_tree().get_nodes_in_group("player")
@@ -40,6 +41,9 @@ func _physics_process(delta: float) -> void:
 	
 	if health <= 0:
 		#eventbus.grantitem.emit(givenfruit)
+		var DeathVFXInst = DeathVFX.instantiate()
+		DeathVFXInst.global_transform = global_transform
+		get_tree().root.add_child(DeathVFXInst)
 		KillCounter.register_kill()
 		queue_free()
 	if not is_on_floor():
