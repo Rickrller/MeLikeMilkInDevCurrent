@@ -1501,7 +1501,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38809013, 4.5790896, -0.317
 mesh = SubResource("SphereMesh_3806j")
 
 [node name="Leaves3" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall" unique_id=542645922]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12004852, 4.225925, 0.55119514)
+transform = Transform3D(1.0000001, 0, -2.9802322e-08, 0, 1.0000001, 0, -2.9802322e-08, 0, 1.0000001, -0.12004757, 4.2259254, 0.5511954)
 mesh = SubResource("SphereMesh_5huw8")
 
 [node name="Leaves4" type="MeshInstance3D" parent="CoolMap/GreeneryLarge/TreeTall" unique_id=170782268]
@@ -2362,7 +2362,7 @@ offset_right = 1104.0
 offset_bottom = 720.0
 text = "Welcome to the game!
 Heres a list of the controls (For those who like to read)
-WASD - Movement
+P - Lock/unlock mouse (Important!)
 Space - Jump/Double jump
 Left click - Punching (Basic form of damage output)
 Right click (While holding a fruit) - Cast the fruit's special ability
