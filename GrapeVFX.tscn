@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://ddncfltlkgmwb"]
+
+[ext_resource type="Script" uid="uid://bmsn0332leyj4" path="res://GrapeVFX.gd" id="1_3lytm"]
+[ext_resource type="Script" uid="uid://dls1jo1kxf27r" path="res://GrapeVFXCleanup.gd" id="2_2utr7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ipp32"]
+load_path = "res://.godot/imported/Sparks.png-997edff6ef6163bdc757efd54796730a.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjoak"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0, 1, 1)
+albedo_texture = SubResource("CompressedTexture2D_ipp32")
+emission_enabled = true
+emission = Color(0.6039216, 0, 1, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_h0v5h"]
+material = SubResource("StandardMaterial3D_qjoak")
+
+[sub_resource type="Curve" id="Curve_bwcfo"]
+_data = [Vector2(0, 0), 0.0, 2.5789452, 0, 0, Vector2(0.13492063, 0.61695904), 3.9473686, 3.9473686, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_1mibb"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wl5pb"]
+load_path = "res://.godot/imported/RingEffect.png-64a2a9af3b1ffcfa7a10e839faf4a7ab.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3v6t8"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.8, 0, 1, 1)
+albedo_texture = SubResource("CompressedTexture2D_wl5pb")
+emission_enabled = true
+emission = Color(0.7372549, 0, 1, 1)
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_djw68"]
+material = SubResource("StandardMaterial3D_3v6t8")
+orientation = 1
+
+[sub_resource type="Curve" id="Curve_0wbb0"]
+_data = [Vector2(0, 0), 0.0, 0.8256181, 0, 0, Vector2(1e-05, 0), 1.2600001, 1.2600001, 0, 0, Vector2(1, 1), 0.14354074, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_ir7a6"]
+offsets = PackedFloat32Array(0.0061728396, 0.24382716, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.6784314, 1, 1, 1, 0)
+
+[node name="GrapeHit" type="Node3D" unique_id=1581757725]
+
+[node name="Bubbling" type="CPUParticles3D" parent="." unique_id=186817630]
+emitting = false
+amount = 40
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+local_coords = true
+mesh = SubResource("QuadMesh_h0v5h")
+direction = Vector3(0, 1, 0)
+spread = 90.0
+gravity = Vector3(0, -5, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 10.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+damping_min = 8.0
+damping_max = 8.0
+angle_max = 360.0
+scale_amount_min = 0.1
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_bwcfo")
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("Gradient_1mibb")
+script = ExtResource("1_3lytm")
+
+[node name="Ring" type="CPUParticles3D" parent="." unique_id=764606761]
+emitting = false
+amount = 15
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.71
+local_coords = true
+mesh = SubResource("QuadMesh_djw68")
+particle_flag_align_y = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 0.1
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 3.0
+scale_amount_max = 12.0
+scale_amount_curve = SubResource("Curve_0wbb0")
+color_ramp = SubResource("Gradient_ir7a6")
+script = ExtResource("2_2utr7")

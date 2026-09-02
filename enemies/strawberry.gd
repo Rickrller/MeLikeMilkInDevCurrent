@@ -82,6 +82,7 @@ func parried(d : bool, k : bool, v : bool):
 	
 	if not parryable:
 		return
+	eventbus.landedparry.emit()
 	if d:
 		health -= eventbus.parrydamage
 	#if state != enemystate.pouncing and state != enemystate.attacking:
@@ -245,4 +246,4 @@ func deactivatearea():
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		body.velocity.y += 20
-		body.health -= 10 * body.defense
+		body.health -= 5 * body.defense

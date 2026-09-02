@@ -11,11 +11,11 @@ func _ready() -> void:
 	$tick.start()
 
 func _on_tick() -> void:
-	protien -= 1.1
+	protien -= 1
 	minerals -= 1
-	carbs -= 1.3
-	vitamins -= 1.6
-	hydration -= 1.7
+	carbs -= 1
+	vitamins -= 1
+	hydration -= 1
 
 func _process(_delta: float) -> void:
 	if Engine.get_frames_drawn() % 6 == 0:
